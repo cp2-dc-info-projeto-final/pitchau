@@ -1,4 +1,4 @@
-# Documento de Casos de Uso
+![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/94806b00-9916-4bc3-89ec-8f5fde0957e3)# Documento de Casos de Uso
 
 ## Lista dos Casos de Uso
  - [CDU 01 - Adm](CDU-01): Fazer Cadastro
@@ -29,7 +29,7 @@
 *CDU's - Administrador*
 *CDU-01. Fazer Cadastro*
 *Fluxo Principal*
-![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/2d8467d1-01be-4b5e-854c-b3df2d71ba7d)
+![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6176934b-6c90-4e07-bd81-a752c83e6d55)
 
     1. O sistema exibe o formulário solicitando e-mail e senha.
     2. O usuário preenche as credencias solicitadas.
@@ -39,8 +39,8 @@
     6. O sistema direciona o usuário para a página principal da loja.
 
 *Fluxo Alternativo A - Caso o usuário já esteja cadastrado*
-![CadAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e907b300-c94e-4964-9d6d-ff355b371bd8)
-    
+![CadAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/455fb056-9398-4c18-9731-ccf365c662bf)
+
     1. O sistema exibe o formulário solicitando e-mail e senha.
     2. O usuário preenche as credencias solicitadas.
     3. O sistema verifica se o e-mail está cadastrado.
@@ -49,8 +49,8 @@
 
 *CDU-02. Fazer Login*
 *Fluxo Principal*
-![LogAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/61b92d4d-7957-4b45-af31-c1a239ea7a56)
-    
+![LogAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/4cd05ecb-03ab-4ea4-9d9b-e7e06b6daacf)
+
     1. O sistema exibe o formulário solicitando e-mail e senha
     2. O usuário preenche as credencias solicitadas.
     3. O sistema verifica se o e-mail está cadastrado.
@@ -59,8 +59,8 @@
     6. O sistema exibe a página principal da loja.
 
 *Fluxo Alternativo A - Caso o e-mail não esteja cadastrado*
-![LogAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/4eb7d2eb-f3ef-47ad-82a4-53eb044921b8)
-    
+![LogAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b88dcd71-9cad-4d58-a174-c04b1d22c742)
+
     1. O sistema exibe o formulário solicitando e-mail e senha
     2. O usuário preenche as credencias solicitadas.
     3. O sistema verifica se o e-mail está cadastrado.
@@ -68,8 +68,8 @@
     5. O sistema sugere a aba de Cadastro
 
 *Fluxo Alternativo B - Caso a Senha esteja incorreta*
-![LogAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/50be174a-6eef-4f11-827c-93fc929ef6f8)
-    
+![LogAdm_DSFA3](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/17b26f9a-85ee-41ca-834a-0fc2dd037314)
+
     1. O sistema exibe o formulário solicitando e-mail e senha
     2. O usuário preenche as credencias solicitadas.
     3. O sistema verifica se o e-mail está cadastrado.
