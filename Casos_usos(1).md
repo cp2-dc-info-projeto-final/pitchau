@@ -1,16 +1,26 @@
 # Documento de Casos de Uso
 
 ## Lista dos Casos de Uso
- - [CDU 01](CDU-01): Fazer Cadastro
- - [CDU 02](CDU-02): Fazer Login
- - [CDU 03](CDU-03): Cadastrar Categoria
+ - [CDU 01 - Adm](CDU-01): Fazer Cadastro
+ - [CDU 02 - Adm](CDU-02): Fazer Login
+ - [CDU 03 - Adm](CDU-03): Cadastrar Categoria
+ - [CDU 04 - Adm](CDU-04): Atualizar Categoria
+ - [CDU 05 - Adm](CDU-05): Cadastrar Produto
+ - [CDU 06 - Adm](CDU-06): Atualizar Produto
+ - [CDU 07 - Adm](CDU-07): Gerenciar Estoque
+ - [CDU 01 - Usr](CDU-01): Fazer Cadastro
+ - [CDU 02 - Usr](CDU-02): Atualizar Cliente
+ - [CDU 03 - Usr](CDU-03): Fazer Login
+ - [CDU 04 - Usr](CDU-04): Pesquisar Produto
+ - [CDU 05 - Usr](CDU-05): Adicionar Produto ao Carrinho
+ - [CDU 06 - Usr](CDU-06): Finalizar Compra
 
 ## Lista de Atores
  - Cliente
  - Adminstrador
 
 ## Diagrama de Casos de Uso
-![DiaCasosUso](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5943a717-6323-4282-9aae-faf076a463df)
+![DiaCasosUso](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e28634fa-9543-460e-b5a1-6023df51a086)
 
 ## Descrição dos Casos de Uso
 
@@ -208,7 +218,7 @@
     3. O cliente logado insere as novas informações e envia
     4. O sistema não atualiza o cliente logado por conter informações semelhantes à outro cliente
     
-*2. Fazer Login*
+*3. Fazer Login*
 *Fluxo Principal*
 ![LogUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5c36ecdd-be7b-4a2c-b0fc-7d6c77913734)
     
@@ -237,7 +247,7 @@
     4. O sistema verifica se credenciais são compatíveis com as do Banco de Dados.
     6. O sistema retorna a mensagem que a senha deste e-mail está incorreta.
 
-*3. Pesquisar Produto*
+*4. Pesquisar Produto*
 *Fluxo Principal*
     1. O sistema exibe a página principal do site.
     2. O usuário seleciona a aba de pesquisa e digita o nome do produto.
@@ -245,7 +255,7 @@
     3. O sistema procura o produto na qual o usuário digitou o nome no Banco de Dados.
     4. O sistema exibe uma lista dos produtos que foram encontrados com o nome solicitado.
 
-*4. Adicionando Produtos no Carrinho*
+*5. Adicionando Produtos no Carrinho*
 *Fluxo Principal*
 ![AddProdCart_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b9b99c9d-0651-4dc8-8df3-ce28be952602)
     
