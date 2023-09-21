@@ -26,7 +26,7 @@
 
 
 
-*CDU's - Administrador* 
+*CDU's - Administrador*r
 *CDU-01. Fazer Cadastro* 
 *Fluxo Principal*
 ![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6176934b-6c90-4e07-bd81-a752c83e6d55)
