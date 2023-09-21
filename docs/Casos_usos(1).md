@@ -1,4 +1,4 @@
-![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/94806b00-9916-4bc3-89ec-8f5fde0957e3)# Documento de Casos de Uso
+# Documento de Casos de Uso
 
 ## Lista dos Casos de Uso
  - [#CDU 01 - Adm](CDU-01): Fazer Cadastro
