@@ -27,8 +27,9 @@
 
 
 #CDU's - Administrador
+
 #CDU-01. Fazer Cadastro
-#Fluxo Principal
+ - Fluxo Principal
 ![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6176934b-6c90-4e07-bd81-a752c83e6d55)
 
     1. O sistema exibe o formulário solicitando e-mail e senha.
@@ -38,7 +39,7 @@
     5. O sistema retorna a mensagem que o cadastro foi finalizado com sucesso.
     6. O sistema direciona o usuário para a página principal da loja.
 
-*Fluxo Alternativo A - Caso o usuário já esteja cadastrado*
+ - Fluxo Alternativo A - Caso o usuário já esteja cadastrado
 ![CadAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/455fb056-9398-4c18-9731-ccf365c662bf)
 
     1. O sistema exibe o formulário solicitando e-mail e senha.
