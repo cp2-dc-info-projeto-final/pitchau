@@ -1,19 +1,19 @@
 ![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/94806b00-9916-4bc3-89ec-8f5fde0957e3)# Documento de Casos de Uso
 
 ## Lista dos Casos de Uso
- - [CDU 01 - Adm](CDU-01): Fazer Cadastro
- - [CDU 02 - Adm](CDU-02): Fazer Login
- - [CDU 03 - Adm](CDU-03): Cadastrar Categoria
- - [CDU 04 - Adm](CDU-04): Atualizar Categoria
- - [CDU 05 - Adm](CDU-05): Cadastrar Produto
- - [CDU 06 - Adm](CDU-06): Atualizar Produto
- - [CDU 07 - Adm](CDU-07): Gerenciar Estoque
- - [CDU 01 - Usr](CDU-01): Fazer Cadastro
- - [CDU 02 - Usr](CDU-02): Atualizar Cliente
- - [CDU 03 - Usr](CDU-03): Fazer Login
- - [CDU 04 - Usr](CDU-04): Pesquisar Produto
- - [CDU 05 - Usr](CDU-05): Adicionar Produto ao Carrinho
- - [CDU 06 - Usr](CDU-06): Finalizar Compra
+ - [ - CDU 01 - Adm]( - CDU-01): Fazer Cadastro
+ - [ - CDU 02 - Adm]( - CDU-02): Fazer Login
+ - [ - CDU 03 - Adm]( - CDU-03): Cadastrar Categoria
+ - [ - CDU 04 - Adm]( - CDU-04): Atualizar Categoria
+ - [ - CDU 05 - Adm]( - CDU-05): Cadastrar Produto
+ - [ - CDU 06 - Adm]( - CDU-06): Atualizar Produto
+ - [ - CDU 07 - Adm]( - CDU-07): Gerenciar Estoque
+ - [ - CDU 01 - Usr]( - CDU-01): Fazer Cadastro
+ - [ - CDU 02 - Usr]( - CDU-02): Atualizar Cliente
+ - [ - CDU 03 - Usr]( - CDU-03): Fazer Login
+ - [ - CDU 04 - Usr]( - CDU-04): Pesquisar Produto
+ - [ - CDU 05 - Usr]( - CDU-05): Adicionar Produto ao Carrinho
+ - [ - CDU 06 - Usr]( - CDU-06): Finalizar Compra
 
 ## Lista de Atores
  - Cliente
@@ -23,8 +23,6 @@
 ![DiaCasosUso](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e28634fa-9543-460e-b5a1-6023df51a086)
 
 ## Descrição dos Casos de Uso
-
-
 
 CDU's - Administrador
  - CDU-01. Fazer Cadastro
@@ -46,7 +44,7 @@ CDU's - Administrador
      4. O sistema retorna a mensagem dizendo que o e-mail de já está cadastrado.
      5. O sistema sugere a aba de Fazer login.
 
-CDU-02. Fazer Login
+ - CDU-02. Fazer Login
    - Fluxo Principal
 ![LogAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/4cd05ecb-03ab-4ea4-9d9b-e7e06b6daacf)
      1. O sistema exibe o formulário solicitando e-mail e senha
@@ -74,7 +72,7 @@ CDU-02. Fazer Login
      4. O sistema verifica se credenciais são compatíveis com as do Banco de Dados.
      6. O sistema retorna a mensagem que a senha deste e-mail está incorreta.
 
-CDU-03. Cadastrar Categoria*
+ - CDU-03. Cadastrar Categoria*
    - Fluxo Principal*
 ![CadCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/8fba0e38-a6bf-4636-b4a2-9f1e3f871615)
     
@@ -178,7 +176,7 @@ CDU-03. Cadastrar Categoria*
      7. O usuário encerra a operação, clicando no botão: Finalizar.
      8. O sistema retira do estoque do produto escolhido a quantidade informada na solicitação.
 
-CDU's - Cliente*
+ - CDU's - Cliente*
 1. Fazer Cadastro*
    - Fluxo Principal*
 ![CadUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5cc506fb-484f-4fc8-8ba4-d718457041f2)
