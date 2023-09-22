@@ -41,77 +41,73 @@ CDU's - Administrador
      1. O sistema exibe o formulário solicitando e-mail e senha.
      2. O usuário preenche as credencias solicitadas.
      3. O sistema verifica se o e-mail está cadastrado.
-     4. O sistema retorna a mensagem dizendo que o e-mail de já está cadastrado.
+     4. O sistema retorna a mensagem dizendo que o administrador já está cadastrado.
      5. O sistema sugere a aba de Fazer login.
 
  - CDU-02. Fazer Login
    - Fluxo Principal
 ![LogAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/4cd05ecb-03ab-4ea4-9d9b-e7e06b6daacf)
-     1. O sistema exibe o formulário solicitando e-mail e senha
+     1. O sistema exibe o formulário solicitando e-mail e senha.
      2. O usuário preenche as credencias solicitadas.
      3. O sistema verifica se o e-mail está cadastrado.
-     4. O sistema verifica se credenciais são compatíveis com as do Banco de Dados.
+     4. O sistema verifica se as credenciais são coerentes as do Banco de Dados.
      5. O sistema autentica o usuário.
      6. O sistema exibe a página principal da loja.
 
-   - Fluxo Alternativo A - Caso o e-mail não esteja cadastrado*
-![LogAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b88dcd71-9cad-4d58-a174-c04b1d22c742)
+   - Fluxo Alternativo A - Caso o e-mail não esteja cadastrado
+![LogAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/438c2894-b6ad-4801-8935-9ceae8ce50b2)
 
-     1. O sistema exibe o formulário solicitando e-mail e senha
+     1. O sistema exibe o formulário solicitando e-mail e senha.
      2. O usuário preenche as credencias solicitadas.
      3. O sistema verifica se o e-mail está cadastrado.
      4. O sistema retorna a mensagem dizendo que o e-mail não está cadastrado 
      5. O sistema sugere a aba de Cadastro
 
-   - Fluxo Alternativo B - Caso a Senha esteja incorreta*
-![LogAdm_DSFA3](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/17b26f9a-85ee-41ca-834a-0fc2dd037314)
-
-     1. O sistema exibe o formulário solicitando e-mail e senha
+   - Fluxo Alternativo B - Caso a Senha esteja incorreta
+![LogAdm_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/0681a5a3-a5f1-42c4-a1dd-2e75b52c3411)
+     1. O sistema exibe o formulário solicitando e-mail e senha.
      2. O usuário preenche as credencias solicitadas.
      3. O sistema verifica se o e-mail está cadastrado.
-     4. O sistema verifica se credenciais são compatíveis com as do Banco de Dados.
+     4. O sistema verifica se as credenciais são coerentes as do Banco de Dados.
      6. O sistema retorna a mensagem que a senha deste e-mail está incorreta.
 
- - CDU-03. Cadastrar Categoria*
-   - Fluxo Principal*
-![CadCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/8fba0e38-a6bf-4636-b4a2-9f1e3f871615)
-    
-     1. O sistema exibe um formulário solicitando o nome da nova categoria
+ - CDU-03. Cadastrar Categoria
+   - Fluxo Principal
+![CadCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e3bcbf44-60e5-45c1-82af-552780d918b2) 
+     1. O sistema exibe um formulário solicitando o nome da nova categoria.
      2. O administrador preenche a solicitação.
-     3. O sistema verifica se a categoria já existe
+     3. O sistema verifica se a categoria já existe.
      3. O sistema cadastra a categoria preenchida no Banco de Dados.
 
    - Fluxo Alternativo A - Caso a Categoria já exista*
-![CadCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/ae59efd6-ff33-4c65-8b30-1782f9f7159d)
-    
-     1. O sistema exibe um formulário solicitando o nome da nova categoria
+![CadCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/ae59efd6-ff33-4c65-8b30-1782f9f7159d)    
+     1. O sistema exibe um formulário solicitando o nome da nova categoria.
      2. O administrador preenche a solicitação.
-     3. O sistema verifica se a categoria já existe
-     4. O sistema retorna a mensagem dizendo que a categoria já existe
+     3. O sistema verifica se a categoria já existe.
+     4. O sistema retorna a mensagem dizendo que a categoria já existe.
+     5. O sistema sugere atualizar a categoria existente.
 
+4. Atualizar Categoria
+   - Fluxo Principal
+![UpdCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/1f194a93-e0f6-4822-9b56-c8be6081aeea)    
+     1. O sistema busca em si a categoria selecionado para atualização.
+     2. O sistema exibe a categoria e suas respectivas informações.
+     3. O administrador insere as novas informações e envia.
+     4. O sistema verifica se existe categoria semelhante.
+     5. O sistema atualiza a categoria.
 
-4. Atualizar Categoria*
-   - Fluxo Principal*
-![UpdCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/d43ab2ee-adb7-44d3-9182-c51e5755b3a8)
+   - Fluxo Alternativo A - Categoria semelhante a outra
+![UpdCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3927d7ab-e8b9-4467-85ca-9870637f78e1)
+     1. O sistema busca em si a categoria selecionado para atualização.
+     2. O sistema exibe a categoria e suas respectivas informações.
+     3. O administrador insere as novas informações e envia.
+     4. O sistema verifica se existe categoria semelhante.
+     5. O sistema não atualiza a categoria por conter semelhanças a outra categoria.
     
-     1. O sistema busca em si a categoria selecionado para atualização
-     2. O sistema exibe a categoria e suas respectivas informações
-     3. O administrador insere as novas informações e envia
-     4. O sistema atualiza a categoria
-
-   - Fluxo Alternativo A - Categoria semelhante a outra*
-![UpdCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/edd9aa38-340c-48f3-acb7-243649b7893c)
-    
-     1. O sistema busca em si a categoria selecionado para atualização
-     2. O sistema exibe a categoria e suas respectivas informações
-     3. O administrador insere as novas informações e envia
-     4. O sistema não atualiza a categoria por conter semelhanças a outra categoria
-    
-5. Cadastrar Produto*
-   - Fluxo Principal*
-![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/8ad31825-d076-40b0-9d05-134cdd2611b8)
-    
-     1. O sistema exibe um formulário solicitando o nome do produto, o preço do produto e a descrição do produto.
+5. Cadastrar Produto
+   - Fluxo Principal
+![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/0808c59a-97fc-43b2-afe0-296bcabd191a)
+     1. O sistema exibe um formulário solicitando o nome do produto, o preço do produto, a descrição do produto e imagem do produto.
      2. O usuário preenche os dados do produto.
      3. O sistema exibe uma lista de categorias existentes para o produto.
      4. O usuário seleciona uma categoria da lista.
@@ -119,25 +115,24 @@ CDU's - Administrador
      6. O sistema verifica se o produto já está cadastrado.
      7. O produto é inserido ao Banco de dados.
     
-   - Fluxo Alternativo A - Caso o Produto já exista*
-![CadProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/4f8a62ef-95a7-4cbd-b2af-b48a72d3a649)
-    
-     1. O sistema exibe um formulário solicitando o nome do produto, o preço do produto e a descrição do produto.
+   - Fluxo Alternativo A - Caso o Produto já exista
+![CadProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5e996305-13c9-4785-b02d-c08f3f9720ef)
+     1. O sistema exibe um formulário solicitando o nome do produto, o preço do produto, a descrição do produto e imagem do produto.
      2. O usuário preenche os dados do produto.
      3. O sistema exibe uma lista de categorias existentes para o produto.
      4. O usuário seleciona uma categoria da lista.
      5. O usuário clica no botão: Enviar.
      6. O sistema verifica se o produto já está cadastrado.
-     7. O sistema retorna uma mensagem dizendo que o produto que está sendo cadastrado já existe.
+     7. O sistema retorna uma mensagem dizendo que um produto semelhante já existe, não cadastrando-o.
 
-6. Atualizar Produto*
-   - Fluxo Principal*
-![UpdProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/9cd7b485-2dff-48ed-a79d-de2a1a25f373)
-    
-     1. O sistema busca em si o produto selecionado para atualização
-     2. O sistema exibe o produto e suas respectivas informações
-     3. O administrador insere as novas informações e envia
-     4. O sistema atualiza o produto
+6. Atualizar Produto
+   - Fluxo Principal
+![UpdProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e7e52c25-a619-47f9-9d45-56bd2cd6fd42)
+     > 1. O sistema busca em si o produto selecionado para atualização.
+     > 2. O sistema exibe o produto e suas respectivas informações.
+     > 3. O administrador insere as novas informações e envia.
+     > 4. O sistema verifica se o produto é semelhante a outro.
+     > 5. O sistema atualiza o produto.
 
    - Fluxo Alternativo A - Produto semelhante a outro*
 ![UpdProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e2a3553b-3e88-4c9e-a1b6-59c53e40d3c8)
