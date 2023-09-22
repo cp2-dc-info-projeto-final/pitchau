@@ -1,4 +1,4 @@
-# Documento de Casos de Uso
+![CadUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/cef94a1f-5827-4091-8ec9-67a4e92caba0)# Documento de Casos de Uso
 
 ## Lista dos Casos de Uso
  - [#CDU 01 - Adm](CDU-01): Fazer Cadastro
@@ -7,7 +7,8 @@
  - [#CDU 04 - Adm](CDU-04): Atualizar Categoria
  - [#CDU 05 - Adm](CDU-05): Cadastrar Produto
  - [#CDU 06 - Adm](CDU-06): Atualizar Produto
- - [#CDU 07 - Adm](CDU-07): Gerenciar Estoque
+ - [#CDU 07 - Adm](CDU-07): Aumentar Quantidade em Estoque
+ - [#CDU 08 - Adm](CDU-08): Subtrair Quantide em Estoque
  - [#CDU 01 - Usr](CDU-01): Fazer Cadastro
  - [#CDU 02 - Usr](CDU-02): Atualizar Cliente
  - [#CDU 03 - Usr](CDU-03): Fazer Login
@@ -152,7 +153,7 @@ CDU's - Administrador
 ![InsertProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e8104bb2-361c-4d6c-8059-06f5626d5f6e)
      > 1. O sistema exibe os produtos junto da quantidade atual no estoque.
      > 2. O usuário seleciona um produto cadastrado.
-     > 3. O sistema exibe as opções: Aumentar quantidade de estoque de um produto e Diminuir quantidade de estoque de um produto.
+     > 3. O sistema exibe as opções: Aumentar Quantidade em Estoque de um produto e Subtrair Quantidade em Estoque de um produto.
      > 4. O usuário seleciona a opção de Aumentar quantidade de estoque de um produto.
      > 5. O sistema solicita a quantidade de produtos a serem adicionados ao estoque.
      > 6. O usuário preenche a solicitação com a quantidade de produtos desejada.
@@ -163,28 +164,40 @@ CDU's - Administrador
 ![InsertProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/ac2d8085-c0c0-4871-92cc-2508753b6027)
      > 1. O sistema exibe os produtos junto da quantidade atual no estoque.
      > 2. O usuário seleciona um produto cadastrado.
-     > 3. O sistema exibe as opções: Aumentar quantidade de estoque de um produto e Diminuir quantidade de estoque de um produto.
+     > 3. O sistema exibe as opções: Aumentar Quantidade em Estoque de um produto e Subtrair Quantidade em Estoque de um produto.
      > 4. O usuário seleciona a opção de Aumentar quantidade de estoque de um produto.
      > 5. O sistema solicita a quantidade de produtos a serem adicionados ao estoque.
      > 6. O usuário preenche a solicitação com a quantidade de produtos desejada.
      > 7. O usuário encerra a operação, clicando no botão: Finalizar.
      > 8. O sistema não adiciona ao estoque do produto escolhido a quantidade informada na solicitação, por ultrapassar a quantidade máxima.
 
-   - Fluxo Alternativo A - Diminuir Quantidade de Produtos no Estoque
+8. Subtrair Quantidade em Estoque
+   - Fluxo Principal
+![RemovProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/d29b387b-f327-40f3-bb57-410d3ce4f8b2)
      > 1. O sistema exibe os produtos junto da quantidade atual no estoque.
      > 2. O usuário seleciona um produto cadastrado.
-     > 3. O sistema exibe as opções: Aumentar quantidade de estoque de um produto e Diminuir quantidade de estoque de um produto.
-     > 4. O usuário seleciona a opção de Diminuir quantidade de estoque de um produto.
-     > 5. O sistema solicita a quantidade de produtos à serem retirados do estoque.
+     > 3. O sistema exibe as opções: Aumentar Quantidade em Estoque de um produto e Subtrair Quantidade em Estoque de um produto.
+     > 4. O usuário seleciona a opção de Subtrair Quantidade em Estoque de um produto.
+     > 5. O sistema solicita a quantidade de produtos a serem subtraídos do estoque.
      > 6. O usuário preenche a solicitação com a quantidade de produtos desejada.
      > 7. O usuário encerra a operação, clicando no botão: Finalizar.
-     > 8. O sistema retira do estoque do produto escolhido a quantidade informada na solicitação.
+     > 8. O sistema subtrai do estoque do produto escolhido a quantidade informada na solicitação.
 
- - CDU's - Cliente*
-1. Fazer Cadastro*
-   - Fluxo Principal*
-![CadUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5cc506fb-484f-4fc8-8ba4-d718457041f2)
-    
+   - Fluxo Alternativo A - Quantidade de Produtos maior que Estoque
+![RemovProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/ce472f5b-740f-41a7-a2a2-734eb32402e4)
+     > 1. O sistema exibe os produtos junto da quantidade atual no estoque.
+     > 2. O usuário seleciona um produto cadastrado.
+     > 3. O sistema exibe as opções: Aumentar Quantidade em Estoque de um produto e Subtrair Quantidade em Estoque de um produto.
+     > 4. O usuário seleciona a opção de Subtrair Quantidade em Estoque de um produto.
+     > 5. O sistema solicita a quantidade de produtos a serem subtraídos do estoque.
+     > 6. O usuário preenche a solicitação com a quantidade de produtos desejada.
+     > 7. O usuário encerra a operação, clicando no botão: Finalizar.
+     > 8. O sistema não subtrai do estoque do produto escolhido a quantidade informada na solicitação, por ultrapassar a quantidade presente.
+
+CDU's - Cliente
+ - Fazer Cadastro
+   - Fluxo Principal
+![CadUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/91c8c382-42fd-4cad-bcf4-b993eb6795f6)
      > 1. O sistema exibe o formulário solicitando e-mail e senha.
      > 2. O usuário preenche as credencias solicitadas.
      > 3. O sistema verifica se o e-mail está cadastrado.
@@ -192,36 +205,32 @@ CDU's - Administrador
      > 5. O sistema retorna a mensagem que o cadastro foi finalizado com sucesso.
      > 6. O sistema direciona o usuário para a página principal da loja.
 
-   - Fluxo Alternativo A - Caso o usuário já esteja cadastrado*
-![CadUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/0e5d122d-0761-45df-978f-60717bc76df3)
-    
+   - Fluxo Alternativo A - Caso o usuário já esteja cadastrado
+![CadUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/a4f093ec-d4e6-4f53-bbea-7552a6440ebe)
      > 1. O sistema exibe o formulário solicitando e-mail e senha.
      > 2. O usuário preenche as credencias solicitadas.
      > 3. O sistema verifica se o e-mail está cadastrado.
-     > 4. O sistema retorna a mensagem dizendo que o e-mail de já está cadastrado.
+     > 4. O sistema retorna a mensagem dizendo que o usuário já está cadastrado.
      > 5. O sistema sugere a aba de Fazer login.
 
-2. Atualizar Cliente*
-   - Fluxo Principal*
-![UpdUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/1fd4aa88-779a-45fe-b2f3-e16daf41ab2e)
-    
+2. Atualizar Cliente
+   - Fluxo Principal
+![UpdUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/30e463f4-22bf-49a2-8333-4b9d84f7043a)
      > 1. O sistema busca em si o cliente logado para atualização
      > 2. O sistema exibe o cliente logado e suas respectivas informações
      > 3. O cliente logado insere as novas informações e envia
      > 4. O sistema atualiza o cliente logado
 
-   - Fluxo Alternativo A - Cliente semelhante*
-![UpdUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/45aec9b5-2b17-402f-9105-475edcb6e0f8)
-    
+   - Fluxo Alternativo A - Cliente semelhante
+![UpdUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/7c4de721-ae84-469a-8589-e4123236ba5d)
      > 1. O sistema busca em si o cliente logado para atualização
      > 2. O sistema exibe o cliente logado e suas respectivas informações
      > 3. O cliente logado insere as novas informações e envia
      > 4. O sistema não atualiza o cliente logado por conter informações semelhantes à outro cliente
     
-3. Fazer Login*
-   - Fluxo Principal*
-![LogUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5c36ecdd-be7b-4a2c-b0fc-7d6c77913734)
-    
+3. Fazer Login
+   - Fluxo Principal
+![LogUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3f9b38f0-c8ba-4552-9a3b-bd7eef4c55bc)
      > 1. O sistema exibe o formulário solicitando e-mail e senha
      > 2. O usuário preenche as credencias solicitadas.
      > 3. O sistema verifica se o e-mail está cadastrado.
@@ -229,71 +238,69 @@ CDU's - Administrador
      > 5. O sistema autentica o usuário.
      > 6. O sistema exibe a página principal da loja.
 
-   - Fluxo Alternativo A - Caso o e-mail não esteja cadastrado*
-![LogUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/fab02e02-a211-44d1-b528-a6283ae1cc48)
-    
+   - Fluxo Alternativo A - Caso o e-mail não esteja cadastrado
+![LogUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/2bcc0ca8-337f-492d-a956-ad2c68f294db)
      > 1. O sistema exibe o formulário solicitando e-mail e senha
      > 2. O usuário preenche as credencias solicitadas.
      > 3. O sistema verifica se o e-mail está cadastrado.
      > 4. O sistema retorna a mensagem dizendo que o e-mail não está cadastrado 
      > 5. O sistema sugere a aba de Cadastro
 
-   - Fluxo Alternativo B - Caso a Senha esteja incorreta*
-![LogUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/404ef176-fba1-43d1-ba08-8a3a4c05d3dd)
-    
+   - Fluxo Alternativo B - Caso a Senha esteja incorreta
+![LogUser_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/4ded6499-e631-401f-8f32-f99b20fb89ad)
      > 1. O sistema exibe o formulário solicitando e-mail e senha
      > 2. O usuário preenche as credencias solicitadas.
      > 3. O sistema verifica se o e-mail está cadastrado.
-     > 4. O sistema verifica se credenciais são compatíveis com as do Banco de Dados.
+     > 4. O sistema verifica se as credenciais são coerentes as do Banco de Dados.
      > 6. O sistema retorna a mensagem que a senha deste e-mail está incorreta.
 
-4. Pesquisar Produto*
-   - Fluxo Principal*
+4. Pesquisar Produto
+   - Fluxo Principal
+![PsqzProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/71df787b-6a8e-4ebc-acd4-cae3f5f72430)
      > 1. O sistema exibe a página principal do site.
      > 2. O usuário seleciona a aba de pesquisa e digita o nome do produto.
      > 3. O usuário clica no botão "Procurar" após digitar o nome do produto.
      > 3. O sistema procura o produto na qual o usuário digitou o nome no Banco de Dados.
      > 4. O sistema exibe uma lista dos produtos que foram encontrados com o nome solicitado.
 
-5. Adicionando Produtos no Carrinho*
-   - Fluxo Principal*
-![AddProdCart_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b9b99c9d-0651-4dc8-8df3-ce28be952602)
-    
+5. Adicionando Produtos no Carrinho
+   - Fluxo Principal
+![AddProdCart_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/d22be22c-3525-409c-89d0-4160d4b37319)
      > 1. O usuário seleciona um produto que deseje.
-     > 2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
+     > 2. O sistema abre a página do produto contendo suas informações como: nome, preço, categoria, descrição e foto.
      > 3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
-     > 4. O sistema verifica que possui o produto selecionado possui no estoque.
+     > 4. O sistema verifica se há quantidade disponível no estoque do produto selecionado.
      > 5. O sistema adiciona o produto ao Carrinho.
      > 6. O sistema sugere ao usuário a opção de ver o Carrinho.
      > 7. O usuário seleciona a opção de ver o Carrinho.
      > 8. O sistema abre a página do Carrinho que contem os produtos na qual ele adicionou junto da quantidade no estoque.
-     > 9. O sistema exibe as opções de: Adicionar mais quantidade desse produto ao Carrinho, Diminuir mais quantidade desse produto no Carrinho e exclusão do produto no Carrinho para cada produto no Carrinho.
-     10. O usuário seleciona a opção de "Adicionar mais quantidade desse produto ao Carrinho".
-     11. O sistema exibe uma lista de números para o usuário escolher a quantidades de produtos para serem adicionados ao Carrinho. Onde a quantidade adicionada no final não poderá ser maior que a quantidade no estoque.
-     12. O usuário escolhe a quantidade de produtos que deseja adicionar no Carrinho.
-     13. O sistema insere os produtos na quantidade selecionada no Carrinho.
+     > 9. O sistema exibe as opções de: Adicionar mais Quantidade desse Produto ao Carrinho, Diminuir mais Quantidade desse Produto no Carrinho e Exclusão do Produto no Carrinho para cada produto no Carrinho.
+     > 10. O usuário seleciona a opção de "Adicionar mais Quantidade desse Produto ao Carrinho".
+     > 11. O sistema exibe uma lista de números para o usuário escolher a quantidades de produtos para serem adicionados ao Carrinho. Onde a quantidade adicionada no final não poderá ser maior que a quantidade no estoque.
+     > 12. O usuário escolhe a quantidade de produtos que deseja adicionar no Carrinho.
+     > 13. O sistema insere os produtos na quantidade selecionada no Carrinho.
 
-   - Fluxo Alternativo A - Sem estoque do produto*
-![AddProdCart_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3f8f62eb-e2cc-4b75-8a88-385664fcfdc8)
-    
+   - Fluxo Alternativo A - Sem estoque do produto
+![AddProdCart_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5f24a994-2fa6-4894-9095-c951c21d45a0)
      > 1. O usuário seleciona um produto que deseje.
-     > 2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
+     > 2. O sistema abre a página do produto contendo suas informações como: nome, preço, categoria, descrição e foto.
      > 3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
-     > 4. O sistema verifica que possui o produto selecionado possui no estoque.
+     > 4. O sistema verifica se há quantidade disponível no estoque do produto selecionado.
      > 5. O sistema retorna a mensagem de que não possui o produto no estoque no momento.
 
-   - Fluxo Alternativo B - Usuário escolhe não ver o carrinho*
+   - Fluxo Alternativo B - Usuário escolhe não ver o carrinho
+![AddProdCart_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/d48b3a4c-a785-4f8c-bb74-4f89a6bfa5ef)
      > 1. O usuário seleciona um produto que deseje.
-     > 2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
+     > 2. O sistema abre a página do produto contendo suas informações como: nome, preço, categoria, descrição e foto.
      > 3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
      > 4. O sistema verifica que possui o produto selecionado possui no estoque.
      > 5. O sistema adiciona o produto ao Carrinho.
      > 6. O sistema sugere ao usuário a opção de ver o Carrinho.
      > 7. O usuário escolhe não ver o carrinho.
 
-   - Fluxo Alternativo C - Diminuir quantidade*
+   - Fluxo Alternativo C - Diminuir quantidade
      > 1. O usuário seleciona um produto que deseje.
-     > 2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
+     > 2. O sistema abre a página do produto contendo suas informações como: nome, preço, categoria, descrição e foto.
      > 3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
      > 4. O sistema verifica que possui o produto selecionado possui no estoque.
      > 5. O sistema adiciona o produto ao Carrinho.
@@ -301,10 +308,10 @@ CDU's - Administrador
      > 7. O usuário seleciona a opção de ver o Carrinho.
      > 8. O sistema abre a página do Carrinho que contem os produtos na qual ele adicionou junto da quantidade no estoque.
      > 9. O sistema exibe as opções de: Adicionar mais quantidade desse produto ao Carrinho, Diminuir mais quantidade desse produto no Carrinho e Exclusão do produto no Carrinho para cada produto no Carrinho.
-     10. O usuário seleciona a opção de "Diminuir mais quantidade desse produto no Carrinho".
-     11. O sistema exibe uma lista de números para o usuário escolher a quantidades de produtos que quer retirar no Carrinho. Onde a quantidade retirada no final não poderá ser igual a zero.
-     12. O usuário escolhe a quantidade de produtos que deseja retirar no Carrinho.
-     13. O sistema retira os produtos na quantidade selecionada no Carrinho.
+     > 10. O usuário seleciona a opção de "Diminuir mais quantidade desse produto no Carrinho".
+     > 11. O sistema exibe uma lista de números para o usuário escolher a quantidades de produtos que quer retirar no Carrinho. Onde a quantidade retirada no final não poderá ser igual a zero.
+     > 12. O usuário escolhe a quantidade de produtos que deseja retirar no Carrinho.
+     > 13. O sistema retira os produtos na quantidade selecionada no Carrinho.
 
 
    - Fluxo Alternativo D - Remover Produto do Carrinho*
@@ -317,8 +324,8 @@ CDU's - Administrador
      > 7. O usuário seleciona a opção de ver o Carrinho.
      > 8. O sistema abre a página do Carrinho que contem os produtos na qual ele adicionou junto da quantidade no estoque.
      > 9. O sistema exibe as opções de: Adicionar mais quantidade desse produto ao Carrinho, Diminuir mais quantidade desse produto no Carrinho e Exclusão do produto no Carrinho, para cada produto no Carrinho.
-     10. O usuário seleciona a opção de "Exclusão do produto no Carrinho".
-     11. O sistema retira do Carrinho o produto no qual o usuário selecionou a opção de Exclusão do produto no Carrinho.
+     > 10. O usuário seleciona a opção de "Exclusão do produto no Carrinho".
+     > 11. O sistema retira do Carrinho o produto no qual o usuário selecionou a opção de Exclusão do produto no Carrinho.
 
 6. Finalizar Compra*
    - Fluxo Principal*
@@ -333,9 +340,9 @@ CDU's - Administrador
      > 7. O usuário insere os dados solicitados.
      > 8. O sistema envia uma solicitação ao banco para verificar a autenticidade dos dados.
      > 9. O Banco responde confirmando a autenticação do cartão.
-     10. O sistema envia uma solicitação ao banco para verificar se possui saldo disponível para a compra.
-     11. O Banco responde confirmando o saldo disponível para a compra total do Carrinho.
-     12. O sistema retorna a mensagem dizendo que a compra no cartão de crédito foi aprovada com sucesso.
+     > 10. O sistema envia uma solicitação ao banco para verificar se possui saldo disponível para a compra.
+     > 11. O Banco responde confirmando o saldo disponível para a compra total do Carrinho.
+     > 12. O sistema retorna a mensagem dizendo que a compra no cartão de crédito foi aprovada com sucesso.
 
    - Fluxo Alternativo A - Cartão não válido - Crédito*
 ![BuyCart_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/7771e1e8-abeb-4156-a427-d5db352051d5)
@@ -349,7 +356,7 @@ CDU's - Administrador
      > 7. O usuário insere os dados solicitados.
      > 8. O sistema envia uma solicitação ao banco para verificar a autenticidade dos dados.
      > 9. O Banco responde negando a autenticação do cartão.
-     10. O sistema retorna a mensagem dizendo que o cartão não é válido. 
+     > 10. O sistema retorna a mensagem dizendo que o cartão não é válido. 
 
    - Fluxo Alternativo B - Saldo Insuficiente - Crédito*
 ![BuyCart_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/ce25a260-34e8-434e-95ff-b72a1e3651e8)
@@ -363,9 +370,9 @@ CDU's - Administrador
      > 7. O usuário insere os dados solicitados.
      > 8. O sistema envia uma solicitação ao banco para verificar a autenticidade dos dados.
      > 9. O Banco responde confirmando a autenticação do cartão.
-     10. O sistema envia uma solicitação ao banco para verificar se possui saldo disponível para a compra.
-     11. O Banco responde negando o saldo disponível para a compra total do Carrinho.
-     12. O sistema retorna a mensagem dizendo que não há saldo suficiente para finalizar a compra.
+     > 10. O sistema envia uma solicitação ao banco para verificar se possui saldo disponível para a compra.
+     > 11. O Banco responde negando o saldo disponível para a compra total do Carrinho.
+     > 12. O sistema retorna a mensagem dizendo que não há saldo suficiente para finalizar a compra.
 
    - Fluxo Alternativo C - Aprovado - Cartão de Débito*
      > 1. O usuário acessa a página: Carrinho de Compras.
@@ -377,9 +384,9 @@ CDU's - Administrador
      > 7. O usuário insere os dados solicitados.
      > 8. O sistema envia uma solicitação ao banco para verificar a autenticidade dos dados.
      > 9. O Banco responde confirmando a autenticação do cartão.
-     10. O sistema envia uma solicitação ao banco para verificar se possui saldo disponível para a compra.
-     11. O Banco responde confirmando o saldo disponível para a compra total do Carrinho.
-     12. O sistema retorna a mensagem dizendo que a compra no cartão de débito foi aprovada com sucesso.
+     > 10. O sistema envia uma solicitação ao banco para verificar se possui saldo disponível para a compra.
+     > 11. O Banco responde confirmando o saldo disponível para a compra total do Carrinho.
+     > 12. O sistema retorna a mensagem dizendo que a compra no cartão de débito foi aprovada com sucesso.
 
    - Fluxo Alternativo D - Cartão não válido - Cartão de Débito*
 ![BuyCart_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/ba88b28a-b554-4b68-aeb2-25220ecf33a7)
@@ -393,7 +400,7 @@ CDU's - Administrador
      > 7. O usuário insere os dados solicitados.
      > 8. O sistema envia uma solicitação ao banco para verificar a autenticidade dos dados.
      > 9. O Banco responde negando a autenticação do cartão.
-     10. O sistema retorna a mensagem dizendo que o cartão não é válido.
+     > 10. O sistema retorna a mensagem dizendo que o cartão não é válido.
 
    - Fluxo Alternativo E - Saldo Insuficiente - Débito*
 ![BuyCart_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/7d9f0192-d056-494b-8c57-a8db7c708e40)
@@ -407,9 +414,9 @@ CDU's - Administrador
      > 7. O usuário insere os dados solicitados.
      > 8. O sistema envia uma solicitação ao banco para verificar a autenticidade dos dados.
      > 9. O Banco responde confirmando a autenticação do cartão.
-     10. O sistema envia uma solicitação ao banco para verificar se possui saldo disponível para a compra.
-     11. O Banco responde negando o saldo disponível para a compra total do Carrinho.
-     12. O sistema retorna a mensagem dizendo que não há saldo suficiente para finalizar a compra.
+     > 10. O sistema envia uma solicitação ao banco para verificar se possui saldo disponível para a compra.
+     > 11. O Banco responde negando o saldo disponível para a compra total do Carrinho.
+     > 12. O sistema retorna a mensagem dizendo que não há saldo suficiente para finalizar a compra.
 
    - Fluxo Alternativo F - Aprovado - Boleto*
      > 1. O usuário acessa a página: Carrinho de Compras.
@@ -421,8 +428,8 @@ CDU's - Administrador
      > 7. O cliente imprime ou anota os dados do boleto.
      > 8. O usuário realiza o pagamento do boleto em um banco, lotérica ou via internet banking.
      > 9. O sistema aguarda a confirmação do pagamento por parte do banco.
-     10. O Banco retorna uma mensagem avisando do recebimento do pagamento
-     11. O sistema registra a compra e finaliza o pedido.
+     > 10. O Banco retorna uma mensagem avisando do recebimento do pagamento
+     > 11. O sistema registra a compra e finaliza o pedido.
 
    - Fluxo Alternativo G - Prazo Vencido - Boleto*
 ![BuyCart_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6d1f33fe-80b9-493f-9ff2-c3822aabfbc1)
