@@ -100,7 +100,7 @@ CDU's - Administrador
      > 1. O sistema busca em si a categoria selecionado para atualização.
      > 2. O sistema exibe a categoria e suas respectivas informações.
      > 3. O administrador insere as novas informações e envia.
-     > 4.  O sistema verifica se existe categoria semelhante.
+     > 4. O sistema verifica se existe categoria semelhante.
      > 5. O sistema não atualiza a categoria por conter semelhanças a outra categoria.
     
 5. Cadastrar Produto
@@ -109,7 +109,7 @@ CDU's - Administrador
      > 1. O sistema exibe um formulário solicitando o nome do produto, o preço do produto, a descrição do produto e imagem do produto.
      > 2. O usuário preenche os dados do produto.
      > 3. O sistema exibe uma lista de categorias existentes para o produto.
-     > 4.  O usuário seleciona uma categoria da lista.
+     > 4. O usuário seleciona uma categoria da lista.
      > 5. O usuário clica no botão: Enviar.
      > 6. O sistema verifica se o produto já está cadastrado.
      > 7. O produto é inserido ao Banco de dados.
@@ -119,7 +119,7 @@ CDU's - Administrador
      > 1. O sistema exibe um formulário solicitando o nome do produto, o preço do produto, a descrição do produto e imagem do produto.
      > 2. O usuário preenche os dados do produto.
      > 3. O sistema exibe uma lista de categorias existentes para o produto.
-     > 4.  O usuário seleciona uma categoria da lista.
+     > 4. O usuário seleciona uma categoria da lista.
      > 5. O usuário clica no botão: Enviar.
      > 6. O sistema verifica se o produto já está cadastrado.
      > 7. O sistema retorna uma mensagem dizendo que um produto semelhante já existe, não cadastrando-o.
@@ -130,27 +130,26 @@ CDU's - Administrador
      > 1. O sistema busca em si o produto selecionado para atualização.
      > 2. O sistema exibe o produto e suas respectivas informações.
      > 3. O administrador insere as novas informações e envia.
-     > 4.  O sistema verifica se o produto é semelhante a outro.
+     > 4. O sistema verifica se o produto é semelhante a outro.
      > 5. O sistema atualiza o produto.
 
-   - Fluxo Alternativo A - Produto semelhante a outro*
-![UpdProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e2a3553b-3e88-4c9e-a1b6-59c53e40d3c8)
-    
+   - Fluxo Alternativo A - Produto semelhante a outro
+![UpdProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/c551d995-ebb9-4542-befb-0082b9bec375)
      > 1. O sistema busca em si o produto selecionado para atualização
      > 2. O sistema exibe o produto e suas respectivas informações
      > 3. O administrador insere as novas informações e envia
      > 4. O sistema não atualiza o produto por conter semelhanças a outra categoria
 
-   - Fluxo Alternativo  B - Produto com valor inestimado*
-![UpdProd_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/9d3e4d5f-163a-4ffd-b819-99079b48d3b3)
-    
+   - Fluxo Alternativo  B - Produto com valor inválido
+![UpdProd_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/dfadd32c-8973-404b-9d20-9035e26f5214)
      > 1. O sistema busca em si o produto selecionado para atualização
      > 2. O sistema exibe o produto e suas respectivas informações
      > 3. O administrador insere as novas informações e envia
-     > 4. O sistema não atualiza o produto por conter valor inestimado(inválido) a outra categoria
+     > 4. O sistema não atualiza o produto por conter valor inválido a outra categoria
 
-7. Gerenciar Estoque*
-   - Fluxo Principal*
+7. Aumentar Quantidade em Estoque
+   - Fluxo Principal
+![InsertProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e8104bb2-361c-4d6c-8059-06f5626d5f6e)
      > 1. O sistema exibe os produtos junto da quantidade atual no estoque.
      > 2. O usuário seleciona um produto cadastrado.
      > 3. O sistema exibe as opções: Aumentar quantidade de estoque de um produto e Diminuir quantidade de estoque de um produto.
@@ -159,6 +158,17 @@ CDU's - Administrador
      > 6. O usuário preenche a solicitação com a quantidade de produtos desejada.
      > 7. O usuário encerra a operação, clicando no botão: Finalizar.
      > 8. O sistema adiciona ao estoque do produto escolhido a quantidade informada na solicitação.
+
+   - Fluxo Alternativo A - Quantidade de Produtos maior que Estoque
+![InsertProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/ac2d8085-c0c0-4871-92cc-2508753b6027)
+     > 1. O sistema exibe os produtos junto da quantidade atual no estoque.
+     > 2. O usuário seleciona um produto cadastrado.
+     > 3. O sistema exibe as opções: Aumentar quantidade de estoque de um produto e Diminuir quantidade de estoque de um produto.
+     > 4. O usuário seleciona a opção de Aumentar quantidade de estoque de um produto.
+     > 5. O sistema solicita a quantidade de produtos a serem adicionados ao estoque.
+     > 6. O usuário preenche a solicitação com a quantidade de produtos desejada.
+     > 7. O usuário encerra a operação, clicando no botão: Finalizar.
+     > 8. O sistema não adiciona ao estoque do produto escolhido a quantidade informada na solicitação, por ultrapassar a quantidade máxima.
 
    - Fluxo Alternativo A - Diminuir Quantidade de Produtos no Estoque
      > 1. O sistema exibe os produtos junto da quantidade atual no estoque.
