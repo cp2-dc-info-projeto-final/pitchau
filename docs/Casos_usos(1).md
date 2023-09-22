@@ -27,7 +27,7 @@
 CDU's - Administrador
  - CDU-01. Fazer Cadastro
    - Fluxo Principal
-![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6176934b-6c90-4e07-bd81-a752c83e6d55)
+![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b27d9857-e775-4891-bb58-4fc23a5febc5)
      > 1. O sistema exibe o formulário solicitando e-mail e senha.
      > 2. O usuário preenche as credencias solicitadas.
      > 3. O sistema verifica se o e-mail está cadastrado.
@@ -36,8 +36,7 @@ CDU's - Administrador
      > 6. O sistema direciona o usuário para a página principal da loja.
 
    - Fluxo Alternativo A - Caso o usuário já esteja cadastrado
-![CadAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/455fb056-9398-4c18-9731-ccf365c662bf)
-
+![CadAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/23e66ab8-c70d-4623-a22e-d171ec675ad7)
      > 1. O sistema exibe o formulário solicitando e-mail e senha.
      > 2. O usuário preenche as credencias solicitadas.
      > 3. O sistema verifica se o e-mail está cadastrado.
