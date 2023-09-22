@@ -78,8 +78,8 @@ CDU's - Administrador
      > 3. O sistema verifica se a categoria já existe.
      > 3. O sistema cadastra a categoria preenchida no Banco de Dados.
 
-   - Fluxo Alternativo A - Caso a Categoria já exista*
-![CadCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/ae59efd6-ff33-4c65-8b30-1782f9f7159d)    
+   - Fluxo Alternativo A - Caso a Categoria já exista
+![CadCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e4b7a84b-0b68-4771-aa6f-9a51ba9f0666)
      > 1. O sistema exibe um formulário solicitando o nome da nova categoria.
      > 2. O administrador preenche a solicitação.
      > 3. O sistema verifica se a categoria já existe.
