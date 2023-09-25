@@ -24,7 +24,7 @@
 ## Descrição dos Casos de Uso
 
 CDU's - Administrador
- - #CDU-01. Fazer Cadastro
+ - CDU-01. Fazer Cadastro
    - Fluxo Principal
 ![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b27d9857-e775-4891-bb58-4fc23a5febc5)
      > 1. O sistema exibe o formulário solicitando e-mail e senha.
