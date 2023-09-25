@@ -258,7 +258,6 @@ CDU-01. Fazer Cadastro/n
 *5. Adicionando Produtos no Carrinho*
 *Fluxo Principal*
 ![AddProdCart_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b9b99c9d-0651-4dc8-8df3-ce28be952602)
-    
     1. O usuário seleciona um produto que deseje.
     2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
     3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
@@ -275,7 +274,6 @@ CDU-01. Fazer Cadastro/n
 
 *Fluxo Alternativo A - Sem estoque do produto*
 ![AddProdCart_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3f8f62eb-e2cc-4b75-8a88-385664fcfdc8)
-    
     1. O usuário seleciona um produto que deseje.
     2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
     3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
@@ -283,6 +281,7 @@ CDU-01. Fazer Cadastro/n
     5. O sistema retorna a mensagem de que não possui o produto no estoque no momento.
 
 *Fluxo Alternativo B - Usuário escolhe não ver o carrinho*
+![AddProdCart_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b9b99c9d-0651-4dc8-8df3-ce28be952602)
     1. O usuário seleciona um produto que deseje.
     2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
     3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
@@ -291,36 +290,51 @@ CDU-01. Fazer Cadastro/n
     6. O sistema sugere ao usuário a opção de ver o Carrinho.
     7. O usuário escolhe não ver o carrinho.
 
-*Fluxo Alternativo C - Diminuir quantidade*
-    1. O usuário seleciona um produto que deseje.
-    2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
-    3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
-    4. O sistema verifica que possui o produto selecionado possui no estoque.
-    5. O sistema adiciona o produto ao Carrinho.
-    6. O sistema sugere ao usuário a opção de ver o Carrinho.
-    7. O usuário seleciona a opção de ver o Carrinho.
-    8. O sistema abre a página do Carrinho que contem os produtos na qual ele adicionou junto da quantidade no estoque.
-    9. O sistema exibe as opções de: Adicionar mais quantidade desse produto ao Carrinho, Diminuir mais quantidade desse produto no Carrinho e Exclusão do produto no Carrinho para cada produto no Carrinho.
-    10. O usuário seleciona a opção de "Diminuir mais quantidade desse produto no Carrinho".
-    11. O sistema exibe uma lista de números para o usuário escolher a quantidades de produtos que quer retirar no Carrinho. Onde a quantidade retirada no final não poderá ser igual a zero.
-    12. O usuário escolhe a quantidade de produtos que deseja retirar no Carrinho.
-    13. O sistema retira os produtos na quantidade selecionada no Carrinho.
+6. Aumentando Quantidade de Produto no Carrinho
+*Fluxo Principal*
+![GrowProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/dab722d3-b6ae-40e3-8352-19a0082ec77f)
+    1. O usuário seleciona um produto que deseje do seu carrinho.
+    2. O sistema abre a pagina do produto selecionado.
+    3. O usuário seleciona o botão "Aumenta Quantidade".
+    4. O usuário digita a quantidade.
+    5. O sistema atualiza a quantidade.
 
+*Fluxo Alternativo A - Quantidade requisitada ultrapassa a quantidade em estoque*
+![GrowProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/f205e21a-17ae-4250-ac21-1d33ae813817)
+  1. O usuário seleciona um produto que deseje do seu carrinho.
+  2. O sistema abre a pagina do produto selecionado.
+  3. O usuário seleciona o botão "Aumenta Quantidade".
+  4. O usuário digita a quantidade.
+  5. O sistema não atualiza a quantidade.
 
-*Fluxo Alternativo D - Remover Produto do Carrinho*
-    1. O usuário seleciona um produto que deseje.
-    2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
-    3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
-    4. O sistema verifica que possui o produto selecionado possui no estoque.
-    5. O sistema adiciona o produto ao Carrinho.
-    6. O sistema sugere ao usuário a opção de ver o Carrinho.
-    7. O usuário seleciona a opção de ver o Carrinho.
-    8. O sistema abre a página do Carrinho que contem os produtos na qual ele adicionou junto da quantidade no estoque.
-    9. O sistema exibe as opções de: Adicionar mais quantidade desse produto ao Carrinho, Diminuir mais quantidade desse produto no Carrinho e Exclusão do produto no Carrinho, para cada produto no Carrinho.
-    10. O usuário seleciona a opção de "Exclusão do produto no Carrinho".
-    11. O sistema retira do Carrinho o produto no qual o usuário selecionou a opção de Exclusão do produto no Carrinho.
+7. Reduzindo Quantidade de Produto no Carrinho
+*Fluxo Principal*
+![ReducProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/86dd326f-3a88-4442-8fff-925d7e1969ba)
+  1. O usuário seleciona um produto que deseje do seu carrinho.
+  2. O sistema abre a pagina do produto selecionado.
+  3. O usuário seleciona o botão "Reduzir Quantidade".
+  4. O usuário digita a quantidade.
+  5. O sistema atualiza a quantidade.
 
-*6. Finalizar Compra*
+*Fluxo Alternativo A - Cancelar Operação*
+![ReducProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/d5e38b84-d65a-4dde-b593-fa5b93b1f44e)
+  1. O usuário seleciona um produto que deseje do seu carrinho.
+  2. O sistema abre a pagina do produto selecionado.
+  3. O usuário seleciona o botão "Reduzir Quantidade".
+  4. O usuário digita a quantidade.
+  5. O usuário seleciona "Cancelar Operação".
+  6. O sistema não atualiza o produto.
+
+*Fluxo Alternativo B - Remover Produto*
+![ReducProd_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5cd2cda5-c4c7-42c7-b7cd-5928b2599abd)
+  1. O usuário seleciona um produto que deseje do seu carrinho.
+  2. O sistema abre a pagina do produto selecionado.
+  3. O usuário seleciona o botão "Reduzir Quantidade".
+  4. O usuário digita a quantidade.
+  5. O usuário seleciona "Remover Produto".
+  6. O sistema remove o produto.
+
+*8. Finalizar Compra*
 *Fluxo Principal*
 ![BuyCart_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3846e652-8336-4407-8e32-2874504c9d92)
 
