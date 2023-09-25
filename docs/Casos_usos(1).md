@@ -1,5 +1,3 @@
-![CadUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/cef94a1f-5827-4091-8ec9-67a4e92caba0)# Documento de Casos de Uso
-
 ## Lista dos Casos de Uso
  - [#CDU 01 - Adm](CDU-01): Fazer Cadastro
  - [#CDU 02 - Adm](CDU-02): Fazer Login
