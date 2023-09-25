@@ -34,10 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         }
         else {
-            echo "Senha incorreta. <a href='../paginas/login.php'>Tente novamente</a>";
+            echo "Senha incorreta. <a href='login.html'>Tente novamente</a>";
         }
     } else {
-        echo "Email não encontrado. <a href='../paginas/login.php'>Tente novamente</a>";
+        echo "Email não encontrado. <a href='login.html'>Tente novamente</a>";
     }
 
     // Fechar a conexão com o banco de dados

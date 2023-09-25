@@ -10,7 +10,7 @@
 </head>
 <body>
     
-<form class="form">
+<form class="form" action="../php/processar_cadastro_produto.php" method="post" enctype="multipart/form-data">
 <div class="container"> 
         <div class="header"> 
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> 
@@ -18,20 +18,27 @@
         </div> 
         <label for="file" class="footer"> 
           <svg fill="#000000" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M15.331 6H8.5v20h15V14.154h-8.169z"></path><path d="M18.153 6h-.009v5.342H23.5v-.002z"></path></g></svg> 
-          <p>Not selected file</p> 
+          <p>Selecione a foto do Produto</p> 
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5.16565 10.1534C5.07629 8.99181 5.99473 8 7.15975 8H16.8402C18.0053 8 18.9237 8.9918 18.8344 10.1534L18.142 19.1534C18.0619 20.1954 17.193 21 16.1479 21H7.85206C6.80699 21 5.93811 20.1954 5.85795 19.1534L5.16565 10.1534Z" stroke="#000000" stroke-width="2"></path> <path d="M19.5 5H4.5" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> <path d="M10 3C10 2.44772 10.4477 2 11 2H13C13.5523 2 14 2.44772 14 3V5H10V3Z" stroke="#000000" stroke-width="2"></path> </g></svg>
         </label> 
-        <input id="file" type="file"> 
+        <input id="file" type="file" name="foto"> 
       </div>
        <p class="form-title">Sign in to your account</p>
         <div class="input-container">
-          <input type="email" placeholder="Enter email">
+          <input type="text" name="nome" placeholder="Nome">
           <span>
           </span>
       </div>
       <div class="input-container">
-          <input type="password" placeholder="Enter password">
-        </div>
+          <input type="text" name="desc" placeholder="Descrição">
+          <span>
+          </span>
+      </div>
+      <div class="input-container">
+          <input type="number" name="valor" placeholder="Valor">
+          <span>
+          </span>
+      </div>
          <button type="submit" class="submit">
         Sign in
       </button>
