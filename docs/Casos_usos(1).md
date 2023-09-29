@@ -1,7 +1,7 @@
 ![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/94806b00-9916-4bc3-89ec-8f5fde0957e3)# Documento de Casos de Uso
 
 ## Lista dos Casos de Uso
- - [CDU 01 - Adm](#CDU-01.-Fazer-Cadastro): Fazer Cadastro
+ - [CDU 01 - Adm](#CDU-01-Fazer-Cadastro): Fazer Cadastro
  - [CDU 02 - Adm](#CDU-02): Fazer Login
  - [CDU 03 - Adm](#CDU-03): Cadastrar Categoria
  - [CDU 04 - Adm](#CDU-04): Atualizar Categoria
@@ -27,7 +27,7 @@
 
 
 CDU's - Administrador/n
-#### CDU-01. Fazer Cadastro/n
+#### CDU-01 Fazer Cadastro
 *Fluxo Principal*
 ![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6176934b-6c90-4e07-bd81-a752c83e6d55)
 
