@@ -17,7 +17,7 @@
 
 ## Lista de Atores
  - [Cliente](#CDU's-Cliente)
- - [Adminstrador](#CDU---Administrador)
+ - [Adminstrador](#CDU's-Administrador)
 
 ## Diagrama de Casos de Uso
 ![DiaCasosUso](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e28634fa-9543-460e-b5a1-6023df51a086)
@@ -26,7 +26,7 @@
 
 
 
-#### CDU's - Administrador
+#### CDU's Administrador
 #### CDU-01 Fazer Cadastro
 *Fluxo Principal*
 ![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6176934b-6c90-4e07-bd81-a752c83e6d55)
@@ -180,7 +180,7 @@
     7. O usuário encerra a operação, clicando no botão: Finalizar.
     8. O sistema retira do estoque do produto escolhido a quantidade informada na solicitação.
 
-#### CDU's - Cliente
+#### CDU's Cliente
 #### CDU-01. Fazer Cadastro
 *Fluxo Principal*
 ![CadUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5cc506fb-484f-4fc8-8ba4-d718457041f2)
