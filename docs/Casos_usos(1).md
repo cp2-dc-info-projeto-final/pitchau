@@ -16,8 +16,8 @@
  - [CDU 06 - Usr](#CDU-06-Finalizar-Compra): Finalizar Compra
 
 ## Lista de Atores
- - Cliente
- - Adminstrador
+ - [Cliente](#CDU's---Cliente): Cliente
+ - [Adminstrador](#CDU's---Administrador): Administrador
 
 ## Diagrama de Casos de Uso
 ![DiaCasosUso](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e28634fa-9543-460e-b5a1-6023df51a086)
@@ -26,7 +26,7 @@
 
 
 
-CDU's - Administrador/n
+#### CDU's - Administrador
 #### CDU-01 Fazer Cadastro
 *Fluxo Principal*
 ![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6176934b-6c90-4e07-bd81-a752c83e6d55)
@@ -47,7 +47,7 @@ CDU's - Administrador/n
     4. O sistema retorna a mensagem dizendo que o e-mail de já está cadastrado.
     5. O sistema sugere a aba de Fazer login.
 
-*CDU-02. Fazer Login*
+#### CDU-02. Fazer Login
 *Fluxo Principal*
 ![LogAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/4cd05ecb-03ab-4ea4-9d9b-e7e06b6daacf)
 
@@ -76,7 +76,7 @@ CDU's - Administrador/n
     4. O sistema verifica se credenciais são compatíveis com as do Banco de Dados.
     6. O sistema retorna a mensagem que a senha deste e-mail está incorreta.
 
-*CDU-03. Cadastrar Categoria*
+#### CDU-03. Cadastrar Categoria
 *Fluxo Principal*
 ![CadCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/8fba0e38-a6bf-4636-b4a2-9f1e3f871615)
     
@@ -94,7 +94,7 @@ CDU's - Administrador/n
     4. O sistema retorna a mensagem dizendo que a categoria já existe
 
 
-*4. Atualizar Categoria*
+#### CDU-04. Atualizar Categoria
 *Fluxo Principal*
 ![UpdCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/d43ab2ee-adb7-44d3-9182-c51e5755b3a8)
     
@@ -111,7 +111,7 @@ CDU's - Administrador/n
     3. O administrador insere as novas informações e envia
     4. O sistema não atualiza a categoria por conter semelhanças a outra categoria
     
-*5. Cadastrar Produto*
+#### CDU-05. Cadastrar Produto
 *Fluxo Principal*
 ![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/8ad31825-d076-40b0-9d05-134cdd2611b8)
     
@@ -134,7 +134,7 @@ CDU's - Administrador/n
     6. O sistema verifica se o produto já está cadastrado.
     7. O sistema retorna uma mensagem dizendo que o produto que está sendo cadastrado já existe.
 
-*6. Atualizar Produto*
+#### CDU-06. Atualizar Produto
 *Fluxo Principal*
 ![UpdProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/9cd7b485-2dff-48ed-a79d-de2a1a25f373)
     
@@ -159,7 +159,7 @@ CDU's - Administrador/n
     3. O administrador insere as novas informações e envia
     4. O sistema não atualiza o produto por conter valor inestimado(inválido) a outra categoria
 
-*7. Gerenciar Estoque*
+#### CDU-07. Gerenciar Estoque
 *Fluxo Principal*
     1. O sistema exibe os produtos junto da quantidade atual no estoque.
     2. O usuário seleciona um produto cadastrado.
@@ -180,8 +180,8 @@ CDU's - Administrador/n
     7. O usuário encerra a operação, clicando no botão: Finalizar.
     8. O sistema retira do estoque do produto escolhido a quantidade informada na solicitação.
 
-*CDU's - Cliente*
-*1. Fazer Cadastro*
+#### CDU's - Cliente
+#### CDU-01. Fazer Cadastro
 *Fluxo Principal*
 ![CadUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5cc506fb-484f-4fc8-8ba4-d718457041f2)
     
@@ -201,7 +201,7 @@ CDU's - Administrador/n
     4. O sistema retorna a mensagem dizendo que o e-mail de já está cadastrado.
     5. O sistema sugere a aba de Fazer login.
 
-*2. Atualizar Cliente*
+#### CDU-02. Atualizar Cliente
 *Fluxo Principal*
 ![UpdUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/1fd4aa88-779a-45fe-b2f3-e16daf41ab2e)
     
@@ -218,7 +218,7 @@ CDU's - Administrador/n
     3. O cliente logado insere as novas informações e envia
     4. O sistema não atualiza o cliente logado por conter informações semelhantes à outro cliente
     
-*3. Fazer Login*
+#### CDU-03. Fazer Login
 *Fluxo Principal*
 ![LogUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5c36ecdd-be7b-4a2c-b0fc-7d6c77913734)
     
@@ -247,7 +247,7 @@ CDU's - Administrador/n
     4. O sistema verifica se credenciais são compatíveis com as do Banco de Dados.
     6. O sistema retorna a mensagem que a senha deste e-mail está incorreta.
 
-*4. Pesquisar Produto*
+#### CDU-04. Pesquisar Produto
 *Fluxo Principal*
     1. O sistema exibe a página principal do site.
     2. O usuário seleciona a aba de pesquisa e digita o nome do produto.
@@ -255,7 +255,7 @@ CDU's - Administrador/n
     3. O sistema procura o produto na qual o usuário digitou o nome no Banco de Dados.
     4. O sistema exibe uma lista dos produtos que foram encontrados com o nome solicitado.
 
-*5. Adicionando Produtos no Carrinho*
+#### CDU-05. Adicionando Produtos no Carrinho
 *Fluxo Principal*
 ![AddProdCart_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b9b99c9d-0651-4dc8-8df3-ce28be952602)
     
@@ -320,7 +320,7 @@ CDU's - Administrador/n
     10. O usuário seleciona a opção de "Exclusão do produto no Carrinho".
     11. O sistema retira do Carrinho o produto no qual o usuário selecionou a opção de Exclusão do produto no Carrinho.
 
-*6. Finalizar Compra*
+#### CDU-06. Finalizar Compra
 *Fluxo Principal*
 ![BuyCart_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3846e652-8336-4407-8e32-2874504c9d92)
 
