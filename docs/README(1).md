@@ -27,7 +27,7 @@ Sed sit amet ante sem. Nunc id sapien metus. Etiam lobortis in purus ut porta. V
 
 - [Manual do Usuário](manual.md)
 - [Requisitos](requisitos.md)
-- [Casos de Uso](casos-de-uso.md)
+- [Casos de Uso](casos_de_usos.md)
 - [Apresentação](apresentacao.pdf)
 
 **Diagrama de Classes**
