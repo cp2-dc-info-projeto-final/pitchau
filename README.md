@@ -14,10 +14,10 @@ Descrição do Projeto
 #### P - Piano I - instrumentos T - Teclado C - Cajon H - Harpa A - Acordeom U - Ukulele
 
 Documentação
- - #Manual do Usuário
- - #Requisitos
- - #Casos de Uso
- - #Apresentação
+ - # Manual do Usuário
+ - # Requisitos
+ - # Casos de Uso
+ - # Apresentação
 
 Diagrama de Classes
 Modelagem do Banco de Dados
