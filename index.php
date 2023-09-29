@@ -82,7 +82,7 @@ if ($imagens != null) {
 <div class="card_list">
 <?php
 
-/*
+//preciso terminar card produtos
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<div class="card">';
@@ -109,7 +109,7 @@ if ($result->num_rows > 0) {
 }
 
 // Fechando a conexão com o banco de dados
-$conn->close();*/
+$conn->close();
 ?>
 
 
