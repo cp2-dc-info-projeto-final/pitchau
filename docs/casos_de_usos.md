@@ -23,20 +23,20 @@
 ![DiaCasosUso](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e28634fa-9543-460e-b5a1-6023df51a086)
 
 ## Descrição dos Casos de Uso
- - O visitante se cadastra como cliente
- - O visitante realiza o seu login.
- - O cliente pesquisa por produtos.
- - O cliente pesquisa usando categorias.
- - O cliente adiciona produtos ao seu carrinho.
- - O cliente visualiza seu carrinho.
- - O cliente compra o seu carrinho.
- - O cliente visualisa todas as sua compras já realizadas.
- - O administrador cadastra outro aministrador.
- - O adminstrador cadastra categorias;
- - O aminsitrador atualiza categorias.
- - O aministraador cadastra produtos.
- - O administrador atualiza produtos.
- - O aministrador visualiza as compras de todos os cliente.
+    1. O visitante se cadastra como cliente
+    2. O visitante realiza o seu login.
+    3. O cliente pesquisa por produtos.
+    4. O cliente pesquisa usando categorias.
+    5. O cliente adiciona produtos ao seu carrinho.
+    6. O cliente visualiza seu carrinho.
+    7. O cliente compra o seu carrinho.
+    8. O cliente visualisa todas as sua compras já realizadas.
+    9. O administrador cadastra outro aministrador.
+    10. O adminstrador cadastra categorias;
+    11. O aminsitrador atualiza categorias.
+    12. O aministraador cadastra produtos.
+    13. O administrador atualiza produtos.
+    14. O aministrador visualiza as compras de todos os cliente.
 
 
 #### CDUs Administrador
