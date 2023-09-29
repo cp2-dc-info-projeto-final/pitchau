@@ -52,7 +52,6 @@
           6. O sistema direciona o usuário para a página principal da loja.
 
  - Fluxo Alternativo A - Caso o usuário já esteja cadastrado
-![CadAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/455fb056-9398-4c18-9731-ccf365c662bf)
 ![CadAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/89b59f66-b7e7-47f0-9b99-e2be03ae933a)
 
        1. O sistema exibe o formulário solicitando e-mail e senha.
@@ -63,7 +62,6 @@
 
 #### CDU-02. Fazer Login
  - Fluxo Principal
-![LogAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/4cd05ecb-03ab-4ea4-9d9b-e7e06b6daacf)
 ![LogAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b22580bb-7cc0-4966-94d6-667f5261b34c)
 
        1. O sistema exibe o formulário solicitando e-mail e senha
@@ -74,7 +72,6 @@
        6. O sistema exibe a página principal da loja.
 
  - Fluxo Alternativo A - Caso o e-mail não esteja cadastrado
-![LogAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b88dcd71-9cad-4d58-a174-c04b1d22c742)
 ![LogAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3a3011bb-dc36-45b1-80a5-7bc59a313fed)
 
        1. O sistema exibe o formulário solicitando e-mail e senha
@@ -84,7 +81,6 @@
        5. O sistema sugere a aba de Cadastro
 
  - Fluxo Alternativo B - Caso a Senha esteja incorreta
-![LogAdm_DSFA3](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/17b26f9a-85ee-41ca-834a-0fc2dd037314)
 ![LogAdm_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/dfdd0b03-5db2-42f8-ad76-28b92ec19525)
 
        1. O sistema exibe o formulário solicitando e-mail e senha
@@ -95,8 +91,7 @@
 
 #### CDU-03. Cadastrar Categoria
  - Fluxo Principal
-![CadCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/8fba0e38-a6bf-4636-b4a2-9f1e3f871615)
-    ![CadCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/767c373b-e1b3-4af2-b7ff-95f0abc1afd5)
+![CadCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/767c373b-e1b3-4af2-b7ff-95f0abc1afd5)
 
        1. O sistema exibe um formulário solicitando o nome da nova categoria
        2. O administrador preenche a solicitação.
@@ -104,8 +99,7 @@
        3. O sistema cadastra a categoria preenchida no Banco de Dados.
 
  - Fluxo Alternativo A - Caso a Categoria já exista
-![CadCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/ae59efd6-ff33-4c65-8b30-1782f9f7159d)
-    ![CadCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/f18ca598-1c44-4a9c-8f2f-eddbdce46e86)
+[CadCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/f18ca598-1c44-4a9c-8f2f-eddbdce46e86)
 
        1. O sistema exibe um formulário solicitando o nome da nova categoria
        2. O administrador preenche a solicitação.
@@ -115,8 +109,7 @@
 
 #### CDU-04. Atualizar Categoria
  - Fluxo Principal
-![UpdCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/d43ab2ee-adb7-44d3-9182-c51e5755b3a8)
-    ![UpdCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/235a3c8f-8f66-4d2b-89d6-dc71f37c2163)
+![UpdCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/235a3c8f-8f66-4d2b-89d6-dc71f37c2163)
 
        1. O sistema busca em si a categoria selecionado para atualização
        2. O sistema exibe a categoria e suas respectivas informações
@@ -124,8 +117,7 @@
        4. O sistema atualiza a categoria
 
  - Fluxo Alternativo A - Categoria semelhante a outra
-![UpdCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/edd9aa38-340c-48f3-acb7-243649b7893c)
-    ![UpdCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b70dbc9d-f5fe-441b-9ab2-ff27a64a7034)
+![UpdCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b70dbc9d-f5fe-441b-9ab2-ff27a64a7034)
 
        1. O sistema busca em si a categoria selecionado para atualização
        2. O sistema exibe a categoria e suas respectivas informações
@@ -134,8 +126,7 @@
     
 #### CDU-05. Cadastrar Produto
  - Fluxo Principal
-![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/8ad31825-d076-40b0-9d05-134cdd2611b8)
-    ![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5014a12c-a6cd-46cd-807e-9119bfd484cd)
+![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5014a12c-a6cd-46cd-807e-9119bfd484cd)
 
        1. O sistema exibe um formulário solicitando o nome do produto, o preço do produto e a descrição do produto.
        2. O usuário preenche os dados do produto.
@@ -146,8 +137,7 @@
        7. O produto é inserido ao Banco de dados.
     
  - Fluxo Alternativo A - Caso o Produto já exista
-![CadProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/4f8a62ef-95a7-4cbd-b2af-b48a72d3a649)
-    ![CadProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/47f2d398-c927-47ad-a5f1-6e8bf293b22c)
+![CadProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/47f2d398-c927-47ad-a5f1-6e8bf293b22c)
 
        1. O sistema exibe um formulário solicitando o nome do produto, o preço do produto e a descrição do produto.
        2. O usuário preenche os dados do produto.
@@ -159,8 +149,7 @@
 
 #### CDU-06. Atualizar Produto
  - Fluxo Principal
-![UpdProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/9cd7b485-2dff-48ed-a79d-de2a1a25f373)
-    ![UpdProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6d6b1270-6377-4f10-86ce-c5ce733f5d6d)
+![UpdProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6d6b1270-6377-4f10-86ce-c5ce733f5d6d)
 
        1. O sistema busca em si o produto selecionado para atualização
        2. O sistema exibe o produto e suas respectivas informações
@@ -168,8 +157,7 @@
        4. O sistema atualiza o produto
 
  - Fluxo Alternativo A - Produto semelhante a outro
-![UpdProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e2a3553b-3e88-4c9e-a1b6-59c53e40d3c8)
-    ![UpdProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/720a9376-c007-46b8-82e6-17488710b9b9)
+![UpdProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/720a9376-c007-46b8-82e6-17488710b9b9)
 
        1. O sistema busca em si o produto selecionado para atualização
        2. O sistema exibe o produto e suas respectivas informações
@@ -177,8 +165,7 @@
        4. O sistema não atualiza o produto por conter semelhanças a outra categoria
 
  - Fluxo Alternativo  B - Produto com valor inestimado
-![UpdProd_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/9d3e4d5f-163a-4ffd-b819-99079b48d3b3)
-    ![UpdProd_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5262476c-1023-49d9-a08c-f431b330ab2a)
+![UpdProd_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5262476c-1023-49d9-a08c-f431b330ab2a)
 
        1. O sistema busca em si o produto selecionado para atualização
        2. O sistema exibe o produto e suas respectivas informações
@@ -240,7 +227,8 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
 #### CDU-01. Fazer Cadastro
  - Fluxo Principal
 ![CadUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5cc506fb-484f-4fc8-8ba4-d718457041f2)
-    
+    ![CadUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/d398a2de-1d5d-412e-b803-09641c5cfcbe)
+
        1. O sistema exibe o formulário solicitando e-mail e senha.
        2. O usuário preenche as credencias solicitadas.
        3. O sistema verifica se o e-mail está cadastrado.
@@ -250,7 +238,8 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
 
  - Fluxo Alternativo A - Caso o usuário já esteja cadastrado
 ![CadUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/0e5d122d-0761-45df-978f-60717bc76df3)
-    
+    ![CadUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/08f7d6cd-63d3-4966-9caa-8d792e933784)
+
        1. O sistema exibe o formulário solicitando e-mail e senha.
        2. O usuário preenche as credencias solicitadas.
        3. O sistema verifica se o e-mail está cadastrado.
@@ -260,7 +249,8 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
 #### CDU-02. Atualizar Cliente
  - Fluxo Principal
 ![UpdUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/1fd4aa88-779a-45fe-b2f3-e16daf41ab2e)
-    
+    ![UpdUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/f8ecc198-3ec0-4e23-9f7a-b5dffeaa5f20)
+
        1. O sistema busca em si o cliente logado para atualização
        2. O sistema exibe o cliente logado e suas respectivas informações
        3. O cliente logado insere as novas informações e envia
@@ -268,7 +258,8 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
 
  - Fluxo Alternativo A - Cliente semelhante
 ![UpdUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/45aec9b5-2b17-402f-9105-475edcb6e0f8)
-    
+    ![UpdUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/ec744fe9-dab2-458a-9844-310abdf98e95)
+
        1. O sistema busca em si o cliente logado para atualização
        2. O sistema exibe o cliente logado e suas respectivas informações
        3. O cliente logado insere as novas informações e envia
@@ -277,7 +268,8 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
 #### CDU-03. Fazer Login
  - Fluxo Principal
 ![LogUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5c36ecdd-be7b-4a2c-b0fc-7d6c77913734)
-    
+    ![LogUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3f49d177-47a0-48eb-98da-f5126450bf41)
+
        1. O sistema exibe o formulário solicitando e-mail e senha
        2. O usuário preenche as credencias solicitadas.
        3. O sistema verifica se o e-mail está cadastrado.
@@ -287,7 +279,8 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
 
  - Fluxo Alternativo A - Caso o e-mail não esteja cadastrado
 ![LogUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/fab02e02-a211-44d1-b528-a6283ae1cc48)
-    
+    ![LogUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/1f6b6b2c-9a85-4581-b2af-196dc710a984)
+
        1. O sistema exibe o formulário solicitando e-mail e senha
        2. O usuário preenche as credencias solicitadas.
        3. O sistema verifica se o e-mail está cadastrado.
@@ -296,7 +289,8 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
 
  - Fluxo Alternativo B - Caso a Senha esteja incorreta
 ![LogUser_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/404ef176-fba1-43d1-ba08-8a3a4c05d3dd)
-    
+    ![LogUser_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6b35bb56-ff2e-4ebb-87db-e66b99703af7)
+
        1. O sistema exibe o formulário solicitando e-mail e senha
        2. O usuário preenche as credencias solicitadas.
        3. O sistema verifica se o e-mail está cadastrado.
@@ -305,6 +299,8 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
 
 #### CDU-04. Pesquisar Produto
  - Fluxo Principal
+![PsqzProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/1566e8ad-2ae8-4fde-aef6-84120507e715)
+
        1. O sistema exibe a página principal do site.
        2. O usuário seleciona a aba de pesquisa e digita o nome do produto.
        3. O usuário clica no botão "Procurar" após digitar o nome do produto.
@@ -313,8 +309,7 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
 
 #### CDU-05. Adicionando Produtos no Carrinho
  - Fluxo Principal
-![AddProdCart_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b9b99c9d-0651-4dc8-8df3-ce28be952602)
-    
+
        1. O usuário seleciona um produto que deseje.
        2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
        3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
@@ -331,7 +326,8 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
 
  - Fluxo Alternativo A - Sem estoque do produto
 ![AddProdCart_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3f8f62eb-e2cc-4b75-8a88-385664fcfdc8)
-    
+    ![AddProdCart_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/60935c18-e2a2-43ac-83a5-6f149df93f98)
+
        1. O usuário seleciona um produto que deseje.
        2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
        3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
@@ -347,7 +343,9 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
        6. O sistema sugere ao usuário a opção de ver o Carrinho.
        7. O usuário escolhe não ver o carrinho.
 
- - Fluxo Alternativo C - Diminuir quantidade
+
+#### CDU-06. Reduzir Quantidade do Produto no Carrinho
+ - Fluxo Principal
        1. O usuário seleciona um produto que deseje.
        2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
        3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
@@ -362,8 +360,7 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
        12. O usuário escolhe a quantidade de produtos que deseja retirar no Carrinho.
        13. O sistema retira os produtos na quantidade selecionada no Carrinho.
 
-
- - Fluxo Alternativo D - Remover Produto do Carrinho
+ - Fluxo Alternativo A - Remover Produto do Carrinho
        1. O usuário seleciona um produto que deseje.
        2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
        3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
@@ -376,7 +373,24 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
        10. O usuário seleciona a opção de "Exclusão do produto no Carrinho".
        11. O sistema retira do Carrinho o produto no qual o usuário selecionou a opção de Exclusão do produto no Carrinho.
 
-#### CDU-06. Finalizar Compra
+ - Fluxo Alternativo B - Cancelar Operação
+       1. O usuário seleciona um produto que deseje.
+       2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
+       3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".
+       4. O sistema verifica que possui o produto selecionado possui no estoque.
+       5. O sistema adiciona o produto ao Carrinho.
+       6. O sistema sugere ao usuário a opção de ver o Carrinho.
+       7. O usuário seleciona a opção de ver o Carrinho.
+       8. O sistema abre a página do Carrinho que contem os produtos na qual ele adicionou junto da quantidade no estoque.
+       9. O sistema exibe as opções de: Adicionar mais quantidade desse produto ao Carrinho, Diminuir mais quantidade desse produto no Carrinho e Exclusão do produto no Carrinho, para cada produto no Carrinho.
+       10. O usuário seleciona a opção de "Exclusão do produto no Carrinho".
+       11. O sistema retira do Carrinho o produto no qual o usuário selecionou a opção de Exclusão do produto no Carrinho.
+
+
+#### CDU-07. Aumentar Quantidade do Produto no Carrinho
+ - Fluxo Principal
+
+#### CDU-08. Finalizar Compra
  - Fluxo Principal
 ![BuyCart_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3846e652-8336-4407-8e32-2874504c9d92)
 
