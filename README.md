@@ -2,11 +2,11 @@
 
 Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colégio Pedro II - Campus Duque de Caxias
 Integrantes:
- - Athos Dr. Xavier
- - Kayky Carrilho
- - IgoNorio
+ - Athos Xavier
+ - Igor Honório
  - Igor Santana
- - Adeilton S.S.
+ - Kayky Carrilho
+ - Adeilton Santos
 
 Descrição do Projeto
 
@@ -14,10 +14,10 @@ Descrição do Projeto
 #### P - Piano I - instrumentos T - Teclado C - Cajon H - Harpa A - Acordeom U - Ukulele
 
 Documentação
- - Manual do Usuário
- - Requisitos
- - Casos de Uso
- - Apresentação
+ - #Manual do Usuário
+ - #Requisitos
+ - #Casos de Uso
+ - #Apresentação
 
 Diagrama de Classes
 Modelagem do Banco de Dados
