@@ -47,31 +47,15 @@
   </div>
 </nav>
 <?php
-// Conectar ao banco de dados (substitua com suas credenciais)
-session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "pitchau";
+include_once "consultas/flying_bubbles.php";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Falha na conexão com o banco de dados: " . $conn->connect_error);
-}
-
-// Consulta SQL para buscar todas as URLs de imagens da tabela "Slider"
-$sql = "SELECT url_img FROM Slider";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
+$imagens = carousel($servername, $username, $password, $dbname);
+if ($imagens != null) {
     echo '<div id="carouselExample" class="carousel slide">';
     echo '<div class="carousel-inner">';
-
     $first = true; // Variável para controlar o primeiro item do carrossel
-
-    while ($row = $result->fetch_assoc()) {
-        $url_img = $row["url_img"];
+    foreach ($imagens as $imagem) {
+        $url_img = $imagem["url_img"];
         echo '<div class="carousel-item ' . ($first ? 'active' : '') . '">';
         echo '<img src="' . $url_img . '" class="d-block w-100" alt="...">';
         echo '</div>';
@@ -93,27 +77,12 @@ if ($result->num_rows > 0) {
 }
 
 // Fechando a conexão com o banco de dados
-$conn->close();
 ?>
 
 <div class="card_list">
 <?php
-// Conectar ao banco de dados (substitua com suas credenciais)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "pitchau";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Falha na conexão com o banco de dados: " . $conn->connect_error);
-}
-
-// Consulta SQL para buscar todos os registros da tabela Produto
-$sql = "SELECT * FROM Produto";
-$result = $conn->query($sql);
-
+/*
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<div class="card">';
@@ -140,7 +109,7 @@ if ($result->num_rows > 0) {
 }
 
 // Fechando a conexão com o banco de dados
-$conn->close();
+$conn->close();*/
 ?>
 
 
