@@ -30,6 +30,7 @@
 #### CDU-01 Fazer Cadastro
 *Fluxo Principal*
 ![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6176934b-6c90-4e07-bd81-a752c83e6d55)
+![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/7abe13c3-7343-4e90-9899-74aad5d86948)
 
     1. O sistema exibe o formulário solicitando e-mail e senha.
     2. O usuário preenche as credencias solicitadas.
@@ -40,6 +41,7 @@
 
 *Fluxo Alternativo A - Caso o usuário já esteja cadastrado*
 ![CadAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/455fb056-9398-4c18-9731-ccf365c662bf)
+![CadAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/89b59f66-b7e7-47f0-9b99-e2be03ae933a)
 
     1. O sistema exibe o formulário solicitando e-mail e senha.
     2. O usuário preenche as credencias solicitadas.
@@ -50,6 +52,7 @@
 #### CDU-02. Fazer Login
 *Fluxo Principal*
 ![LogAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/4cd05ecb-03ab-4ea4-9d9b-e7e06b6daacf)
+![LogAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b22580bb-7cc0-4966-94d6-667f5261b34c)
 
     1. O sistema exibe o formulário solicitando e-mail e senha
     2. O usuário preenche as credencias solicitadas.
@@ -60,6 +63,7 @@
 
 *Fluxo Alternativo A - Caso o e-mail não esteja cadastrado*
 ![LogAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b88dcd71-9cad-4d58-a174-c04b1d22c742)
+![LogAdm_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3a3011bb-dc36-45b1-80a5-7bc59a313fed)
 
     1. O sistema exibe o formulário solicitando e-mail e senha
     2. O usuário preenche as credencias solicitadas.
@@ -69,6 +73,7 @@
 
 *Fluxo Alternativo B - Caso a Senha esteja incorreta*
 ![LogAdm_DSFA3](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/17b26f9a-85ee-41ca-834a-0fc2dd037314)
+![LogAdm_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/dfdd0b03-5db2-42f8-ad76-28b92ec19525)
 
     1. O sistema exibe o formulário solicitando e-mail e senha
     2. O usuário preenche as credencias solicitadas.
@@ -79,7 +84,8 @@
 #### CDU-03. Cadastrar Categoria
 *Fluxo Principal*
 ![CadCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/8fba0e38-a6bf-4636-b4a2-9f1e3f871615)
-    
+    ![CadCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/767c373b-e1b3-4af2-b7ff-95f0abc1afd5)
+
     1. O sistema exibe um formulário solicitando o nome da nova categoria
     2. O administrador preenche a solicitação.
     3. O sistema verifica se a categoria já existe
@@ -87,7 +93,8 @@
 
 *Fluxo Alternativo A - Caso a Categoria já exista*
 ![CadCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/ae59efd6-ff33-4c65-8b30-1782f9f7159d)
-    
+    ![CadCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/f18ca598-1c44-4a9c-8f2f-eddbdce46e86)
+
     1. O sistema exibe um formulário solicitando o nome da nova categoria
     2. O administrador preenche a solicitação.
     3. O sistema verifica se a categoria já existe
@@ -97,7 +104,8 @@
 #### CDU-04. Atualizar Categoria
 *Fluxo Principal*
 ![UpdCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/d43ab2ee-adb7-44d3-9182-c51e5755b3a8)
-    
+    ![UpdCat_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/235a3c8f-8f66-4d2b-89d6-dc71f37c2163)
+
     1. O sistema busca em si a categoria selecionado para atualização
     2. O sistema exibe a categoria e suas respectivas informações
     3. O administrador insere as novas informações e envia
@@ -105,7 +113,8 @@
 
 *Fluxo Alternativo A - Categoria semelhante a outra*
 ![UpdCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/edd9aa38-340c-48f3-acb7-243649b7893c)
-    
+    ![UpdCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b70dbc9d-f5fe-441b-9ab2-ff27a64a7034)
+
     1. O sistema busca em si a categoria selecionado para atualização
     2. O sistema exibe a categoria e suas respectivas informações
     3. O administrador insere as novas informações e envia
@@ -114,7 +123,8 @@
 #### CDU-05. Cadastrar Produto
 *Fluxo Principal*
 ![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/8ad31825-d076-40b0-9d05-134cdd2611b8)
-    
+    ![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5014a12c-a6cd-46cd-807e-9119bfd484cd)
+
     1. O sistema exibe um formulário solicitando o nome do produto, o preço do produto e a descrição do produto.
     2. O usuário preenche os dados do produto.
     3. O sistema exibe uma lista de categorias existentes para o produto.
@@ -125,7 +135,8 @@
     
 *Fluxo Alternativo A - Caso o Produto já exista*
 ![CadProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/4f8a62ef-95a7-4cbd-b2af-b48a72d3a649)
-    
+    ![CadProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/47f2d398-c927-47ad-a5f1-6e8bf293b22c)
+
     1. O sistema exibe um formulário solicitando o nome do produto, o preço do produto e a descrição do produto.
     2. O usuário preenche os dados do produto.
     3. O sistema exibe uma lista de categorias existentes para o produto.
@@ -137,7 +148,8 @@
 #### CDU-06. Atualizar Produto
 *Fluxo Principal*
 ![UpdProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/9cd7b485-2dff-48ed-a79d-de2a1a25f373)
-    
+    ![UpdProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6d6b1270-6377-4f10-86ce-c5ce733f5d6d)
+
     1. O sistema busca em si o produto selecionado para atualização
     2. O sistema exibe o produto e suas respectivas informações
     3. O administrador insere as novas informações e envia
@@ -145,7 +157,8 @@
 
 *Fluxo Alternativo A - Produto semelhante a outro*
 ![UpdProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e2a3553b-3e88-4c9e-a1b6-59c53e40d3c8)
-    
+    ![UpdProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/720a9376-c007-46b8-82e6-17488710b9b9)
+
     1. O sistema busca em si o produto selecionado para atualização
     2. O sistema exibe o produto e suas respectivas informações
     3. O administrador insere as novas informações e envia
@@ -153,7 +166,8 @@
 
 *Fluxo Alternativo  B - Produto com valor inestimado*
 ![UpdProd_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/9d3e4d5f-163a-4ffd-b819-99079b48d3b3)
-    
+    ![UpdProd_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5262476c-1023-49d9-a08c-f431b330ab2a)
+
     1. O sistema busca em si o produto selecionado para atualização
     2. O sistema exibe o produto e suas respectivas informações
     3. O administrador insere as novas informações e envia
@@ -161,6 +175,8 @@
 
 #### CDU-07. Gerenciar Estoque
 *Fluxo Principal*
+![InsertProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/2b68b10c-3cce-4b78-b8fb-7ed4540097c3)
+
     1. O sistema exibe os produtos junto da quantidade atual no estoque.
     2. O usuário seleciona um produto cadastrado.
     3. O sistema exibe as opções: Aumentar quantidade de estoque de um produto e Diminuir quantidade de estoque de um produto.
