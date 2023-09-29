@@ -2,18 +2,18 @@
 
 ## Lista dos Casos de Uso
  - [CDU 01 - Adm](#CDU-01-Fazer-Cadastro): Fazer Cadastro
- - [CDU 02 - Adm](#CDU-02): Fazer Login
- - [CDU 03 - Adm](#CDU-03): Cadastrar Categoria
- - [CDU 04 - Adm](#CDU-04): Atualizar Categoria
- - [CDU 05 - Adm](#CDU-05): Cadastrar Produto
- - [CDU 06 - Adm](#CDU-06): Atualizar Produto
- - [CDU 07 - Adm](#CDU-07): Gerenciar Estoque
- - [CDU 01 - Usr](#CDU-01): Fazer Cadastro
- - [CDU 02 - Usr](#CDU-02): Atualizar Cliente
- - [CDU 03 - Usr](#CDU-03): Fazer Login
- - [CDU 04 - Usr](#CDU-04): Pesquisar Produto
- - [CDU 05 - Usr](#CDU-05): Adicionar Produto ao Carrinho
- - [CDU 06 - Usr](#CDU-06): Finalizar Compra
+ - [CDU 02 - Adm](#CDU-02-Fazer-Login): Fazer Login
+ - [CDU 03 - Adm](#CDU-03-Cadastrar-Categoria): Cadastrar Categoria
+ - [CDU 04 - Adm](#CDU-04-Atualizar-Categoria): Atualizar Categoria
+ - [CDU 05 - Adm](#CDU-05-Cadastrar-Produto): Cadastrar Produto
+ - [CDU 06 - Adm](#CDU-06-Atualizar-Produto): Atualizar Produto
+ - [CDU 07 - Adm](#CDU-07-Gerenciar-Estoque): Gerenciar Estoque
+ - [CDU 01 - Usr](#CDU-01-Fazer-Cadastro): Fazer Cadastro
+ - [CDU 02 - Usr](#CDU-02-Atualizar-Cliente): Atualizar Cliente
+ - [CDU 03 - Usr](#CDU-03-Fazer-Login): Fazer Login
+ - [CDU 04 - Usr](#CDU-04-Pesquisar-Produto): Pesquisar Produto
+ - [CDU 05 - Usr](#CDU-05-Adicionar-Produto-ao-Carrinho): Adicionar Produto ao Carrinho
+ - [CDU 06 - Usr](#CDU-06-Finalizar-Compra): Finalizar Compra
 
 ## Lista de Atores
  - Cliente
