@@ -12,12 +12,12 @@
  - [CDU 02 - Usr](#CDU-02-Atualizar-Cliente): Atualizar Cliente
  - [CDU 03 - Usr](#CDU-03-Fazer-Login): Fazer Login
  - [CDU 04 - Usr](#CDU-04-Pesquisar-Produto): Pesquisar Produto
- - [CDU 05 - Usr](#CDU-05-Adicionar-Produto-ao-Carrinho): Adicionar Produto ao Carrinho
+ - [CDU 05 - Usr](#CDU-05-Adicionando-Produtos-no-Carrinho): Adicionando Produtos no Carrinho
  - [CDU 06 - Usr](#CDU-06-Finalizar-Compra): Finalizar Compra
 
 ## Lista de Atores
- - [Cliente](#CDU's---Cliente): Cliente
- - [Adminstrador](#CDU's---Administrador): Administrador
+ - [Cliente](#CDU's-Cliente)
+ - [Adminstrador](#CDU---Administrador)
 
 ## Diagrama de Casos de Uso
 ![DiaCasosUso](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e28634fa-9543-460e-b5a1-6023df51a086)
