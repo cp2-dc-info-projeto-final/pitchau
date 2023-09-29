@@ -1,6 +1,6 @@
-![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/94806b00-9916-4bc3-89ec-8f5fde0957e3)# Documento de Casos de Uso
+#Diagrama de Casos de Uso
 
-## Lista dos Casos de Uso
+## Lista de Casos de Uso
  - [CDU 01 - Adm](#CDU-01-Fazer-Cadastro): Fazer Cadastro
  - [CDU 02 - Adm](#CDU-02-Fazer-Login): Fazer Login
  - [CDU 03 - Adm](#CDU-03-Cadastrar-Categoria): Cadastrar Categoria
@@ -23,7 +23,20 @@
 ![DiaCasosUso](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e28634fa-9543-460e-b5a1-6023df51a086)
 
 ## Descrição dos Casos de Uso
-
+ - O visitante se cadastra como cliente
+ - O visitante realiza o seu login.
+ - O cliente pesquisa por produtos.
+ - O cliente pesquisa usando categorias.
+ - O cliente adiciona produtos ao seu carrinho.
+ - O cliente visualiza seu carrinho.
+ - O cliente compra o seu carrinho.
+ - O cliente visualisa todas as sua compras já realizadas.
+ - O administrador cadastra outro aministrador.
+ - O adminstrador cadastra categorias;
+ - O aminsitrador atualiza categorias.
+ - O aministraador cadastra produtos.
+ - O administrador atualiza produtos.
+ - O aministrador visualiza as compras de todos os cliente.
 
 
 #### CDUs Administrador
@@ -173,28 +186,56 @@
     3. O administrador insere as novas informações e envia
     4. O sistema não atualiza o produto por conter valor inestimado(inválido) a outra categoria
 
-#### CDU-07. Gerenciar Estoque
+#### CDU-07 Adicionar Quantidade de Produto em Estoque
 *Fluxo Principal*
-![InsertProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/2b68b10c-3cce-4b78-b8fb-7ed4540097c3)
+![InsertProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e2f739f5-452d-4f09-a08f-17b452b19dbc)
 
     1. O sistema exibe os produtos junto da quantidade atual no estoque.
-    2. O usuário seleciona um produto cadastrado.
-    3. O sistema exibe as opções: Aumentar quantidade de estoque de um produto e Diminuir quantidade de estoque de um produto.
-    4. O usuário seleciona a opção de Aumentar quantidade de estoque de um produto.
-    5. O sistema solicita a quantidade de produtos a serem adicionados ao estoque.
-    6. O usuário preenche a solicitação com a quantidade de produtos desejada.
+    2. O administrador seleciona um produto cadastrado.
+    3. O sistema exibe as opções: Aumentar Quantidade de Estoque e Diminuir Quantidade de Estoque.
+    4. O administrador seleciona a opção de Aumentar Quantidade de Estoque.
+    5. O sistema solicita a quantidade do produto a ser adicionados ao estoque.
+    6. O adminstrador preenche a solicitação com a quantidade de produtos desejada.
     7. O usuário encerra a operação, clicando no botão: Finalizar.
     8. O sistema adiciona ao estoque do produto escolhido a quantidade informada na solicitação.
 
-*Fluxo Alternativo A - Diminuir Quantidade de Produtos no Estoque
+Fluxo Alternativo A - Inserção maior que possível do estoque
+![InsertProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/0ce043d4-7e40-46b3-9781-76359b317936)
+
     1. O sistema exibe os produtos junto da quantidade atual no estoque.
-    2. O usuário seleciona um produto cadastrado.
-    3. O sistema exibe as opções: Aumentar quantidade de estoque de um produto e Diminuir quantidade de estoque de um produto.
-    4. O usuário seleciona a opção de Diminuir quantidade de estoque de um produto.
-    5. O sistema solicita a quantidade de produtos à serem retirados do estoque.
-    6. O usuário preenche a solicitação com a quantidade de produtos desejada.
+    2. O administrador seleciona um produto cadastrado.
+    3. O sistema exibe as opções: Aumentar Quantidade de Estoque e Diminuir Quantidade de Estoque.
+    4. O administrador seleciona a opção de Aumentar Quantidade de Estoque.
+    5. O sistema solicita a quantidade do produto a ser adicionados ao estoque.
+    6. O adminstrador preenche a solicitação com a quantidade de produtos desejada.
     7. O usuário encerra a operação, clicando no botão: Finalizar.
-    8. O sistema retira do estoque do produto escolhido a quantidade informada na solicitação.
+    8. O sistema não adiciona ao estoque do produto escolhido a quantidade informada na solicitação, pois ultrapassa o limite do estoque.
+
+#### CDU-07. Remover Quantidade de Produto em Estoque
+*Fluxo Principal*
+![RemovProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6b7b899e-47ee-4db5-b88c-3b43c4f5a3a3)
+
+    1. O sistema exibe os produtos junto da quantidade atual no estoque.
+    2. O administrador seleciona um produto cadastrado.
+    3. O sistema exibe as opções: Aumentar Quantidade de Estoque e Diminuir Quantidade de Estoque.
+    4. O administrador seleciona a opção de Diminuir Quantidade de Estoque.
+    5. O sistema solicita a quantidade do produto a ser removida do estoque.
+    6. O adminstrador preenche a solicitação com a quantidade de produtos desejada.
+    7. O usuário encerra a operação, clicando no botão: Finalizar.
+    8. O sistema remove do estoque do produto escolhido a quantidade informada na solicitação.
+
+Fluxo Alternativo A - Remoção maior que possível do estoque
+![RemovProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/cd1ba229-68cd-4b68-a1ca-566957e3841d)
+
+    1. O sistema exibe os produtos junto da quantidade atual no estoque.
+    2. O administrador seleciona um produto cadastrado.
+    3. O sistema exibe as opções: Aumentar Quantidade de Estoque e Diminuir Quantidade de Estoque.
+    4. O administrador seleciona a opção de Diminuir Quantidade de Estoque.
+    5. O sistema solicita a quantidade do produto a ser removida do estoque.
+    6. O adminstrador preenche a solicitação com a quantidade de produtos desejada.
+    7. O usuário encerra a operação, clicando no botão: Finalizar.
+    8. O sistema não rmeove do estoque do produto escolhido a quantidade informada na solicitação, pois ultrapassa o limite do estoque.
+
 
 #### CDUs Cliente
 #### CDU-01. Fazer Cadastro
