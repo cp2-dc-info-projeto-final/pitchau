@@ -1,22 +1,12 @@
 <?php
 
+include_once "../consultas/flying_bubbles.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password_ = $_POST["password"];
 
-    // Conectar ao banco de dados (substitua com suas credenciais)
-    $servername = "localhost";
-    $username = "root";
-    $dbpassword = "";
-    $dbname = "pitchau";
-
-    $conn = new mysqli($servername, $username, $dbpassword, $dbname);
-
-    if ($conn->connect_error) {
-        die("Falha na conexão com o banco de dados: " . $conn->connect_error);
-    }
-
+   $conn= connect()
     // Verificar as credenciais no banco de dados
     $sql = "SELECT id, nome, email, senha FROM Usuario WHERE email = '$email'";
 
