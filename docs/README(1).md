@@ -11,7 +11,7 @@ Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colé
 
  ## Descrição do Projeto
 
- Aqui está a maior empresa musical do CPII. Onde se reúnem as melhores empresas músicais de todo o campo Pedro II, com todos os tipos de instrumentos.
+ Eis aqui A maior empresa musical do CPII. Onde reúnem-se as melhores empresas músicais de todo o campo Pedro II, com todos os tipos de instrumentos.
  
  P - Piano
  I - instrumentos
@@ -21,8 +21,8 @@ Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colé
  A - Acordeom
  U - Ukulele
 
-Sed sit amet ante sem. Nunc id sapien metus. Etiam lobortis in purus ut porta. Vestibulum at libero euismod felis feugiat tempus eu sagittis lorem. Vestibulum ultrices, mi euismod eleifend viverra, odio enim volutpat tortor, sed condimentum odio est id purus. Sed at leo vel ligula luctus bibendum in sed justo. Duis sodales consectetur vestibulum. Morbi libero quam, varius ac sodales eget, bibendum eu quam. In accumsan ac turpis vitae porttitor. Nulla eget velit in nisl vulputate sagittis. Phasellus ligula mi, viverra id vehicula nec, varius eget diam. Vestibulum id ultricies nulla, vel sagittis lorem. Sed aliquam dictum lacus quis maximus.
-
+  Comece a fazer música daqui. Aqui você encontra desde o mais popular ao mais exótico instrumento musical.
+  
 ## Documentação
 
 - [Manual do Usuário](manual.md)
