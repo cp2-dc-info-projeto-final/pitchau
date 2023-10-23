@@ -3,11 +3,11 @@
 Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colégio Pedro II - Campus Duque de Caxias
 
 **Integrantes:**
- - Athos Dr. Xavier
+ - Athos Xavier
  - Kayky Carrilho
- - IgoNorio
+ - Igor Honório
  - Igor Santana
- - Adeilton S.S.
+ - Adeilton Santos
 
  ## Descrição do Projeto
 
