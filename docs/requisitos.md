@@ -2,9 +2,11 @@
 
 ## Requisitos Funcionais
 
-### RF01- O sistema deverá permitir compras
-### RF02 - O sistema deverá
-### RNF0
+### RF01 - O sistema deverá permitir cadastro
+### RF02 - O sistema deverá permitir login
+### RF03 - O sistema deverá permitir compras
+### RF04 - O sistema deverá
+### RF05
 
 ## Requisitos Não-Funcionais
 
