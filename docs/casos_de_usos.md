@@ -7,13 +7,16 @@
  - [CDU 04](#CDU-04-Atualizar-Categoria): Adm-Atualizar Categoria
  - [CDU 05](#CDU-05-Cadastrar-Produto): Adm-Cadastrar Produto
  - [CDU 06](#CDU-06-Atualizar-Produto): Adm-Atualizar Produto
- - [CDU 07](#CDU-07-Gerenciar-Estoque): Adm-Gerenciar Estoque
- - [CDU 08](#CDU-08-Fazer-Cadastro): User-Fazer Cadastro
- - [CDU 09](#CDU-09-Atualizar-Cliente): User-Atualizar Cliente
- - [CDU 10](#CDU-10-Fazer-Login): User-Fazer Login
- - [CDU 11](#CDU-11-Pesquisar-Produto): User-Pesquisar Produto
- - [CDU 12](#CDU-12-Adicionando-Produtos-no-Carrinho): User-Adicionando Produtos no Carrinho
- - [CDU 13](#CDU-13-Finalizar-Compra): User-Finalizar Compra
+ - [CDU 07](#CDU-07-Adicionar-Quantidade-de-Produto-em-Estoque): Adm-Adicionar Quantidade de Produto em Estoque
+ - [CDU 08](#CDU-08-Remover-Quantidade-de-Produto-em-Estoque): Adm-Remover Quantidade de Produto em Estoque
+ - [CDU 09](#CDU-09-Fazer-Cadastro): User-Fazer Cadastro
+ - [CDU 10](#CDU-10-Atualizar-Cliente): User-Atualizar Cliente
+ - [CDU 11](#CDU-11-Fazer-Login): User-Fazer Login
+ - [CDU 12](#CDU-12-Pesquisar-Produto): User-Pesquisar Produto
+ - [CDU 13](#CDU-13-Adicionando-Produtos-no-Carrinho): User-Adicionando Produtos no Carrinho
+ - [CDU 14](#CDU-14-Reduzir-Quantidade-do-Produto-no-Carrinho): User-Reduzir Quantidade do Produto no Carrinho
+ - [CDU 15](#CDU-15-Aumentar-Quantidade-do-Produto-no-Carrinho): User-Aumentar Quantidade do Produto no Carrinho
+ - [CDU 16](#CDU-16-Finalizar-Compra): User-Finalizar Compra
 
 ## Lista de Atores
  - [Cliente](#CDUs-Cliente)
@@ -197,7 +200,7 @@ Fluxo Alternativo A - Inserção maior que possível do estoque
        7. O usuário encerra a operação, clicando no botão: Finalizar.
        8. O sistema não adiciona ao estoque do produto escolhido a quantidade informada na solicitação, pois ultrapassa o limite do estoque.
 
-#### CDU-07. Remover Quantidade de Produto em Estoque
+#### CDU-08. Remover Quantidade de Produto em Estoque
  - Fluxo Principal
 ![RemovProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6b7b899e-47ee-4db5-b88c-3b43c4f5a3a3)
 
@@ -224,7 +227,7 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
 
 
 #### CDUs Cliente
-#### CDU-08. Fazer Cadastro
+#### CDU-09. Fazer Cadastro
  - Fluxo Principal
 ![CadUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5cc506fb-484f-4fc8-8ba4-d718457041f2)
     ![CadUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/d398a2de-1d5d-412e-b803-09641c5cfcbe)
@@ -246,7 +249,7 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
        4. O sistema retorna a mensagem dizendo que o e-mail de já está cadastrado.
        5. O sistema sugere a aba de Fazer login.
 
-#### CDU-09. Atualizar Cliente
+#### CDU-10. Atualizar Cliente
  - Fluxo Principal
 ![UpdUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/1fd4aa88-779a-45fe-b2f3-e16daf41ab2e)
     ![UpdUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/f8ecc198-3ec0-4e23-9f7a-b5dffeaa5f20)
@@ -265,7 +268,7 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
        3. O cliente logado insere as novas informações e envia
        4. O sistema não atualiza o cliente logado por conter informações semelhantes à outro cliente
     
-#### CDU-10. Fazer Login
+#### CDU-11. Fazer Login
  - Fluxo Principal
 ![LogUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5c36ecdd-be7b-4a2c-b0fc-7d6c77913734)
     ![LogUser_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3f49d177-47a0-48eb-98da-f5126450bf41)
@@ -297,7 +300,7 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
        4. O sistema verifica se credenciais são compatíveis com as do Banco de Dados.
        6. O sistema retorna a mensagem que a senha deste e-mail está incorreta.
 
-#### CDU-11. Pesquisar Produto
+#### CDU-12. Pesquisar Produto
  - Fluxo Principal
 ![PsqzProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/1566e8ad-2ae8-4fde-aef6-84120507e715)
 
@@ -307,7 +310,7 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
        3. O sistema procura o produto na qual o usuário digitou o nome no Banco de Dados.
        4. O sistema exibe uma lista dos produtos que foram encontrados com o nome solicitado.
 
-#### CDU-12. Adicionando Produtos no Carrinho
+#### CDU-13. Adicionando Produtos no Carrinho
  - Fluxo Principal
 
        1. O usuário seleciona um produto que deseje.
@@ -344,7 +347,7 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
        7. O usuário escolhe não ver o carrinho.
 
 
-#### CDU-13. Reduzir Quantidade do Produto no Carrinho
+#### CDU-14. Reduzir Quantidade do Produto no Carrinho
  - Fluxo Principal
        1. O usuário seleciona um produto que deseje.
        2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
@@ -387,10 +390,10 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
        11. O sistema retira do Carrinho o produto no qual o usuário selecionou a opção de Exclusão do produto no Carrinho.
 
 
-#### CDU-14. Aumentar Quantidade do Produto no Carrinho
+#### CDU-15. Aumentar Quantidade do Produto no Carrinho
  - Fluxo Principal
 
-#### CDU-15. Finalizar Compra
+#### CDU-16. Finalizar Compra
  - Fluxo Principal
 ![BuyCart_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3846e652-8336-4407-8e32-2874504c9d92)
 
