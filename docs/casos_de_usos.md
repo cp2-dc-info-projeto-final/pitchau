@@ -70,7 +70,7 @@
        1. O sistema exibe o formulário solicitando e-mail e senha
        2. O usuário preenche as credencias solicitadas.
        3. O sistema verifica se o e-mail está cadastrado.
-       4. O sistema verifica se credenciais são compatíveis com as do Banco de Dados.
+       4. O sistema verifica se as credenciais são compatíveis com as do Banco de Dados.
        5. O sistema autentica o usuário.
        6. O sistema exibe a página principal da loja.
 
