@@ -8,12 +8,12 @@
  - [CDU 05](#CDU-05-Cadastrar-Produto): Adm-Cadastrar Produto
  - [CDU 06](#CDU-06-Atualizar-Produto): Adm-Atualizar Produto
  - [CDU 07](#CDU-07-Gerenciar-Estoque): Adm-Gerenciar Estoque
- - [CDU 08](#CDU-08-Fazer-Cadastro): Usr-Fazer Cadastro
- - [CDU 09](#CDU-09-Atualizar-Cliente): Usr-Atualizar Cliente
- - [CDU 10](#CDU-10-Fazer-Login): Usr-Fazer Login
- - [CDU 11](#CDU-11-Pesquisar-Produto): Usr-Pesquisar Produto
+ - [CDU 08](#CDU-08-Fazer-Cadastro): User-Fazer Cadastro
+ - [CDU 09](#CDU-09-Atualizar-Cliente): User-Atualizar Cliente
+ - [CDU 10](#CDU-10-Fazer-Login): User-Fazer Login
+ - [CDU 11](#CDU-11-Pesquisar-Produto): User-Pesquisar Produto
  - [CDU 12](#CDU-12-Adicionando-Produtos-no-Carrinho): Usr-Adicionando Produtos no Carrinho
- - [CDU 13](#CDU-13-Finalizar-Compra): Usr-Finalizar Compra
+ - [CDU 13](#CDU-13-Finalizar-Compra): User-Finalizar Compra
 
 ## Lista de Atores
  - [Cliente](#CDUs-Cliente)
