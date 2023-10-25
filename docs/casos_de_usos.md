@@ -100,6 +100,7 @@
        2. O administrador preenche a solicitação.
        3. O sistema verifica se a categoria já existe
        3. O sistema cadastra a categoria preenchida no Banco de Dados.
+       4. O sistema sugere a criação de outra categoria
 
  - Fluxo Alternativo A - Caso a Categoria já exista
 [CadCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/f18ca598-1c44-4a9c-8f2f-eddbdce46e86)
@@ -108,7 +109,7 @@
        2. O administrador preenche a solicitação.
        3. O sistema verifica se a categoria já existe
        4. O sistema retorna a mensagem dizendo que a categoria já existe
-
+       5. O sistema sugere a criação de outra categoria
 
 #### CDU-04. Atualizar Categoria
  - Fluxo Principal
@@ -122,19 +123,20 @@
  - Fluxo Alternativo A - Categoria semelhante a outra
 ![UpdCat_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/b70dbc9d-f5fe-441b-9ab2-ff27a64a7034)
 
-       1. O sistema busca em si a categoria selecionado para atualização
-       2. O sistema exibe a categoria e suas respectivas informações
-       3. O administrador insere as novas informações e envia
-       4. O sistema não atualiza a categoria por conter semelhanças a outra categoria
+       1. O sistema busca em si a categoria selecionado para atualização.
+       2. O sistema exibe a categoria e suas respectivas informações.
+       3. O administrador insere as novas informações e envia.
+       4. O sistema não atualiza a categoria por conter semelhanças a outra categoria.
+       5. O sistema sugere a criação de outra categoria.
     
 #### CDU-05. Cadastrar Produto
  - Fluxo Principal
 ![CadProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5014a12c-a6cd-46cd-807e-9119bfd484cd)
 
-       1. O sistema exibe um formulário solicitando o nome do produto, o preço do produto e a descrição do produto.
+       1. O sistema exibe um formulário solicitando o nome do produto, o preço do produto, a foto do produto e a descrição do produto.
        2. O usuário preenche os dados do produto.
        3. O sistema exibe uma lista de categorias existentes para o produto.
-       4. O usuário seleciona uma categoria da lista.
+       4. O usuário seleciona as categorias desejadas da lista.
        5. O usuário clica no botão: Enviar.
        6. O sistema verifica se o produto já está cadastrado.
        7. O produto é inserido ao Banco de dados.
@@ -149,31 +151,36 @@
        5. O usuário clica no botão: Enviar.
        6. O sistema verifica se o produto já está cadastrado.
        7. O sistema retorna uma mensagem dizendo que o produto que está sendo cadastrado já existe.
+       8. O sistema sugere a criação de outro produto.
 
 #### CDU-06. Atualizar Produto
  - Fluxo Principal
 ![UpdProd_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/6d6b1270-6377-4f10-86ce-c5ce733f5d6d)
 
-       1. O sistema busca em si o produto selecionado para atualização
-       2. O sistema exibe o produto e suas respectivas informações
-       3. O administrador insere as novas informações e envia
-       4. O sistema atualiza o produto
+       1. O sistema exibe os produtos para atualizar.
+       2. O usuário seleciona o produto que deseja atualizar.
+       3. O sistema exibe o produto e suas respectivas informações.
+       4. O administrador insere as novas informações e envia.
+       5. O sistema atualiza o produto.
 
  - Fluxo Alternativo A - Produto semelhante a outro
 ![UpdProd_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/720a9376-c007-46b8-82e6-17488710b9b9)
 
-       1. O sistema busca em si o produto selecionado para atualização
-       2. O sistema exibe o produto e suas respectivas informações
-       3. O administrador insere as novas informações e envia
-       4. O sistema não atualiza o produto por conter semelhanças a outra categoria
+       1. O sistema exibe os produtos para atualizar.
+       2. O usuário seleciona o produto que deseja atualizar.
+       3. O sistema exibe o produto e suas respectivas informações.
+       4. O administrador insere as novas informações e envia.
+       5. O sistema não atualiza o produto por conter semelhanças a outra categoria.
+       8. O sistema sugere a criação de outro produto.
 
  - Fluxo Alternativo  B - Produto com valor inestimado
 ![UpdProd_DSFA2](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/5262476c-1023-49d9-a08c-f431b330ab2a)
 
-       1. O sistema busca em si o produto selecionado para atualização
-       2. O sistema exibe o produto e suas respectivas informações
-       3. O administrador insere as novas informações e envia
-       4. O sistema não atualiza o produto por conter valor inestimado(inválido) a outra categoria
+       1. O sistema exibe os produtos para atualizar.
+       2. O usuário seleciona o produto que deseja atualizar.
+       3. O sistema exibe o produto e suas respectivas informações
+       4. O administrador insere as novas informações e envia
+       5. O sistema não atualiza o produto por conter valor inestimado(inválido) a outra categoria
 
 #### CDU-07 Adicionar Quantidade de Produto em Estoque
  - Fluxo Principal
