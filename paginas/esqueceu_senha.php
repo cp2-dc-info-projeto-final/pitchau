@@ -14,9 +14,7 @@
             <input required="" placeholder="" type="email" name="email" class="input">
             <span>Email</span>
         </label>
-        
-        <p><input required="" placehot</p>
-
+    
         <button type="submit" class="submit">Enviar</button>
     </form>
 </body>
