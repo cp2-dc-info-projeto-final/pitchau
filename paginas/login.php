@@ -18,6 +18,7 @@
             <input required="" placeholder="" type="password" name="password" class="input">
             <span>Senha</span>
         </label>
+        <p class="signin"><a href="esqueceu_senha.php">Esqueceu sua senha?</a></p>
 
         <button type="submit" class="submit">Login</button>
         <p class="signin">Ainda não tem cadastro? <a href="cadastro.php">Cadatre-se</a></p>
