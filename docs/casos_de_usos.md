@@ -46,7 +46,10 @@
 #### CDU-01 Fazer Cadastro
  - Fluxo Principal
 ![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/7abe13c3-7343-4e90-9899-74aad5d86948)
-   
+   ![Alt text](CadAdm_DSFP.png)
+
+
+
           1. O sistema exibe o formulário solicitando e-mail e senha.
           2. O usuário preenche as credencias solicitadas.
           3. O sistema verifica se o e-mail está cadastrado.
