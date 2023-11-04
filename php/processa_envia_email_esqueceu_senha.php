@@ -1,7 +1,5 @@
 <?php
 
-include_once "../consultas/flying_bubbles.php";
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $para = $_POST["email"];
  
