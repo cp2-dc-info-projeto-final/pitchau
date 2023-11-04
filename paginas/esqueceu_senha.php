@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="../css/registre.css">
 </head>
 <body>
+<script>
+    function enviaEmail()
+    {
+        <?php
+        include_once "../php/processa_envia_email_esqueceu_senha.php";
+        $email = "athosespinner9@gmail.com";
+        $assunto = "Redefinição de senha";
+        $mensagem = "Redefina sua senha clicando neste link:";
+        envia_email($email, $assunto, $mensagem);
+        >
+    }        
+<\script>
 <form action="../php/processa_esqueceu_senha.php" method="POST" class="form">
         <p class="title">Esqueceu Sua Senha</p>
         <p>Solicitação para Redefinição de Senha</p>
@@ -15,7 +27,7 @@
             <span>Email</span>
         </label>
     
-        <button type="submit" class="submit">Enviar</button>
+        <button type="submit" class="submit" onClick="enviaEmail()">Enviar</button>
     </form>
 </body>
 </html>
