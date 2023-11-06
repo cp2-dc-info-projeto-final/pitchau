@@ -12,7 +12,7 @@
     {
         <?php
         include_once "../php/processa_envia_email_esqueceu_senha.php";
-        $email = "athosespinner9@gmail.com";
+        $para = $email;
         $assunto = "Redefinição de senha";
         $mensagem = "Redefina sua senha clicando neste link:";
         envia_email($email, $assunto, $mensagem);
@@ -23,7 +23,7 @@
         <p class="title">Esqueceu Sua Senha</p>
         <p>Solicitação para Redefinição de Senha</p>
         <label>
-            <input required="" placeholder="" type="email" name="email" class="input">
+            <input required="" placeholder="" type="email" name="$email" class="input">
             <span>Email</span>
         </label>
     
