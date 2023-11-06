@@ -12,6 +12,7 @@ require 'C:/Program Files (x86)/EasyPHP-Devserver-17/eds-www/PHPMailer-master/sr
 require 'C:/Program Files (x86)/EasyPHP-Devserver-17/eds-www/PHPMailer-master/src/PHPMailer.php';
 require 'C:/Program Files (x86)/EasyPHP-Devserver-17/eds-www/PHPMailer-master/src/SMTP.php';
 
+echo 'oi';
 function envia_email($para, $assunto, $mensagem){
 
     //Cria uma instância da classe PHPMailer; o parâmetro `true` habilita as exceções
