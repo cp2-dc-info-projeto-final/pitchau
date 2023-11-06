@@ -16,7 +16,7 @@
         $assunto = "Redefinição de senha";
         $mensagem = "Redefina sua senha clicando neste link:";
         envia_email($email, $assunto, $mensagem);
-        >
+        ?>
     }        
 <\script>
 <form action="../php/processa_esqueceu_senha.php" method="POST" class="form">
