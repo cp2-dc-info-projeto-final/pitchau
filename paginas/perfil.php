@@ -28,8 +28,8 @@
               Menu
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li>
-              <li><a class="dropdown-item" href="paginas/cadastro_produto.php">Cadastrar Produto</a></li>
+              <li><a class="dropdown-item" href="perfil.php">Perfil</a></li>
+              <li><a class="dropdown-item" href="cadastro_produto.php">Cadastrar Produto</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>

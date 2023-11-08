@@ -46,7 +46,11 @@ function card_produtos($servername, $username, $password, $dbname){
 }
 }
 
-function processar_login(){
+function processar_login($servername, $username, $password, $dbname, $email, $password_) {
+    $conn = connect($servername, $username, $password, $dbname);
+
+    // Verificar as credenciais no banco de dados
+    $email = mysqli_real_escape_string($conn, $email);  // Evitar injeção de SQL
     $sql = "SELECT id, nome, email, senha FROM Usuario WHERE email = '$email'";
 
     $result = $conn->query($sql);
@@ -54,13 +58,20 @@ function processar_login(){
     if ($result->num_rows == 1) {
         session_start();
         $row = $result->fetch_assoc();
-        if( $password_ == $row['senha']){
+        if (password_verify($password_, $row['senha'])) { // Verificar senha de forma segura
             $_SESSION["user_id"] = $row["id"];
             $_SESSION["email"] = $email;
             $_SESSION["user_nome"] = $row["nome"];
             header("Location: ../index.php"); // Redirecionar para a página do painel após o login
             exit();
+        } else {
+            echo "Senha incorreta. <a href='login.html'>Tente novamente</a>";
         }
-    
-}}
+    } else {
+        echo "Email não encontrado. <a href='login.html'>Tente novamente</a>";
+    }
+
+    // Fechar a conexão com o banco de dados
+    $conn->close();
+}
 ?>
