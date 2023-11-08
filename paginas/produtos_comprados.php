@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../index.php">Início</a>
+            <a class="nav-link active" aria-current="page" href="#">Início</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
@@ -43,23 +43,20 @@
   </nav>
     <main>
       <nav>
-          <ul>
+      <ul>
               <li><a href="produtos_comprados.php">Produtos Comprados</a></li>
               <li><a href="produtos_vendidos.php">Produtos à Venda</a></li>
               <li><a href="perfil.php">Dados da Conta</a></li>
               <li><a href="#">Logout</a></li>
           </ul>
       </nav>
-        <section id="dados-conta">
-            <h2>Dados da Conta</h2>
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" value="Seu Nome" disabled>
-                <label for="email">Email:</label>
-                <input type="email" id="email" value="seuemail@email.com" disabled>
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" value="suaSenha" disabled>
-            </form>
+        <section id="produtos-comprados">
+            <h2>Produtos Comprados</h2>
+            <ul>
+                <li>Produto 1 - Preço: R$100</li>
+                <li>Produto 2 - Preço: R$50</li>
+                <li>Produto 3 - Preço: R$75</li>
+            </ul>
         </section>
     </main>
 </body>
