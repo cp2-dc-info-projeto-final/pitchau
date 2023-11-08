@@ -46,7 +46,10 @@
 #### CDU-01 Fazer Cadastro
  - Fluxo Principal
 ![CadAdm_DSFP](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/7abe13c3-7343-4e90-9899-74aad5d86948)
-   
+   ![Alt text](CadAdm_DSFP.png)
+
+
+
           1. O sistema exibe o formulário solicitando e-mail e senha.
           2. O usuário preenche as credencias solicitadas.
           3. O sistema verifica se o e-mail está cadastrado.
@@ -337,7 +340,7 @@ Fluxo Alternativo A - Remoção maior que possível do estoque
  - Fluxo Alternativo A - Sem estoque do produto
 ![AddProdCart_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/3f8f62eb-e2cc-4b75-8a88-385664fcfdc8)
     ![AddProdCart_DSFA](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/60935c18-e2a2-43ac-83a5-6f149df93f98)
-
+    
        1. O usuário seleciona um produto que deseje.
        2. O sistema abre a página do produto contendo suas informações como: nome, preço, descrição e categoria.
        3. O usuário seleciona o botão "Adicionar Produto ao Carrinho".

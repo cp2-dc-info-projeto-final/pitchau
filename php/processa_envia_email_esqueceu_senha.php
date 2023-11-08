@@ -1,10 +1,6 @@
 <?php
+namespace foo;
 
-include_once "../consultas/flying_bubbles.php";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $para = $_POST["email"];
- 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -55,6 +51,21 @@ function envia_email($para, $assunto, $mensagem){
         echo "Erro: ".$e;
         return false;                                           // retorna falso se ocorrer uma falha no envio.
     }
+
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $para = $_POST["email"];
+    envia_email($para, 'Troca de Senha',
+     '
+     <?php
+        connect($servername, $username, $password, $dbname);
+        <form class="form" action="../php/processar_registro.php" method="post">
+        <label>
+            <input required="" placeholder="" type="password" class="input" name="password">
+            <span>Senha</span>
+        </label>
+     ');
+}  
 
 ?>
