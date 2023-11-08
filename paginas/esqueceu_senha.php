@@ -11,10 +11,10 @@
         <p class="title">Esqueceu Sua Senha</p>
         <p>Solicitação para Redefinição de Senha</p>
         <label>
-            <input required="" placeholder="" type="email" name="$email" class="input">
+            <input required="" placeholder="" type="email" name="email" class="input">
             <span>Email</span>
         </label>
-        <p class="signin">Lembrei minha senha! <a href="login.php">Voltar</a></p>
+    
         <button type="submit" class="submit">Enviar</button>
     </form>
 </body>
