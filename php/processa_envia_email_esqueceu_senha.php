@@ -56,16 +56,7 @@ function envia_email($para, $assunto, $mensagem){
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $para = $_POST["email"];
-    envia_email($para, 'Troca de Senha',
-     '
-     <?php
-        connect($servername, $username, $password, $dbname);
-        <form class="form" action="../php/processar_registro.php" method="post">
-        <label>
-            <input required="" placeholder="" type="password" class="input" name="password">
-            <span>Senha</span>
-        </label>
-     ');
+    envia_email($para, 'Troca de Senha', '<p>Clique neste link para alterar sua senha<br><a href="../paginas/altera_senha.php');
 }  
 
 ?>
