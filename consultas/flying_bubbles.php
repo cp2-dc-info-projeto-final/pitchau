@@ -56,14 +56,16 @@ function processar_login($servername, $username, $password, $dbname, $email, $pa
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
-        session_start();
-        $row = $result->fetch_assoc();
-        if (password_verify($password_, $row['senha'])) { // Verificar senha de forma segura
-            $_SESSION["user_id"] = $row["id"];
-            $_SESSION["email"] = $email;
-            $_SESSION["user_nome"] = $row["nome"];
-            header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-            exit();
+        //session_start();
+        while ($row = $result->fetch_assoc($processar))
+
+            if (password_verify($password_, $row['senha'])) { // Verificar senha de forma segura
+                $_SESSION["user_id"] = $row["id"];
+                $_SESSION["email"] = $email;
+                $_SESSION["user_nome"] = $row["nome"];
+                header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+                return $processar;
+                exit();
         } else {
             echo "Senha incorreta. <a href='login.html'>Tente novamente</a>";
         }
