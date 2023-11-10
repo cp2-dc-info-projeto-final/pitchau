@@ -14,7 +14,7 @@
             <input required="" placeholder="" type="email" name="email" class="input">
             <span>Email</span>
         </label>
-    
+        <p class="signin">Lembrei minha senha! <a href="login.php">Voltar</a></p>
         <button type="submit" class="submit">Enviar</button>
     </form>
 </body>
