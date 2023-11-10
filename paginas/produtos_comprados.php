@@ -28,8 +28,8 @@
               Menu
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li>
-              <li><a class="dropdown-item" href="paginas/cadastro_produto.php">Cadastrar Produto</a></li>
+              <li><a class="dropdown-item" href="perfil.php">Perfil</a></li>
+              <li><a class="dropdown-item" href="cadastro_produto.php">Cadastrar Produto</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
@@ -44,7 +44,7 @@
     <main>
       <nav>
       <ul>
-              <li><a href="produtos_comprados.php">Produtos Comprados</a></li>
+              <li><a href="#">Produtos Comprados</a></li>
               <li><a href="produtos_vendidos.php">Produtos à Venda</a></li>
               <li><a href="perfil.php">Dados da Conta</a></li>
               <li><a href="#">Logout</a></li>

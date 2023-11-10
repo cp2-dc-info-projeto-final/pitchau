@@ -6,7 +6,7 @@ $password = "";
 $dbname = "pitchau";
 
 
-function connect($servername, $username, $password, $dbname) {
+function connect($servername, $username, $password, $dbname){
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         die("Falha na conexão com o banco de dados: " . $conn->connect_error);
@@ -46,32 +46,34 @@ function card_produtos($servername, $username, $password, $dbname){
 }
 }
 
-function processar_login($servername, $username, $password, $dbname, $email, $password_) {
-    $conn = connect($servername, $username, $password, $dbname);
-
-    // Verificar as credenciais no banco de dados
-    $email = mysqli_real_escape_string($conn, $email);  // Evitar injeção de SQL
-    $sql = "SELECT id, nome, email, senha FROM Usuario WHERE email = '$email'";
-
-    $result = $conn->query($sql);
-
-    if ($result->num_rows == 1) {
-        session_start();
-        $row = $result->fetch_assoc();
-        if (password_verify($password_, $row['senha'])) { // Verificar senha de forma segura
-            $_SESSION["user_id"] = $row["id"];
-            $_SESSION["email"] = $email;
-            $_SESSION["user_nome"] = $row["nome"];
-            header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-            exit();
-        } else {
-            echo "Senha incorreta. <a href='login.html'>Tente novamente</a>";
-        }
-    } else {
-        echo "Email não encontrado. <a href='login.html'>Tente novamente</a>";
+function processar_login($servername, $username, $password, $dbname){
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $email = $_POST["email"];
+        $password_ = $_POST["password"];
+    
+       $conn= connect($servername, $username, $password, $dbname);
+        // Verificar as credenciais no banco de dados
+        $sql = "SELECT id, nome, email, senha FROM Usuario WHERE email = '$email'";
+    
+        $result = $conn->query($sql);
+    
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            if( $password_ == $row['senha']){
+                $_SESSION["user_id"] = $row["id"];
+                $_SESSION["email"] = $email;
+                $_SESSION["user_nome"] = $row["nome"];
+                header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+                exit();
+    
+            }
+            else return 1;
+        }   else return 2;
+    
+        // Fechar a conexão com o banco de dados
+        $conn->close();
+        return 0;
     }
-
-    // Fechar a conexão com o banco de dados
-    $conn->close();
 }
+
 ?>
