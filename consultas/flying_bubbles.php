@@ -46,34 +46,33 @@ function card_produtos($servername, $username, $password, $dbname){
 }
 }
 
-function processar_login($servername, $username, $password, $dbname){
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $_POST["email"];
-        $password_ = $_POST["password"];
-    
-       $conn= connect($servername, $username, $password, $dbname);
-        // Verificar as credenciais no banco de dados
-        $sql = "SELECT id, nome, email, senha FROM Usuario WHERE email = '$email'";
-    
-        $result = $conn->query($sql);
-    
-        if ($result->num_rows == 1) {
-            $row = $result->fetch_assoc();
-            if( $password_ == $row['senha']){
-                $_SESSION["user_id"] = $row["id"];
-                $_SESSION["email"] = $email;
-                $_SESSION["user_nome"] = $row["nome"];
-                header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-                exit();
-    
-            }
-            else return 1;
-        }   else return 2;
-    
-        // Fechar a conexão com o banco de dados
-        $conn->close();
-        return 0;
+function processar_login($servername, $username, $password, $dbname, $email, $senha){
+    $conn = connect($servername, $username, $password, $dbname);
+
+    // Verificar as credenciais no banco de dados
+    $email = mysqli_real_escape_string($conn, $email);  // Evitar injeção de SQL
+    $senha = mysqli_real_escape_string($conn, $senha);  // Evitar injeção de SQL e escapar a senha
+    $sql = "SELECT id, nome, email, senha FROM Usuario WHERE email = '$email'";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        if (password_verify($senha, $row['senha'])) { // Verificar senha de forma segura
+            $_SESSION["user_id"] = $row["id"];
+            $_SESSION["email"] = $email;
+            $_SESSION["user_nome"] = $row["nome"];
+            header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+            exit();
+        } else {
+            return 1;
+        }
+    } else {
+        return 2;
     }
+
+    // Fechar a conexão com o banco de dados
+    $conn->close();
 }
 
 ?>

@@ -1,8 +1,17 @@
-CREATE TABLE Usuario (
+ CREATE DATABASE Pitchau;
+ 
+ CREATE TABLE Usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
     senha VARCHAR(255) NOT NULL,
     nome VARCHAR(255) NOT NULL
+);
+ALTER TABLE Usuario (
+    ADD COLUMN isAdmin BOOLEAN NOT NULL DEFAULT FALSE
+);
+INSERT INTO Usuario 
+    (email, senha, nome, isAdmin)
+    VALUES ('admin@example.com', 'senha_admin', 'Admin Name', TRUE
 );
 
 CREATE TABLE Produto (
@@ -11,8 +20,6 @@ CREATE TABLE Produto (
     descricao TEXT,
     foto VARCHAR(255),
     valor DECIMAL(10, 2) NOT NULL
-    id_vendedor int,
-    FOREIGN KEY (id_vendedor) REFERENCES Usuario(id)
 );
 
 CREATE TABLE Slider (
