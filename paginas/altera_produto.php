@@ -10,9 +10,9 @@
     <?php    
         include_once "consultas/flying_bubbles.php";
 
-        um = 1
+        /*um = 1
         if um == 1:
-            select nome, desc, foto, e tals from database
+            select nome, desc, foto, e tals from database*/
     ?>
 
     <form class="form" action="../php/processar_altera_produto.php" method="post" enctype="multipart/form-data">

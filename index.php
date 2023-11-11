@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/card_produtos.css">
     <link rel="stylesheet" href="css/slider.css">
-    <title>Document</title>
+    <title>Pitchau</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -29,20 +29,19 @@
             Menu
           </a>
           <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li>
+          <li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>
             <li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li>
             <li><a class="dropdown-item" href="paginas/cadastro_produto.php">Cadastrar Produto</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+      
     </div>
   </div>
 </nav>
