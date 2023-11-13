@@ -7,22 +7,23 @@
     <link rel="stylesheet" href="../css/registre.css">
 </head>
 <body>
-<form action="../php/processar_login.php" method="POST" class="form">
-        <p class="title">Login</p>
-        <label>
-            <input required="" placeholder="" type="email" name="email" class="input">
-            <span>Email</span>
-        </label>
+    <h3><a href="../#" text-decoration:none>Pitchau</a></h3>
+    <form action="../php/processar_login.php" method="POST" class="form">
+            <p class="title">Login</p>
+            <label>
+                <input required="" placeholder="" type="email" name="email" class="input">
+                <span>Email</span>
+            </label>
 
-        <label>
-            <input required="" placeholder="" type="password" name="password" class="input">
-            <span>Senha</span>
-        </label>
-        <p class="signin"><a href="esqueceu_senha.php">Esqueceu sua senha?</a></p>
+            <label>
+                <input required="" placeholder="" type="password" name="password" class="input">
+                <span>Senha</span>
+            </label>
+            <p class="signin"><a href="esqueceu_senha.php">Esqueceu sua senha?</a></p>
 
-        <button type="submit" class="submit">Login</button>
-        <p class="signin">Ainda não tem cadastro? <a href="cadastro.php">Cadatre-se</a></p>
-    </form>
+            <button type="submit" class="submit">Login</button>
+            <p class="signin">Ainda não tem cadastro? <a href="cadastro.php">Cadatre-se</a></p>
+        </form>
 </body>
 </html>
 <!DOCTYPE html>
