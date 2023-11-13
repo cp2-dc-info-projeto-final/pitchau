@@ -7,6 +7,7 @@
     <title>Documento</title>
 </head>
 <body>
+<h3><a href="../#" text-decoration:none>Pitchau</a></h3>
 <form class="form" action="../php/processar_registro.php" method="post">
     <p class="title">Registrar</p>
     <p class="message">Registre-se agora e tenha acesso completo ao nosso aplicativo.</p>
