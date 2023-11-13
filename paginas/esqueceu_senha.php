@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/registre.css">
 </head>
 <body>
+<h3><a href="../#" text-decoration:none>Pitchau</a></h3>
 <form action="../php/processa_envia_email_esqueceu_senha.php" method="POST" class="form">
         <p class="title">Esqueceu Sua Senha</p>
         <p>Solicitação para Redefinição de Senha</p>
