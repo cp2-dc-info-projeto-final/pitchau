@@ -15,6 +15,7 @@
             select nome, desc, foto, e tals from database*/
     ?>
 
+<h3><a href="../#" text-decoration:none>Pitchau</a></h3>
     <form class="form" action="../php/processar_altera_produto.php" method="post" enctype="multipart/form-data">
         <div class="container"> 
 
