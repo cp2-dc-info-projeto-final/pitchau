@@ -7,6 +7,7 @@
     <title>AlterarSenha</title>
 </head>
 <body>
+<h3><a href="../#" text-decoration:none>Pitchau</a></h3>
 <form action="../php/processar_altera_senha.php" method="POST" class="form">
 
         <p class="title">Alterar Senha</p>
