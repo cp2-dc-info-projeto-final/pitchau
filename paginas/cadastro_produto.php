@@ -10,6 +10,7 @@
 </head>
 <body>
     
+<h3><a href="../#" text-decoration:none>Pitchau</a></h3>
 <form class="form" action="../php/processar_cadastro_produto.php" method="post" enctype="multipart/form-data">
 <div class="container"> 
         <div class="header"> 
