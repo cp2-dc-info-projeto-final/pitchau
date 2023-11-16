@@ -6,9 +6,8 @@
     senha VARCHAR(255) NOT NULL,
     nome VARCHAR(255) NOT NULL
 );
-ALTER TABLE Usuario (
-    ADD COLUMN isAdmin BOOLEAN NOT NULL DEFAULT FALSE
-);
+ALTER TABLE Usuario ADD COLUMN isAdmin BOOLEAN NOT NULL DEFAULT FALSE;
+
 INSERT INTO Usuario 
     (email, senha, nome, isAdmin)
     VALUES ('admin@example.com', 'senha_admin', 'Admin Name', TRUE
