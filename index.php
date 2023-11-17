@@ -29,11 +29,24 @@
             Menu
           </a>
           <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li>
-          <li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>
-            <li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li>
-            <li><a class="dropdown-item" href="paginas/cadastro_produto.php">Cadastrar Produto</a></li>
-            <li><hr class="dropdown-divider"></li>
+          <div id="menu"></div>
+          <script>
+            var logado = 3; //substituir depois
+            var menu = '';
+            if(logado == 1)
+            {
+              menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li> <br> <li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
+            }
+            else if(logado == 2)
+            {
+              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li> <br> <li><a class="dropdown-item" href="paginas/cadastro_produto.php">Cadastrar Produto</a></li>';
+            }
+            else if(logado == 3)
+            {
+              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li>';
+            }
+            document.getElementById("menu").innerHTML = menu;
+          </script>
           </ul>
         </li>
       </ul>
