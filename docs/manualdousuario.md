@@ -4,8 +4,8 @@ Na Pitchau o visitante, já cadastrado como: usuário ou administrador podera re
 
 **Lista das Funcionalidades:**
 
- - [Funcionalidade Comprar Produto](#Funcionalidade-X)
- - [Funcionalidade Editar Produto](#Funcionalidade-Y)
+ - [Funcionalidade Comprar Produto](#Funcionalidade-Comprar-Produto)
+ - [Funcionalidade Editar Produto](##-Funcionalidade-Editar-Produto)
  - [Funcionalidade Z](#Funcionalidade-Z)
 
 ## Funcionalidade Comprar Produto
