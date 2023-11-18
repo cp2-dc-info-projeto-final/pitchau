@@ -13,11 +13,5 @@ if ($codigo_erro == 1) {
     echo "Senha incorreta. <a href='../paginas/login.php'>Tente novamente</a>";
 } elseif ($codigo_erro == 2) {
     echo "Email não encontrado. <a href='../paginas/login.php'>Tente novamente</a>";
-} elseif ($codigo_erro == 0) {
-    echo "<div id='logado' value=2></div>";
 }
 ?>
-
-<script>
-        logado = document.getElementById("logado").value;
-    </script>
