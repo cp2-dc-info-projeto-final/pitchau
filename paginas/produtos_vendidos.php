@@ -9,6 +9,14 @@
   <title>Seus Produtos</title>
 </head>
 <body>
+    <?php
+        include_once "consultas/flying_bubbles.php";
+        session_start();
+
+        if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
+            header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+        }
+    ?>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Pitchau</a>

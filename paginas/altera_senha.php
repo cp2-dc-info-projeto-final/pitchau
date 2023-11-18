@@ -7,6 +7,14 @@
     <title>AlterarSenha</title>
 </head>
 <body>
+    <?php
+        include_once "consultas/flying_bubbles.php";
+        session_start();
+
+        if (!isset( $_SESSION["id"]) || !isset( $_SESSION["is_admin"])) { //Verifica se == Usuário Logado e == Administrador
+            header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+        }
+    ?>
 <h3><a href="../#" text-decoration:none>Pitchau</a></h3>
 <form action="../php/processar_altera_senha.php" method="POST" class="form">
 
