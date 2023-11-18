@@ -62,6 +62,7 @@ function processar_login($servername, $username, $password, $dbname, $email, $se
             $_SESSION["user_id"] = $row["id"];
             $_SESSION["email"] = $email;
             $_SESSION["user_nome"] = $row["nome"];
+            $_SESSION["is_admin"] = $row["isAdmin"];
             header("Location: ../index.php"); // Redirecionar para a página do painel após o login
             exit();
         } else {
