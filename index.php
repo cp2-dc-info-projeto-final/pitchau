@@ -10,6 +10,23 @@
     <title>Pitchau</title>
 </head>
 <body>
+<?php
+  include_once "consultas/flying_bubbles.php";
+  session_start();
+
+  if (!isset( $_SESSION["id"]) || !isset( $_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
+    $menulevel = 1;
+    echo "<input type='hidden' id='menulevel' value='1'/>";
+  };
+  if (isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
+    $menulevel = 2;
+    echo "<input type='hidden' id='menulevel' value='2'/>";
+  };
+  if (isset( $_SESSION["id"])) { //Verifica se == Usuário Logado
+    $menulevel = 3;
+    echo "<input type='hidden' id='menulevel' value='3'/>";
+  };
+?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Pitchau</a>
@@ -31,18 +48,15 @@
           <ul class="dropdown-menu">
           <div id="menu"></div>
           <script>
-            var logado = 3; //substituir depois
+            menulevel = document.getElementById("menulevel").value;
             var menu = '';
-            if(logado == 1)
-            {
+            if(menulevel == 1){
               menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li> <br> <li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
             }
-            else if(logado == 2)
-            {
+            else if(menulevel == 2){
               menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li> <br> <li><a class="dropdown-item" href="paginas/cadastro_produto.php">Cadastrar Produto</a></li>';
             }
-            else if(logado == 3)
-            {
+            else if(menulevel == 3){
               menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li>';
             }
             document.getElementById("menu").innerHTML = menu;
