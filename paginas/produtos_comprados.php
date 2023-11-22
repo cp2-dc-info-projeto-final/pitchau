@@ -9,6 +9,14 @@
   <title>Meu Perfil</title>
 </head>
 <body>
+    <?php
+        include_once "consultas/flying_bubbles.php";
+        session_start();
+
+        if (!isset( $_SESSION["id"]) || !isset( $_SESSION["is_admin"])) { //Verifica se == Usuário Logado e == Administrador
+            header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+        }
+    ?>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Pitchau</a>

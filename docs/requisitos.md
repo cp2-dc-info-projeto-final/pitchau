@@ -17,7 +17,6 @@
 
 ## Requisitos Não-Funcionais
 
-### RNF01 - O sistema deverá ser feito nas cores x, y & z
+### RNF01 - O sistema deverá ser feito nas cores branco e azul
 ### RNF02 - O sistema deverá ser autoexplicativo
 ### RNF03 - O sistema deverá ser feito em PHP, Html, CSS & JavaScript
-### RNF04 - O sistema deverá 

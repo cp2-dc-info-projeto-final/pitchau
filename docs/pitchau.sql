@@ -26,3 +26,31 @@ CREATE TABLE Slider (
     url_img VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE Compra  (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    datahora DATETIME,
+    FOREIGN KEY (usuario_id) REFERENCES Usuario (id)
+);
+
+CREATE TABLE ProdutoCompra (
+    produto_id INT,
+    compra_id INT,
+    quantidade INT,
+    FOREIGN KEY (produto_id) REFERENCES Produto (id),
+    FOREIGN KEY (compra_id) REFERENCES Compra (id)
+);
+
+-- usuario id = 12
+-- compra id = 277
+-- produtos id 2 7 22
+-- quantidades 1 3 1
+
+-- tabela Compra
+-- 277 12 '2023-11-18 09:49'
+
+-- tabela ProdutoCompra
+-- 2 277 1
+-- 7 277 3
+-- 22 277 1
+
