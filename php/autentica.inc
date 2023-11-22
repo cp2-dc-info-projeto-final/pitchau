@@ -6,10 +6,9 @@
     if(isset($_SESSION["senha"])){
         $senha = $_SESSION["senha"];
     }
-    if(empty($username) or empty($senha)){
-        // echo "Você não fez o login!";
-        // echo "<p><a href='login.html'>Página de login</a></p>";
-        $_SESSION['erro_login'] = "Você não fez o login!";
+    if(!hash_equals($senha,$usuario["senha"])){
+                unset($_SESSION[$username]);
+                unset($_SESSION[$senha]);
         header("Location: ../paginas/login.php");
         exit;
     }

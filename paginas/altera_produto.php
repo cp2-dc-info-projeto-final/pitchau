@@ -33,7 +33,7 @@
         </label> 
         <input id="file" type="file" name="foto"> 
         </div>
-        <p class="form-title">Sign in to your account</p>
+        <p class="form-title">Alterar o produto</p>
         <div class="input-container">
             <input type="text" name="nome" placeholder="Nome">
             <span>
@@ -49,9 +49,7 @@
             <span>
             </span>
         </div>
-        <button type="submit" class="submit">Sign in</button>
-
-        <p class="signup-link">No account?<a href="">Sign up</a></p>
+        <button type="submit" class="submit">Confirmar</button>
     </form>
 </body>
 </html>

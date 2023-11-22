@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Administração</title>
-    <link rel="stylesheet" href="transforma_admim.css">
+    <link rel="stylesheet" href="../css/registre.css">
 </head>
 <body>
 

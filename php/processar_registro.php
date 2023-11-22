@@ -23,7 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Inserir dados na tabela Usuario
-    $sql = "INSERT INTO Usuario (nome, email, senha) VALUES ('$firstname $lastname', '$email', '$password_')";
+    $senha_cript = password_hash($password_, PASSWORD_DEFAULT);
+    $sql = "INSERT INTO Usuario (nome, email, senha) VALUES ('$firstname','$email', '$senha_cript')";
 
     if ($conn->query($sql) === TRUE) {
         header("Location: ../index.php");

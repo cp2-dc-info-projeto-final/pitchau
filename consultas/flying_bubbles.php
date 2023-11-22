@@ -65,14 +65,13 @@ function processar_login($servername, $username, $password, $dbname, $email, $se
             header("Location: ../index.php"); // Redirecionar para a página do painel após o login
             exit();
         } else {
+            $conn->close(); // Fechar a conexão com o banco de dados em caso de senha incorreta
             return 1;
         }
     } else {
+        $conn->close(); // Fechar a conexão com o banco de dados se o email não for encontrado
         return 2;
     }
-
-    // Fechar a conexão com o banco de dados
-    $conn->close();
 }
 
 ?>
