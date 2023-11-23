@@ -9,15 +9,13 @@
 <body>
     <?php
         include_once "consultas/flying_bubbles.php";
-        session_start();
 
-        if (!isset( $_SESSION["id"]) || !isset( $_SESSION["is_admin"])) { //Verifica se == Usuário Logado e == Administrador
+        if (($_SESSION["user_id"]) != isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado e == Administrador
             header("Location: ../index.php"); // Redirecionar para a página do painel após o login
         }
     ?>
-
-        <h3><a href="../#" text-decoration:none>Pitchau</a></h3>
-        <form action="../php/processar_altera_senha.php" method="POST" class="form">
+<h3><a href="../#" text-decoration:none>Pitchau</a></h3>
+<form action="../php/processar_altera_senha.php" method="POST" class="form">
 
         <p class="title">Alterar Senha</p>
         <p>Solicitação para Redefinição de Senha</p>
