@@ -1,6 +1,12 @@
 
-.body{
-    justify-items: center;
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../img/background/login_wallpaper.jpg');
+    background-size: cover; /* para cobrir todo o fundo */
+    background-position: center; /* para centralizar a imagem */
+    background-repeat: no-repeat; /* para evitar repetição da imagem */
 }
 .form {
     display: flex;

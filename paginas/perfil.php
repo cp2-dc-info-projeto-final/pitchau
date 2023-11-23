@@ -10,11 +10,21 @@
 </head>
 <body>
     <?php
-        include_once "consultas/flying_bubbles.php";
+        include_once "../consultas/flying_bubbles.php";
 
-        if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário Logado e == Administrador
+        if ($_SESSION["user_id"] != isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado e == Administrador
             header("Location: ../index.php"); // Redirecionar para a página do painel após o login
         }
+
+        if (!isset($_SESSION["user_id"]) || !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
+          echo "<input type='hidden' id='menulevel' value='1'/>";
+        }
+        if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
+          echo "<input type='hidden' id='menulevel' value='2'/>";
+        };
+        if (isset($_SESSION["is_admin"]) == true) { //Verifica se == Administrador
+          echo "<input type='hidden' id='menulevel' value='3'/>";
+        };
     ?>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -27,22 +37,27 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="../index.php">Início</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Menu
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="perfil.php">Perfil</a></li>
-              <li><a class="dropdown-item" href="cadastro_produto.php">Cadastrar Produto</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <div id="menu"></div>
+            <script>
+              menulevel = document.getElementById("menulevel").value;
+              var menu = '';
+              if(menulevel == '1'){
+                menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
+              }
+              else if(menulevel == '2'){
+                menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="#">Logout</a></li>';
+              }
+              else if(menulevel == '3'){
+                menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Cadastrar Produto</a></li>';
+              }
+              document.getElementById("menu").innerHTML = menu;
+            </script>
+          </ul>
           </li>
         </ul>
       </div>
