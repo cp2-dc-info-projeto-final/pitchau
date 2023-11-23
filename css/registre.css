@@ -1,27 +1,30 @@
 
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../img/background/login_wallpaper.jpg');
-    background-size: cover; /* para cobrir todo o fundo */
-    background-position: center; /* para centralizar a imagem */
-    background-repeat: no-repeat; /* para evitar repetição da imagem */
+body {
+  margin: 0; /* Remover margens padrão do corpo da página */
+  padding: 0; /* Remover padding padrão do corpo da página */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Faz com que o corpo ocupe 100% da altura da viewport */
+  background-image: url('../img/background/login_wallpaper.jpg'); /* Substitua pelo caminho real da sua imagem */
+  background-size: cover; /* Cobrir toda a área com a imagem */
+  background-position: center; /* Centralizar a imagem */
+  background-repeat: no-repeat; /* Evitar repetição da imagem */
+  font-family: Arial, sans-serif; /* Especificar a fonte desejada */
+  color: #ffffff; /* Cor do texto na página */
 }
+
 .form {
-    display: flex;
+    display: flex; 
     flex-direction: column;
-    gap: 10px;
-    max-width: 350px;
+    gap: 10px; 
+    max-width: 350px; 
     background-color: #fff;
-    padding: 30px;
     border-radius: 20px;
     position: relative;
-    border: solid 2px blue;
     margin:auto;
-    
   }
-  
+
   .title {
     font-size: 28px;
     color: royalblue;
@@ -76,43 +79,6 @@ body{
     display: flex;
     width: 100%;
     gap: 6px;
-  }
-  
-  .form label {
-    position: relative;
-  }
-  
-  .form label .input {
-    width: 100%;
-    padding: 10px 10px 20px 10px;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 10px;
-  }
-  
-  .form label .input + span {
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    color: grey;
-    font-size: 0.9em;
-    cursor: text;
-    transition: 0.3s ease;
-  }
-  
-  .form label .input:placeholder-shown + span {
-    top: 15px;
-    font-size: 0.9em;
-  }
-  
-  .form label .input:focus + span,.form label .input:valid + span {
-    top: 30px;
-    font-size: 0.7em;
-    font-weight: 600;
-  }
-  
-  .form label .input:valid + span {
-    color: green;
   }
   
   .submit {

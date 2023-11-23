@@ -9,26 +9,9 @@
     <link rel="stylesheet" href="../css/registre.css">
 </head>
 <body>
-<?php
-        include_once "../consultas/flying_bubbles.php";
-
-        if ($_SESSION["user_id"] != isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado e == Administrador
-            header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-        }
-
-        if (!isset($_SESSION["user_id"]) || !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
-          echo "<input type='hidden' id='menulevel' value='1'/>";
-        }
-        if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
-          echo "<input type='hidden' id='menulevel' value='2'/>";
-        };
-        if (isset($_SESSION["is_admin"]) == true) { //Verifica se == Administrador
-          echo "<input type='hidden' id='menulevel' value='3'/>";
-        };
-    ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Pitchau</a>
+      <a class="navbar-brand" href="../index.php">Pitchau</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -42,28 +25,15 @@
               Menu
             </a>
             <ul class="dropdown-menu">
-            <div id="menu"></div>
-            <script>
-              menulevel = document.getElementById("menulevel").value;
-              var menu = '';
-              if(menulevel == '1'){
-                menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
-              }
-              else if(menulevel == '2'){
-                menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="#">Logout</a></li>';
-              }
-              else if(menulevel == '3'){
-                menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Cadastrar Produto</a></li>';
-              }
-              document.getElementById("menu").innerHTML = menu;
-            </script>
+            <li><a class="dropdown-item" href="#">Fazer Login</a></li><li><a class="dropdown-item" href="cadastro.php">Se Cadastrar</a></li>
           </ul>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-    <form action="../php/processar_login.php" method="POST" class="form">
+  <div style="position: relative; text-align: center; background: url('../img/background/login_wallpaper.jpg') center/cover no-repeat;" class= "divin">
+    <form action="../php/processar_login.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
             <p class="title">Login</p>
             <label>
                 <input required="" placeholder="" type="email" name="email" class="input">
@@ -77,8 +47,8 @@
             <p class="signin"><a href="esqueceu_senha.php">Esqueceu sua senha?</a></p>
 
             <button type="submit" class="submit">Login</button>
-            <p class="signin">Ainda não tem cadastro? <a href="cadastro.php">Cadatre-se</a></p>
+            <p class="signin">Ainda não tem cadastro? <a href="cadastro.php">Cadastre-se</a></p>
         </form>
+        </div>
 </body>
 </html>
-<!DOCTYPE html>

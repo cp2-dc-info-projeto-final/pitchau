@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password_ = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
-    $usuario= $firstname + $lastname;
+    $usuario = $firstname." ".$lastname;
 
     // Conectar ao banco de dados (substitua com suas credenciais)
     $servername = "localhost";
