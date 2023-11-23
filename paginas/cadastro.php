@@ -22,22 +22,10 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Menu
             </a>
-            <ul class="dropdown-menu">
+          <ul class="dropdown-menu">
             <div id="menu"></div>
-            <script>
-              menulevel = document.getElementById("menulevel").value;
-              var menu = '';
-              if(menulevel == '1'){
-                menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
-              }
-              else if(menulevel == '2'){
-                menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="#">Logout</a></li>';
-              }
-              else if(menulevel == '3'){
-                menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Cadastrar Produto</a></li>';
-              }
-              document.getElementById("menu").innerHTML = menu;
-            </script>
+            <li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li>
+            <li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>
           </ul>
           </li>
         </ul>
