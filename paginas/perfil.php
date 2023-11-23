@@ -61,7 +61,13 @@
         <section id="dados-conta">
             <h2>Dados da Conta</h2>
             <?php
-              
+            $usuario= perfil($servername, $username, $password, $dbname)
+            if($usuario != null){
+              foreach($usuario as $usuario){
+                echo '<p class= "text-body"'.$usuario["nome"].'</p>'
+                echo '<p class= "text-body"'. $usuario["email"].'</p>'
+              }
+            }
             ?>
             <form>
                 <label for="nome">Nome:</label>

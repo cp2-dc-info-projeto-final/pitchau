@@ -74,10 +74,10 @@ function processar_login($servername, $username, $password, $dbname, $email, $se
     }
 }
 
-function perfil($servername, $username, $password, $dbname, $email){
+function perfil($servername, $username, $password, $dbname){
 
     $conn = connect($servername, $username, $password, $dbname);
-    $sql= "SELECT nome, emai FROM Usuario ";
+    $sql= "SELECT nome, email FROM Usuario ";
 
     $usuario= [];
     if ($result->num_rows > 0) {
