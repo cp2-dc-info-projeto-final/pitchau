@@ -12,20 +12,16 @@
 <body>
 <?php
   include_once "consultas/flying_bubbles.php";
-  session_start();
-
-  if (!isset( $_SESSION["id"]) || !isset( $_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
-    $menulevel = 1;
+  if (!isset($_SESSION["user_id"]) || !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
     echo "<input type='hidden' id='menulevel' value='1'/>";
-  };
-  if (isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
-    $menulevel = 2;
+  }
+  if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
     echo "<input type='hidden' id='menulevel' value='2'/>";
   };
-  if (isset( $_SESSION["id"])) { //Verifica se == Usuário Logado
-    $menulevel = 3;
+  if (isset($_SESSION["is_admin"]) == true) { //Verifica se == Administrador
     echo "<input type='hidden' id='menulevel' value='3'/>";
   };
+
 ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -50,14 +46,14 @@
           <script>
             menulevel = document.getElementById("menulevel").value;
             var menu = '';
-            if(menulevel == 1){
-              menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li> <br> <li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
+            if(menulevel == '1'){
+              menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
             }
-            else if(menulevel == 2){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li> <br> <li><a class="dropdown-item" href="paginas/cadastro_produto.php">Cadastrar Produto</a></li>';
-            }
-            else if(menulevel == 3){
+            else if(menulevel == '2'){
               menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li>';
+            }
+            else if(menulevel == '3'){
+              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Cadastrar Produto</a></li>';
             }
             document.getElementById("menu").innerHTML = menu;
           </script>

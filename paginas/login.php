@@ -16,7 +16,7 @@
             </label>
 
             <label>
-                <input required="" placeholder="" type="password" name="password" class="input">
+                <input required="" placeholder="" type="password" name="senha" class="input">
                 <span>Senha</span>
             </label>
             <p class="signin"><a href="esqueceu_senha.php">Esqueceu sua senha?</a></p>
