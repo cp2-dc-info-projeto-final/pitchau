@@ -9,6 +9,13 @@
   <title>Meu Perfil</title>
 </head>
 <body>
+    <?php
+        include_once "consultas/flying_bubbles.php";
+
+        if (($_SESSION["user_id"]) != isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado e == Administrador
+            header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+        }
+    ?>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Pitchau</a>
@@ -47,11 +54,21 @@
               <li><a href="produtos_comprados.php">Produtos Comprados</a></li>
               <li><a href="produtos_vendidos.php">Produtos à Venda</a></li>
               <li><a href="perfil.php">Dados da Conta</a></li>
+              <li><a href="altera_senha.php">Trocar a Senha</a></li>
               <li><a href="#">Logout</a></li>
           </ul>
       </nav>
         <section id="dados-conta">
             <h2>Dados da Conta</h2>
+            <?php
+            $usuario= perfil($servername, $username, $password, $dbname)
+            if($usuario != null){
+              foreach($usuario as $usuario){
+                echo '<p class= "text-body"'.$usuario["nome"].'</p>'
+                echo '<p class= "text-body"'. $usuario["email"].'</p>'
+              }
+            }
+            ?>
             <form>
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" value="Seu Nome" disabled>

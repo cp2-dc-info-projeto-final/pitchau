@@ -17,7 +17,7 @@ function connect($servername, $username, $password, $dbname){
 function carousel($servername, $username, $password, $dbname) {
     $conn = connect($servername, $username, $password, $dbname);
     // Consulta SQL para buscar todas as URLs de imagens da tabela "Slider"
-    $sql = "SELECT url_img FROM Slider";
+    $sql = "SELECT url_img FROM slider";
     $result = $conn->query($sql);
     $imagens=[];
     if ($result->num_rows > 0) {    
@@ -49,30 +49,45 @@ function card_produtos($servername, $username, $password, $dbname){
 function processar_login($servername, $username, $password, $dbname, $email, $senha){
     $conn = connect($servername, $username, $password, $dbname);
 
-    // Verificar as credenciais no banco de dados
-    $email = mysqli_real_escape_string($conn, $email);  // Evitar injeção de SQL
-    $senha = mysqli_real_escape_string($conn, $senha);  // Evitar injeção de SQL e escapar a senha
-    $sql = "SELECT id, nome, email, senha FROM Usuario WHERE email = '$email'";
-
+    $sql = "SELECT id, nome, email, senha, isAdmin FROM Usuario WHERE email = '$email'";
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
-        if (password_verify($senha, $row['senha'])) { // Verificar senha de forma segura
+        if (password_verify($senha, $row['senha'])) {
             $_SESSION["user_id"] = $row["id"];
             $_SESSION["email"] = $email;
-            $_SESSION["user_nome"] = $row["nome"];
+            $_SESSION["username"] = $row["nome"]; // Defina o nome de usuário aqui
+            $_SESSION["is_admin"] = $row["isAdmin"];
             header("Location: ../index.php"); // Redirecionar para a página do painel após o login
             exit();
-        } else {
+        } 
+        else{
             return 1;
         }
-    } else {
+        
+    } 
+ 
+    
+    else {
         return 2;
     }
+}
 
-    // Fechar a conexão com o banco de dados
+function perfil($servername, $username, $password, $dbname){
+
+    $conn = connect($servername, $username, $password, $dbname);
+    $sql= "SELECT nome, email FROM Usuario ";
+
+    $usuario= [];
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc())
+            array_push($usuario, $row);
+    //Fechando a conexão com o banco de dados
     $conn->close();
+    //Retornanndo variavel com usuario
+    return $usuario;
+}
 }
 
 ?>

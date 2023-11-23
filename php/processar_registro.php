@@ -7,8 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password_ = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
-
-    // Validar os dados (adicionar validações adicionais conforme necessário)
+    $usuario = $firstname." ".$lastname;
 
     // Conectar ao banco de dados (substitua com suas credenciais)
     $servername = "localhost";
@@ -22,17 +21,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Falha na conexão com o banco de dados: " . $conn->connect_error);
     }
 
-    // Inserir dados na tabela Usuario
-    $sql = "INSERT INTO Usuario (nome, email, senha) VALUES ('$firstname $lastname', '$email', '$password_')";
+    // Uso de prepared statement para evitar SQL injection
+    $stmt = $conn->prepare("INSERT INTO Usuario (nome, email, senha) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $usuario, $email, password_hash($password_, PASSWORD_DEFAULT));
 
-    if ($conn->query($sql) === TRUE) {
-        header("Location: ../index.php");
+    if ($stmt->execute()) {
+        header("Location: ../paginas/login.php");
         exit;
     } else {
-        echo "Erro ao registrar: " . $conn->error;
+        echo "Erro ao registrar: " . $stmt->error;
     }
 
     // Fechar a conexão com o banco de dados
+    $stmt->close();
     $conn->close();
 }
 ?>
