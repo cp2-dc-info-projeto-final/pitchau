@@ -50,7 +50,6 @@ function processar_login($servername, $username, $password, $dbname, $email, $se
     $conn = connect($servername, $username, $password, $dbname);
 
     $sql = "SELECT id, nome, email, senha, isAdmin FROM Usuario WHERE email = '$email'";
-
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
@@ -73,6 +72,22 @@ function processar_login($servername, $username, $password, $dbname, $email, $se
     else {
         return 2;
     }
+}
+
+function perfil($servername, $username, $password, $dbname, $email){
+
+    $conn = connect($servername, $username, $password, $dbname);
+    $sql= "SELECT nome, emai FROM Usuario ";
+
+    $usuario= [];
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc())
+            array_push($usuario, $row);
+    //Fechando a conexão com o banco de dados
+    $conn->close();
+    //Retornanndo variavel com usuario
+    return $usuario;
+}
 }
 
 ?>
