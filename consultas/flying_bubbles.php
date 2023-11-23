@@ -17,7 +17,7 @@ function connect($servername, $username, $password, $dbname){
 function carousel($servername, $username, $password, $dbname) {
     $conn = connect($servername, $username, $password, $dbname);
     // Consulta SQL para buscar todas as URLs de imagens da tabela "Slider"
-    $sql = "SELECT url_img FROM Slider";
+    $sql = "SELECT url_img FROM slider";
     $result = $conn->query($sql);
     $imagens=[];
     if ($result->num_rows > 0) {    

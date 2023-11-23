@@ -1,5 +1,8 @@
- CREATE DATABASE Pitchau;
- 
+IF EXISTS DATABASE Pitchau 
+Drop DATABASE Pitchau;
+CREATE DATABASE Pitchau;
+Use Pitchau;
+
 CREATE TABLE Usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
@@ -18,7 +21,9 @@ CREATE TABLE Produto (
     nome VARCHAR(255) NOT NULL,
     descricao TEXT,
     foto VARCHAR(255),
-    valor DECIMAL(10, 2) NOT NULL
+    valor DECIMAL(10, 2) NOT NULL,
+    categoria VARCHAR(255) NOT NULL,
+    FOREIGN KEY(categoria) REFERENCES Categoria(id)
 );
 
 CREATE TABLE Slider (
@@ -54,3 +59,7 @@ CREATE TABLE ProdutoCompra (
 -- 7 277 3
 -- 22 277 1
 
+CREATE TABLE Categoria (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL
+);

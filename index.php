@@ -50,7 +50,7 @@
               menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
             }
             else if(menulevel == '2'){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li>';
+              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="#">Logout</a></li>';
             }
             else if(menulevel == '3'){
               menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Cadastrar Produto</a></li>';

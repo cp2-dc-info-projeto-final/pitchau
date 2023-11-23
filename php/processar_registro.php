@@ -9,8 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirm_password = $_POST["confirm_password"];
     $usuario= $firstname + $lastname;
 
-    // Validar os dados (adicionar validações adicionais conforme necessário)
-
     // Conectar ao banco de dados (substitua com suas credenciais)
     $servername = "localhost";
     $username = "root";
