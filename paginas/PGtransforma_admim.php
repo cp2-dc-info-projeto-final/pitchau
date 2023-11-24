@@ -4,17 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Administração</title>
-    <link rel="stylesheet" href="transforma_admim.css">
+    <link rel="stylesheet" href="../css/pefil/transforma_admim.css">
 </head>
 <body>
-    <?php
-        include_once "consultas/flying_bubbles.php";
-        session_start();
 
-        if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
-            header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-        }
-    ?>
     <div class="container">
         <h2>Usuários</h2>
 
