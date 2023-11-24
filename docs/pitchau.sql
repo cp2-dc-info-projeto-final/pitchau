@@ -22,8 +22,8 @@ CREATE TABLE Produto (
     descricao TEXT,
     foto VARCHAR(255),
     valor DECIMAL(10, 2) NOT NULL,
-    categoria VARCHAR(255) NOT NULL,
-    FOREIGN KEY(categoria) REFERENCES Categoria(id)
+    categoria_id INT NOT NULL,
+    FOREIGN KEY(categoria_id) REFERENCES Categoria(id)
 );
 
 CREATE TABLE Slider (
