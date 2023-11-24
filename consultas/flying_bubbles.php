@@ -78,6 +78,7 @@ function perfil($servername, $username, $password, $dbname){
 
     $conn = connect($servername, $username, $password, $dbname);
     $sql= "SELECT nome, email FROM Usuario ";
+    $result = $conn->query($sql);
 
     $usuario= [];
     if ($result->num_rows > 0) {
