@@ -1,5 +1,3 @@
-IF EXISTS DATABASE Pitchau 
-Drop DATABASE Pitchau;
 CREATE DATABASE Pitchau;
 Use Pitchau;
 
