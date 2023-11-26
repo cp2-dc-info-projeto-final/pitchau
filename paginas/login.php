@@ -25,7 +25,7 @@
             Menu
           </a>
           <ul class="dropdown-menu">
-          <li><li><a class="dropdown-item" href="cadastro.php">Se Cadastrar</a></li>
+          <li><li><a class="dropdown-item" href="../cadastro.php">Se Cadastrar</a></li>
         </ul>
         </li>
       </ul>
@@ -45,10 +45,10 @@
       <input required="" placeholder="Senha" type="password" name="senha" class="input">
       <span>Senha</span>
   </label>
-  <p class="signin"><a href="esqueceu_senha.php">Esqueceu sua senha?</a></p>
+  <p class="signin"><a href="../esqueceu_senha.php">Esqueceu sua senha?</a></p>
 
   <button type="submit" class="submit">Login</button>
-  <p class="signin">Ainda não tem cadastro? <a href="cadastro.php">Cadastre-se</a></p>
+  <p class="signin">Ainda não tem cadastro? <a href="../cadastro.php">Cadastre-se</a></p>
 </form>
 </div>
 </body>
