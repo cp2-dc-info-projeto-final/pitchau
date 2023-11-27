@@ -17,7 +17,7 @@
   }*/
   echo "<input type='hidden' id='menulevel' value='1'/>";
   if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
-    echo "<input type='hidden' id='menulevel' value='2'/>"
+    echo "<input type='hidden' id='menulevel' value='2'/>";
     if (isset($_SESSION["is_admin"])) { //Verifica se == Administrador
       echo "<input type='hidden' id='menulevel' value='3'/>";
     }
@@ -68,7 +68,7 @@
   </div>
 </nav>
 <?php
-include_once "../consultas/flying_bubbles.php";
+include_once "consultas/flying_bubbles.php";
 
 $imagens = carousel($servername, $username, $password, $dbname);
 if ($imagens != null) {
