@@ -1,5 +1,38 @@
 <?php
 namespace foo;
+include_once "consultas/flying_bubbles.php";
+
+function nova_senha_criptografada(){
+  function random_string($length) {
+      $random_pin = random_bytes($length);
+      $random_pin = base64_encode($random_pin);
+      $random_pin = str_replace(["+", "/", "="], "", $random_pin);
+      $random_pin = substr($random_pin, 0, $length);
+      return $random_pin;
+  }
+
+      $sql = "ALTER TABLE Usuario (senha) VALUES ('$random_pin')";
+
+
+      // Uso de prepared statement para evitar SQL injection
+      $stmt = $conn->prepare("INSERT INTO Usuario(senha) VALUES (?,)");
+      $stmt->bind_param("sss", $usuario, $email, password_hash($random_pin, PASSWORD_DEFAULT));
+
+      /*if ($stmt->execute()) {
+          header("Location: ../paginas/login.php");
+          exit;
+      } else {
+          echo "Erro ao registrar: " . $stmt->error;
+      }*/
+
+      // Fechar a conexão com o banco de dados
+      $stmt->close();
+      $conn->close();
+
+    return $random_pin;
+    };
+
+
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -54,9 +87,17 @@ function envia_email($para, $assunto, $mensagem){
 
 }
 
+
+
+$min = 000000;
+$max = 999999;
+$cod_altera_senha = rand(int $min, int $max): int;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $para = $_POST["email"];
-    envia_email($para, 'Troca de Senha', '<p>Clique neste link para alterar sua senha<br><a href="../paginas/altera_senha.php');
+    //envia_email($para, 'Troca de Senha', '<h1>Não compartilhe essa senha com ninguém!</h1><br><p>Sua senha para alteração de senha é:</p><br> $random_pin<br><a href="../paginas/login.php">Pagina de Login</a>');    
+    envia_email($para, 'Troca de Senha', '<p>Solicitação para troca de senha, caso não seja você, favor desconsidere</p><br><p>Seu código para alterar senha é: $cod_altera_senha</p>');
 }  
+
 
 ?>
