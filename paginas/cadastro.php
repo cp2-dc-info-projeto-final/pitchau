@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documento</title>
-    <link rel="stylesheet" href="../css/registre.css?v=0.9">
+    <link rel="stylesheet" href="css/registre.css?v=0.9">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../index.php">Início</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Início</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -35,7 +35,7 @@
 </nav>
 
 <div style="position: relative; text-align: center; background: url('../img/background/login_wallpaper.jpg') center/cover no-repeat;" class= "divin">
-<form action="../php/processar_registro.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
+<form action="php/processar_registro.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
   <p class="title">Registrar</p>
   <p class="message">Registre-se agora e tenha acesso completo ao nosso aplicativo.</p>
   <div class="flex">

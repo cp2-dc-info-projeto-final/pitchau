@@ -16,8 +16,8 @@
             header("Location: ../index.php"); // Redirecionar para a página do painel após o login
         }
     ?>
-<h3><a href="../#" text-decoration:none>Pitchau</a></h3>
-<form action="../php/processar_altera_senha.php" method="POST" class="form">
+<h3><a href="index/" text-decoration:none>Pitchau</a></h3>
+<form action="php/processar_altera_senha.php" method="POST" class="form">
 
         <p class="title">Alterar Senha</p>
         <p>Solicitação para Redefinição de Senha</p>
