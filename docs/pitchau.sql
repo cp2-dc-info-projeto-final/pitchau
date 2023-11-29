@@ -29,10 +29,16 @@ CREATE TABLE Produto (
     FOREIGN KEY(categoria_id) REFERENCES Categoria(id)
 );
 
+insert into Produto(nome, descricao, foto, valor) values("VIolão de aço", "Violao com cordas de aço", "img/img_produto/imagem1.png", 1600);
+insert into Produto(nome, descricao, foto, valor) values("Violão de Nylon", "Violão com cordas de nylon", "img/img_produto/imagem2.png", 1400);
+insert into Produto(nome, descricao, foto, valor) values("Guitarra EletroAcustica", "Guitarra eletroacústica com cordas de aço", "img/img_produto/imagem3.png", 3800);
+
 CREATE TABLE Slider (
     id INT AUTO_INCREMENT PRIMARY KEY,
     url_img VARCHAR(255) NOT NULL
 );
+
+insert into Slider(url_img) values("img/slider.png");
 
 CREATE TABLE Compra  (
     id INT AUTO_INCREMENT PRIMARY KEY,

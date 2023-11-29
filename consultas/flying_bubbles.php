@@ -43,7 +43,25 @@ function card_produtos($servername, $username, $password, $dbname){
         //Retornanndo variavel para card de produto
         return $card_produto;
         
+    }
 }
+
+function recuperar_produto_por_id($servername, $username, $password, $dbname, $id_produto){
+    $conn= connect($servername, $username, $password, $dbname);
+    $sql = "SELECT * FROM Produto where id=$id_produto";
+    $result = $conn->query($sql);
+    $card_produto=null;
+    if ($result->num_rows > 0) {
+        if ($row = $result->fetch_assoc()) {
+            $card_produto = $row;
+        }
+            
+        //Fechando a conexão com o banco de dados
+        $conn->close();
+        //Retornanndo variavel para card de produto
+        return $card_produto;
+        
+    }
 }
 
 function processar_login($servername, $username, $password, $dbname, $email, $senha){

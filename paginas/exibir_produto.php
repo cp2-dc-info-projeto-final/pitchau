@@ -14,13 +14,17 @@
   include_once "consultas/flying_bubbles.php";
   if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
     echo "<input type='hidden' id='menulevel' value='1'/>";
+    $menulevel = 1;
   }
   if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
     if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]== 1 ) { //Verifica se == Administrador
       echo "<input type='hidden' id='menulevel' value='3'/>";
+      $menulevel = 3;
     }
   else echo "<input type='hidden' id='menulevel' value='2'/>";
+  $menulevel = 2;
   }
+  $id_produto = $_GET["id_produto"];
 
 ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -63,70 +67,58 @@
     </div>
   </div>
 </nav>
+
+<!-- Página do Produto -->
+<div class="card_list">
 <?php
-include_once "consultas/flying_bubbles.php";
 
-$imagens = carousel($servername, $username, $password, $dbname);
-if ($imagens != null) {
-    echo '<div id="carouselExample" class="carousel slide">';
-    echo '<div class="carousel-inner">';
-    $first = true; // Variável para controlar o primeiro item do carrossel
-    foreach ($imagens as $imagem) {
-        $url_img = $imagem["url_img"];
-        echo '<div class="carousel-item ' . ($first ? 'active' : '') . '">';
-        echo '<img src="' . $url_img . '" class="d-block w-100" alt="...">';
-        echo '</div>';
-        $first = false; // Desativar a flag após o primeiro item
-    }
+$card_produto= recuperar_produto_por_id($servername, $username, $password, $dbname, $id_produto);
+  if($card_produto != null){
+      echo $card_produto["id"]
+      echo '<div class="card">';
+      echo '<div class="card-img">';
+      $imagem=$card_produto['foto'];
+      echo '<img src="' . $imagem . '" class="d-block w-100" alt="...">';
+      echo '</div>';
+      echo '<div class="card-info">';
+      echo '<p class="text-title">' . $card_produto["nome"] . '</p>';
+      echo '<p class="text-body">' . $card_produto["descricao"] . '</p>';
+      echo '</div>';
+      echo '<div class="card-footer">';
+      echo '<span class="text-title">$' . number_format($card_produto["valor"], 2) . '</span>';
+      echo '<div class="card-button" id="addcart">';
+  	  /* Fazer Depois
+      echo $card_produto["id"];
+      if ($menulevel == '3'){
+        echo '<a href="altera_produto.php?id_produto='.$card_produto["id"].'">Alterar Produto</a>';
+        echo '<div class="prod-edit">';
+      }
+      */
+      
+      echo '<a href="carrinho.php">Comprar</a>';
 
-    echo '</div>';
-    echo '<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">';
-    echo '<span class="carousel-control-prev-icon" aria-hidden="true"></span>';
-    echo '<span class="visually-hidden">Previous</span>';
-    echo '</button>';
-    echo '<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">';
-    echo '<span class="carousel-control-next-icon" aria-hidden="true"></span>';
-    echo '<span class="visually-hidden">Next</span>';
-    echo '</button>';
-    echo '</div>';
+      echo '<svg class="svg-icon" viewBox="0 0 20 20">';
+      echo '<path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>';
+      echo '<path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"></path>';
+      echo '<path d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z"></path>';
+      echo '</svg>';
+      echo '</div>';
+      echo '</div>';
+      echo '</div>';
 } else {
-    echo "Nenhuma imagem encontrada na tabela Slider.";
+  echo "Nenhum produto encontrado na tabela com este id.";
 }
+
 ?>
+<script>
+	add_cart = document.getElementById("addcart").innerHTML = menu;
+	add_cart = document.getElementById("id").innerHTML = menu;
+	echo "<input type='hidden' id='menulevel' value='2'/>";
+	
+	
 
-<div class="card_list">   
-  <?php //Cards
-  $card_produto= card_produtos($servername, $username, $password, $dbname);
-    if($card_produto != null){
-      foreach($card_produto as $card_produto) {
-        echo '<div class="card">';
-        echo '<div class="card-img">';
-        $imagem=$card_produto['foto'];
-        echo '<img src="' . $imagem . '" class="d-block w-100" alt="...">';
-        echo '</div>';
-        echo '<div class="card-info">';
-        echo '<p class="text-title">' . $card_produto["nome"] . '</p>';
-        echo '<p class="text-body">' . $card_produto["descricao"] . '</p>';
-        echo '</div>';
+</script>
 
-        echo '<div class="card-footer">';
-        echo '<span class="text-title">$' . number_format($card_produto["valor"], 2) . '</span>';
-        
-        echo '<div class="card-button" id="addcart">';
-        echo '<a href="exibir_produto.php?id_produto='.$card_produto["id"].'">Ir</a>';
-        echo '<svg class="svg-icon" viewBox="0 0 20 20">';
-        echo '<path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>';
-        echo '<path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"></path>';
-        echo '<path d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z"></path>';
-        echo '</svg>';
-        echo '</div>'; #fecha botão
-        echo '</div>'; #fecha footer
-        echo '</div>'; #fechacard
-    }
-  } else {
-    echo "Nenhum produto encontrado na tabela Produto.";
-  }
-  ?>
 </div>
 
 </body>
