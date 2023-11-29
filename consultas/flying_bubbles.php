@@ -106,6 +106,8 @@ if ($result->num_rows > 0) {
 
 }
 
+function alterar_senha($servername, $username, $password, $dbname){
 
+}
 
 ?>
