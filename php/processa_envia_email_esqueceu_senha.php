@@ -55,11 +55,11 @@ function envia_email($para, $assunto, $mensagem){
 }
 
 
-
+//Cria-se o código, que enviado ao email, para alterar senha 
 $min = 000000;
 $max = 999999;
 $cod_email = rand(int $min, int $max): int;
-echo "<input type='hidden' id='$cod_email '/>";
+echo "<input type='hidden' id='$cod_email value='$cod_email'/>";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $para = $_POST["email"];
