@@ -64,6 +64,7 @@
     <main>
       <nav>
           <ul>
+              <li><a href="alterar_email.php">Alterar email</a></li>
               <li><a href="altera_senha.php">Trocar a Senha</a></li>
           </ul>
       </nav>

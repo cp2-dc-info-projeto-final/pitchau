@@ -9,7 +9,7 @@
     <title>AlterarSenha</title>
 </head>
 <body>
-<?php
+    <?php
         include_once "../consultas/flying_bubbles.php";
 
        if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
@@ -57,18 +57,19 @@
     </div>
   </div>
 </nav>
-<form action="../php/processar_altera_senha.php" method="POST" class="form">
 
-        <p class="title">Alterar Senha</p>
-        <p>Solicitação para Redefinição de Senha</p>
+<form action="../php/processar_altera_email.php" method="POST" class="form">
+
+        <p class="title">Alterar email</p>
+        <p>Solicitação para Redefinição de email</p>
 
         <label>
-            <input required="" placeholder="" type="password" class="input" name="senha">
-            <span>Senha</span>
+            <input required="" placeholder="" type="email" class="input" name="email">
+            <span>Novo email</span>
         </label>
         <label>
-            <input required="" placeholder="" type="password" class="input" name="confirm_password">
-            <span>Confirmar senha</span>
+            <input required="" placeholder="" type="password" class="input" name="senha">
+            <span>Digite sua senha</span>
         </label>
 
         <button type="submit" class="submit">Enviar</button>
