@@ -11,16 +11,16 @@
 <body>
     <?php
         include_once "../consultas/flying_bubbles.php";
-
-        if (($_SESSION["user_id"]) != isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado e == Administrador
-            header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+        if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
+          echo "<input type='hidden' id='menulevel' value='1'/>";
         }
         if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
-          echo "<input type='hidden' id='menulevel' value='2'/>";
-        };
-        if (isset($_SESSION["is_admin"]) == true) { //Verifica se == Administrador
-          echo "<input type='hidden' id='menulevel' value='3'/>";
-        };
+          if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]== 1 ) { //Verifica se == Administrador
+            echo "<input type='hidden' id='menulevel' value='3'/>";
+          }
+        else echo "<input type='hidden' id='menulevel' value='2'/>";
+        }
+      
       
     ?>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -64,32 +64,35 @@
       <nav>
           <ul>
               <li><a href="produtos_comprados.php">Produtos Comprados</a></li>
-              <li><a href="produtos_vendidos.php">Produtos à Venda</a></li>
               <li><a href="perfil.php">Dados da Conta</a></li>
               <li><a href="altera_senha.php">Trocar a Senha</a></li>
               <li><a href="#">Logout</a></li>
           </ul>
       </nav>
         <section id="dados-conta">
-            <h2>Dados da Conta</h2>
-            <?php
-              $usuario= perfil($servername, $username, $password, $dbname);
-              if($usuario != null){
-                foreach($usuario as $usuario){
-                  echo '<p class= "text-body"'.$usuario["nome"].'</p>';
-                  echo '<p class= "text-body"'. $usuario["email"].'</p>';
-                };
-              }
-            ?>
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" value="Seu Nome" disabled>
-                <label for="email">Email:</label>
-                <input type="email" id="email" value="seuemail@email.com" disabled>
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" value="suaSenha" disabled>
-            </form>
-            <div>
+          <div class= perfil>
+            <div class= text>
+              <h2>Dados da Conta</h2>
+              <div class= dados>
+                <h3>Nome</h3>
+                <p><?php
+                $perfil= perfil($servername, $username, $password, $dbname);
+                if ($perfil !== null) {
+                  echo $perfil['nomeUsuario'];
+                  } ?></p>
+              </div>
+              <div class= dados>
+                <p><?php 
+                $perfil= perfil($servername, $username, $password, $dbname);
+                if ($perfil !== null) {
+                  echo $perfil['email'];
+              } ?></p>
+              </div>
+
+            </div>
+            
+            
+          </div>
 
             </div>
         </section>

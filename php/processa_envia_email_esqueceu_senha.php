@@ -54,9 +54,18 @@ function envia_email($para, $assunto, $mensagem){
 
 }
 
+
+
+$min = 000000;
+$max = 999999;
+$cod_email = rand(int $min, int $max): int;
+echo "<input type='hidden' id='$cod_email '/>";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $para = $_POST["email"];
-    envia_email($para, 'Troca de Senha', '<p>Clique neste link para alterar sua senha<br><a href="../paginas/altera_senha.php');
+    //envia_email($para, 'Troca de Senha', '<h1>Não compartilhe essa senha com ninguém!</h1><br><p>Sua senha para alteração de senha é:</p><br> $random_pin<br><a href="paginas/login.php">Pagina de Login</a>');    
+    envia_email($para, 'Troca de Senha', '<p>Solicitação para troca de senha, caso não seja você, favor desconsidere</p><br><p>Seu código para alterar senha é: $cod_email</p>');
 }  
+
 
 ?>

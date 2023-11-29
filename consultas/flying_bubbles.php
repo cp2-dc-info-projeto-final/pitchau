@@ -76,19 +76,41 @@ function processar_login($servername, $username, $password, $dbname, $email, $se
 
 function perfil($servername, $username, $password, $dbname){
 
-    $conn = connect($servername, $username, $password, $dbname);
-    $sql= "SELECT nome, email FROM Usuario ";
-    $result = $conn->query($sql);
+    // Verifica a conexão do usuario
+if (isset($_SESSION["email"])) {
+    $emailUsuario = $_SESSION["email"]; // Obtém o email do usuário da sessão
 
-    $usuario= [];
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc())
-            array_push($usuario, $row);
-    //Fechando a conexão com o banco de dados
-    $conn->close();
-    //Retornanndo variavel com usuario
-    return $usuario;
+    // Use $emailUsuario para exibir informações do usuário ou realizar operações
+    
+} else {
+    // Se o usuário não estiver logado, redirecione-o para a página de login
+    header("Location: ../paginas/login.php");
+    exit;
 }
+$conn = connect($servername, $username, $password, $dbname);
+$sql = "SELECT nome, email FROM usuario WHERE email = ?";
+$stmt = $conn->prepare($sql);
+if (!$stmt) {
+    die('Erro na preparação da consulta: ' . $conn->error);
 }
+$stmt->bind_param("s",$email);
+$stmt->execute();
+$result = $stmt->get_result();
+$perfil= [];
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    while ($row = $result->fetch_assoc())
+            array_push($perfil, $row);
+        $conn->close();
+        return $perfil;
+    } else {
+    return 1;
+    //echo "Usuário não encontrado.";
+    exit;
+}
+
+}
+
+
 
 ?>

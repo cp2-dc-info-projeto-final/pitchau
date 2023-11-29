@@ -22,10 +22,10 @@ Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colé
 
 **Diagrama de Classes**
 
-![Diagrama de Classes](diagrama-exemplo.png)
+![Diagrama de Classes](/docs/diagrama-exemplo.png)
 
 **Modelagem do Banco de Dados**
 
-![Diagrama de Banco de Dados](diagrama-exemplo.png)
+![Diagrama de Banco de Dados](/docs/diagrama-exemplo.png)
 
 Diagrama de Classes Modelagem do Banco de Dados Diagrama de Banco de Dados pitchau/docs/README(1).md at main · cp2-dc-info-projeto-final/pitchau
