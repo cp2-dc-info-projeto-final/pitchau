@@ -12,9 +12,9 @@
     <?php
         include_once "consultas/flying_bubbles.php";
 
-        if (($_SESSION["user_id"]) != isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado e == Administrador
+        /*if (($_SESSION["user_id"]) != isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado e == Administrador
             header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-        }
+        }*/
     ?>
     
     
@@ -32,50 +32,50 @@
 
         <script>
             $compara_cod_email = document.getElementById("email_code").value;
-            $recebe_cod_email = document.getElementById("cod_altera_senha").value;
+            $recebe_cod_email = document.getElementById("cod_email").value;
 
             if $compara_cod_email != $recebe_cod_email{
+                echo 'Código incorreto<br>Reenvie o email caso ainda queira alterar sua senha';
                 header("Location: index.php"); // Redirecionar para a página do painel após o login
+                break
             }
+            else:
+                <?php
+                    function nova_senha_criptografada(){
+                    function random_string($length) {
+                    $random_pin = random_bytes($length);
+                    $random_pin = base64_encode($random_pin);
+                    $random_pin = str_replace(["+", "/", "="], "", $random_pin);
+                    $random_pin = substr($random_pin, 0, $length);
+                    return $random_pin;
+                }
+                    $sql = "ALTER TABLE Usuario (senha) VALUES ('$random_pin')";
+
+                    
+                    // Uso de prepared statement para evitar SQL injection
+                    $stmt = $conn->prepare("INSERT INTO Usuario(senha) VALUES (?,)");
+                    $stmt->bind_param("sss", $usuario, $email, password_hash($random_pin, PASSWORD_DEFAULT));
+
+                    /*if ($stmt->execute()) {
+                        header("Location: ../paginas/login.php");
+                        exit;
+                    } else {
+                        echo "Erro ao registrar: " . $stmt->error;
+                    }*/
+
+                    // Fechar a conexão com o banco de dados
+                    $stmt->close();
+                    $conn->close();
+
+                    return $random_pin;
+                    };
+                ?>
+
+                echo 'Não compartilhe com ninguém!'
+                echo 'Sua nova senha para alteração de senha é:'
+                echo '$random_pin'
+                echo '<p><a href="paginas/login.php">Login</a></p>'
         </script>
-        
-<?php
-    function nova_senha_criptografada(){
-    function random_string($length) {
-    $random_pin = random_bytes($length);
-    $random_pin = base64_encode($random_pin);
-    $random_pin = str_replace(["+", "/", "="], "", $random_pin);
-    $random_pin = substr($random_pin, 0, $length);
-    return $random_pin;
-}
-    $sql = "ALTER TABLE Usuario (senha) VALUES ('$random_pin')";
-
-    
-    // Uso de prepared statement para evitar SQL injection
-    $stmt = $conn->prepare("INSERT INTO Usuario(senha) VALUES (?,)");
-    $stmt->bind_param("sss", $usuario, $email, password_hash($random_pin, PASSWORD_DEFAULT));
-
-    /*if ($stmt->execute()) {
-        header("Location: ../paginas/login.php");
-        exit;
-    } else {
-        echo "Erro ao registrar: " . $stmt->error;
-    }*/
-
-    // Fechar a conexão com o banco de dados
-    $stmt->close();
-    $conn->close();
-
-    return $random_pin;
-    };
-?>
-
-
-<!--tenho que: após confirmar o código, levar à página de troca de senha-->
-
-header("Location: paginas/altera_senha.php"); // Redirecionar para a página do painel após o login
-            }
-        <button type="submit" class="submit">Enviar</button>
     </form>
 </body>
 </html>
