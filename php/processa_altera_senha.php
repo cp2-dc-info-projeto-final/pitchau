@@ -1,9 +1,6 @@
 <?php
     include_once "consultas/flying_bubbles.php";
-
-    if ($conn->connect_error) {
-        die("Falha na conexão com o banco de dados: " . $conn->connect_error);
-    }
+    $conn = connect($servername, $username, $password, $dbname);
 
     // Verifique se o formulário foi enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

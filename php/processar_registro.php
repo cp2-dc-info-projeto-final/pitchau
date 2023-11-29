@@ -9,7 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirm_password = $_POST["confirm_password"];
     $usuario = $firstname." ".$lastname;
 
-    include_once "consultas/flying_bubbles.php";
+    include_once "../consultas/flying_bubbles.php";
+    $conn = connect($servername, $username, $password, $dbname);
     
     // Uso de prepared statement para evitar SQL injection
     $stmt = $conn->prepare("INSERT INTO Usuario (nome, email, senha) VALUES (?, ?, ?)");
