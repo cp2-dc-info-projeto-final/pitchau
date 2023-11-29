@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../css/registre.css?v=0.9">
+    <link rel="stylesheet" href="../css/registre.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -37,12 +37,12 @@
 <form action="../php/processar_login.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
   <p class="title">Login</p>
   <label>
-      <input required="" placeholder="Email" type="email" name="email" class="input">
+      <input required="" placeholder="" type="email" name="email" class="input">
       <span>Email</span>
   </label>
 
   <label>
-      <input required="" placeholder="Senha" type="password" name="senha" class="input">
+      <input required="" placeholder="" type="password" name="senha" class="input">
       <span>Senha</span>
   </label>
   <p class="signin"><a href="esqueceu_senha.php">Esqueceu sua senha?</a></p>
