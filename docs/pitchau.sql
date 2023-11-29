@@ -14,6 +14,11 @@ INSERT INTO Usuario
     VALUES ('admin@example.com', 'senha_admin', 'Admin Name', TRUE
 );
 
+CREATE TABLE Categoria (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL
+);
+
 CREATE TABLE Produto (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
@@ -57,7 +62,3 @@ CREATE TABLE ProdutoCompra (
 -- 7 277 3
 -- 22 277 1
 
-CREATE TABLE Categoria (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL
-);
