@@ -10,15 +10,14 @@
 </head>
 <body>
     <?php
-        include_once "consultas/flying_bubbles.php";
-        session_start();
+        include_once "../consultas/flying_bubbles.php";
 
         if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
             header("Location: ../index.php"); // Redirecionar para a página do painel após o login
         }
     ?>
     
-<h3><a href="../#" text-decoration:none>Pitchau</a></h3>
+
 <form class="form" action="../php/processar_cadastro_produto.php" method="post" enctype="multipart/form-data">
 <div class="container"> 
         <div class="header"> 

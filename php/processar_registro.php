@@ -9,18 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirm_password = $_POST["confirm_password"];
     $usuario = $firstname." ".$lastname;
 
-    // Conectar ao banco de dados (substitua com suas credenciais)
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "pitchau";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Falha na conexão com o banco de dados: " . $conn->connect_error);
-    }
-
+    include_once "consultas/flying_bubbles.php";
+    
     // Uso de prepared statement para evitar SQL injection
     $stmt = $conn->prepare("INSERT INTO Usuario (nome, email, senha) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $usuario, $email, password_hash($password_, PASSWORD_DEFAULT));

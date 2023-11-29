@@ -11,7 +11,6 @@
 <body>
     <?php
         include_once "consultas/flying_bubbles.php";
-        session_start();
 
         if (!isset( $_SESSION["id"]) || !isset( $_SESSION["is_admin"])) { //Verifica se == Usuário Logado e == Administrador
             header("Location: ../index.php"); // Redirecionar para a página do painel após o login

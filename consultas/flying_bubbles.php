@@ -77,8 +77,8 @@ function processar_login($servername, $username, $password, $dbname, $email, $se
 function perfil($servername, $username, $password, $dbname){
 
     // Verifica a conexão do usuario
-if (isset($_SESSION["email"])) {
-    $emailUsuario = $_SESSION["email"]; // Obtém o email do usuário da sessão
+if (isset($_SESSION["email"])) { 
+    $email = $_SESSION["email"]; // Obtém o email do usuário da sessão
 
     // Use $emailUsuario para exibir informações do usuário ou realizar operações
     
@@ -96,17 +96,12 @@ if (!$stmt) {
 $stmt->bind_param("s",$email);
 $stmt->execute();
 $result = $stmt->get_result();
-$perfil= [];
 if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    while ($row = $result->fetch_assoc())
-            array_push($perfil, $row);
+    $perfil = $result->fetch_assoc();
         $conn->close();
         return $perfil;
     } else {
-    return 1;
-    //echo "Usuário não encontrado.";
-    exit;
+        return array('nome' => 'Usuário não encontrado', 'email' => 'Email não encontrado');
 }
 
 }

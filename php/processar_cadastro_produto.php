@@ -1,17 +1,5 @@
 <?php
-// Conexão com o banco de dados (substitua pelas suas configurações)
-echo "Entrou na página";
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "pitchau";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verifica a conexão
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
+ include_once "consultas/flying_bubbles.php";
 
 // Função para gerar um nome único para a imagem
 function generateUniqueFileName($originalName) {

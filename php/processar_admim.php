@@ -1,12 +1,6 @@
 <?php
     include_once "consultas/flying_bubbles.php";
 
-    // Conectar ao banco de dados
-    $servername = "localhost";
-    $username = "root";
-     $password = "";
-    $dbname = "pitchau";
-
     $conn = new mysqli($servername, $username, $password, $dbname);
          
     if ($conn->connect_error) {
