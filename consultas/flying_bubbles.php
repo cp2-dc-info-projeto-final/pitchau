@@ -128,4 +128,29 @@ function alterar_senha($servername, $username, $password, $dbname){
 
 }
 
+function alterar_email($servername, $username, $password, $dbname,$email, $senha){
+    $conn= connect($servername,$username,$password,$dbname);
+    $user_id= $_SESSION["user_id"]; //Variavel de sessão
+    $sql= "SELECT email, senha FROM usuario WHERE id= '$user_id'";
+    $result=$conn->query($sql);
+    if($result->num_rows > 0 ){
+        $row= $result->fetch_assoc();
+        if(password_verify($senha, $row['senha'])){
+            $stmt=$conn->prepare("UPDATE usuario SET email= ? WHERE id= ?");
+            $stmt->bind_param("si",$email, $user_id );
+            if ($stmt->execute()) {
+                header("Location: ../php/logout.php");
+            } else {
+                echo "Erro ao alterar o e-mail: " . $stmt->error;
+            }
+            $stmt->close();
+        } else {
+            echo "Senha incorreta. A alteração de e-mail não foi realizada.";
+        }      
+    } else {
+        echo "Usuário não encontrado.";}
+        $conn->close();
+}
+
+
 ?>

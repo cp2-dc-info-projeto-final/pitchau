@@ -58,18 +58,18 @@
   </div>
 </nav>
 
-<form action="../php/processar_altera_email.php" method="POST" class="form">
+<form action="../php/processarAltera_email.php" method="POST" class="form">
 
         <p class="title">Alterar email</p>
         <p>Solicitação para Redefinição de email</p>
 
         <label>
             <input required="" placeholder="" type="email" class="input" name="email">
-            <span>Novo email</span>
+            <span>Digite seu novo email</span>
         </label>
         <label>
             <input required="" placeholder="" type="password" class="input" name="senha">
-            <span>Digite sua senha</span>
+            <span>Digite sua senha para confirmação</span>
         </label>
 
         <button type="submit" class="submit">Enviar</button>
