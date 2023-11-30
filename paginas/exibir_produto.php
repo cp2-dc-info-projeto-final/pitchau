@@ -74,7 +74,7 @@
 
 $card_produto= recuperar_produto_por_id($servername, $username, $password, $dbname, $id_produto);
   if($card_produto != null){
-      echo $card_produto["id"]
+      echo $card_produto["id"];
       echo '<div class="card">';
       echo '<div class="card-img">';
       $imagem=$card_produto['foto'];

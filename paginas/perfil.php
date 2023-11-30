@@ -21,46 +21,57 @@
           }
         else echo "<input type='hidden' id='menulevel' value='2'/>";
         }
+
+        // Defina a variável de sessão para o modo escuro (isso pode ser ajustado conforme necessário)
+        $_SESSION['modo_escuro'] = isset($_SESSION['modo_escuro']) ? $_SESSION['modo_escuro'] : false;
+
+        // Lógica para alternar o modo escuro (pode ser baseado em preferências do usuário, configurações salvas, etc.)
+        if (isset($_GET['modo_escuro']) && $_GET['modo_escuro'] == 'ativar') {
+            $_SESSION['modo_escuro'] = true;
+        } elseif (isset($_GET['modo_escuro']) && $_GET['modo_escuro'] == 'desativar') {
+            $_SESSION['modo_escuro'] = false;
+        }
       
       
     ?>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="../index.php">Pitchau</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../index.php">Início</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Menu
-            </a>
-            <ul class="dropdown-menu">
-            <div id="menu"></div>
-            <script>
-              menulevel = document.getElementById("menulevel").value;
-              var menu = '';
-              if(menulevel == '1'){
-                menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
-              }
-              else if(menulevel == '2'){
-                menu = '<li><a class="dropdown-item" href="carrinho.php">Carrinho</a></li><li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>';
-              }
-              else if(menulevel == '3'){
-                menu = '<li><a class="dropdown-item" href="cadastro_produto.php">Cadastrar Produto</a></li><li><a class="dropdown-item" href="carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="produtos_comprados.php">Relação de Compras</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>';
-              }
-              document.getElementById("menu").innerHTML = menu;
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.php" id="gradPitchau"><img src="img/PITCHAU.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+          <ul class="dropdown-menu">
+          <div id="menu"></div>
+          <script>
+            menulevel = document.getElementById("menulevel").value;
+            var menu = '';
+            if(menulevel == '1'){
+              menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li><li><a class="dropdown-item" href="?modo_escuro=ativar">Ativar Modo Escuro</a></li><li><a class="dropdown-item" href="?modo_escuro=desativar">Desativar Modo Escuro</a></li>';
+            }
+            else if(menulevel == '2'){
+              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="paginas/produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li><li><a class="dropdown-item" href="?modo_escuro=ativar">Ativar Modo Escuro</a></li><li><a class="dropdown-item" href="?modo_escuro=desativar">Desativar Modo Escuro</a></li>';
+            }
+            else if(menulevel == '3'){
+              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_categoria.php">Criar Categoria</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="paginas/produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="paginas/PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li><li><a class="dropdown-item" href="?modo_escuro=ativar">Ativar Modo Escuro</a></li><li><a class="dropdown-item" href="?modo_escuro=desativar">Desativar Modo Escuro</a></li>';
+            }
+            
+            document.getElementById("menu").innerHTML = menu;
           </script>
           </ul>
-          </li>
-        </ul>
-      </div>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      
     </div>
-  </nav>
+  </div>
+</nav>
     <main>
       <nav>
           <ul>
