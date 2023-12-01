@@ -7,8 +7,12 @@
 <link rel="stylesheet" href="../css/registre.css">
 </head>
 <body>
-<?php include_once "../consultas/flying_bubbles.php"; ?>
+<?php include_once "../consultas/flying_bubbles.php"; 
+ // if ($_SESSION['is_admin'] != 'admin') {
+    //echo "Acesso negado!";
+    //exit;}
 
+?>
 <div class="divin">
   <div class="form">
     <div class="title">
