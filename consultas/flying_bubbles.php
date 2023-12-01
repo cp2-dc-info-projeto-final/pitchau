@@ -152,5 +152,36 @@ function alterar_email($servername, $username, $password, $dbname,$email, $senha
         $conn->close();
 }
 
+function Apagar_conta($servername, $username, $password, $dbname){
+    $conn= connect($servername,$username,$password,$dbname);
+    $user_id= $_SESSION["user_id"]; //Variavel de sessão
+    $stmt = $conn->prepare("DELETE FROM usuario WHERE id = ?");
+    $stmt->bind_param("i", $user_id);
+    $result= $stmt->execute();
+    $stmt->close();
+    $conn->close();
+    return $result;
+}
 
+function getuser($servername, $username, $password, $dbname){
+    $conn= connect($servername,$username,$password,$dbname);
+    $sql = "SELECT * FROM usuario";
+    $result = $conn->query($sql);
+    $usuarios = [];
+    // Verificar se há resultados
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $usuarios[] = $row;
+        }
+    }
+    // Fechar a conexão
+    $conn->close();
+
+    return $usuarios;
+}
+
+function apagar_usuarios(){
+    
+
+}
 ?>

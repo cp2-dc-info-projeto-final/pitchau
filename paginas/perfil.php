@@ -77,7 +77,32 @@
           <ul>
               <li><a href="alterar_email.php">Alterar email</a></li>
               <li><a href="altera_senha.php">Trocar a Senha</a></li>
+              <li><a href="#" id="delete-account">Apagar sua conta</a></li>
+              <!-- Modal de confirmação -->
+              <div id="confirmation-modal" style="display:none;">
+                <p>Tem certeza que deseja apagar sua conta?</p>
+                <button id="confirm-delete">Sim</button>
+                <button id="cancel-delete">Não</button>
+              </div>
           </ul>
+
+          <script>
+// Quando o link de deletar conta for clicado
+document.getElementById('delete-account').addEventListener('click', function(event) {
+  event.preventDefault(); // Impede a navegação imediata
+  document.getElementById('confirmation-modal').style.display = 'block'; // Mostra o modal
+});
+
+// Quando o botão de confirmar no modal for clicado
+document.getElementById('confirm-delete').addEventListener('click', function() {
+  window.location.href = '../php/userDrop.php'; // Redireciona para o script de exclusão
+});
+
+// Quando o botão de cancelar no modal for clicado
+document.getElementById('cancel-delete').addEventListener('click', function() {
+  document.getElementById('confirmation-modal').style.display = 'none'; // Esconde o modal
+});
+</script>
       </nav>
         <section id="dados-conta">
           <div class= perfil>
