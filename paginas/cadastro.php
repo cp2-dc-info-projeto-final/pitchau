@@ -48,13 +48,13 @@
             menulevel = document.getElementById("menulevel").value;
             var menu = '';
             if(menulevel == '1'){
-              menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li><li><a class="dropdown-item" href="?modo_escuro=ativar">Ativar Modo Escuro</a></li><li><a class="dropdown-item" href="?modo_escuro=desativar">Desativar Modo Escuro</a></li>';
+              menu = '<li><a class="dropdown-item" href="login.php">Fazer Login</a></li><li><a class="dropdown-item" href="cadastro.php">Se Cadastrar</a></li><li><a class="dropdown-item" href="?modo_escuro=ativar">Ativar Modo Escuro</a></li><li><a class="dropdown-item" href="?modo_escuro=desativar">Desativar Modo Escuro</a></li>';
             }
             else if(menulevel == '2'){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="paginas/produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li><li><a class="dropdown-item" href="?modo_escuro=ativar">Ativar Modo Escuro</a></li><li><a class="dropdown-item" href="?modo_escuro=desativar">Desativar Modo Escuro</a></li>';
+              menu = '<li><a class="dropdown-item" href="perfil.php">Perfil</a></li><li><a class="dropdown-item" href="carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li><li><a class="dropdown-item" href="?modo_escuro=ativar">Ativar Modo Escuro</a></li><li><a class="dropdown-item" href="?modo_escuro=desativar">Desativar Modo Escuro</a></li>';
             }
             else if(menulevel == '3'){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_categoria.php">Criar Categoria</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="paginas/produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="paginas/PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li><li><a class="dropdown-item" href="?modo_escuro=ativar">Ativar Modo Escuro</a></li><li><a class="dropdown-item" href="?modo_escuro=desativar">Desativar Modo Escuro</a></li>';
+              menu = '<li><a class="dropdown-item" href="perfil.php">Perfil</a></li><li><a class="dropdown-item" href="cadastro_categoria.php">Criar Categoria</a></li><li><a class="dropdown-item" href="cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li><li><a class="dropdown-item" href="?modo_escuro=ativar">Ativar Modo Escuro</a></li><li><a class="dropdown-item" href="?modo_escuro=desativar">Desativar Modo Escuro</a></li>';
             }
             
             document.getElementById("menu").innerHTML = menu;
