@@ -1,32 +1,31 @@
 <?php
-// Verifique se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Coletar dados do formulário
-    $id_produto = $_POST["id_produto"];
-    
-    $lastname = $_POST["lastname"];
-    $email = $_POST["email"];
-    $password_ = $_POST["password"];
-    $confirm_password = $_POST["confirm_password"];
-    $usuario = $firstname." ".$lastname;
-    
-    if($password_ == $confirm_password){
-    include_once "../consultas/flying_bubbles.php";
-     $conn = connect($servername, $username, $password, $dbname);
-    
-    // Uso de prepared statement para evitar SQL injection
-    $stmt = $conn->prepare("INSERT INTO Usuario (nome, email, senha) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $usuario, $email, password_hash($password_, PASSWORD_DEFAULT));
+include_once "../consultas/flying_bubbles.php";
+//session_start();
 
-        if ($stmt->execute()) {
-            header("Location: ../paginas/login.php");
-            exit;}
-    }else {
+$produto_presente = isset($_SESSION["id_produto"]);
+
+// Verifique se o formulário foi enviado
+/*if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Receber id_produto presente
+    $id_produto = $_POST["id_produto"];
+}*/
+$id_produto = $_GET["id_produto"];
+
+    // inserir produto presente no BD - EDITAR
+    $conn=connect($servername, $username, $password, $dbname);
+    $stmt = $conn->prepare("INSERT INTO ProdutoCompra(produto_id, compra_id, quantidade) VALUES (?, ?, ?)");
+    $quantidade = 1;
+    $stmt->bind_param("sss", $id_produto, $compra_id, $quantidade);
+
+    if ($stmt->execute()) {
+        header("Location: ../paginas/carrinho.php?id_produto=$id_produto");
+        exit;}
+    else {
         echo "Erro ao registrar: " . $stmt->error;
     }
 
     // Fechar a conexão com o banco de dados
     $stmt->close();
     $conn->close();
-}
+//}
 ?>

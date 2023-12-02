@@ -11,7 +11,6 @@
     <title>Pitchau</title>
 </head>
 <body>
-  ramdom
 <?php
   include_once "consultas/flying_bubbles.php";
   if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador

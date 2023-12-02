@@ -64,6 +64,26 @@ function recuperar_produto_por_id($servername, $username, $password, $dbname, $i
     }
 }
 
+function criar_carrinho($servername, $username, $password, $dbname, $min, $max, $cod_carrinho){
+    $conn= connect($servername, $username, $password, $dbname);
+    $min = 000000;
+    $max = 999999;
+    $cod_carrinho = rand($min, $max);
+    $sql - "INSERT INTO Compra(id) VALUES($cod_carrinho)";
+
+}
+
+function add_produto_carrinho($servername, $username, $password, $dbname, $id_produto){
+    $conn= connect($servername, $username, $password, $dbname);
+    $sql = "SELECT * FROM Produto where id=$id_produto";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        if ($row = $result->fetch_assoc()) {
+            $card_produto = $row;
+        }
+    }
+}
+
 function processar_login($servername, $username, $password, $dbname, $email, $senha){
     $conn = connect($servername, $username, $password, $dbname);
 
@@ -148,8 +168,9 @@ function alterar_email($servername, $username, $password, $dbname,$email, $senha
             echo "Senha incorreta. A alteração de e-mail não foi realizada.";
         }      
     } else {
-        echo "Usuário não encontrado.";}
+        echo "Usuário não encontrado.";
         $conn->close();
+    }
 }
 
 function Apagar_conta($servername, $username, $password, $dbname){
@@ -181,7 +202,6 @@ function getuser($servername, $username, $password, $dbname){
 }
 
 function apagar_usuarios(){
-    
-
+      
 }
 ?>
