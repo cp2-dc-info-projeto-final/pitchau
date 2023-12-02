@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/perfil/perfil.css">
   <link rel="stylesheet" href="../css/registre.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu Perfil</title>
 </head>
+
 <body>
     <?php
         include_once "../consultas/flying_bubbles.php";
@@ -53,7 +54,7 @@
               menu = '<li><a class="dropdown-item" href="login.php">Fazer Login</a></li><li><a class="dropdown-item" href="cadastro.php">Se Cadastrar</a></li><li><a class="dropdown-item" href="?modo_escuro=ativar">Ativar Modo Escuro</a></li><li><a class="dropdown-item" href="?modo_escuro=desativar">Desativar Modo Escuro</a></li>';
             }
             else if(menulevel == '2'){
-              menu = '<li><a class="dropdown-item" href="perfil.php">Perfil</a></li><li><a class="dropdown-item" href="carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li><li><a class="dropdown-item" href="?modo_escuro=ativar">Ativar Modo Escuro</a></li><li><a class="dropdown-item" href="?modo_escuro=desativar">Desativar Modo Escuro</a></li>';
+              menu = '<li><a class="dropdown-item" href="perfil.php">Perfil</a></li><li><a class="dropdown-item" href="carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li><li><a class="dropdown-item" href="?modo_escuro=ativar">Ativar Modo Escuro</a></li><li><a class="dropdown-item" href="?modo_escuro=desativar">Desativar Modo Escuro</a></li>';
             }
             else if(menulevel == '3'){
               menu = '<li><a class="dropdown-item" href="perfil.php">Perfil</a></li><li><a class="dropdown-item" href="cadastro_categoria.php">Criar Categoria</a></li><li><a class="dropdown-item" href="cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li><li><a class="dropdown-item" href="?modo_escuro=ativar">Ativar Modo Escuro</a></li><li><a class="dropdown-item" href="?modo_escuro=desativar">Desativar Modo Escuro</a></li>';
@@ -86,48 +87,49 @@
               </div>
           </ul>
 
-          <script>
-// Quando o link de deletar conta for clicado
-document.getElementById('delete-account').addEventListener('click', function(event) {
-  event.preventDefault(); // Impede a navegação imediata
-  document.getElementById('confirmation-modal').style.display = 'block'; // Mostra o modal
-});
+      <script>
+        // Quando o link de deletar conta for clicado
+        document.getElementById('delete-account').addEventListener('click', function(event) {
+          event.preventDefault(); // Impede a navegação imediata
+          document.getElementById('confirmation-modal').style.display = 'block'; // Mostra o modal
+        });
 
-// Quando o botão de confirmar no modal for clicado
-document.getElementById('confirm-delete').addEventListener('click', function() {
-  window.location.href = '../php/userDrop.php'; // Redireciona para o script de exclusão
-});
+        // Quando o botão de confirmar no modal for clicado
+        document.getElementById('confirm-delete').addEventListener('click', function() {
+          window.location.href = '../php/userDrop.php'; // Redireciona para o script de exclusão
+        });
 
-// Quando o botão de cancelar no modal for clicado
-document.getElementById('cancel-delete').addEventListener('click', function() {
-  document.getElementById('confirmation-modal').style.display = 'none'; // Esconde o modal
-});
-</script>
-      </nav>
-        <section id="dados-conta">
-          <div class= perfil>
-            <div class= text>
-              <h2>Dados da Conta</h2>
-            <form>
-              <div class= dados>
-              <?php $perfil= perfil($servername, $username, $password, $dbname);?>
-                <label for="nome">
-                  <span><?php echo $perfil['nome']; ?></span>
-                </label>
-              </div>
-              <div class= dados>
-                <label for="email">
-                  <span><?php echo $perfil['email']; ?></span>
-                </label>
-              </div>
-            </form>
+        // Quando o botão de cancelar no modal for clicado
+        document.getElementById('cancel-delete').addEventListener('click', function() {
+          document.getElementById('confirmation-modal').style.display = 'none'; // Esconde o modal
+        });
+      </script>
+    </nav>
+    <section id="dados-conta">
+      <div class=perfil>
+        <div class=text>
+          <h2>Dados da Conta</h2>
+          <form>
+            <div class=dados>
+              <?php $perfil = perfil($servername, $username, $password, $dbname); ?>
+              <label for="nome">
+                <span><?php echo $perfil['nome']; ?></span>
+              </label>
             </div>
-            
-            
-          </div>
-
+            <div class=dados>
+              <label for="email">
+                <span><?php echo $perfil['email']; ?></span>
+              </label>
             </div>
-        </section>
-    </main>
+          </form>
+        </div>
+
+
+      </div>
+
+      </div>
+    </section>
+  </main>
 </body>
+
 </html>
