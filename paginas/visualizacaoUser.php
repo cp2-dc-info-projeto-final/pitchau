@@ -63,7 +63,7 @@
 
 <form id="transform_admim-form" method="post" action="../php/edita_usuario.php" style="display: none;">
   <input type="hidden" name="action" value="adminuser">
-  <input type="hidden" name="id" id="delete-id">
+  <input type="hidden" name="transform_admin" id="admin-id">
 </form>
 
 <script>
@@ -80,6 +80,12 @@ function deleteUser(userId) {
     if (confirm('Tem certeza que deseja excluir este usuário?')) {
         document.getElementById('delete-id').value = userId;
         document.getElementById('delete-form').submit();
+    }
+}
+function adminUser(userId) {
+    if (confirm('Tem certeza que deseja transformar este usuário em administrador?')) {
+        document.getElementById('admin-id').value = userId;
+        document.getElementById('transform_admim-form').submit();
     }
 }
 </script>
