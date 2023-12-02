@@ -12,6 +12,7 @@
   background-repeat: no-repeat; /* Evitar repetição da imagem */
   font-family: Arial, sans-serif; /* Especificar a fonte desejada */
   color: #252222; /* Cor do texto na página */
+  backdrop-filter: blur(5px);
 }
 
 .form {
@@ -202,33 +203,35 @@
 }
 
 .user-list {
+  width: 100%;
+  border-collapse: collapse;
   margin-top: 20px;
 }
 
-.user-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  color: #333;
+.user-list th {
+  background-color: rgba(74, 9, 74, 0.7); /* Fundo semi-transparente para cabeçalho da tabela */
 }
 
+.user-list tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05); /* Alternando cores de fundo para linhas */
+}
+
+.user-list tr:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Realce ao passar o mouse */
+}
+
+/* Estilos para botões editar e excluir ajustados para contraste */
 .user-item .edit-button,
 .user-item .delete-button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ffffff; /* Contorno branco para os botões */
   background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
+  color: #ffffff; /* Texto branco para os botões */
+  transition: background-color 0.3s ease; /* Transição suave para o hover */
 }
 
-.user-item .edit-button {
-  color: #007BFF; /* Cor azul para o botão de edição */
-}
-
-.user-item .delete-button {
-  color: #FF0000; /* Cor vermelha para o botão de exclusão */
-  margin-left: 10px;
+.user-item .edit-button:hover,
+.user-item .delete-button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Mudança de cor ao passar o mouse */
 }
