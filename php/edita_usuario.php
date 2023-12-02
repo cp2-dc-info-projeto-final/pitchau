@@ -13,5 +13,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['id'
     $id = $_POST['id'];
     $newName = $_POST['new_name'];
     $edituser= editName_usuarios($servername, $username, $password, $dbname, $id,$newName);
-}
+} elseif()
+    we
+
+
 ?>

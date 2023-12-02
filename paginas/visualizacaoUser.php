@@ -38,6 +38,7 @@
             echo '<td>';
             echo '<button class="edit-button" onclick="editUser(' . $usuario['id'] . ')">Editar</button>';
             echo '<button class="delete-button" onclick="deleteUser(' . $usuario['id'] . ')">Excluir</button>';
+            echo '<button class="delete-button" onclick="transform_admim(' . $usuario['id'] . ')">Tornar<br>adm</button>';
             echo '</td>';
             echo '</tr>';
           }
@@ -49,14 +50,19 @@
     </table>
   </div>
 </div>
-<form id="edit-form" method="post" action="../php/editarApagar_usuario.php" style="display: none;">
+<form id="edit-form" method="post" action="../php/editar_usuario.php" style="display: none;">
   <input type="hidden" name="action" value="edit">
   <input type="hidden" name="id" id="edit-id">
   <input type="hidden" name="new_name" id="edit-new-name">
 </form>
 
-<form id="delete-form" method="post" action="../php/editarApagar_usuario.php" style="display: none;">
+<form id="delete-form" method="post" action="../php/edita_usuario.php" style="display: none;">
   <input type="hidden" name="action" value="delete">
+  <input type="hidden" name="id" id="delete-id">
+</form>
+
+<form id="transform_admim-form" method="post" action="../php/edita_usuario.php" style="display: none;">
+  <input type="hidden" name="action" value="adminuser">
   <input type="hidden" name="id" id="delete-id">
 </form>
 

@@ -10,7 +10,7 @@
 </head>
 
 <?php
-include_once "consultas/flying_bubbles.php";
+include_once "../consultas/flying_bubbles.php";
 if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
   echo "<input type='hidden' id='menulevel' value='1'/>";
 }
