@@ -2,7 +2,7 @@
 
 ## Requisitos Funcionais
 
-### RF01 - O sistema deverá permitir cadastror usuários
+### RF01 - O sistema deverá permitir cadastro usuários
 ### RF02 - O sistema deverá permitir atualizar usuários
 ### RF03 - O sistema deverá permitir logar usuários
 ### RF04 - O sistema deverá permitir adicionar produtos ao carrinho
