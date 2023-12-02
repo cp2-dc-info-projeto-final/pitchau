@@ -12,6 +12,6 @@ $codigo_erro = processar_login($servername, $username, $password, $dbname, $emai
 if ($codigo_erro == 1) {
     header("Location: ../index.php");
 } elseif ($codigo_erro == 2) {
-    echo "Email não encontrado. <a href='../paginas/login.php'>Tente novamente</a>";
+    header("Location: ../paginas/erro_email_invalido.php");
 }
 ?>

@@ -141,3 +141,94 @@
     opacity: 0;
   }
 }
+
+#confirmation-modal {
+  position: fixed; /* Fica sobre o conteúdo da página */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #aaa;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  z-index: 1000; /* Certifique-se que está sobre outros elementos */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  background-color: #000000;
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+  border: solid 2px rgb(74, 9, 74);
+  margin: auto;
+}
+
+.title {
+  font-size: 28px;
+  color: rgb(74, 9, 74);
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: rgb(74, 9, 74);
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: rgb(74, 9, 74);
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.user-list {
+  margin-top: 20px;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+.user-item .edit-button,
+.user-item .delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.user-item .edit-button {
+  color: #007BFF; /* Cor azul para o botão de edição */
+}
+
+.user-item .delete-button {
+  color: #FF0000; /* Cor vermelha para o botão de exclusão */
+  margin-left: 10px;
+}
