@@ -11,14 +11,15 @@
 <div class="container">
     <h1>Produtos a Comprar</h1>
 <?php 
-include_once "consultas/flying_bubbles.php";
+include_once "../consultas/flying_bubbles.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Coletar produtos
     $id_produto = $_POST["id_produto"];
     
-$id_produto = $_GET["id_produto"];
-$valor_total = 0
+    $id_produto = $_GET["id_produto"];
+    $valor_total = 0;
+}
 
 $card_produto = recuperar_produto_por_id($servername, $username, $password, $dbname, $id_produto);
 if($card_produto != null){
@@ -51,6 +52,7 @@ echo "Nenhum produto encontrado na tabela com este id.";
     echo '<div id="valor_total">';
     echo '<p>Valor total: $'.$valor_total;
     echo '</div>';
+    }
 
         /*
         <div id="total">
