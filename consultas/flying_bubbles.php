@@ -225,14 +225,14 @@ function editName_usuarios($servername, $username, $password, $dbname, $id,$newN
     $sql->close();
     }
 
-function transform_admin($servername, $username, $password, $dbname, $id){
+function transform_admin($servername, $username, $password, $dbname,$id){
     $conn= connect($servername,$username,$password,$dbname);
-    $sql = $conn->prepare("UPDATE usuario set FROM usuario WHERE id = ?");
+    $sql = $conn->prepare("UPDATE usuario set isAdmin = 1 WHERE id = ?");
     $sql->bind_param("i", $id);
     if ($sql->execute()) {
-        echo "Usuário excluído com sucesso!";
+        echo "Usuário se tornou um admin com sucesso!";
     } else {
-        echo "Erro ao excluir o usuário: " . $conn->error;
+        echo "Erro ao tornar o usuario admin o usuário: " . $conn->error;
     }
     $sql->close();
 

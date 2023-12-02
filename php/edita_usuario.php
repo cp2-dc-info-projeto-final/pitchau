@@ -12,10 +12,11 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['id'
 } elseif (isset($_POST['action']) && $_POST['action'] == 'edit' && isset($_POST['id']) && isset($_POST['new_name'])) {
     $id = $_POST['id'];
     $newName = $_POST['new_name'];
-
     $edituser= editName_usuarios($servername, $username, $password, $dbname, $id,$newName);
-} elseif(isset($_POST['action']) && $_POST['action'] == 'adminuser' && isset($_POST['tranform_admin'])){
-        $id= $_post['transform_admin'];
+
+} elseif(isset($_POST['action']) && $_POST['action'] == 'adminuser' && isset($_POST['id'])){
+        $id= $_POST['id'];
+        $tornaradmin= transform_admin($servername, $username, $password, $dbname, $id);
 
 }
     

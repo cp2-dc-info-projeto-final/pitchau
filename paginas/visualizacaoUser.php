@@ -38,7 +38,7 @@
             echo '<td>';
             echo '<button class="edit-button" onclick="editUser(' . $usuario['id'] . ')">Editar</button>';
             echo '<button class="delete-button" onclick="deleteUser(' . $usuario['id'] . ')">Excluir</button>';
-            echo '<button class="delete-button" onclick="transform_admim(' . $usuario['id'] . ')">Tornar<br>adm</button>';
+            echo '<button class="delete-button" onclick="transformaAdmim(' . $usuario['id'] . ')">Tornar<br>adm</button>';
             echo '</td>';
             echo '</tr>';
           }
@@ -61,9 +61,9 @@
   <input type="hidden" name="id" id="delete-id">
 </form>
 
-<form id="transform_admim-form" method="post" action="../php/edita_usuario.php" style="display: none;">
+<form id="transformAdmim-form" method="post" action="../php/edita_usuario.php" style="display: none;">
   <input type="hidden" name="action" value="adminuser">
-  <input type="hidden" name="transform_admin" id="admin-id">
+  <input type="hidden" name="id" id="admin-id">
 </form>
 
 <script>
@@ -82,10 +82,10 @@ function deleteUser(userId) {
         document.getElementById('delete-form').submit();
     }
 }
-function adminUser(userId) {
+function transformaAdmim(userId) {
     if (confirm('Tem certeza que deseja transformar este usuário em administrador?')) {
         document.getElementById('admin-id').value = userId;
-        document.getElementById('transform_admim-form').submit();
+        document.getElementById('transformAdmim-form').submit();
     }
 }
 </script>
