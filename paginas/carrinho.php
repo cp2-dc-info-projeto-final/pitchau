@@ -65,7 +65,7 @@
 
 <div class="container">
     <h1>Produtos a Comprar</h1>
-    <a href="paginas/carrinho.php">Toque aqui para recarregar seu carrinho</a>
+    <a href="carrinho.php">Toque aqui para recarregar seu carrinho</a>
 
 <?php 
 include_once "../consultas/flying_bubbles.php";
@@ -80,21 +80,6 @@ elseif (isset($_GET["id_produto"])) {
 
     $card_produto = recuperar_produto_por_id($servername, $username, $password, $dbname, $id_produto);
     if($card_produto != null){
-      foreach($card_produto as $card_produto) {
-        echo '<div class="card">';
-        echo '<div class="card-img">';
-        $imagem=$card_produto['foto'];
-        echo '<img src="' . $imagem . '" class="d-block w-100" alt="...">';
-        echo '</div>';
-        echo '<div class="card-info">';
-        echo '<p class="text-title">' . $card_produto["nome"] . '</p>';
-        echo '<p class="text-body">' . $card_produto["descricao"] . '</p>';
-        echo '</div>';
-        echo '<div class="card-footer">';
-        echo '<span class="text-title">$' . number_format($card_produto["valor"], 2) . '</span>';
-        echo '</div>';
-        echo '</div>';
-      /*
       echo $card_produto["id"];
       echo '<div class="card">';
       echo '<div class="card-img">';
@@ -117,8 +102,8 @@ elseif (isset($_GET["id_produto"])) {
       echo '</div>';
       echo '</div>';
       echo '</div>';
-      */
-        $valor_total = $valor_total + $card_produto["valor"];
+      $valor_total = $valor_total + $card_produto["valor"];
+
     } else {
     echo "Nenhum produto encontrado na tabela com este id.";
 
@@ -132,6 +117,8 @@ elseif (isset($_GET["id_produto"])) {
         </div>
         */
     }
+    // Acho que esse Banco tá errado, acho que tinha que ser o ProdutoCompra
+    // E o Banco Compra pra finalizar a compra
     $conn = connect($servername, $username, $password, $dbname);
     $sql = 'INSERT INTO Compra(usuario_id, datahora) VALUES ('.$_SESSION["user_id"].', NULL)';
     $result = $conn->query($sql);
@@ -150,6 +137,31 @@ else {
     foreach($array as $item)
         echo '<p>'.implode(" ",$item).'</p><br>';
     
+    
+    echo '<div id="valor_total">';
+    echo '<p>Valor total: $'.$valor_total;
+    echo '</div>';
+    
+//Tem q botar no Banco de comprado        
+
+/* Talvez usar isso p/ apresentar todos os produtos
+      foreach($card_produto as $card_produto) {
+        echo '<div class="card">';
+        echo '<div class="card-img">';
+        $imagem=$card_produto['foto'];
+        echo '<img src="' . $imagem . '" class="d-block w-100" alt="...">';
+        echo '</div>';
+        echo '<div class="card-info">';
+        echo '<p class="text-title">' . $card_produto["nome"] . '</p>';
+        echo '<p class="text-body">' . $card_produto["descricao"] . '</p>';
+        echo '</div>';
+        echo '<div class="card-footer">';
+        echo '<span class="text-title">$' . number_format($card_produto["valor"], 2) . '</span>';
+        echo '</div>';
+        echo '</div>';
+*/
+
+
 
 
 }
