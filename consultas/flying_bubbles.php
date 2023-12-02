@@ -180,8 +180,27 @@ function getuser($servername, $username, $password, $dbname){
     return $usuarios;
 }
 
-function apagar_usuarios(){
-    
+function apagar_usuarios($servername, $username, $password, $dbname, $id){
+    $conn= connect($servername,$username,$password,$dbname);
+    $sql = $conn->prepare("DELETE FROM usuario WHERE id = ?");
+    $sql->bind_param("i", $id);
+    if ($sql->execute()) {
+        echo "Usuário excluído com sucesso!";
+    } else {
+        echo "Erro ao excluir o usuário: " . $conn->error;
+    }
+    $sql->close();
+}
 
+function editName_usuarios($servername, $username, $password, $dbname, $id,$newName){
+    $conn= connect($servername,$username,$password,$dbname);
+    $sql = $conn->prepare("UPDATE usuario SET nome = ? WHERE id = ?");
+    $sql->bind_param("si", $newName, $id);
+    if ($sql->execute()) {
+        echo "Nome do usuário atualizado com sucesso!";
+    } else {
+        echo "Erro ao atualizar o nome do usuário: " . $conn->error;
+        }
+    $sql->close();
 }
 ?>

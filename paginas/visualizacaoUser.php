@@ -22,7 +22,6 @@
       <tr>
         <th>ID</th>
         <th>Email</th>
-        <th>Senha</th>
         <th>Nome</th>
         <th>Admin</th>
         <th>Ações</th>
@@ -34,7 +33,6 @@
             echo '<tr>';
             echo '<td>' . $usuario['id'] . '</td>';
             echo '<td>' . $usuario['email'] . '</td>';
-            echo '<td>' . $usuario['senha'] . '</td>'; // Considere esconder ou mascarar a senha
             echo '<td>' . $usuario['nome'] . '</td>';
             echo '<td>' . ($usuario['isAdmin'] ? 'Sim' : 'Não') . '</td>';
             echo '<td>';
@@ -51,3 +49,33 @@
     </table>
   </div>
 </div>
+<form id="edit-form" method="post" action="../php/editarApagar_usuario.php" style="display: none;">
+  <input type="hidden" name="action" value="edit">
+  <input type="hidden" name="id" id="edit-id">
+  <input type="hidden" name="new_name" id="edit-new-name">
+</form>
+
+<form id="delete-form" method="post" action="../php/editarApagar_usuario.php" style="display: none;">
+  <input type="hidden" name="action" value="delete">
+  <input type="hidden" name="id" id="delete-id">
+</form>
+
+<script>
+function editUser(userId) {
+    var newName = prompt('Por favor, insira o novo nome do usuário:');
+    if (newName) {
+        document.getElementById('edit-id').value = userId;
+        document.getElementById('edit-new-name').value = newName;
+        document.getElementById('edit-form').submit();
+    }
+}
+
+function deleteUser(userId) {
+    if (confirm('Tem certeza que deseja excluir este usuário?')) {
+        document.getElementById('delete-id').value = userId;
+        document.getElementById('delete-form').submit();
+    }
+}
+</script>
+</body>
+</html>
