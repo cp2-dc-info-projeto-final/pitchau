@@ -96,7 +96,7 @@ if ($imagens != null) {
 }
 ?>
 
-<h1 align="center"></br>Hello World! Compre violão com super descontão! uuôo çhá com pão</h1>
+<h1 align="center"></br>Hello World! Compre violão com super descontão!</h1>
 
 
 <div class="card_list">   
