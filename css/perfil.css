@@ -1,0 +1,86 @@
+/* Estilo Geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.divin {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('../img/background/perfil_wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: #252222;
+    backdrop-filter: blur(5px);
+}
+
+/* Navegação */
+.navbar {
+    background-color: transparent; /* Deixe transparente para mostrar a imagem de fundo */
+    border-bottom: none;
+}
+
+.nav-link, .navbar-brand {
+    color: #4a4a4a;
+}
+
+.navbar-toggler {
+    border-color: #ddd;
+}
+
+/* Links do Menu */
+.dropdown-item {
+    color: #4a4a4a;
+    font-size: 0.9em;
+}
+
+/* Botão de Pesquisa */
+.btn-outline-success {
+    border-color: #4a90e2;
+    color: #4a90e2;
+}
+
+.btn-outline-success:hover {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+/* Seção Principal */
+main {
+    padding: 20px;
+    backdrop-filter: blur(5px); /* Aplicar um efeito de desfoque no fundo */
+}
+
+
+
+/* Modal de Confirmação */
+#confirmation-modal {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo com maior opacidade para legibilidade */
+    border: 1px solid #ccc;
+    padding: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Dados da Conta */
+#dados-conta {
+    background-color: rgba(255, 255, 255, 0.7); /* Fundo branco com transparência */
+    border: 1px solid #e1e1e1;
+    padding: 15px;
+    border-radius: 5px; /* Bordas arredondadas */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.dados {
+    margin-bottom: 10px;
+}
