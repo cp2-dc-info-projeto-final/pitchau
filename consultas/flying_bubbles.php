@@ -69,7 +69,7 @@ function criar_carrinho($servername, $username, $password, $dbname, $min, $max, 
     $min = 000000;
     $max = 999999;
     $cod_carrinho = rand($min, $max);
-    $sql - "INSERT INTO Compra(id) VALUES($cod_carrinho)";
+    $sql = "INSERT INTO Compra(id) VALUES($cod_carrinho)";
 
 }
 
@@ -206,9 +206,10 @@ function apagar_usuarios($servername, $username, $password, $dbname, $id){
     $sql = $conn->prepare("DELETE FROM usuario WHERE id = ?");
     $sql->bind_param("i", $id);
     if ($sql->execute()) {
-        echo "Usuário excluído com sucesso!";
+        header("Location: ../paginas/visualizacaoUser.php");
     } else {
         echo "Erro ao excluir o usuário: " . $conn->error;
+        return 1;
     }
     $sql->close();
 }
@@ -218,9 +219,10 @@ function editName_usuarios($servername, $username, $password, $dbname, $id,$newN
     $sql = $conn->prepare("UPDATE usuario SET nome = ? WHERE id = ?");
     $sql->bind_param("si", $newName, $id);
     if ($sql->execute()) {
-        echo "Nome do usuário atualizado com sucesso!";
+        header("Location: ../paginas/visualizacaoUser.php");
     } else {
         echo "Erro ao atualizar o nome do usuário: " . $conn->error;
+        return 1;
         }
     $sql->close();
     }
@@ -230,9 +232,10 @@ function transform_admin($servername, $username, $password, $dbname,$id){
     $sql = $conn->prepare("UPDATE usuario set isAdmin = 1 WHERE id = ?");
     $sql->bind_param("i", $id);
     if ($sql->execute()) {
-        echo "Usuário se tornou um admin com sucesso!";
+        header("Location: ../paginas/visualizacaoUser.php");
     } else {
-        echo "Erro ao tornar o usuario admin o usuário: " . $conn->error;
+        echo "Erro ao tornar admin:" . $conn->error;
+        return 1;
     }
     $sql->close();
 
