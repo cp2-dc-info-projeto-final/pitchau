@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../css/registre.css">
+    <link rel="stylesheet" href="../css/registro_login.css">
 </head>
 
 <?php
-include_once "consultas/flying_bubbles.php";
+include_once "../consultas/flying_bubbles.php";
 if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
   echo "<input type='hidden' id='menulevel' value='1'/>";
 }
@@ -31,9 +31,6 @@ else echo "<input type='hidden' id='menulevel' value='2'/>";
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../index.php">Início</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Menu
@@ -63,7 +60,7 @@ else echo "<input type='hidden' id='menulevel' value='2'/>";
   </div>
 </nav>
 
-<div style="position: relative; text-align: center; background: url('../img/background/login_wallpaper.jpg') center/cover no-repeat;" class= "divin">
+<div style="position: relative; text-align: center; background: url('../img/background/perfil_wallpaper.jpg') center/cover no-repeat;" class= "divin">
 <form action="../php/processar_login.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
   <p class="title">Login</p>
   <label>
