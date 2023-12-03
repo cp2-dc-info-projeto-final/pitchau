@@ -35,7 +35,7 @@
 </nav>
 
 
-<form action="php/processa_envia_email_esqueceu_senha.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
+<form action="../php/processa_envia_email_esqueceu_senha.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
         <p class="title">Esqueceu Sua Senha</p>
         <p>Solicitação para Redefinição de Senha</p>
         <label>
