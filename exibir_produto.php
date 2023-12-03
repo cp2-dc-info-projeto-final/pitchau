@@ -125,7 +125,6 @@ $card_produto = recuperar_produto_por_id($servername, $username, $password, $dbn
 	//add_cart = document.getElementById("id").innerHTML = menu;
 	document.body.innerHTML += "<input type='hidden' id='menulevel' value='2'/>";
 </script>
-
 </div>
 
 </body>

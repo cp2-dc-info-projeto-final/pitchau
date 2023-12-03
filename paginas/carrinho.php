@@ -24,7 +24,6 @@
   else echo "<input type='hidden' id='menulevel' value='2'/>";
   $menulevel = 2;
   }
-
 ?>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -77,10 +76,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 elseif (isset($_GET["id_produto"])) {
     $id_produto = $_GET["id_produto"];
     $valor_total = 0;
+    //$produtos[] = int;
 
     $card_produto = recuperar_produto_por_id($servername, $username, $password, $dbname, $id_produto);
     if($card_produto != null){
       echo $card_produto["id"];
+      //$valor_total += $card_produto("valor");
+      //$produtos[] += $card_produto["id"];
+      
       echo '<div class="card">';
       echo '<div class="card-img">';
       $imagem=$card_produto['foto'];
@@ -102,8 +105,7 @@ elseif (isset($_GET["id_produto"])) {
       echo '</div>';
       echo '</div>';
       echo '</div>';
-      $valor_total = $valor_total + $card_produto["valor"];
-
+      
     } else {
     echo "Nenhum produto encontrado na tabela com este id.";
 
@@ -137,6 +139,7 @@ else {
     foreach($array as $item)
         echo '<p>'.implode(" ",$item).'</p><br>';
     
+    //echo $produtos;
     
     echo '<div id="valor_total">';
     echo '<p>Valor total: $'.$valor_total;
@@ -160,9 +163,6 @@ else {
         echo '</div>';
         echo '</div>';
 */
-
-
-
 
 }
 ?>

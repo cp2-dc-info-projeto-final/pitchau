@@ -93,7 +93,6 @@ if ($imagens != null) {
 
 <h1 align="center"></br>Hello World! Compre violão com super descontão!</h1>
 
-
 <div class="card_list">   
   <?php //Cards
   $card_produto= card_produtos($servername, $username, $password, $dbname);
