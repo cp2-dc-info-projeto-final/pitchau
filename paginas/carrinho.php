@@ -24,7 +24,6 @@
   else echo "<input type='hidden' id='menulevel' value='2'/>";
   $menulevel = 2;
   }
-
 ?>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
