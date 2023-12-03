@@ -28,6 +28,7 @@
   $id_produto = $_GET["id_produto"];
 
 ?>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Pitchau</a>
@@ -60,11 +61,6 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-      
     </div>
   </div>
 </nav>
@@ -72,7 +68,6 @@
 <!-- Página do Produto -->
 <div class="card_list">
 <?php
-
 $card_produto = recuperar_produto_por_id($servername, $username, $password, $dbname, $id_produto);
   if($card_produto != null){
       echo $card_produto["id"];
@@ -89,20 +84,26 @@ $card_produto = recuperar_produto_por_id($servername, $username, $password, $dbn
       echo '<span class="text-title">$' . number_format($card_produto["valor"], 2) . '</span>';
       echo '<div class="card-button" id="addcart">';
   	  
-      // Terminar Depois
+      // Terminar Depois - Editar Produto
       if ($menulevel == '3'){
         echo '<div class="prod-edit">';
         echo '<a href="altera_produto.php?id_produto='.$card_produto["id"].'">Alterar Produto</a>';
         echo '</div>';
       }
 
-      echo "<input type='hidden' id='menulevel' value='1'/>";
-      $menulevel = 1;
-
-      echo '<form action="/php/processar_produto.php" method="POST" class="form">';
+      echo '<form action="php/processar_produto.php" method="GET" class="form">'; //echo '<a href="exibir_produto.php?id_produto='.$card_produto["id"].'">Ir</a>';
       echo '<div class="flex">';
-      echo '<input type="hidden" name="id_produto">';
-      echo '<label><button class="submit">Add ao Carrinho</button></label>';
+      if ($menulevel != 1){
+        echo '<button class="submit"><a href="php/processar_produto.php?id_produto='.$card_produto["id"].'">Add -> Carrinho</a></button>';
+      }
+        /*echo '<button onClick="function add_produto_carrinho($id_produto){
+          session_start();
+          $_SESSION[''id_produto''] = $id_produto;
+        } class="submit"><a href="php/processar_produto.php">Add -> Carrinho</a></button>'
+      );*/
+      else{
+        echo '<button><a href="paginas/login.php">Add -> Carrinho</a></button>';
+      }
       echo '</div>';
       echo '</form>';
 
@@ -120,12 +121,9 @@ $card_produto = recuperar_produto_por_id($servername, $username, $password, $dbn
 
 ?>
 <script>
-	add_cart = document.getElementById("addcart").innerHTML = menu;
-	add_cart = document.getElementById("id").innerHTML = menu;
-	//'echo "<input type='hidden' id='menulevel' value='2'/>"';
-	
-	
-
+	//  add_cart = document.getElementById("addcart").innerHTML = menu;
+	//add_cart = document.getElementById("id").innerHTML = menu;
+	document.body.innerHTML += "<input type='hidden' id='menulevel' value='2'/>";
 </script>
 
 </div>

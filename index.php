@@ -57,11 +57,6 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-      
     </div>
   </div>
 </nav>
@@ -96,7 +91,7 @@ if ($imagens != null) {
 }
 ?>
 
-<h1 align="center"></br>Hello World! Compre violão com super descontão! uuôo çhá com pão</h1>
+<h1 align="center"></br>Hello World! Compre violão com super descontão!</h1>
 
 
 <div class="card_list">   

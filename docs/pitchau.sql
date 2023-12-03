@@ -23,6 +23,7 @@ CREATE TABLE if NOT EXISTS Produto (
     foto VARCHAR(255),
     valor DECIMAL(10, 2) NOT NULL,
     categoria_id INT NOT NULL,
+    quantidade_estoque INT,
     FOREIGN KEY(categoria_id) REFERENCES Categoria(id)
 );
 
