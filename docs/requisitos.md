@@ -12,7 +12,7 @@
 ### RF08 - O sistema deverá permitir visualizar produtos do catálogo
 ### RF09 - O sistema deverá permitir cadastrar categorias
 ### RF10 - O sistema deverá permitir atualizar categorias
-### RF11 - O sistema deverá permitir visualizar produtos já comprados
+### RF11 - O sistema deverá permitir visualizar id dos produtos já comprados
 
 
 ## Requisitos Não-Funcionais
