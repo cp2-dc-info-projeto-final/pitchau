@@ -11,14 +11,15 @@
 <body>
 <div class="background">
   <div class="report-box">
-    <h2>"Email Invalido:</h2>
+    <h2>"Algo de errado não está certo  \/(º>º)\/"</h2>
+    <h2>Email e/ou Senha Inválido:</h2>
     <form>
       <a href="login.php" class="report-button">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-        Submit Issue
+        Tentar Novamente
       </a>
     </form>
   </div>

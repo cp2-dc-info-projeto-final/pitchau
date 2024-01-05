@@ -5,7 +5,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/registre.css">
+    <link rel="stylesheet" href="../css/perfil.css">
     <title>AlterarSenha</title>
 </head>
 <body>
@@ -24,7 +24,7 @@
     ?>
    <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../index.php">Pitchau</a>
+    <a class="navbar-brand" href="../index.php" id="gradPitchau"><img src="../img/PITCHAU.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -46,7 +46,7 @@
                 menu = '<li><a class="dropdown-item" href="../index.php">Home</a></li><li><a class="dropdown-item" href="perfil.php">perfil</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>';
               }
               else if(menulevel == '3'){
-                menu = '<li><a class="dropdown-item" href="cadastro_produto.php">Cadastrar Produto</a></li><li><a class="dropdown-item" href="carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="produtos_comprados.php">Relação de Compras</a></li><li><a class="dropdown-item" href="PGtranforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>';
+              menu = '<li><a class="dropdown-item" href="cadastro_produto.php">Cadastrar Produto</a></li><li><a class="dropdown-item" href="carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="produtos_comprados.php">Relação de Compras</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>';
               }
               document.getElementById("menu").innerHTML = menu;
           </script>
@@ -57,22 +57,31 @@
     </div>
   </div>
 </nav>
-
+<div class="divin">
+<section id="dados-conta">
+    <div class=perfil>
+      <div class=text>
 <form action="../php/processarAltera_email.php" method="POST" class="form">
 
         <p class="title">Alterar email</p>
         <p>Solicitação para Redefinição de email</p>
 
         <label>
+<span>Digite seu novo email</span>
             <input required="" placeholder="" type="email" class="input" name="email">
-            <span>Digite seu novo email</span>
+            
         </label>
         <label>
+ <span>Digite sua senha para confirmação</span>
             <input required="" placeholder="" type="password" class="input" name="senha">
-            <span>Digite sua senha para confirmação</span>
+           
         </label>
 
         <button type="submit" class="submit">Enviar</button>
     </form>
+        </div>
+      </div>
+    </section>
+</div>
 </body>
 </html>

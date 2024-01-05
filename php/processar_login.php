@@ -10,7 +10,7 @@ $codigo_erro = processar_login($servername, $username, $password, $dbname, $emai
 
 
 if ($codigo_erro == 1) {
-    header("Location: ../index.php");
+    header("Location: ../paginas/erro_email_invalido.php");
 } elseif ($codigo_erro == 2) {
     header("Location: ../paginas/erro_email_invalido.php");
 }

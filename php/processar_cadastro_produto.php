@@ -1,5 +1,6 @@
 <?php
- include_once "consultas/flying_bubbles.php";
+ include_once "../consultas/flying_bubbles.php";
+$conn= connect($servername, $username, $password, $dbname);
 
 // Função para gerar um nome único para a imagem
 function generateUniqueFileName($originalName) {
@@ -18,7 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_FILES["foto"]["error"] === 0) {
         $fotoNome = generateUniqueFileName($_FILES["foto"]["name"]);
         echo $fotoNome;
-        $fotoCaminho = "../img/produtos_cadastrados/" . $fotoNome;
+    $pastaDestino = "../uploads/img/img_produto/"; // Caminho para a pasta desejada
+        $fotoCaminho = $pastaDestino . $fotoNome;
         move_uploaded_file($_FILES["foto"]["tmp_name"], $fotoCaminho);
     } else {
         echo "Erro de imagem!";
@@ -26,12 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Inserir os dados no banco de dados
-    $id_user=$_SESSION["user_id"] = $row["id"];
+    $id_user=$_SESSION["user_id"];
     echo $id_user;
-    $sql = "INSERT INTO Produto (nome, descricao, valor, foto, id_vendedor) VALUES ('$nome', '$descricao', $valor, '$fotoNome', $id_user)";
+    $sql = "INSERT INTO Produto (nome, descricao, foto, valor) VALUES ('$nome', '$descricao', '$fotoNome', $valor)";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Produto cadastrado com sucesso!";
+        header("Location:../index.php");
     } else {
         echo "Erro ao cadastrar o produto: " . $conn->error;
     }

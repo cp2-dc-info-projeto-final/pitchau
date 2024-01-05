@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EsqueceuSenha</title>
-    <link rel="stylesheet" href="css/registre.css">
+    <link rel="stylesheet" href="../css/perfil.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -34,7 +34,7 @@
   </div>
 </nav>
 
-
+<div>
 <form action="../php/processa_envia_email_esqueceu_senha.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
         <p class="title">Esqueceu Sua Senha</p>
         <p>Solicitação para Redefinição de Senha</p>
@@ -45,5 +45,6 @@
         <p class="signin">Lembrei minha senha! <a href="login.php">Voltar</a></p>
         <button type="submit" class="submit">Enviar</button>
     </form>
+</div>
 </body>
 </html>

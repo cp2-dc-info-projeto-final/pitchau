@@ -22,7 +22,7 @@
         <span></span>
         <span></span>
         <span></span>
-        Submit Issue
+        Tentar Novamente
       </a>
     </form>
   </div>

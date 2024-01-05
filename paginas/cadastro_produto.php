@@ -85,7 +85,9 @@
                 <?php endforeach; ?>
             </select>
         </div>
+      <button class="submit">Cadastrar</button>
   </form>
+  
 
 
 </body>

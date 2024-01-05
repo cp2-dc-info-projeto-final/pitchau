@@ -13,7 +13,7 @@
         $conn = connect($servername, $username, $password, $dbname);
         $user_id = $_SESSION["user_id"];  // variável de sessão para o ID do usuário
         $stmt = $conn->prepare("UPDATE usuario SET senha = ? WHERE id = ?");
-            }
+            } else{header("location: ../paginas/erro_senhas_diferentes.php");}
         
         // Verifique se a preparação da declaração foi bem-sucedida
         if ($stmt === false) {
