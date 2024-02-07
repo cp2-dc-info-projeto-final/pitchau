@@ -12,7 +12,7 @@
 <?php
   include_once "../consultas/flying_bubbles.php";
 
-  if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
+  if (!isset($_SESSION["user_id"]) ) { //Verifica se == Usuário Logado ou == Administrador
     echo "<input type='hidden' id='menulevel' value='1'/>";
     $menulevel = 1;
   }
@@ -78,7 +78,7 @@ elseif (isset($_GET["id_produto"])) {
     $valor_total = 0;
     //$produtos[] = int;
 
-    $card_produto = recuperar_produto_por_id($servername, $username, $password, $dbname, $id_produto);
+    $card_produto = recuperar_produto_por_id($id_produto);
     if($card_produto != null){
       echo $card_produto["id"];
       //$valor_total += $card_produto("valor");

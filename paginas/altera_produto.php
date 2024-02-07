@@ -10,26 +10,26 @@
 </head>
 <body>
 <?php
-    include_once "consultas/flying_bubbles.php";
+  include_once "consultas/flying_bubbles.php";
 
-    if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
-        header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-    }
-    include_once "consultas/flying_bubbles.php";
-    session_start();
+  if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
+      header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+  }
+  include_once "consultas/flying_bubbles.php";
+  session_start();
 
-    if (!isset( $_SESSION["id"]) || !isset( $_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
-        $menulevel = 1;
-        echo "<input type='hidden' id='menulevel' value='1'/>";
-    };
-    if (isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
-        $menulevel = 2;
-        echo "<input type='hidden' id='menulevel' value='2'/>";
-    };
-    if (isset( $_SESSION["id"])) { //Verifica se == Usuário Logado
-        $menulevel = 3;
-        echo "<input type='hidden' id='menulevel' value='3'/>";
-    };
+  if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
+    echo "<input type='hidden' id='menulevel' value='1'/>"; //Torna em visitante
+    $menulevel = 1;
+  }
+  if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
+    if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]== 1 ) { //Verifica se == Administrador
+      echo "<input type='hidden' id='menulevel' value='3'/>"; //Torna em administrador
+      $menulevel = 3;
+   }
+ else echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
+ $menulevel = 2;
+ }
 ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -54,14 +54,14 @@
           <script>
             menulevel = document.getElementById("menulevel").value;
             var menu = '';
-            if(menulevel == 1){
-              menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li> <br> <li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
+            if(menulevel == '1'){
+              menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
             }
-            else if(menulevel == 2){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li> <br> <li><a class="dropdown-item" href="paginas/cadastro_produto.php">Cadastrar Produto</a></li>';
+            else if(menulevel == '2'){
+              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="paginas/produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
             }
-            else if(menulevel == 3){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li>';
+            else if(menulevel == '3'){
+              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" </li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="paginas/produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="paginas/visualizacaoUser.php">Visualização Usuários</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
             }
             document.getElementById("menu").innerHTML = menu;
           </script>
