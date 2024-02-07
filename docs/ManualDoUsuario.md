@@ -6,7 +6,7 @@ Lista-se aqui as funcionalidades da loja de instrumentos musicais Pitchau
 
 **Lista das Funcionalidades:**
  - [Introdução](#Introdução)
- - [Página Principal](#Págin-Principal)
+ - [Página Principal](#Página-Principal)
  - [Cadastro de Usuário](#Cadastro-de-Usuário)
  - [Login de Usuários](#Login-de-Usuários)
  - [Alterar Senha](#Alterar-Senha)
@@ -23,15 +23,15 @@ Lista-se aqui as funcionalidades da loja de instrumentos musicais Pitchau
 
 ## Introdução
    O sistema possuí:
-       - Visitante
-       - Usuário
-       - Administrador
+      <br>- Visitante
+      <br>- Usuário
+      <br>- Administrador
 
    O visitante pode visualizar produtos, contudo, não adiciona-los ao carrinho. E também realizar seu cadastro e login.
    O usuário pode visualizar e adicionar produtos ao carrinho e compra-lo, pode visualizar seu perfil, e alterar seu email e senha.
    O administrador pode visualizar produtos, contudo, não adiciona-los ao carrinho. Pode criar e atualizar categoria e produto, atualizar todo usuário cadastrado no sistema, e ver todo produto comprado no sistema.
 
-# Página Principal
+## Página Principal
 ![PáginaPrincipalImg](/docs/ManualImages/1.png)
     Na página principal todos podem visualizar os produtos desejados e as opções, cujas visíveis em todas as páginas. Visitantes poderão, através de opções, fazer seu cadastro como usuário ou realizar o login em uma conta já existente, enquanto usuários poderão, através de opções, ver seu perfil, carrinho, produtos comprados e deslogar, e enquanto adminstradores poderão, através de opções, ver seu perfil, criar categorias, criar produtos, ver relação de vendas, visualizar usuários e deslogar.
 
