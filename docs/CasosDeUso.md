@@ -2,48 +2,48 @@
 
 ## Lista de Casos de Uso
 
- - [CDU 01.Cadastro](/docs/#CDU-01-Cadastro): Cadastro
- - [CDU 02.Login](/docs/#CDU-02-Login): Login
- - [CDU 03.Esqueceu Senha](/docs/#CDU-03-Esqueceu-a-Senha): Esqueceu Senha
- - [CDU 04.Deslogar](/docs/#CDU-04-Deslogar): Deslogar
+ - [CDU 01.Cadastro](#CDU01-Cadastro): Cadastro
+ - [CDU 02.Login](#CDU02-Login): Login
+ - [CDU 03.Esqueceu Senha](#CDU03-Esqueceu-a-Senha): Esqueceu Senha
+ - [CDU 04.Deslogar](#CDU04-Deslogar): Deslogar
 
- - [CDU 05.Alterar Email](/docs/#CDU-05-Alterar-Email): Alterar Email
- - [CDU 06.Alterar Senha](/docs/#CDU-06-Alterar-Senha): Alterar Senha
- - [CDU 07.Excluir Conta](/docs/#CDU-07-Apagar-Conta): Apagar Conta
+ - [CDU 05.Alterar Email](#CDU05-Alterar-Email): Alterar Email
+ - [CDU 06.Alterar Senha](#CDU06-Alterar-Senha): Alterar Senha
+ - [CDU 07.Excluir Conta](#CDU07-Apagar-Conta): Apagar Conta
 
- - [CDU 08.Visualizar Produto](/docs/#CDU-08-Visualizar-Produto): Visualizar Produto
- - [CDU 09.Adicionar Produto ao Carrinho](/docs/#CDU-09-Adicionar-Produto-ao-Carrinho): Adicionar Produto ao Carrinho
- - [CDU 10.Comprar Carrinho](/docs/#CDU-10-Comprar-Carrinho): Comprar Carrinho
- - [CDU 11.Visualizar Produto Comprado](/docs/#CDU-11-Visualizar-Produto-Comprado): Visualizar Produto Comprado
+ - [CDU 08.Visualizar Produto](#CDU08-Visualizar-Produto): Visualizar Produto
+ - [CDU 09.Adicionar Produto ao Carrinho](#CDU09-Adicionar-Produto-ao-Carrinho): Adicionar Produto ao Carrinho
+ - [CDU 10.Comprar Carrinho](#CDU10-Comprar-Carrinho): Comprar Carrinho
+ - [CDU 11.Visualizar Produto Comprado](#CDU11-Visualizar-Produto-Comprado): Visualizar Produto Comprado
 
- - [CDU 12.Visualizar Todo Produto Comprado](/docs/#CDU-12-Visualizar-Todo-Produto-Comprado): Visualizar Todo Produto Comprado
- - [CDU 13.Visualizar Todo Usuário Cadastrado](/docs/#CDU-13-Visualizar-Todo-Usuário-Cadastrado): Visualizar Todo Usuário Cadastrado
+ - [CDU 12.Visualizar Todo Produto Comprado](#CDU12-Visualizar-Todo-Produto-Comprado): Visualizar Todo Produto Comprado
+ - [CDU 13.Visualizar Todo Usuário Cadastrado](#CDU13-Visualizar-Todo-Usuário-Cadastrado): Visualizar Todo Usuário Cadastrado
 
- - [CDU 14.Atualizar Email Usuário](/docs/#CDU-14-Atualizar-Email-de-Usuário): Atualizar Email Usuário 
- - [CDU 15.Excluir Conta Usuário](/docs/#CDU-15-Excluir-Conta): Excluir Conta Usuário
- - [CDU 16.Promover Usuário à Administrador](/docs/#CDU-16-Promover-Usuário-à-Administrador): Promover Usuário à Administrador
+ - [CDU 14.Atualizar Email Usuário](#CDU14-Atualizar-Email-de-Usuário): Atualizar Email Usuário 
+ - [CDU 15.Excluir Conta Usuário](#CDU15-Excluir-Conta): Excluir Conta Usuário
+ - [CDU 16.Promover Usuário à Administrador](#CDU16-Promover-Usuário-à-Administrador): Promover Usuário à Administrador
 
- - [CDU 17.Criar Categoria](/docs/#CDU-17-Criar-Categoria): Criar Categoria
- - [CDU 18.Atualizar Categoria](/docs/#CDU-18-Atualizar-Categoria): Atualizar Categoria
- - [CDU 19.Criar Produto](/docs/#CDU-19-Criar-Produto): Criar Produto
- - [CDU 20.Atualizar Produto](/docs/#CDU-20-Atualizar-Produto): Atualizar Produto
- - [CDU 21.Adicionar Quantidade em Estoque](/docs/#CDU-21-Adicionar-Quantidade-em-Estoque): Adicionar Quantidade em Estoque
- - [CDU 22.Reduzir Quantidade em Estoque](/docs/#CDU-22-Reduzir-Quantidade-em-Estoque): Reduzir Quantidade em Estoque
+ - [CDU 17.Criar Categoria](#CDU17-Criar-Categoria): Criar Categoria
+ - [CDU 18.Atualizar Categoria](#CDU18-Atualizar-Categoria): Atualizar Categoria
+ - [CDU 19.Criar Produto](#CDU19-Criar-Produto): Criar Produto
+ - [CDU 20.Atualizar Produto](#CDU20-Atualizar-Produto): Atualizar Produto
+ - [CDU 21.Adicionar Quantidade em Estoque](#CDU21-Adicionar-Quantidade-em-Estoque): Adicionar Quantidade em Estoque
+ - [CDU 22.Reduzir Quantidade em Estoque](#CDU22-Reduzir-Quantidade-em-Estoque): Reduzir Quantidade em Estoque
 
 <!-- Antigos CDUs
- - [CDU 01](/docs/#CDU-01-Fazer-Cadastro): Fazer Cadastro
- - [CDU 02](/docs/#CDU-02-Fazer-Login): Fazer Login 
- - [CDU 03](/docs/#CDU-03-Cadastrar-Categoria): Adm-Cadastrar Categoria
- - [CDU 04](/docs/#CDU-04-Atualizar-Categoria): Adm-Atualizar Categoria
- - [CDU 05](/docs/#CDU-05-Cadastrar-Produto): Adm-Cadastrar Produto
- - [CDU 06](/docs/#CDU-06-Atualizar-Produto): Adm-Atualizar Produto
- - [CDU 07](/docs/#CDU-07-Adicionar-Quantidade-de-Produto-em-Estoque): Adm-Adicionar Quantidade de Produto em Estoque
- - [CDU 08](/docs/#CDU-08-Remover-Quantidade-de-Produto-em-Estoque): Adm-Remover Quantidade de Produto em Estoque
- - [CDU 10](/docs/#CDU-10-Atualizar-Cliente): User-Atualizar Cliente
- - [CDU 13](/docs/#CDU-13-Adicionando-Produtos-no-Carrinho): User-Adicionando Produtos no Carrinho
- - [CDU 14](/docs/#CDU-14-Reduzir-Quantidade-do-Produto-no-Carrinho): User-Reduzir Quantidade do Produto no Carrinho
- - [CDU 15](/docs/#CDU-15-Aumentar-Quantidade-do-Produto-no-Carrinho): User-Aumentar Quantidade do Produto no Carrinho
- - [CDU 16](/docs/#CDU-16-Finalizar-Compra): User-Finalizar Compra
+ - [CDU 01](#CDU01-Fazer-Cadastro): Fazer Cadastro
+ - [CDU 02](#CDU02-Fazer-Login): Fazer Login 
+ - [CDU 03](#CDU03-Cadastrar-Categoria): Adm-Cadastrar Categoria
+ - [CDU 04](#CDU04-Atualizar-Categoria): Adm-Atualizar Categoria
+ - [CDU 05](#CDU05-Cadastrar-Produto): Adm-Cadastrar Produto
+ - [CDU 06](#CDU06-Atualizar-Produto): Adm-Atualizar Produto
+ - [CDU 07](#CDU07-Adicionar-Quantidade-de-Produto-em-Estoque): Adm-Adicionar Quantidade de Produto em Estoque
+ - [CDU 08](#CDU08-Remover-Quantidade-de-Produto-em-Estoque): Adm-Remover Quantidade de Produto em Estoque
+ - [CDU 10](#CDU10-Atualizar-Cliente): User-Atualizar Cliente
+ - [CDU 13](#CDU13-Adicionando-Produtos-no-Carrinho): User-Adicionando Produtos no Carrinho
+ - [CDU 14](#CDU14-Reduzir-Quantidade-do-Produto-no-Carrinho): User-Reduzir Quantidade do Produto no Carrinho
+ - [CDU 15](#CDU15-Aumentar-Quantidade-do-Produto-no-Carrinho): User-Aumentar Quantidade do Produto no Carrinho
+ - [CDU 16](#CDU16-Finalizar-Compra): User-Finalizar Compra
 -->
 
 ## Lista de Atores
@@ -55,28 +55,28 @@
    ![CasosDeUso](/docs/CasosDeUsoImagens/CasosDeUso.png)
 
 ## Descrição dos Casos de Uso
- - [1. O visitante realiza seu cadastro de cliente](/docs/#CDU-01-Cadastro)
- - [2. O visitante realiza seu login](/docs/#CDU-02-Login)
- - [3. O visitante faz pedido de nova senha](/docs/#CDU-03-Esqueceu-a-Senha)
- - [4. O usuário finaliza sua sessão](/docs/#CDU-04-Deslogar)
- - [5. O usuário altera seu email](/docs/#CDU-05-Alterar-Email)
- - [6. O usuário altera sua senha](/docs/#CDU-06-Alterar-Senha)
- - [7. O usuário exclui sua conta](/docs/#CDU-07-Apagar-Conta)
- - [8. A pessoa visualiza produto do catálogo](/docs/#CDU-08-Visualizar-Produto)
- - [9. O usuário adiciona produto no seu carrinho](/docs/#CDU-09-Adicionar-Produto-ao-Carrinho)
- - [10. O usuário compra seu carrinho](/docs/#CDU-10-Comprar-Carrinho)
- - [11. O usuário visualiza seus produtos já comprados](/docs/#CDU-11-Visualizar-Produto-Comprado)
- - [12. O administrador visualiza todo produtos já comprado](/docs/#CDU-12-Visualizar-Todo-Produto-Comprado)
- - [13. O administrador visualiza todo usuário cadastrado](/docs/#CDU-13-Visualizar-Todo-Usuário-Cadastrado)
- - [14. O administrador atualiza email de usuário](/docs/#CDU-14-Atualizar-Email-de-Usuário)
- - [15. O administrador exclui conta de usuário](/docs/#CDU-15-Excluir-Conta)
- - [16. O administrador promove a conta a administrador](/docs/#CDU-16-Promover-Usuário-à-Administrador)
- - [17. O administrador cria categoria](/docs/#CDU-17-Criar-Categoria)
- - [18. O administrador atualiza categoria](/docs/#CDU-18-Atualizar-Categoria)
- - [19. O administrador cria produto](/docs/#CDU-19-Criar-Produto)
- - [20. O administrador atualiza produto](/docs/#CDU-20-Atualizar-Produto)
- - [21. O administrador adiciona quantide do produto em estoque](/docs/#CDU-21-Adicionar-Quantidade-em-Estoque)
- - [22. O administrador reduz quantide do produto em estoque](/docs/#CDU-22-Reduzir-Quantidade-em-Estoque)
+ - [CDU 01](#CDU01-Cadastro): O visitante realiza seu cadastro de cliente
+ - [CDU 02](#CDU02-Login): O visitante realiza seu login
+ - [CDU 03](#CDU03-Esqueceu-a-Senha): O visitante faz pedido de nova senha
+ - [CDU 04](#CDU04-Deslogar): O usuário finaliza sua sessão
+ - [CDU 05](#CDU05-Alterar-Email):O usuário altera seu email
+ - [CDU 06](#CDU06-Alterar-Senha): O usuário altera sua senha
+ - [CDU 07](#CDU07-Apagar-Conta): O usuário exclui sua conta
+ - [CDU 08](#CDU08-Visualizar-Produto): A pessoa visualiza produto do catálogo
+ - [CDU 09](#CDU09-Adicionar-Produto-ao-Carrinho): O usuário adiciona produto no seu carrinho
+ - [CDU 10](#CDU10-Comprar-Carrinho): O usuário compra seu carrinho
+ - [CDU 11](#CDU11-Visualizar-Produto-Comprado): O usuário visualiza seus produtos já comprados
+ - [CDU 12](#CDU12-Visualizar-Todo-Produto-Comprado): O administrador visualiza todo produtos já comprado
+ - [CDU 13](#CDU13-Visualizar-Todo-Usuário-Cadastrado): O administrador visualiza todo usuário cadastrado
+ - [CDU 14](#CDU14-Atualizar-Email-de-Usuário): O administrador atualiza email de usuário
+ - [CDU 15](#CDU15-Excluir-Conta): O administrador exclui conta de usuário
+ - [CDU 16](#CDU16-Promover-Usuário-à-Administrador): O administrador promove a conta a administrador
+ - [CDU 17](#CDU17-Criar-Categoria): O administrador cria categoria
+ - [CDU 18](#CDU18-Atualizar-Categoria): O administrador atualiza categoria
+ - [CDU 19](#CDU19-Criar-Produto): O administrador cria produto
+ - [CDU 20](#CDU20-Atualizar-Produto): O administrador atualiza produto
+ - [CDU 21](#CDU21-Adicionar-Quantidade-em-Estoque): O administrador adiciona quantide do produto em estoque
+ - [CDU 22](#CDU22-Reduzir-Quantidade-em-Estoque): O administrador reduz quantide do produto em estoque
 
 <!-- Antiga descrição dos CDUs
        1. O visitante se cadastra como cliente
