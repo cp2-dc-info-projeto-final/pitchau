@@ -71,7 +71,7 @@ session_start();
   </div>
 </nav>
 
-<div style="position: relative; text-align: center; " class= "divin">
+<div style="position: relative; text-align: center; background: url('../img/background/login_wallpaper.jpg') center/cover no-repeat;" class= "divin">
 <form action="../php/processar_login.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
   <p class="title">Login</p>
   <label>
@@ -93,5 +93,4 @@ session_start();
 <?php
 include('../php/footer.php');
 ?>
-
 </html>

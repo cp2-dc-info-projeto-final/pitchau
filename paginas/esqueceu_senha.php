@@ -38,34 +38,48 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Início</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Menu
           </a>
           <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="login.php">Fazer Login</a></li>
-              <li><a class="dropdown-item" href="cadastro.php">Se Cadastrar</a></li>
-        </ul>
+          <div id="menu"></div>
+          <script>
+            menulevel = document.getElementById("menulevel").value;
+            var menu = '';
+            if(menulevel == '1'){
+              menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
+            }
+            else if(menulevel == '2'){
+              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="paginas/produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
+            }
+            else if(menulevel == '3'){
+              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="paginas/produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="paginas/visualizacaoUser.php">Visualização Usuários</a></li><li><a class="dropdown-item" href="paginas/PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
+            }
+            
+            document.getElementById("menu").innerHTML = menu;
+          </script>
+          </ul>
         </li>
-      </ul>
+      </ul>      
     </div>
   </div>
 </nav>
 
-<div>
-<form action="../php/processa_envia_email_esqueceu_senha.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
-        <p class="title">Esqueceu Sua Senha</p>
-        <p>Solicitação para Redefinição de Senha</p>
-        <label>
-            <input required="" placeholder="" type="email" name="email" class="input">
-            <span>Email</span>
-        </label>
-        <p class="signin">Lembrei minha senha! <a href="login.php">Voltar</a></p>
-        <button type="submit" class="submit">Enviar</button>
-    </form>
+<div style="position: relative; text-align: center; background: url('../img/background/login_wallpaper.jpg') center/cover no-repeat;" class= "divin">
+<form action="../php/processar_login.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
+  <p class="title">Esqueceu Sua Senha</p>
+  <p>Solicitação para Redefinição de Senha</p>
+  <label>
+    <input required="" placeholder="" type="email" name="email" class="input">
+    <span>Email</span>
+  </label>
+  <p class="signin">Lembrei minha senha! <a href="login.php">Voltar</a></p>
+  <button type="submit" class="submit">Enviar</button>
+</form>
 </div>
 </body>
+<?php
+include('../php/footer.php');
+?>
 </html>

@@ -10,7 +10,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="../css/registro_login.css">
-    
 </head>
 <body>
   
@@ -39,7 +38,7 @@ session_start();
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php"><img src="img/PITCHAU.png" alt=""></a>
+    <a class="navbar-brand" href="../index.php"><img src="../img/PITCHAU.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -63,18 +62,18 @@ session_start();
             else if(menulevel == '3'){
               menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="paginas/produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="paginas/visualizacaoUser.php">Visualização Usuários</a></li><li><a class="dropdown-item" href="paginas/PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
             }
+            
             document.getElementById("menu").innerHTML = menu;
           </script>
           </ul>
         </li>
-      </ul>
+      </ul>      
     </div>
   </div>
 </nav>
 
-
 <div style="position: relative; text-align: center; background: url('../img/background/login_wallpaper.jpg') center/cover no-repeat;" class= "divin">
-<form action="../php/processar_registro.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
+<form action="../php/processar_login.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
   <p class="title">Registrar</p>
   <p class="message">Registre-se agora e tenha acesso completo ao nosso aplicativo.</p>
   <div class="flex">
@@ -105,9 +104,9 @@ session_start();
     <button class="submit">Enviar</button>
     <p class="signin">Já tem uma conta? <a href="login.php">Entrar</a> </p>
 </form>
+</div>
 </body>
 <?php
 include('../php/footer.php');
 ?>
-
 </html>
