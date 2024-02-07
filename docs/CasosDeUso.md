@@ -53,6 +53,7 @@
 
 ## Diagrama de Casos de Uso
       ![DiaCasosUso](https://github.com/cp2-dc-info-projeto-final/pitchau/assets/95544072/e28634fa-9543-460e-b5a1-6023df51a086)
+      ![DiaCasosUso](/assets/95544072/e28634fa-9543-460e-b5a1-6023df51a086)
 
 ## Descrição dos Casos de Uso
  - [1. O visitante realiza seu cadastro de cliente](#CDU-01-Cadastro)
@@ -97,7 +98,7 @@
 
 #### CDU-01 Cadastro
  - Fluxo Principal
-      ![cadastroFP](/CasosDeUsoImagens/cadastroFP.png)
+      ![cadastroFP](/docs/CasosDeUsoImagens/cadastroFP.png)
        1. O sistema exibe o formulário solicitando nome, sobrenome, e-mail, senha e confirmação de senha.
        2. O visitante preenche as credencias solicitadas.
        3. O sistema verifica se o e-mail está cadastrado.
@@ -106,7 +107,7 @@
        6. O sistema direciona o usuário para a página de login.
 
  - Fluxo Alternativo A - Caso o email já esteja cadastrado
-      ![cadastroFAa](/CasosDeUsoImagens/cadastroFAa.png)
+      ![cadastroFAa](/docs//CasosDeUsoImagens/cadastroFAa.png)
        1. O sistema exibe o formulário solicitando nome, sobrenome, e-mail, senha e confirmação de senha.
        2. O visitante preenche as credencias solicitadas.
        3. O sistema verifica se o e-mail está cadastrado.
@@ -123,7 +124,7 @@
 
 #### CDU-02. Login
  - Fluxo Principal
-      ![loginFP](/CasosDeUsoImagens/loginFP.png))
+      ![loginFP](/docs//CasosDeUsoImagens/loginFP.png))
        1. O sistema exibe o formulário solicitando e-mail e senha.
        2. O usuário preenche as credencias solicitadas.
        3. O sistema verifica compatibilidade com o Banco de Dados.
