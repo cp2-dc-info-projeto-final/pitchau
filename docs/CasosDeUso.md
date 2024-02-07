@@ -27,8 +27,8 @@
  - [CDU 18.Atualizar Categoria](#CDU-18-Atualizar-Categoria): Atualizar Categoria
  - [CDU 19.Criar Produto](#CDU-19-Criar-Produto): Criar Produto
  - [CDU 20.Atualizar Produto](#CDU-20-Atualizar-Produto): Atualizar Produto
- - [CDU 21.Adicionar Quantidade em Estoque](#CDU-21-Adicionar-Quantidade-em-Estoque): Adicionar Quantidade em Estoque
- - [CDU 22.Reduzir Quantidade em Estoque](#CDU-22-Reduzir-Quantidade-em-Estoque): Reduzir Quantidade em Estoque
+ - [CDU 21.Adicionar Quantidade do Produto em Estoque](#CDU-21-Adicionar-Quantidade-do-Produto-em-Estoque): Adicionar Quantidade do Produto em Estoque
+ - [CDU 22.Reduzir Quantidade do Produto em Estoque](#CDU-22-Reduzir-Quantidade-do-Produto-em-Estoque): Reduzir Quantidade do Produto em Estoque
 
 <!-- Antigos CDUs
  - [CDU 01](#CDU-01-Fazer-Cadastro): Fazer Cadastro
@@ -75,8 +75,8 @@
  - [CDU 18](#CDU-18-Atualizar-Categoria): O administrador atualiza categoria
  - [CDU 19](#CDU-19-Criar-Produto): O administrador cria produto
  - [CDU 20](#CDU-20-Atualizar-Produto): O administrador atualiza produto
- - [CDU 21](#CDU-21-Adicionar-Quantidade-em-Estoque): O administrador adiciona quantide do produto em estoque
- - [CDU 22](#CDU-22-Reduzir-Quantidade-em-Estoque): O administrador reduz quantide do produto em estoque
+ - [CDU 21](#CDU-21-Adicionar-Quantidade-do-Produto-em-Estoque): O administrador adiciona quantide do produto em estoque
+ - [CDU 22](#CDU-22-Reduzir-Quantidade-do-Produto-em-Estoque): O administrador reduz quantide do produto em estoque
 
 <!-- Antiga descrição dos CDUs
        1. O visitante se cadastra como cliente
