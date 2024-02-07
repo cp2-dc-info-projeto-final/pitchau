@@ -1,4 +1,6 @@
 <?php
+  if (isset($_SESSION["user_id"])) { //Verifica se == Usuário
+    header("Location: ../index.php"); // Redirecionar para a página index
 ?>
 <!DOCTYPE html>
 <html lang="en">

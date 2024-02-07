@@ -9,9 +9,30 @@
     <link rel="stylesheet" href="../css/perfil.css">
 </head>
 <body>
+<?php
+  include_once "consultas/flying_bubbles.php";
+
+  if (isset( $_SESSION["user_id"])) { //Verifica se == Usuário
+    header("Location: ../index.php"); // Redirecionar para a página index
+  }
+
+  if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
+    echo "<input type='hidden' id='menulevel' value='1'/>"; //Torna em visitante
+    $menulevel = 1;
+  }
+  if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
+    if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]== 1 ) { //Verifica se == Administrador
+      echo "<input type='hidden' id='menulevel' value='3'/>"; //Torna em administrador
+      $menulevel = 3;
+   }
+  else echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
+  $menulevel = 2;
+  }
+?>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Pitchau</a>
+    <a class="navbar-brand" href="../index.php"><img src="../img/PITCHAU.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
