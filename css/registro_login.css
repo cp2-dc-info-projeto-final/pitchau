@@ -5,8 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Faz com que o corpo ocupe 100% da altura da viewport */
-  background-image: url('../img/background/login_wallpaper.jpg'); /* Substitua pelo caminho real da sua imagem */
+  height: 100vh; /* Faz com que o corpo ocupe 100% da altura da viewport */ /* Substitua pelo caminho real da sua imagem */
   background-size: cover; /* Cobrir toda a área com a imagem */
   background-position: center; /* Centralizar a imagem */
   background-repeat: no-repeat; /* Evitar repetição da imagem */
