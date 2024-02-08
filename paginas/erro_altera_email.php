@@ -1,6 +1,6 @@
 <?php
     //Verifica se == Usuário Logado
-    if (!isset($_SESSION["user_id"])) { //Verifica se == Usuário
+    if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
         header("Location: ../index.php");;
       }
 ?>

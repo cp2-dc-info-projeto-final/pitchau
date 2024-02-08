@@ -10,33 +10,25 @@
 <body>
 
 <?php
-  include_once "consultas/flying_bubbles.php";
-
-  if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
-    header("Location: ../index.php"); // Redirecionar para a página index
-  }
-  if (isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == true) { //Verifica se == Administrador
-      header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-  }
+  include_once "../consultas/flying_bubbles.php";
 
   if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
-    echo "<input type='hidden' id='menulevel' value='1'/>"; //Torna em visitante
+    echo "<input type='hidden' id='menulevel' value='1'/>";
     $menulevel = 1;
   }
   if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
     if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]== 1 ) { //Verifica se == Administrador
-      echo "<input type='hidden' id='menulevel' value='3'/>"; //Torna em administrador
+      echo "<input type='hidden' id='menulevel' value='3'/>";
       $menulevel = 3;
-   }
-  else echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
+    }
+  else echo "<input type='hidden' id='menulevel' value='2'/>";
   $menulevel = 2;
   }
-  $id_produto = $_GET["id_produto"];
 ?>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../index.php"><img src="../img/PITCHAU.png" alt=""></a>
+    <a class="navbar-brand" href="../index.php">Pitchau</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -52,13 +44,13 @@
             menulevel = document.getElementById("menulevel").value;
             var menu = '';
             if(menulevel == '1'){
-              menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
+              menu = '<li><a class="dropdown-item" href="login.php">Fazer Login</a></li><li><a class="dropdown-item" href="cadastro.php">Se Cadastrar</a></li>';
             }
             else if(menulevel == '2'){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="paginas/produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
+              menu = '<li><a class="dropdown-item" href="perfil.php">Perfil</a></li><li><a class="dropdown-item" href="carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>';
             }
             else if(menulevel == '3'){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="paginas/produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="paginas/visualizacaoUser.php">Visualização Usuários</a></li><li><a class="dropdown-item" href="paginas/PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
+              menu = '<li><a class="dropdown-item" href="perfil.php">Perfil</a></li><li><a class="dropdown-item" href="cadastro_categoria.php">Criar Categoria</a></li><li><a class="dropdown-item" href="cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>';
             }
             
             document.getElementById("menu").innerHTML = menu;
@@ -86,7 +78,7 @@ elseif (isset($_GET["id_produto"])) {
     $valor_total = 0;
     //$produtos[] = int;
 
-    $card_produto = recuperar_produto_por_id($id_produto);
+    $card_produto = recuperar_produto_por_id($servername, $username, $password, $dbname, $id_produto);
     if($card_produto != null){
       echo $card_produto["id"];
       //$valor_total += $card_produto("valor");

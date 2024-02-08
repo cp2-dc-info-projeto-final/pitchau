@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/registro_login.css">
+    <link rel="stylesheet" href="../css/categoria.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Cadastro Categoria</title>
 </head>
+<body>
 
 <?php
 include_once "../consultas/flying_bubbles.php";
@@ -22,7 +23,6 @@ else echo "<input type='hidden' id='menulevel' value='2'/>";
 }
 ?>
 
-<body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="../index.php"><img src="../img/PITCHAU.png" alt=""></a>
@@ -47,7 +47,7 @@ else echo "<input type='hidden' id='menulevel' value='2'/>";
               menu = '<li><a class="dropdown-item" href="perfil.php">Perfil</a></li><li><a class="dropdown-item" href="carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
             }
             else if(menulevel == '3'){
-              menu = '<li><a class="dropdown-item" href="perfil.php">Perfil</a></li><li><a class="dropdown-item" href="categoria.php">Criar Categoria</a></li><li><a class="dropdown-item" href="cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>';
+              menu = '<li><a class="dropdown-item" href="perfil.php">Perfil</a></li><li><a class="dropdown-item" href="cadastro_categoria.php">Criar Categoria</a></li><li><a class="dropdown-item" href="cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>';
             }
             
             document.getElementById("menu").innerHTML = menu;
@@ -60,23 +60,19 @@ else echo "<input type='hidden' id='menulevel' value='2'/>";
   </div>
 </nav>
 
-<div style="position: relative; text-align: center; background: url('../img/background/perfil_wallpaper.jpg') center/cover no-repeat;" class= "divin">
-<form action="../php/processar_login.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
-  <p class="title">Login</p>
-  <label>
-      <input required="" placeholder="" type="email" name="email" class="input">
-      <span>Email</span>
-  </label>
-
-  <label>
-      <input required="" placeholder="" type="password" name="senha" class="input">
-      <span>Senha</span>
-  </label>
-  <p class="signin"><a href="esqueceu_senha.php">Esqueceu sua senha?</a></p>
-
-  <button type="submit" class="submit">Login</button>
-  <p class="signin">Ainda não tem cadastro? <a href="cadastro.php">Cadastre-se</a></p>
-</form>
+<div class="divin">
+  <div id="dados-conta">
+    <h3>Crie uma nova categoria inserindo o nome dela abaixo</h3>
+    <div>
+    <form class="form" action="../php/processar_categoria.php" method="post">
+      <div class="input-container"><p>Nome da categoria:<input type="text" name="nome"></p></div>
+    </div>
+    <div>
+      <button class="submit">Cadastrar</button>
+    </div>
+    </form>
+  </div>
 </div>
+
 </body>
 </html>
