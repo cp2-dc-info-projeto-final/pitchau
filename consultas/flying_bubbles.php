@@ -341,7 +341,8 @@ function transform_admin($id){
 
 }
 
-function insertIntoCarrinho($id_produto, $id_cliente, $quantidade) {
+function insertIntoCarrinho($id_produto, $quantidade) {
+    $id_cliente= $_SESSION["user_id"];
     // Substitua 'sua_tabela' pelo nome real da tabela no seu banco de dados
     $conn = connect();
     

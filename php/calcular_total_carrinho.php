@@ -11,6 +11,7 @@ error_reporting(E_ALL);
 <?php
 
 include_once "../consultas/flying_bubbles.php";
+session_start();
 
 
 function calcularTotalCarrinho() {

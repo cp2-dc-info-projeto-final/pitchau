@@ -320,12 +320,14 @@
     $menulevel = 1;
   }
   if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
-    if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]== 1 ) { //Verifica se == Administrador
+    if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]== 1 ) {//Verifica se == Administrador
       echo "<input type='hidden' id='menulevel' value='3'/>"; //Torna em administrador
       $menulevel = 3;
-   }
- else echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
- $menulevel = 2;
+    }  
+  }
+  else {
+    echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
+    $menulevel = 2;
  }
 ?>
 
