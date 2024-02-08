@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,30 +8,21 @@ session_start();
     <title>Login</title>
     <link rel="stylesheet" href="../css/registro_login.css">
 </head>
-<body>
+
 <?php
-  // Resto do código...
-  include_once "consultas/flying_bubbles.php";
-
-  if (isset( $_SESSION["user_id"])) { //Verifica se == Usuário
-    header("Location: ../index.php"); // Redirecionar para a página index
+include_once "../consultas/flying_bubbles.php";
+if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
+  echo "<input type='hidden' id='menulevel' value='1'/>";
+}
+if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
+  if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]== 1 ) { //Verifica se == Administrador
+    echo "<input type='hidden' id='menulevel' value='3'/>";
   }
-
-  if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
-    echo "<input type='hidden' id='menulevel' value='1'/>"; //Torna em visitante
-    $menulevel = 1;
-  }
-  if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
-    if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]== 1 ) { //Verifica se == Administrador
-      echo "<input type='hidden' id='menulevel' value='3'/>"; //Torna em administrador
-      $menulevel = 3;
-   }
-  else echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
-  $menulevel = 2;
-  }
-  $id_produto = $_GET["id_produto"];
+else echo "<input type='hidden' id='menulevel' value='2'/>";
+}
 ?>
 
+<body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="../index.php"><img src="../img/PITCHAU.png" alt=""></a>
@@ -53,25 +41,26 @@ session_start();
             menulevel = document.getElementById("menulevel").value;
             var menu = '';
             if(menulevel == '1'){
-              menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
+              menu = '<li><a class="dropdown-item" href="login.php">Fazer Login</a></li><li><a class="dropdown-item" href="cadastro.php">Se Cadastrar</a></li>';
             }
             else if(menulevel == '2'){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="paginas/produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
+              menu = '<li><a class="dropdown-item" href="perfil.php">Perfil</a></li><li><a class="dropdown-item" href="carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
             }
             else if(menulevel == '3'){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="paginas/produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="paginas/visualizacaoUser.php">Visualização Usuários</a></li><li><a class="dropdown-item" href="paginas/PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
+              menu = '<li><a class="dropdown-item" href="perfil.php">Perfil</a></li><li><a class="dropdown-item" href="categoria.php">Criar Categoria</a></li><li><a class="dropdown-item" href="cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>';
             }
             
             document.getElementById("menu").innerHTML = menu;
           </script>
           </ul>
+        </ul>
         </li>
-      </ul>      
+      </ul>
     </div>
   </div>
 </nav>
 
-<div style="position: relative; text-align: center; background: url('../img/background/login_wallpaper.jpg') center/cover no-repeat;" class= "divin">
+<div style="position: relative; text-align: center; background: url('../img/background/perfil_wallpaper.jpg') center/cover no-repeat;" class= "divin">
 <form action="../php/processar_login.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
   <p class="title">Login</p>
   <label>
@@ -90,7 +79,4 @@ session_start();
 </form>
 </div>
 </body>
-<?php
-include('../php/footer.php');
-?>
 </html>
