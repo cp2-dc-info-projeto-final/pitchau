@@ -659,11 +659,20 @@ session_start();
   $id_produto = $_GET["id_produto"];
 ?>
 
+
+<?php
+// Adicionando SQL no sistema
+
+// include_once('consultas/pitchau.sql');
+?>
+
 <?php
 // Inclua esta linha no início do seu script PHP
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+echo $_SESSION['foto_path'];
 echo $_SESSION['username'];
 
 // Restante do seu código aqui
@@ -797,8 +806,8 @@ document.addEventListener('visibilitychange', function() {
 // Certifique-se de incluir a biblioteca Bootstrap no seu projeto para utilizar o Carousel
 // <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  </script>
- <script>
+</script>
+<script>
   document.addEventListener('DOMContentLoaded', function () {
   const maisproduto = document.getElementById('maisproduto');
 
@@ -834,10 +843,10 @@ document.addEventListener('visibilitychange', function() {
 });
 
 
-  </script>
+</script>
 
 
- <script>
+<script>
   document.addEventListener('DOMContentLoaded', function () {
   const carrinhoTela = document.getElementById('carrinhoTela');
 
@@ -878,11 +887,11 @@ document.addEventListener('visibilitychange', function() {
 });
 
 
-  </script>
+</script>
 <div class="card_list">   
-  <?php //Cards
+<?php //Cards
   
-  $card_produto= card_produtos();
+  $card_produto = card_produtos();
     if($card_produto != null){
       foreach($card_produto as $card_produto) {
         echo '<div class="card" style="height:350px">';
@@ -915,7 +924,7 @@ document.addEventListener('visibilitychange', function() {
     } else {
       echo "Nenhum produto encontrado na tabela Produto.";
     }
-  ?>
+?>
 </div>
 
 <!-- Adicionando um script JavaScript para lidar com a chamada assíncrona -->

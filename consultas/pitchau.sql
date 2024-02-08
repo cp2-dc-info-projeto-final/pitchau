@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS Pitchau;
-USE Pitchau;;
+USE Pitchau;
 
 CREATE TABLE IF NOT EXISTS `Categoria` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

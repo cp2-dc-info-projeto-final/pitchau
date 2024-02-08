@@ -63,9 +63,9 @@ $rowProduto = $resultProduto->fetch_assoc();
 
 if ($rowProduto['count'] == 0) {
     // Inserir dados na tabela Produto
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Violão de aço', 'Violao com cordas de aço', 'img/img_produto/imagem1.png', 1600, 1)");
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Violão de Nylon', 'Violão com cordas de nylon', 'img/img_produto/imagem2.png', 1400, 1)");
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Guitarra EletroAcustica', 'Guitarra eletroacústica com cordas de aço', 'img/img_produto/imagem3.png', 3800, 1)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Violão de aço', 'Violao com cordas de aço', '../../img/img_produto/imagem1.png', 1600, 1)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Violão de Nylon', 'Violão com cordas de nylon', '../../img/img_produto/imagem2.png', 1400, 1)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Guitarra EletroAcustica', 'Guitarra eletroacústica com cordas de aço', '../../img/img_produto/imagem3.png', 3800, 1)");
     // Adicione mais inserções de produtos conforme necessário
 }
 
@@ -76,6 +76,7 @@ $rowSlider = $resultSlider->fetch_assoc();
 if ($rowSlider['count'] == 0) {
     // Inserir dados na tabela Slider
     $conn->query("INSERT INTO Slider(url_img) VALUES('img/img_slider/slider.png')");
+    $conn->query("INSERT INTO Slider(url_img) VALUES('img/img_slider/slider_2.png')");
 }
 
 
