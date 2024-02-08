@@ -308,18 +308,13 @@
   <link rel="stylesheet" href="../css/cadastro_produto.css">
   <title>Cadastro de Produto</title>
 </head>
-
-<body style="display:inherit;">
-
+<body style="display:inherit;"> 
 <?php
   include_once "../consultas/flying_bubbles.php";
-
+  session_start();
   if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
       header("Location: ../index.php"); // Redirecionar para a página do painel após o login
   }
-  include_once "../consultas/flying_bubbles.php";
-  session_start();
-
   if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
     echo "<input type='hidden' id='menulevel' value='1'/>"; //Torna em visitante
     $menulevel = 1;
