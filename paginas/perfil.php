@@ -323,7 +323,7 @@ session_start();
 
 <body>
 <?php
-  include_once "consultas/flying_bubbles.php";
+  include_once "../consultas/flying_bubbles.php";
 
   if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
     header("Location: ../index.php"); // Redirecionar para a página index
