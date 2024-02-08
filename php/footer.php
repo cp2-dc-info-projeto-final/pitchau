@@ -186,9 +186,9 @@
             <ul class="footer-links">
               
               <li><a href="#">Kayky Carrilho</a></li>
-              <li><a href="#">Athos</a></li>
-              <li><a href="#">Igor H.</a></li>
+              <li><a href="#">Athos Xavier</a></li>
               <li><a href="#">Igor Santana</a></li>
+              <li><a href="#">Igor Honório</a></li>
               
             </ul>
           </div>
@@ -210,7 +210,7 @@
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
             <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved by 
-         <a href="#">criptenor</a>.
+         <a href="#">Pitchau</a>.
             </p>
           </div>
 
