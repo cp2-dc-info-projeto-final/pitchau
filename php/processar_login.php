@@ -21,7 +21,7 @@ if ($result->num_rows == 1) {
         
     } 
     else{
-        header("Location: ../paginas/perfil.php");
+        header("Location: ../index.php");
     }
     
 }elseif($result->num_rows ==0){
