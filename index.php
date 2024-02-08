@@ -702,9 +702,6 @@ echo $_SESSION['username'];
           </script>
           </ul>
         </li>
-        <li>
-          <a href="paginas/perfil.php">Perfil</a>
-        </li>
       </ul>
     </div>
     <script>
