@@ -12,7 +12,7 @@
 <body>
 <?php
   // Resto do código...
-  include_once "consultas/flying_bubbles.php";
+  include_once "../consultas/flying_bubbles.php";
 
   if (isset( $_SESSION["user_id"])) { //Verifica se == Usuário
     header("Location: ../index.php"); // Redirecionar para a página index
@@ -30,7 +30,7 @@
   else echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
   $menulevel = 2;
   }
-  $id_produto = $_GET["id_produto"];
+  
 ?>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">

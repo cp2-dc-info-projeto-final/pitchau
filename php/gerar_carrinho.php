@@ -1,8 +1,9 @@
 <?php
 include_once "../consultas/flying_bubbles.php";
+session_start();
 
 
-    $produtos_no_carrinho = getProdutosNoCarrinhoPorCliente($_SESSION['user_id']);
+$produtos_no_carrinho = getProdutosNoCarrinhoPorCliente($_SESSION['user_id']);
 
     // Inicializar um array para armazenar a quantidade de cada produto
     $quantidades = array();
