@@ -13,7 +13,7 @@
   
 <?php
   // Resto do código...
-  include_once "consultas/flying_bubbles.php";
+  include_once "../consultas/flying_bubbles.php";
 
   if (isset( $_SESSION["user_id"])) { //Verifica se == Usuário
     header("Location: ../index.php"); // Redirecionar para a página index
@@ -31,7 +31,6 @@
   else echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
   $menulevel = 2;
   }
-  $id_produto = $_GET["id_produto"];
 ?>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -71,7 +70,7 @@
 </nav>
 
 <div style="position: relative; text-align: center; background-color: beige;" class= "divin">
-<form action="../php/processar_login.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
+<form action="../php/processar_registro.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
   <p class="title">Registrar</p>
   <p class="message">Registre-se agora e tenha acesso completo ao nosso aplicativo.</p>
   <div class="flex">

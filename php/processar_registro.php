@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if($password_ == $confirm_password){
     include_once "../consultas/flying_bubbles.php";
-     $conn = connect($servername, $username, $password, $dbname);
+     $conn = connect();
     
     // Uso de prepared statement para evitar SQL injection
     $stmt = $conn->prepare("INSERT INTO Usuario (nome, email, senha) VALUES (?, ?, ?)");
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../paginas/login.php");
             exit;}
     }else {
-        echo "Erro ao registrar: " . $stmt->error;
+        header("location: ../")
     }
 
     // Fechar a conexão com o banco de dados
