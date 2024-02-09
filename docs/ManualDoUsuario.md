@@ -35,12 +35,12 @@ Lista-se aqui as funcionalidades da loja de instrumentos musicais Pitchau
     Na página principal todos podem visualizar os produtos desejados e as opções, cujas visíveis em todas as páginas. Visitantes poderão, através de opções, fazer seu cadastro como usuário ou realizar o login em uma conta já existente, enquanto usuários poderão, através de opções, ver seu perfil, carrinho, produtos comprados e deslogar, e enquanto adminstradores poderão, através de opções, ver seu perfil, criar categorias, criar produtos, ver relação de vendas, visualizar usuários e deslogar.
 
 ## Cadastro
-![CadastroImg](/docs/ManualImagens/2.png)
+![CadastroImg](/docs/ManualImagens/3.png)
     A página cadastro de usuários pode ser acessada e utilizada apenas por visitante. Cujo insere suas informações, que sendo válidas e originais, não iguais à de outros usuários, o usuário é cadastrado com sucesso. Os dados requisitados são nome, sobrenome, email, senha e confirmação de senha. Todos os campos são obrigatórios
     O visitante pode acessar a página através de opções, e então, cadastro.
 
 ## Login
-![LoginImg](/docs/ManualImagens/3.png)
+![LoginImg](/docs/ManualImagens/2.png)
     A página login pode ser acessada e utilizada apenas por visitante. Cujo insere suas informações, que sendo válidas e concordantes, o usuário é logado com sucesso. Os dados requisitados são email e senha. Todos os campos são obrigatórios
     O visitante pode acessar a página através de opções, e então, login.
 
