@@ -14,7 +14,7 @@
  - [CDU 08.Visualizar Produto](#CDU-08-Visualizar-Produto): Visualizar Produto
  - [CDU 09.Adicionar Produto ao Carrinho](#CDU-09-Adicionar-Produto-ao-Carrinho): Adicionar Produto ao Carrinho
  - [CDU 10.Comprar Carrinho](#CDU-10-Comprar-Carrinho): Comprar Carrinho
- - [CDU 11.Visualizar Produto Comprado](#CDU-11-Visualizar-Produto-Comprado): Visualizar Produto Comprado
+<!-- - [CDU 11.Visualizar Produto Comprado](#CDU-11-Visualizar-Produto-Comprado): Visualizar Produto Comprado -->
 
  - [CDU 12.Visualizar Todo Produto Comprado](#CDU-12-Visualizar-Todo-Produto-Comprado): Visualizar Todo Produto Comprado
  - [CDU 13.Visualizar Todo Usuário Cadastrado](#CDU-13-Visualizar-Todo-Usuário-Cadastrado): Visualizar Todo Usuário Cadastrado
@@ -65,18 +65,18 @@
  - [CDU 08](#CDU-08-Visualizar-Produto): A pessoa visualiza produto do catálogo
  - [CDU 09](#CDU-09-Adicionar-Produto-ao-Carrinho): O usuário adiciona produto no seu carrinho
  - [CDU 10](#CDU-10-Comprar-Carrinho): O usuário compra seu carrinho
- - [CDU 11](#CDU-11-Visualizar-Produto-Comprado): O usuário visualiza seus produtos já comprados
- - [CDU 12](#CDU-12-Visualizar-Todo-Produto-Comprado): O administrador visualiza todo produtos já comprado
- - [CDU 13](#CDU-13-Visualizar-Todo-Usuário-Cadastrado): O administrador visualiza todo usuário cadastrado
- - [CDU 14](#CDU-14-Atualizar-Email-de-Usuário): O administrador atualiza email de usuário
- - [CDU 15](#CDU-15-Excluir-Conta): O administrador exclui conta de usuário
- - [CDU 16](#CDU-16-Promover-Usuário-à-Administrador): O administrador promove a conta a administrador
- - [CDU 17](#CDU-17-Criar-Categoria): O administrador cria categoria
- - [CDU 18](#CDU-18-Atualizar-Categoria): O administrador atualiza categoria
- - [CDU 19](#CDU-19-Criar-Produto): O administrador cria produto
- - [CDU 20](#CDU-20-Atualizar-Produto): O administrador atualiza produto
- - [CDU 21](#CDU-21-Adicionar-Quantidade-do-Produto-em-Estoque): O administrador adiciona quantide do produto em estoque
- - [CDU 22](#CDU-22-Reduzir-Quantidade-do-Produto-em-Estoque): O administrador reduz quantide do produto em estoque
+<!-- - [CDU 11](#CDU-11-Visualizar-Produto-Comprado): O usuário visualiza seus produtos já comprados -->
+ - [CDU 11](#CDU-12-Visualizar-Todo-Produto-Comprado): O administrador visualiza todo produtos já comprado
+ - [CDU 12](#CDU-13-Visualizar-Todo-Usuário-Cadastrado): O administrador visualiza todo usuário cadastrado
+ - [CDU 13](#CDU-14-Atualizar-Email-de-Usuário): O administrador atualiza email de usuário
+ - [CDU 14](#CDU-15-Excluir-Conta): O administrador exclui conta de usuário
+ - [CDU 15](#CDU-16-Promover-Usuário-à-Administrador): O administrador promove a conta a administrador
+ - [CDU 16](#CDU-17-Criar-Categoria): O administrador cria categoria
+ - [CDU 17](#CDU-18-Atualizar-Categoria): O administrador atualiza categoria
+ - [CDU 18](#CDU-19-Criar-Produto): O administrador cria produto
+ - [CDU 19](#CDU-20-Atualizar-Produto): O administrador atualiza produto
+ - [CDU 20](#CDU-21-Adicionar-Quantidade-do-Produto-em-Estoque): O administrador adiciona quantide do produto em estoque
+ - [CDU 21](#CDU-22-Reduzir-Quantidade-do-Produto-em-Estoque): O administrador reduz quantide do produto em estoque
 
 <!-- Antiga descrição dos CDUs
        1. O visitante se cadastra como cliente
@@ -306,25 +306,27 @@
        5. O sistema remove na tabela produtocompra(carrinho) do banco de dados do usuário logado o id do produto, id da compra e quantidade total do produto selecionado pelo usuário.
        6. O sistema recarrega a página carrinho.
 
+<!--
 ### CDU-11 Visualizar Produto Comprado
  - Fluxo Principal
       ![visualizarprodutocompradoFP](/docs/CasosDeUsoImagens/visualizarprodutocompradoFP.png)
        1. O sistema exibe a página produtos comprados.
        2. O sistema apresenta todo produto comprado e registrado na tabela compra do usuário logado na sessão.
+-->
 
-### CDU-12 Visualizar Todo Produto Comprado
+### CDU-11 Visualizar Todo Produto Comprado
  - Fluxo Principal
       ![visualizartodoprodutocompradoFP](/docs/CasosDeUsoImagens/visualizartodoprodutocompradoFP.png)
        1. O sistema exibe a página produtos comprados.
        2. O sistema apresenta todo produto comprado e registrado na tabela compra de todo usuário registrado na tabela usuário.
 
-### CDU-13 Visualizar Todo Usuário Cadastrado
+### CDU-12 Visualizar Todo Usuário Cadastrado
  - Fluxo Principal
       ![visualizartodousuariocompradoFP](/docs/CasosDeUsoImagens/visualizartodousuarioFP.png)
        1. O sistema exibe a página gerenciamento de usuário.
        2. O sistema exibe todo usuário registrado na tabela usuário.
 
-### CDU-14 Atualizar Email Usuário
+### CDU-13 Atualizar Email Usuário
  - Fluxo Principal
       ![atualizaremailusuarioFP](/docs/CasosDeUsoImagens/atualizaremailusuárioFP.png)
        1. O sistema exibe a página gerenciamento de usuário.
@@ -343,7 +345,7 @@
        4. O administrador preenche o novo email.
        5. O sistema mantém o dado inalterado.
 
-### CDU-15 Excluir Conta Usuário
+### CDU-14 Excluir Conta Usuário
  - Fluxo Principal
       ![excluircontausuarioFP](/docs/CasosDeUsoImagens/excluircontausuarioFP.png)
        1. O sistema exibe a página gerenciamento de usuário.
@@ -363,7 +365,7 @@
        5. O administrador não confirma a exclusão de usuário.
        6. O sistema mantém os dados inalterados.
 
-### CDU-16 Promover Usuário à Administrador
+### CDU-15 Promover Usuário à Administrador
  - Fluxo Principal
       ![promoverusuarioaadministradorFP](/docs/CasosDeUsoImagens/promoverusuarioaadministradorFP.png)
        1. O sistema exibe a página gerenciamento de usuário.
@@ -383,7 +385,7 @@
        5. O administrador não confirma.
        6. O sistema mantém os dados inalterados.
 
-### CDU-17 Criar Categoria
+### CDU-16 Criar Categoria
  - Fluxo Principal
       ![criarcategoriaFP](/docs/CasosDeUsoImagens/criarcategoriaFP.png)
        1. O sistema exibe a página criar categoria.
@@ -422,7 +424,7 @@
        6. O sistema apresenta a mensagem: A categoria já está cadatrada.
        7. O sistema sugere tentar novamente.
 
-### CDU-18 Atualizar Categoria
+### CDU-17 Atualizar Categoria
  - Fluxo Principal
       ![atualizarcategoriaFP](/docs/CasosDeUsoImagens/atualizarcategoriaFP.png)
        1. O sistema exibe a página gerenciamento de categoria.
@@ -465,7 +467,7 @@
        4. O administrador preenche o novo nome.
        5. O sistema mantém o dado inalterado.
 
-### CDU-19 Criar Produto
+### CDU-18 Criar Produto
  - Fluxo Principal
       ![criarprodutoFP](/docs/CasosDeUsoImagens/criarprodutoFP.png)
        1. O sistema exibe a página criar produto.
@@ -504,7 +506,7 @@
        6. O sistema apresenta a mensagem: o produto já está cadatrado.
        7. O sistema sugere tentar novamente.
 
-### CDU-20 Atualizar Produto
+### CDU-19 Atualizar Produto
  - Fluxo Principal
       ![atualizarprodutoFP](/docs/CasosDeUsoImagens/atualizarprodutoFP.png)
        1. O sistema exibe a página gerenciamento de produto.
@@ -534,7 +536,7 @@
        4. O administrador preenche os novos dados.
        5. O sistema mantém o dado inalterado.
 
-### CDU-21 Adicionar Quantidade do Produto em Estoque
+### CDU-20 Adicionar Quantidade do Produto em Estoque
  - Fluxo Principal
       ![atualizarquantidadedeprodutoemestoqueFP](/docs/CasosDeUsoImagens/atualizarquantidadedoprodutoemestoqueFP.png)
        1. O sistema exibe a página gerenciamento de produto.
@@ -565,7 +567,7 @@
        4. O administrador altera a quantidade.
        5. O sistema mantém o dado inalterado.
 
-### CDU-22 Reduzir Quantidade do Produto em Estoque
+### CDU-21 Reduzir Quantidade do Produto em Estoque
  - Fluxo Principal
       ![atualizarquantidadedeprodutoemestoqueFP](/docs/CasosDeUsoImagens/atualizarquantidadedoprodutoemestoqueFP.png)
        1. O sistema exibe a página gerenciamento de produto.
