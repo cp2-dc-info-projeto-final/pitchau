@@ -16,19 +16,19 @@
  - [CDU 10.Comprar Carrinho](#CDU-10-Comprar-Carrinho): Comprar Carrinho
 <!-- - [CDU 11.Visualizar Produto Comprado](#CDU-11-Visualizar-Produto-Comprado): Visualizar Produto Comprado -->
 
- - [CDU 12.Visualizar Todo Produto Comprado](#CDU-12-Visualizar-Todo-Produto-Comprado): Visualizar Todo Produto Comprado
- - [CDU 13.Visualizar Todo Usuário Cadastrado](#CDU-13-Visualizar-Todo-Usuário-Cadastrado): Visualizar Todo Usuário Cadastrado
+ - [CDU 11.Visualizar Todo Produto Comprado](#CDU-12-Visualizar-Todo-Produto-Comprado): Visualizar Todo Produto Comprado
+ - [CDU 12.Visualizar Todo Usuário Cadastrado](#CDU-13-Visualizar-Todo-Usuário-Cadastrado): Visualizar Todo Usuário Cadastrado
 
- - [CDU 14.Atualizar Email Usuário](#CDU-14-Atualizar-Email-de-Usuário): Atualizar Email Usuário 
- - [CDU 15.Excluir Conta Usuário](#CDU-15-Excluir-Conta): Excluir Conta Usuário
- - [CDU 16.Promover Usuário à Administrador](#CDU-16-Promover-Usuário-à-Administrador): Promover Usuário à Administrador
+ - [CDU 13.Atualizar Email Usuário](#CDU-14-Atualizar-Email-de-Usuário): Atualizar Email Usuário 
+ - [CDU 14.Excluir Conta Usuário](#CDU-15-Excluir-Conta): Excluir Conta Usuário
+ - [CDU 15.Promover Usuário à Administrador](#CDU-16-Promover-Usuário-à-Administrador): Promover Usuário à Administrador
 
- - [CDU 17.Criar Categoria](#CDU-17-Criar-Categoria): Criar Categoria
- - [CDU 18.Atualizar Categoria](#CDU-18-Atualizar-Categoria): Atualizar Categoria
- - [CDU 19.Criar Produto](#CDU-19-Criar-Produto): Criar Produto
- - [CDU 20.Atualizar Produto](#CDU-20-Atualizar-Produto): Atualizar Produto
- - [CDU 21.Adicionar Quantidade do Produto em Estoque](#CDU-21-Adicionar-Quantidade-do-Produto-em-Estoque): Adicionar Quantidade do Produto em Estoque
- - [CDU 22.Reduzir Quantidade do Produto em Estoque](#CDU-22-Reduzir-Quantidade-do-Produto-em-Estoque): Reduzir Quantidade do Produto em Estoque
+ - [CDU 16.Criar Categoria](#CDU-17-Criar-Categoria): Criar Categoria
+ - [CDU 17.Atualizar Categoria](#CDU-18-Atualizar-Categoria): Atualizar Categoria
+ - [CDU 18.Criar Produto](#CDU-19-Criar-Produto): Criar Produto
+ - [CDU 19.Atualizar Produto](#CDU-20-Atualizar-Produto): Atualizar Produto
+ - [CDU 20.Adicionar Quantidade do Produto em Estoque](#CDU-21-Adicionar-Quantidade-do-Produto-em-Estoque): Adicionar Quantidade do Produto em Estoque
+ - [CDU 21.Reduzir Quantidade do Produto em Estoque](#CDU-22-Reduzir-Quantidade-do-Produto-em-Estoque): Reduzir Quantidade do Produto em Estoque
 
 <!-- Antigos CDUs
  - [CDU 01](#CDU-01-Fazer-Cadastro): Fazer Cadastro
