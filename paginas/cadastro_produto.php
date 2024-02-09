@@ -320,14 +320,12 @@
     $menulevel = 1;
   }
   if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
-    if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]== 1 ) {//Verifica se == Administrador
+    if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]== 1 ) { //Verifica se == Administrador
       echo "<input type='hidden' id='menulevel' value='3'/>"; //Torna em administrador
       $menulevel = 3;
-    }  
-  }
-  else {
-    echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
-    $menulevel = 2;
+   }
+ else echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
+ $menulevel = 2;
  }
 ?>
 
@@ -349,15 +347,14 @@
             menulevel = document.getElementById("menulevel").value;
             var menu = '';
             if(menulevel == '1'){
-              menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
+              menu = '<li><a class="dropdown-item" href="../paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="../paginas/cadastro.php">Se Cadastrar</a></li>';
             }
             else if(menulevel == '2'){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="paginas/produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
+              menu = '<li><a class="dropdown-item" href="../paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="../paginas/carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="../paginas/produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>';
             }
             else if(menulevel == '3'){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="paginas/produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="paginas/visualizacaoUser.php">Visualização Usuários</a></li><li><a class="dropdown-item" href="paginas/PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
+              menu = '<li><a class="dropdown-item" href="../paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="../paginas/produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="../paginas/visualizacaoUser.php">Gerenciar Usuários</a></li><li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>';
             }
-            
             document.getElementById("menu").innerHTML = menu;
           </script>
           </ul>
@@ -371,10 +368,6 @@
   <?php
   include_once "../consultas/flying_bubbles.php";
   $conn = connect();
-
-  if (!isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) {
-    header("Location: ../index.php");
-  }
 
   // Função para gerar um nome único para a imagem
   function generateUniqueFileName($originalName) {

@@ -656,13 +656,7 @@ session_start();
     else echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
   $menulevel = 2;
   }
-?>
-
-
-<?php
-// Adicionando SQL no sistema
-
-// include_once('consultas/pitchau.sql');
+  $id_produto = $_GET["id_produto"];
 ?>
 
 <?php
@@ -670,10 +664,10 @@ session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+echo $_SESSION['username'];
 
 // Restante do seu código aqui
 ?>
-
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -699,7 +693,7 @@ error_reporting(E_ALL);
               menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="paginas/produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
             }
             else if(menulevel == '3'){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="paginas/produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="paginas/visualizacaoUser.php">Visualização Usuários</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
+              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="paginas/produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="paginas/visualizacaoUser.php">Gerenciar Usuários</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
             }
             document.getElementById("menu").innerHTML = menu;
           </script>
@@ -1147,6 +1141,7 @@ function atualizarTotal() {
     document.getElementById('popupContainer').style.display = 'none';
   });
 </script>
+
 <?php
 include('php/footer.php');
 ?>
