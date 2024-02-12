@@ -11,7 +11,8 @@
 </head>
 <body>
 <?php
-  include_once "consultas/flying_bubbles.php";
+  include_once "../consultas/flying_bubbles.php";
+  session_start();
 
   if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
     header("Location: ../index.php"); // Redirecionar para a página index
