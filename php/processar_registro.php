@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../paginas/login.php");
             exit;}
     }else {
-        header("location: ../")
+        //header("location: ../")
     }
 
     // Fechar a conexão com o banco de dados
