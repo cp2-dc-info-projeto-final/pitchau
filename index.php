@@ -656,7 +656,6 @@ session_start();
     else echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
   $menulevel = 2;
   }
-  $id_produto = $_GET["id_produto"];
 ?>
 
 <?php
@@ -664,8 +663,6 @@ session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-echo $_SESSION['username'];
-
 // Restante do seu código aqui
 ?>
 
