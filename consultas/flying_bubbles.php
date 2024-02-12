@@ -273,8 +273,8 @@ function alterar_email($email, $senha){
     }
 }
 
-function Apagar_conta(){
-    $conn= connect($servername,$username,$password,$dbname);
+function Apagar_conta($id){
+    $conn= connect();
     $user_id= $_SESSION["user_id"]; //Variavel de sessão
     $stmt = $conn->prepare("DELETE FROM Usuario WHERE id = ?");
     $stmt->bind_param("i", $user_id);
