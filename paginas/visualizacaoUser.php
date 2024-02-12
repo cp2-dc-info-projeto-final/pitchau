@@ -145,10 +145,10 @@ function transformaAdmim(userId) {
     }
 }
 </script>
-</body>
 
 <?php
 include('../php/footer.php');
 ?>
 
+</body>
 </html>

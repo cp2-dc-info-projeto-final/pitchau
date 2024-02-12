@@ -732,6 +732,9 @@ error_reporting(E_ALL);
       echo '  <span id="quantidadeCarrinho" class="quantity">'.contarItensNoCarrinho($_SESSION['user_id']).'</span>';
       echo '</button>';
     }
+    else{
+      
+    }
     ?>
     
   </div>

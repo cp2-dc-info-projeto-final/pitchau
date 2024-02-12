@@ -43,7 +43,25 @@ function connect(){
     // Conectar ao banco de dados Pitchau após a criação
 $conn = new mysqli($servername, $username, $password, 'Pitchau');
 
+// Verificar se a tabela Usuario está vazia
+$resultUsuario = $conn->query("SELECT COUNT(*) as count FROM Usuario");
+$rowUsuario = $resultUsuario->fetch_assoc();
 
+if($rowUsuario['count'] == 0) {
+    // Inserir super adm na tabela Usuario
+    $conn->query('INSERT INTO Usuario(email, senha, nome, isAdmin) VALUES("adm@super", "$2y$10$KAseMta2Vx5CEwk9rDjACOVRHrYMBsDj4YfqThOm5KYgsBD9TVg5u", "Super Administrador", 1)');
+/*
+=================================
+
+    Main Adm Info's
+
+    Nome.: Super Administrador
+    Email.: adm@super
+    Senha.: adm
+    
+=================================
+*/
+}
 
 // Verificar se a tabela Categoria está vazia
 $resultCategoria = $conn->query("SELECT COUNT(*) as count FROM Categoria");

@@ -621,5 +621,8 @@ session_start();
     });
   }
 </script>
+<?php
+include('php/footer.php');
+?>
 
 </body>
