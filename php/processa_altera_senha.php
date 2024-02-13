@@ -9,9 +9,6 @@
     if ($conn->connect_error) {
         die("Falha na conexão com o banco de dados: " . $conn->connect_error);
     }
-
-    // Verifique se o formulário foi enviado
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         // Coletar dados do formulário
         $password_ = $_POST["senha"];
@@ -20,24 +17,18 @@
             // Validar os dados (adicionar validações adicionais conforme necessário)
 
         // Inserir dados na tabela Usuario
-        $sql = $conn->prepare ("UPDATE Usuario SET senha = ? WHERE id =");
-        $sql->bind_param("s", password_hash($password_, PASSWORD_DEFAULT));
-
-        if ($sql->execute()) {
-            header("Location: ../php/logout.php");
-            exit;
+        $criptografia = password_hash($password_, PASSWORD_DEFAULT);
+        $idSessao= $_SESSION["user_id"];
+        $stmt = "UPDATE usuario SET senha = '$criptografia' WHERE id = '$idSessao' "; 
+        mysqli_query($conn,$stmt);
+        header("Location: ../php/logout.php");
+        exit();
         } else {
             header("Location: ../paginas/perfil.php");
+            //tratar erro
         }
         
 
         // Fechar a conexão com o banco de dados
-        $conn->close();
-        }
-        else{
-            header("Location: ../index.php");
-        }
-
-        
-    }
+$conn->close();
 ?>
