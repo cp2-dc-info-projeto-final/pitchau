@@ -1,5 +1,10 @@
 <?php
-    include_once "consultas/flying_bubbles.php";
+    include_once "../consultas/flying_bubbles.php";
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    $conn= connect(); 
+    session_start();
 
     if ($conn->connect_error) {
         die("Falha na conexão com o banco de dados: " . $conn->connect_error);
@@ -15,17 +20,22 @@
             // Validar os dados (adicionar validações adicionais conforme necessário)
 
         // Inserir dados na tabela Usuario
-        $sql = "ALTER TABLE Usuario (senha) VALUES ('$password_')";
+        $sql = $conn->prepare ("UPDATE Usuario SET senha = ? WHERE id =");
+        $sql->bind_param("s", password_hash($password_, PASSWORD_DEFAULT));
 
-        if ($conn->query($sql) === TRUE) {
-            header("Location: logout.php");
+        if ($sql->execute()) {
+            header("Location: ../php/logout.php");
             exit;
         } else {
             header("Location: ../paginas/perfil.php");
         }
+        
 
         // Fechar a conexão com o banco de dados
         $conn->close();
+        }
+        else{
+            header("Location: ../index.php");
         }
 
         
