@@ -15,9 +15,6 @@
   if (isset( $_SESSION["user_id"])) { //Verifica se == Usuário
     header("Location: ../index.php"); // Redirecionar para a página index
   }
-  if (isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == true) { //Verifica se == Administrador
-    header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-  }
 
   if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
     echo "<input type='hidden' id='menulevel' value='1'/>"; //Torna em visitante
@@ -69,7 +66,7 @@
 </nav>
 
 <div style="position: relative; text-align: center; background-color: beige;" class= "divin">
-<form action="../php/processa_envia_email_esqueceu_senha.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
+<form action="../php/enviar_email.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
   <p class="title">Esqueceu Sua Senha</p>
   <p>Solicitação para Redefinição de Senha</p>
   <label>

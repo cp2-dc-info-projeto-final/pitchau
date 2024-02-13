@@ -14,9 +14,6 @@
   if (isset( $_SESSION["user_id"])) { //Verifica se == Usuário
     header("Location: ../index.php"); // Redirecionar para a página index
   }
-  if (isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == true) { //Verifica se == Administrador
-    header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-  }
 
   include_once "../consultas/flying_bubbles.php";
 
@@ -69,8 +66,9 @@
   </div>
 </nav>
 
+<!-- form action não existente ainda -->
 <div style="position: relative; text-align: center; background-color: beige;" class= "divin">
-<form action="../php/processar_altera_senha.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
+<form action="../php/processar_recebe_codigo_email.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
   <p class="title">Alterar Senha</p>
   <p>Solicitação para Redefinição de Senha</p>
   <p>Insira o código de alteração de senha</p>
@@ -79,6 +77,8 @@
     <input required="" placeholder="" type="password" class="input" name="email_code" id="email_code">
     <span>Código</span>
   </label>
+  
+  <button class="submit">Enviar</button>
 
   <script>
     $compara_cod_email = document.getElementById("email_code").value;

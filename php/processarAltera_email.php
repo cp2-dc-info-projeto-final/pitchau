@@ -24,7 +24,7 @@
                     
 
                     // Redirecionamento com os parâmetros no cabeçalho
-                    header("Location: php/logout.php");
+                    header("Location: ../php/logout.php");
                 } else {
                     echo "Erro ao alterar o e-mail: " . $stmt->error;
                 }
