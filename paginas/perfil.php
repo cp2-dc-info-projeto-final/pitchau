@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
+  header("Location: ../index.php"); // Redirecionar para a página index
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -325,6 +328,22 @@ session_start();
 <body>
 <?php
 
+<<<<<<< HEAD
+=======
+  if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
+    echo "<input type='hidden' id='menulevel' value='1'/>"; //Torna em visitante
+    $menulevel = 1;
+  }
+  if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
+    if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]== 1 ) { //Verifica se == Administrador
+      echo "<input type='hidden' id='menulevel' value='3'/>"; //Torna em administrador
+      $menulevel = 3;
+   }
+  else echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
+  $menulevel = 2;
+  }
+?>
+>>>>>>> 9edb45f368ff9fc357508476dc35d994a3a6ff81
 
         
         include_once "../consultas/flying_bubbles.php";

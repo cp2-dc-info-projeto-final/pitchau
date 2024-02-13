@@ -9,6 +9,11 @@ use PHPMailer\PHPMailer\Exception;
 require 'C:/Program Files (x86)/EasyPHP-Devserver-17/eds-www/PHPMailer-master/src/Exception.php';
 require 'C:/Program Files (x86)/EasyPHP-Devserver-17/eds-www/PHPMailer-master/src/PHPMailer.php';
 require 'C:/Program Files (x86)/EasyPHP-Devserver-17/eds-www/PHPMailer-master/src/SMTP.php';
+/* Talvez assim?
+require 'C:/Program Files (x86)/EasyPHP-Devserver-17/eds-www/pitchau-1/vendor/phpmailer/src/Exception.php';
+require 'C:/Program Files (x86)/EasyPHP-Devserver-17/eds-www/pitchau-1/vendor/phpmailer/src/PHPMailer.php';
+require 'C:/Program Files (x86)/EasyPHP-Devserver-17/eds-www/pitchau-1/vendor/phpmailer/src/SMTP.php';
+*/
 
 function envia_email($para, $assunto, $mensagem){
 
@@ -58,7 +63,7 @@ function envia_email($para, $assunto, $mensagem){
 //Cria-se o código, que enviado ao email, para alterar senha 
 $min = 000000;
 $max = 999999;
-$cod_email = rand(int $min, int $max): int;
+$cod_email = rand(min($min), int($max));
 echo "<input type='hidden' id='$cod_email value='$cod_email'/>";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

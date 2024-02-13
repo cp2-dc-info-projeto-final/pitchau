@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php
-  include_once "consultas/flying_bubbles.php";
+  include_once "../consultas/flying_bubbles.php";
 
   if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
     echo "<input type='hidden' id='menulevel' value='1'/>"; //Torna em visitante
@@ -59,11 +59,6 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-      
     </div>
   </div>
 </nav>
@@ -120,6 +115,10 @@ $card_produto= recuperar_produto_por_id($id_produto);
 </script>
 
 </div>
+
+<?php
+include('../php/footer.php');
+?>
 
 </body>
 </html>

@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php
-  include_once "consultas/flying_bubbles.php";
+  include_once "../consultas/flying_bubbles.php";
 
   if (isset( $_SESSION["user_id"])) { //Verifica se == Usuário
     header("Location: ../index.php"); // Redirecionar para a página index
@@ -66,7 +66,7 @@
 </nav>
 
 <div style="position: relative; text-align: center; background-color: beige;" class= "divin">
-<form action="../php/processar_login.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
+<form action="../php/processa_envia_email_esqueceu_senha.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
   <p class="title">Esqueceu Sua Senha</p>
   <p>Solicitação para Redefinição de Senha</p>
   <label>
