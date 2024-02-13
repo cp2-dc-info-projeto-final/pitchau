@@ -24,9 +24,14 @@
         header("Location: ../php/logout.php");
         exit();
         } else {
-            header("Location: ../paginas/perfil.php");
+            header("Location: ../paginas/perfil.php");}
+<<<<<<< HEAD
             //tratar erro
-        }
+=======
+            echo "<br><br>";
+            echo "<p align='center'>A alteração de senha não foi realizada.</p>";
+            echo "<p align='center'><a href='../paginas/perfil.php'>Voltar para Perfil</a></p>";
+>>>>>>> 76f98406383918d3a2f97d7bd93bee32f2be18ee
         
 
         // Fechar a conexão com o banco de dados

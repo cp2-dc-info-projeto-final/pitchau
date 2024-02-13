@@ -14,7 +14,9 @@ if (isset($_SESSION["user_id"])) {
         header("Location:../php/logout.php");
         exit();
     } else {
-        echo "Erro ao excluir o usuário.";
+        echo "<br><br>";
+        echo "<p align='center'>Erro ao excluir o usuário.</p>";
+        echo "<p align='center'><a href='../paginas/perfil.php'>Voltar para Perfil</a></p>";
     }
 } else {
     echo "ID do usuário não está definido.";
