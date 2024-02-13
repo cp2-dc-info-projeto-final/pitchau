@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
+  header("Location: ../index.php"); // Redirecionar para a página index
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -324,10 +327,6 @@ session_start();
 <body>
 <?php
   include_once "../consultas/flying_bubbles.php";
-
-  if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
-    header("Location: ../index.php"); // Redirecionar para a página index
-  }
 
   if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
     echo "<input type='hidden' id='menulevel' value='1'/>"; //Torna em visitante
