@@ -15,7 +15,7 @@
         if($result->num_rows > 0 ){
             $row= $result->fetch_assoc();
             echo $senha . $row['senha'];
-            if($senha == $row['senha']){
+            if (password_verify($senha, $row['senha'])){
                 $stmt=$conn->prepare("UPDATE Usuario SET email= ? WHERE id= ?");
                 $stmt->bind_param("si",$email, $user_id );
                 if ($stmt->execute()) {
@@ -24,7 +24,7 @@
                     
 
                     // Redirecionamento com os parâmetros no cabeçalho
-                    header("Location: ../paginas/perfil.php");
+                    header("Location: php/logout.php");
                 } else {
                     echo "Erro ao alterar o e-mail: " . $stmt->error;
                 }
