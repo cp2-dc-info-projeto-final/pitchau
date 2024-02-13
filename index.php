@@ -22,6 +22,9 @@ session_start();
 </style>
     <title>Pitchau</title>
   <style>
+      body {
+        background-color: beige;
+      }
     
       .card_ {
     
@@ -720,7 +723,7 @@ error_reporting(E_ALL);
     </script>
     <?php
 
-      if (!isset( $_SESSION["user_id"]) || !$_SESSION["is_admin"] == true){
+      if (isset( $_SESSION["user_id"]) && !$_SESSION["is_admin"] == true){
 /*        if (contarItensNoCarrinho($_SESSION['user_id']) == 0){
     
         }*/
@@ -732,6 +735,7 @@ error_reporting(E_ALL);
         echo '  <span id="quantidadeCarrinho" class="quantity">'.contarItensNoCarrinho($_SESSION['user_id']).'</span>';
         echo '</button>';
       }
+
     ?>
     
   </div>
@@ -875,7 +879,6 @@ document.addEventListener('visibilitychange', function() {
   });
 });
 
-
 </script>
 <div class="card_list">   
 <?php //Cards
@@ -899,16 +902,10 @@ document.addEventListener('visibilitychange', function() {
         
         // Adicionando um identificador único ao botão (id_produto) e removendo a chamada direta da função PHP
         
-        $header = 'header("Location: /paginas/login.php");';
         if (!isset( $_SESSION["user_id"])){
-          echo '<button onclick="'.$header.'">';
-          echo '  <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">';
-          echo '    <title>icon-cart</title>';
-          echo '    <path transform="translate(-3.62 -0.85)" d="M28,27.3,26.24,7.51a.75.75,0,0,0-.76-.69h-3.7a6,6,0,0,0-12,0H6.13a.76.76,0,0,0-.76.69L3.62,27.3v.07a4.29,4.29,0,0,0,4.52,4H23.48a4.29,4.29,0,0,0,4.52-4ZM15.81,2.37a4.47,4.47,0,0,1,4.46,4.45H11.35a4.47,4.47,0,0,1,4.46-4.45Zm7.67,27.48H8.13a2.79,2.79,0,0,1-3-2.45L6.83,8.34h3V11a.76.76,0,0,0,1.52,0V8.34h8.92V11a.76.76,0,0,0,1.52,0V8.34h3L26.48,27.4a2.79,2.79,0,0,1-3,2.44Zm0,0"></path>';
-          echo '  </svg>';
-          echo '</button>';}
-        
-        else{
+          echo 'Logue e compre!';
+        }
+        elseif (isset( $_SESSION["user_id"]) && !$_SESSION["is_admin"] == true){
           echo '<button data-quantity="0" class="btn-cart" id=" addcart_' . $card_produto['id'] . '_carrinho" onclick="adicionarAoCarrinho(' . $card_produto['id'] . '); maisproduto(); atualizarNotificacaoCarrinho(); atualizarTotal();">';
           echo '  <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">';
           echo '    <title>icon-cart</title>';
@@ -916,10 +913,15 @@ document.addEventListener('visibilitychange', function() {
           echo '  </svg>';
           echo '</button>';
         }
+        else{
+          echo 'Adm não pode comprar!';
+        }
+
         echo '</div>'; #fecha footer
         echo '</div>'; #fechacard
       }
-    } else {
+    }
+    else {
       echo "Nenhum produto encontrado na tabela Produto.";
     }
 ?>

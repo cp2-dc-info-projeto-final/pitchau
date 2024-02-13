@@ -30,7 +30,10 @@
                 }
                 $stmt->close();
             } else {
-                echo "Senha incorreta. A alteração de e-mail não foi realizada.";
+                echo "<br><br>";
+                echo "<p align='center'>Senha incorreta.</p>";
+                echo "<p align='center'>A alteração de e-mail não foi realizada.</p>";
+                echo "<p align='center'><a href='../paginas/perfil.php'>Voltar para Perfil</a></p>";
             }      
         } else {
             echo "Usuário não encontrado.";

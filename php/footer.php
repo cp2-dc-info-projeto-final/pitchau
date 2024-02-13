@@ -185,8 +185,8 @@
             <h6>Desenvolvedores</h6>
             <ul class="footer-links">
               
-              <li><a href="#">Kayky Carrilho</a></li>
-              <li><a href="#">Athos Xavier</a></li>
+              <li><a href="https://www.instagram.com/kaykycarrilho/">Kayky Carrilho</a></li>
+              <li><a href="https://www.instagram.com/athosespinner9/">Athos Xavier</a></li>
               <li><a href="#">Igor Santana</a></li>
               <li><a href="#">Igor Honório</a></li>
               
@@ -196,11 +196,10 @@
           <div class="col-xs-6 col-md-3">
             <h6>Desenvolvimento</h6>
             <ul class="footer-links">
-              <li><a href="#"></a></li>
-              <li><a href="#">PHP</a></li>
-              <li><a href="#">JavaScript</a></li>
-              <li><a href="#">HTML</a></li>
-              <li><a href="#">CSS</a></li>
+              <li><a href="https://www.php.net/">PHP</a></li>
+              <li><a href="https://pt.wikipedia.org/wiki/JavaScript">JavaScript</a></li>
+              <li><a href="https://pt.wikipedia.org/wiki/HTML">HTML</a></li>
+              <li><a href="https://pt.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a></li>
             </ul>
           </div>
         </div>
