@@ -82,7 +82,7 @@ $rowProduto = $resultProduto->fetch_assoc();
 if ($rowProduto['count'] == 0) {
     // Inserir dados na tabela Produto
     $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Violão Giannini', 'Violão com cordas de aço. Para os amantes do Country.', '../../img/img_produto/violao1.png', 1500, 2)");
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Violão Tagima', 'Violao com cordas de nylon. Perfeito para os amantes de Clássica. Acompanha duas partituras.', '../../img/img_produto/violao1.png', 1700, 2)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Violão Tagima', 'Violao com cordas de nylon. Perfeito para os amantes de Clássica. Acompanha duas partituras.', '../../img/img_produto/violao2.png', 1700, 2)");
     $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Violão para estudo Giannini', 'Violão com cordas de aço para estudo. Acompanha material de estudo.', '../../img/img_produto/violao3.png', 1300, 2)");
     $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Guitarra Fender', 'Guitarra supimpa para Blues. Acompanha palheta azul.', '../../img/img_produto/guitarra1.png', 2400, 2)");
     $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Baixolão Tagima', 'Baixolao eletroacústico em marfim.', '../../img/img_produto/baixolao1.png', 2100, 2)");

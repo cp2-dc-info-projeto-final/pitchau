@@ -880,9 +880,9 @@ document.addEventListener('visibilitychange', function() {
 });
 
 </script>
+
 <div class="card_list">   
 <?php //Cards
-  
   $card_produto = card_produtos();
     if($card_produto != null){
       foreach($card_produto as $card_produto) {
@@ -913,8 +913,9 @@ document.addEventListener('visibilitychange', function() {
           echo '  </svg>';
           echo '</button>';
         }
+
         else{
-          echo 'Adm não pode comprar!';
+          echo '<a href="exibir_produto.php?id_produto='.$card_produto["id"].'">Editar</a>';
         }
 
         echo '</div>'; #fecha footer

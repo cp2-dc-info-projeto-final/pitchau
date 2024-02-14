@@ -16,14 +16,19 @@ carrinho -> excluir produto
 
 tratamento de erros
 
-	~Avisar tamanho de foto~
-	~Avisar tamanho de foto~
-	~link pra instagram~
+~Avisar tamanho de foto~
+~Avisar tamanho de foto~
+~link pra instagram~
 
-	~alerta de deslog ao alterar email, senha ou apagar conta~
+~alerta de deslog ao alterar email, senha ou apagar conta~
 
 ~botão add cart(visitante) leva p login~
 ~botão carrinho bugado meio bugado~
 enviar email não funcionando
 
-login/registro -> color-text para branco
+	login/registro -> color-text para branco
+
+	editar produto
+editar categoria
+
+envia email
