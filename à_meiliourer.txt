@@ -16,8 +16,8 @@ carrinho -> excluir produto
 
 tratamento de erros
 
-	Avisar tamanho de foto
-	Avisar tamanho de foto
+	~Avisar tamanho de foto~
+	~Avisar tamanho de foto~
 	~link pra instagram~
 
 	~alerta de deslog ao alterar email, senha ou apagar conta~
