@@ -3,6 +3,9 @@ include_once "../consultas/flying_bubbles.php";
 session_start();
 if ($_SESSION['is_admin'] != 1) {
     exit("Acesso negado!");
+    if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
+        header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+    }
 }
 
 if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['id'])) {
@@ -22,6 +25,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['id'
 
 }
     
-
+header("Location: ../paginas/visualizacaoUser.php"); // Redirecionar para a página do painel após o login
 
 ?>

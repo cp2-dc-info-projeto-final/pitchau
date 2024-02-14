@@ -505,8 +505,6 @@ if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
       </div>
     </form>
     <button class="acceptButton" onclick="esconderElementosSenha()">Não</button>
-  </div> 
-  <div class="alinhamento">
   </div>
 </div>
 
