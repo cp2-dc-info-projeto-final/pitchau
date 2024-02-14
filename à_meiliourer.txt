@@ -25,3 +25,5 @@ tratamento de erros
 ~botão add cart(visitante) leva p login~
 ~botão carrinho bugado meio bugado~
 enviar email não funcionando
+
+login/registro -> color-text para branco
