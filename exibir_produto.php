@@ -649,7 +649,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Pitchau</a>
+    <a class="navbar-brand" href="index.php"><img src="img/PITCHAU.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -668,10 +668,10 @@
               menu = '<li><a class="dropdown-item" href="paginas/login.php">Fazer Login</a></li><li><a class="dropdown-item" href="paginas/cadastro.php">Se Cadastrar</a></li>';
             }
             else if(menulevel == '2'){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/carrinho.php">Carrinho</a></li><li><a class="dropdown-item" href="paginas/produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
+              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/produtos_comprados.php">Prod Comprado</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
             }
             else if(menulevel == '3'){
-              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" </a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="paginas/produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="paginas/PGtransforma_admim.php">Cadastrar Administradores</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
+              menu = '<li><a class="dropdown-item" href="paginas/perfil.php">Perfil</a></li><li><a class="dropdown-item" href="paginas/cadastro_produto.php">Criar Produto</a></li><li><a class="dropdown-item" href="paginas/produtos_vendidos.php">Relação de vendas</a></li><li><a class="dropdown-item" href="paginas/visualizacaoUser.php">Gerenciar Usuários</a></li><li><a class="dropdown-item" href="php/logout.php">Logout</a></li>';
             }
             document.getElementById("menu").innerHTML = menu;
           </script>
@@ -716,9 +716,20 @@ $card_produto = recuperar_produto_por_id($id_produto);
     echo "Nenhum produto encontrado na tabela com este id.";
   }
 
+$conn= connect();
+// Buscar categorias do banco de dados
+$sql = "SELECT id, nome FROM Categoria";
+$resultado = $conn->query($sql);
+$categorias = [];
+if ($resultado->num_rows > 0) {
+  while ($row = $resultado->fetch_assoc()) {
+    $categorias[] = $row;
+  }
+}
+$conn->close();
 ?>
 <!-- --------------------------------------- -->
-<form class="form" action="../php/processar_altera_produto.php" method="post" enctype="multipart/form-data">
+<form class="form" action="php/processar_alterar_produto.php" method="post" enctype="multipart/form-data">
   <div class="container"> 
     <p class="title">Alterar Produto</p>
     <p>Redefinição de Produto</p>
@@ -767,84 +778,26 @@ $card_produto = recuperar_produto_por_id($id_produto);
     <span>
     </span>
   </div>
+  <div class="input-container">
+    <select name="categoria">
+      <?php foreach ($categorias as $categoria): ?>
+        <option value="<?php echo $categoria['id']; ?>">
+          <?php echo $categoria['nome']; ?>
+        </option>
+      <?php endforeach; ?>
+    </select>.      
+  </div>
   <button type="submit" class="submit">Confirmar</button>
 </form>
 <script>
 	//  add_cart = document.getElementById("addcart").innerHTML = menu;
 	//add_cart = document.getElementById("id").innerHTML = menu;
-	document.body.innerHTML += "<input type='hidden' id='menulevel' value='2'/>";
+//	document.body.innerHTML += "<input type='hidden' id='menulevel' value='2'/>";
 </script>
-<!-- --------------------------------------- -->
 </div>
-<form class="form" style="margin:auto;" action="" method="post" enctype="multipart/form-data">
-  <!-- ... (seu formulário) ... -->
-  <form class="form" action="" method="post" enctype="multipart/form-data">
-    <div class="centralizar">
-      <div class="container">
-        <div class="header" id="imagePreviewContainer">
-          <img src="../img/upload.png" alt="Imagem padrão" style="width:250px;height:200px">
-          
-          <script>
-            function previewImage(input) {
-              var imagePreviewContainer = document.getElementById('imagePreviewContainer');
-              var file = input.files[0];
+</div>
+</div>
 
-              if (file) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                  imagePreviewContainer.innerHTML = '<img src="' + e.target.result + '" alt="Imagem a ser carregada" style="width:300px;height:200px;">';
-                };
-                reader.readAsDataURL(file);
-              } 
-              else {
-                // Se nenhum arquivo foi selecionado, exibe a imagem padrão
-                imagePreviewContainer.innerHTML = '<img src="../img/upload.png" alt="Imagem padrão" style="width:250px; height:200px;">';
-              }
-            }
-          </script>          
-        </div>
-            
-        <label for="foto" class="footer">
-          <!-- ... (seu código SVG) ... -->
-          <p>Selecione a foto do Produto</p>
-          <!-- ... (seu código SVG) ... -->
-        </label>
-        <input id="foto" type="file" name="foto" onchange="previewImage(this)">
-        
-      </div>
-      <p>Obs.: Use dimensões: 163px x 63px<br>para melhor qualidade.</p>
-      <div class="input-container">
-        <input type="text" name="nome" placeholder="Nome">
-        <span></span>
-      </div>
-      <div class="input-container">
-        <input type="text" name="desc" placeholder="Descrição">
-        <span></span>
-      </div>
-      <div class="input-container">
-        <input type="number" name="valor" placeholder="Valor">
-        <span></span>
-      </div>
-      <div class="input-container">
-        <select name="categoria">
-          <?php foreach ($categorias as $categoria): ?>
-            <option value="<?php echo $categoria['id']; ?>">
-              <?php echo $categoria['nome']; ?>
-            </option>
-          <?php endforeach; ?>
-        </select>.      
-      </div>
-
-      <div tabindex="0" class="plusButton" onclick="exibirElementosSenha()">
-        <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
-          <g mask="url(#mask0_21_345)">
-            <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"></path>
-          </g>
-        </svg>
-      </div>  
-      <button class="submit" name="submit">Cadastrar</button>
-    </div>
-  </form>
 </body>
 <?php
 include('/php/footer.php');
