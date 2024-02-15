@@ -1,6 +1,7 @@
 <?php
 ob_start();
 
+
 function connect(){
     $servername = "localhost";
     $username = "root";
@@ -417,25 +418,28 @@ function removeFromCarrinho($id_produto) {
 }
 
 
-
+/*
 function getProdutosNoCarrinhoPorCliente($id_cliente) {
     $conn = connect();
 
     // Substitua 'sua_tabela_carrinho' pelo nome real da tabela carrinho no seu banco de dados
-    $sql = $conn->prepare("SELECT id_produto, quantidade FROM carrinho WHERE id_cliente = ?");
+    /*$sql = $conn->prepare("SELECT produto_id, quantidade FROM ProdutoCarrinho WHERE id_cliente = ?");
     $sql->bind_param("i", $id_cliente);
 
     $sql->execute();
-    $result = $sql->get_result();
-
+    $result = $sql->get_result(); * /
+    $sql = "SELECT produto_id FROM ProdutoCarrinho WHERE id_cliente = " . $id_cliente;
+    $result = $conn->query($sql);
     // Obter todos os resultados como um array associativo
-    $produtos_no_carrinho = $result->fetch_all(MYSQLI_ASSOC);
-
-    $sql->close();
+    $array = $result->fetch_all(MYSQLI_ASSOC); //fingindo que funciona e que é um array de ids de produtos; agora temos que pegar os atributos do produto:
+    $sql = "SELECT * FROM produto WHERE id = ";
+    for($i = 0; i < size(array); i++)
+        sql = sql . array[i] . "or ";
+    //fazer a consulta!!!
     $conn->close();
 
     return $produtos_no_carrinho;
-}
+}*/
 
 function getProdutoPorId($id_produto) {
     $conn = connect();
@@ -615,7 +619,7 @@ function updateFotoPerfil($id_usuario, $nova_foto) {
 
 
 function contarItensNoCarrinho($id_cliente) {
-    $conn=connect();
+   /* $conn=connect();
 
     if ($conn->connect_error) {
         die("Conexão falhou: " . $conn->connect_error);
@@ -638,7 +642,7 @@ function contarItensNoCarrinho($id_cliente) {
     }
 
     $stmt->close();
-    $conn->close();
+    $conn->close();*/
 }
 
 
