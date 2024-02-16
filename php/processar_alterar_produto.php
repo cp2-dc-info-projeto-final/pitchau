@@ -1,4 +1,5 @@
 <?php
+session_start();
 
     //old CadProd
 
@@ -13,36 +14,43 @@
 
     // Processar o formulário quando for enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        echo 
         $id = $_POST["id"];
         $nome = $_POST["nome"];
         $descricao = $_POST["desc"];
         $valor = $_POST["valor"];
         $categoria_id = $_POST["categoria"];
 
+        $id_user=$_SESSION["user_id"];// = $row["id"];
+        echo $id_user;
+        $sql = "SELECT * FROM Produto";
+
         // Verificar se uma imagem foi enviada
         $fotoNome = 0;
         if ($_FILES["foto"]["error"] == 0) {
             $fotoNome = generateUniqueFileName($_FILES["foto"]["name"]);
             echo $fotoNome;
-            $fotoCaminho = "../img/produtos_cadastrados/" . $fotoNome;
+            $fotoCaminho = "../img/img_produto/" . $fotoNome;
             move_uploaded_file($_FILES["foto"]["tmp_name"], $fotoCaminho);
-        } else {
-            echo "Erro de imagem!";
+            $sql = "UPDATE Produto SET nome = '$nome', descricao = '$descricao', valor = $valor, foto = '$fotoNome', categoria_id = $categoria_id WHERE id = $id";
+        }
+        
+        else {
+            $sql = "UPDATE Produto SET nome = '$nome', descricao = '$descricao', valor = $valor, categoria_id = $categoria_id WHERE id = $id";
             // Lidar com erro de upload de imagem, se necessário
         }
 
         // Inserir os dados no banco de dados
-        $id_user=$_SESSION["user_id"];// = $row["id"];
-        echo $id_user;
-        $sql = "SELECT * FROM Produto";
-        $sql = "UPDATE Produto SET nome = '$nome', descricao = '$descricao', valor = $valor, foto = '$fotoNome', categoria_id = $categoria_id WHERE id = $id";
+
         // Criar conexão
         $conn= connect();
         //$sql = $conn->prepare("DELETE FROM usuario WHERE id = ?");
         if ($conn->query($sql) === TRUE) {
             echo "Produto atualizado com sucesso!";
+            header("Location: ../index.php"); // Redirecionar para a página index
         } else {
             echo "Erro ao atualizar o produto: " . $conn->error;
+
         }
     }
 

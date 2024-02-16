@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <?php
 session_start();
+
+if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
+  header("Location: ../index.php"); // Redirecionar para a página index
+}
+if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
+  header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+}
+
 ?>
 <html lang="en">
 <head>
@@ -635,13 +643,6 @@ session_start();
 <?php
   include_once "consultas/flying_bubbles.php";
 
-  if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
-    header("Location: ../index.php"); // Redirecionar para a página index
-  }
-  if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
-    header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-  }
-
   if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
     echo "<input type='hidden' id='menulevel' value='1'/>"; //Torna em visitante
     $menulevel = 1;
@@ -702,7 +703,7 @@ $card_produto = recuperar_produto_por_id($id_produto);
     echo '<div class="card" style="height:350px">';
     echo '<div class="card-img">';
     $imagem=$card_produto['foto'];
-    echo '<img src="' . $imagem . '" class="d-block w-100" alt="...">';
+    echo '<img src="' . "img/img_produto/" . $imagem . '" class="d-block w-100" alt="...">';
     echo '</div>';
     echo '<div class="card-info">';
     //<button class="card__btn card__btn-solid" onclick="exibirElementosSenha() ">Trocar a Senha</button>
@@ -744,7 +745,7 @@ $conn->close();
     <p class="title">Alterar Produto</p>
     <p>Redefinição de Produto</p>
       <div class="header" id="imagePreviewContainer">
-        <img src="../img/upload.png" alt="Imagem padrão" style="width:250px;height:200px">
+        <img src="upload.png" alt="Imagem padrão" style="width:250px;height:200px">
         <script>
           function previewImage(input) {
             var imagePreviewContainer = document.getElementById('imagePreviewContainer');
@@ -758,7 +759,7 @@ $conn->close();
             } 
             else {
               // Se nenhum arquivo foi selecionado, exibe a imagem padrão
-              imagePreviewContainer.innerHTML = '<img src="../img/upload.png" alt="Imagem padrão" style="width:250px; height:200px;">';
+              imagePreviewContainer.innerHTML = '<img src="upload.png" alt="Imagem padrão" style="width:250px; height:200px;">';
             }
           }
         </script>
@@ -773,18 +774,19 @@ $conn->close();
     </div>
     <p>Obs.: Use dimensões: 163px x 63px<br>para melhor qualidade.</p>
   <p class="form-title">Alterar o produto</p>
+  <input type="hidden" name="id" value="<?php echo $id_produto;?>">
   <div class="input-container">
-    <input type="text" name="nome" placeholder="Nome">
+    <input type="text" name="nome" placeholder="Nome" value="<?php echo $card_produto['nome'];?>">
     <span>
     </span>
   </div>
   <div class="input-container">
-    <input type="text" name="desc" placeholder="Descrição">
+    <input type="text" name="desc" placeholder="Descrição" value="<?php echo $card_produto['descricao'];?>">
     <span>
     </span>
   </div>
   <div class="input-container">
-    <input type="number" name="valor" placeholder="Valor">
+    <input type="number" name="valor" placeholder="Valor" value="<?php echo $card_produto['valor'];?>">
     <span>
     </span>
   </div>

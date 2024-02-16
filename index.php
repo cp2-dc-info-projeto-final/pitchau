@@ -753,7 +753,7 @@ if ($imagens != null) {
     echo '<div class="carousel-inner">';
     $first = true; // Variável para controlar o primeiro item do carrossel
     foreach ($imagens as $imagem) {
-        $url_img = $imagem["url_img"];
+        $url_img = 'img/img_slider/' .$imagem["url_img"];
         echo '<div class="carousel-item ' . ($first ? 'active' : '') . '">';
         echo '<img src="' . $url_img . '" class="d-block w-100" alt="...">';
         echo '</div>';
