@@ -445,7 +445,7 @@ if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
   </script>
     <script>
       // Agora o evento DOMContentLoaded garante que o script só será executado após o carregamento do DOM
-      function comprarAgora() {
+      function excluirAgora() {
         window.location.href = '../php/userDrop.php'; // Redireciona para o script de exclusão
     
   }
@@ -467,7 +467,7 @@ if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
     <p class="cookieDescription">Você será redicionado para <a href="../index.php">Inicio</a> logo após a confirmação.</p>
       <div class="buttonContainer">
         <button class="acceptButton" onclick="esconderElementos()">Não</button>
-        <button class="declineButton confirm-delete" onclick="comprarAgora()" >Sim</button>
+        <button class="declineButton confirm-delete" onclick="excluirAgora()" >Sim</button>
       </div>
     </div>
 </div>
