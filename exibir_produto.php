@@ -3,10 +3,10 @@
 session_start();
 
 if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
-  header("Location: ../index.php"); // Redirecionar para a página index
+  header("Location: index.php"); // Redirecionar para a página index
 }
 if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
-  header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+  header("Location: index.php"); // Redirecionar para a página do painel após o login
 }
 
 ?>

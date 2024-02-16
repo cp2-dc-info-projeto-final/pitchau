@@ -1,4 +1,8 @@
 <?php
+  session_start();
+  if (!isset($_SESSION["user_id"])) { //Verifica se == Usuário
+    header("Location: ../index.php"); // Redirecionar para a página index
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +18,7 @@
     <h2>"Algo de errado não está certo  \/(º>º)\/"</h2>
     <h2>Senhas não coincidem:</h2>
     <form>
-      <a href="altera_senha.php" class="report-button">
+      <a href="perfil.php" class="report-button">
         <span></span>
         <span></span>
         <span></span>

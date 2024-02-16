@@ -6,7 +6,7 @@ if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
   }
   if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
     header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-  }}
+  }
 
 if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['id'])) {
     $id = $_POST['id'];

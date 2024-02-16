@@ -1,6 +1,8 @@
 <?php
-  if (isset($_SESSION["user_id"])) { //Verifica se == Usuário
+  session_start();
+  if (!isset($_SESSION["user_id"])) { //Verifica se == Usuário
     header("Location: ../index.php"); // Redirecionar para a página index
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,20 +13,20 @@
 <link rel="stylesheet" href="../css/erros.css">
 </head>
 <body>
-<div class="background">
-  <div class="report-box">
-    <h2>"Algo de errado não está certo  \/(º>º)\/"</h2>
-    <h2>Email e/ou Senha Inválido:</h2>
-    <form>
-      <a href="login.php" class="report-button">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Tentar Novamente
-      </a>
-    </form>
+  <div class="background">
+    <div class="report-box">
+      <h2>"Algo de errado não está certo  \/(º>º)\/"</h2>
+      <h2>Email e/ou Senha Inválido:</h2>
+      <form>
+        <a href="login.php" class="report-button">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Tentar Novamente
+        </a>
+      </form>
+    </div>
   </div>
-</div>
 </body>
 </html>
