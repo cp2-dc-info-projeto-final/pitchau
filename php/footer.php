@@ -184,10 +184,10 @@
           <div class="col-xs-6 col-md-3">
             <h6>Desenvolvedores</h6>
             <ul class="footer-links">
-              <li><a href="https://www.instagram.com/athosespinner9/">Athos Xavier</a></li>              
-              <li><a href="https://www.instagram.com/kaykycarrilho/">Kayky Carrilho</a></li>
-              <li><a href="#">Igor Santana</a></li>
-              <li><a href="#">Igor Honório</a></li>              
+              <li><a href="https://github.com/athosespinner9/">Athos Xavier</a></li>              
+              <li><a href="https://github.com/kaykyCP2">Kayky Carrilho</a></li>
+              <li><a href="https://github.com/NaoExisto">Igor Santana</a></li>
+              <li><a href="https://github.com/IgorHonorio">Igor Honório</a></li>              
             </ul>
           </div>
 
