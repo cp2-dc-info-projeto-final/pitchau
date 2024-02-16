@@ -14,7 +14,7 @@ session_start();
 
     // Processar o formulário quando for enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        echo 
+        echo '';
         $id = $_POST["id"];
         $nome = $_POST["nome"];
         $descricao = $_POST["desc"];
