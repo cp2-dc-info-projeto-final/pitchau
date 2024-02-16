@@ -168,6 +168,16 @@ function recuperar_produto_por_id($id_produto){
     }
 }
 
+function apagar_produto_por_id($id_produto){
+    $conn= connect();
+    $sql = $conn->prepare("DELETE FROM Produto WHERE id = ?");
+    $sql->bind_param("i", $id_produto);
+    $result = $sql->execute();
+    $sql->close();
+    $conn->close();
+
+}
+
 function criar_carrinho( $min, $max, $cod_carrinho){
     $conn= connect();
     $min = 000000;

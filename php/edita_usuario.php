@@ -23,13 +23,10 @@ elseif (isset($_POST['action']) && $_POST['action'] == 'edit' && isset($_POST['i
 elseif(isset($_POST['action']) && $_POST['action'] == 'adminuser' && isset($_POST['id'])){
         $id= $_POST['id'];
         $tornaradmin= transform_admin($id);
-<<<<<<< HEAD
 
 } elseif(isset($_POST['action']) && $_POST['action'] == 'user' && isset($_POST['id'])){
     $id= $_POST['id'];
     $tornaradmin= destransform_admin($id);
-=======
->>>>>>> 95aadeacd144af221d5bde97b58a61d83aabc063
 }
     
 header("Location: ../paginas/visualizacaoUser.php"); // Redirecionar para a página do painel após o login
