@@ -1,8 +1,12 @@
 <?php
-    include_once "../consultas/flying_bubbles.php";
-    session_start();
+  session_start();
+  include_once "consultas/flying_bubbles.php";
 
-    // Verifique se o formulário foi enviado
+  if (isset( $_SESSION["user_id"])) { //Verifica se == Usuário
+    header("Location: index.php"); // Redirecionar para a página index
+  }
+
+  // Verifique se o formulário foi enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Coletar dados do formulário
         $email= $_POST["email"];

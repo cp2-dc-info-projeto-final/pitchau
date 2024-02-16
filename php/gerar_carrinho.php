@@ -1,6 +1,14 @@
 <?php
-include_once "../consultas/flying_bubbles.php";
-session_start();
+    include_once "../consultas/flying_bubbles.php";
+    session_start();
+
+    if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
+    header("Location: index.php"); // Redirecionar para a página index
+    }
+    if (isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
+    header("Location: index.php"); // Redirecionar para a página do painel após o login
+    }
+
 
     $id_cliente= $_SESSION['user_id'];
     $produtos_no_carrinho = getProdutosNoCarrinhoPorCliente($id_cliente);

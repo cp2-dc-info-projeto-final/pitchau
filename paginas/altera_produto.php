@@ -1,3 +1,6 @@
+<?php
+  header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
