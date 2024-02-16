@@ -709,6 +709,7 @@ $card_produto = recuperar_produto_por_id($id_produto);
     //<button class="card__btn card__btn-solid" onclick="exibirElementosSenha() ">Trocar a Senha</button>
     echo '<p class="text-title">' . $card_produto["nome"] . '</p>';
     echo '<p class="text-body">' . $card_produto["descricao"] . '</p>';
+    echo '<span class="text-body">Estoque: ' . number_format($card_produto["quantidade_estoque"]) . '</span><br>';
     echo '</div>';
     echo '<div class="card-footer">';
     echo '<span class="text-title">$' . number_format($card_produto["valor"], 2) . '</span>';
@@ -799,6 +800,10 @@ $conn->close();
       <?php endforeach; ?>
     </select>.      
   </div>
+  <div class="input-container">
+    <input type="number" name="quantidade" placeholder="Quantidade" value="<?php echo $card_produto['quantidade_estoque'];?>">
+    <span></span>
+  </div>  
   <button type="submit" class="submit">Confirmar</button>
   <br><br>
   <?php echo '<a href="php/processar_excluir_produto.php?id_produto='.$card_produto["id"].'">Excluir</a>';?>

@@ -18,283 +18,283 @@
     top: auto;
     width: 100vw;
     height: 100vh;
-  }
-  .card {
-    visibility: hidden;
-    
+      }
+      .card {
+        visibility: hidden;
+        
 
-    margin: auto;
-    margin-top: -40%;
-    
-    position: fixed;
-    width: 300px;
-    height: 400px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 30px;
-    gap: 13px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
-  }
-  .card_email{
-    margin-top:-20%;
-  }
-  .card_altera_senha{
-    margin-top: -30%;
+        margin: auto;
+        margin-top: -40%;
+        
+        position: fixed;
+        width: 300px;
+        height: 400px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 30px;
+        gap: 13px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+      }
+      .card_email{
+        margin-top:-20%;
+      }
+      .card_altera_senha{
+        margin-top: -30%;
 
-  }
-  .card_apagar_conta{
-    margin-top: -30%;
-  }
-  #cookieSvg {
-    margin:auto;s
-  }
-  .buttonContainer{
-    justify-content: center;
-    text-align: center;
-  }
-  
-  #cookieSvg g path {
-    fill: rgb(97, 81, 81);
-  }
-  
-  .cookieHeading {
-    font-size: 1.2em;
-    font-weight: 800;
-    color: rgb(26, 26, 26);
-  }
-  
-  .cookieDescription {
-    text-align: center;
-    font-size: 0.7em;
-    font-weight: 600;
-    color: rgb(99, 99, 99);
-  }
-  
-  .cookieDescription a {
-    --tw-text-opacity: 1;
-    color: rgb(59 130 246);
-  }
-  
-  .cookieDescription a:hover {
-    -webkit-text-decoration-line: underline;
-    text-decoration-line: underline;
-  }
-  
-  .buttonContainer {
-    display: flex;
-    gap: 20px;
-    flex-direction: row;
-  }
-  
-  .acceptButton {
-    width: 80px;
-    height: 30px;
-    background-color: #7b57ff;
-    transition-duration: .2s;
-    border: none;
-    color: rgb(241, 241, 241);
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 20px;
-    box-shadow: 0 4px 6px -1px #977ef3, 0 2px 4px -1px #977ef3;
-    transition: all .6s ease;
-  }
-  
-  .declineButton {
-    width: 80px;
-    height: 30px;
-    background-color: #dadada;
-    transition-duration: .2s;
-    color: rgb(46, 46, 46);
-    border: none;
-    cursor: not-allowed;
-    font-weight: 600;
-    border-radius: 20px;
-    box-shadow: 0 4px 6px -1px #bebdbd, 0 2px 4px -1px #bebdbd;
-    transition: all .6s ease;
-  }
-  
-  .declineButton:hover {
-    background-color: #ebebeb;
-    box-shadow: 0 10px 15px -3px #bebdbd, 0 4px 6px -2px #bebdbd;
-    transition-duration: .2s;
-  }
-  
-  .acceptButton:hover {
-    background-color: #9173ff;
-    box-shadow: 0 10px 15px -3px #977ef3, 0 4px 6px -2px #977ef3;
-    transition-duration: .2s;
-  }
-  .form-box {
-    max-width: 300px;
-    background: #f1f7fe;
-    overflow: hidden;
-    border-radius: 16px;
-    color: #010101;
-  }
-  
-  .form {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 32px 24px 24px;
-    gap: 16px;
-    text-align: center;
-  }
-  
-  /*Form text*/
-  .title {
-    font-weight: bold;
-    font-size: 1.6rem;
-  }
-  
-  .subtitle {
-    font-size: 1rem;
-    color: #666;
-  }
-  
-  /*Inputs box*/
-  .form-container {
-    overflow: hidden;
-    border-radius: 8px;
-    background-color: #fff;
-    margin: 1rem 0 .5rem;
-    width: 100%;
-  }
-  
-  .input {
-    background: none;
-    border: 1px solid gray;
-    margin: 2%;
-    outline: 0;
-    height: 40px;
-    width: 95%;
-    /* border-bottom: 1px solid #eee; */
-    font-size: .9rem;
-    border-radius: 15px;
-  }
-  
-  .form-section {
-    padding: 16px;
-    font-size: .85rem;
-    background-color: #e0ecfb;
-    box-shadow: rgb(0 0 0 / 8%) 0 -1px;
-  }
-  
-  .form-section a {
-    font-weight: bold;
-    color: #0066ff;
-    transition: color .3s ease;
-  }
-  
-  .form-section a:hover {
-    color: #005ce6;
-    text-decoration: underline;
-  }
-  
-  /*Button*/
-  .form button {
-    background-color: #0066ff;
-    color: #fff;
-    border: 0;
-    border-radius: 24px;
-    padding: 10px 16px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color .3s ease;
-  }
-  
-  .form button:hover {
-    background-color: #005ce6;
-  }
-  
-  /* Note that you only needs to edit the config to customize the button! */
+      }
+      .card_apagar_conta{
+        margin-top: -30%;
+      }
+      #cookieSvg {
+        margin:auto;s
+      }
+      .buttonContainer{
+        justify-content: center;
+        text-align: center;
+      }
+      
+      #cookieSvg g path {
+        fill: rgb(97, 81, 81);
+      }
+      
+      .cookieHeading {
+        font-size: 1.2em;
+        font-weight: 800;
+        color: rgb(26, 26, 26);
+      }
+      
+      .cookieDescription {
+        text-align: center;
+        font-size: 0.7em;
+        font-weight: 600;
+        color: rgb(99, 99, 99);
+      }
+      
+      .cookieDescription a {
+        --tw-text-opacity: 1;
+        color: rgb(59 130 246);
+      }
+      
+      .cookieDescription a:hover {
+        -webkit-text-decoration-line: underline;
+        text-decoration-line: underline;
+      }
+      
+      .buttonContainer {
+        display: flex;
+        gap: 20px;
+        flex-direction: row;
+      }
+      
+      .acceptButton {
+        width: 80px;
+        height: 30px;
+        background-color: #7b57ff;
+        transition-duration: .2s;
+        border: none;
+        color: rgb(241, 241, 241);
+        cursor: pointer;
+        font-weight: 600;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px -1px #977ef3, 0 2px 4px -1px #977ef3;
+        transition: all .6s ease;
+      }
+      
+      .declineButton {
+        width: 80px;
+        height: 30px;
+        background-color: #dadada;
+        transition-duration: .2s;
+        color: rgb(46, 46, 46);
+        border: none;
+        cursor: not-allowed;
+        font-weight: 600;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px -1px #bebdbd, 0 2px 4px -1px #bebdbd;
+        transition: all .6s ease;
+      }
+      
+      .declineButton:hover {
+        background-color: #ebebeb;
+        box-shadow: 0 10px 15px -3px #bebdbd, 0 4px 6px -2px #bebdbd;
+        transition-duration: .2s;
+      }
+      
+      .acceptButton:hover {
+        background-color: #9173ff;
+        box-shadow: 0 10px 15px -3px #977ef3, 0 4px 6px -2px #977ef3;
+        transition-duration: .2s;
+      }
+      .form-box {
+        max-width: 300px;
+        background: #f1f7fe;
+        overflow: hidden;
+        border-radius: 16px;
+        color: #010101;
+      }
+      
+      .form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 32px 24px 24px;
+        gap: 16px;
+        text-align: center;
+      }
+      
+      /*Form text*/
+      .title {
+        font-weight: bold;
+        font-size: 1.6rem;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+        color: #666;
+      }
+      
+      /*Inputs box*/
+      .form-container {
+        overflow: hidden;
+        border-radius: 8px;
+        background-color: #fff;
+        margin: 1rem 0 .5rem;
+        width: 100%;
+      }
+      
+      .input {
+        background: none;
+        border: 1px solid gray;
+        margin: 2%;
+        outline: 0;
+        height: 40px;
+        width: 95%;
+        /* border-bottom: 1px solid #eee; */
+        font-size: .9rem;
+        border-radius: 15px;
+      }
+      
+      .form-section {
+        padding: 16px;
+        font-size: .85rem;
+        background-color: #e0ecfb;
+        box-shadow: rgb(0 0 0 / 8%) 0 -1px;
+      }
+      
+      .form-section a {
+        font-weight: bold;
+        color: #0066ff;
+        transition: color .3s ease;
+      }
+      
+      .form-section a:hover {
+        color: #005ce6;
+        text-decoration: underline;
+      }
+      
+      /*Button*/
+      .form button {
+        background-color: #0066ff;
+        color: #fff;
+        border: 0;
+        border-radius: 24px;
+        padding: 10px 16px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color .3s ease;
+      }
+      
+      .form button:hover {
+        background-color: #005ce6;
+      }
+      
+      /* Note that you only needs to edit the config to customize the button! */
 
-.plusButton {
-  /* Config start */
-  --plus_sideLength: 2.5rem;
-  --plus_topRightTriangleSideLength: 0.9rem;
-  /* Config end */
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid white;
-  width: var(--plus_sideLength);
-  height: var(--plus_sideLength);
-  background-color: #000000;
-  overflow: hidden;
-}
+    .plusButton {
+      /* Config start */
+      --plus_sideLength: 2.5rem;
+      --plus_topRightTriangleSideLength: 0.9rem;
+      /* Config end */
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid white;
+      width: var(--plus_sideLength);
+      height: var(--plus_sideLength);
+      background-color: #000000;
+      overflow: hidden;
+    }
 
-.plusButton::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
-  border-style: solid;
-  border-color: #0066ff #0066ff transparent #0066ff;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.2s;
-}
+    .plusButton::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
+      border-style: solid;
+      border-color: #0066ff #0066ff transparent #0066ff;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.2s;
+    }
 
-.plusButton:hover {
-  cursor: pointer;
-}
+    .plusButton:hover {
+      cursor: pointer;
+    }
 
-.plusButton:hover::before {
-  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
-}
+    .plusButton:hover::before {
+      --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+    }
 
-.plusButton:focus-visible::before {
-  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
-}
+    .plusButton:focus-visible::before {
+      --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+    }
 
-.plusButton>.plusIcon {
-  fill: white;
-  width: calc(var(--plus_sideLength) * 0.7);
-  height: calc(var(--plus_sideLength) * 0.7);
-  z-index: 1;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.2s;
-}
+    .plusButton>.plusIcon {
+      fill: white;
+      width: calc(var(--plus_sideLength) * 0.7);
+      height: calc(var(--plus_sideLength) * 0.7);
+      z-index: 1;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.2s;
+    }
 
-.plusButton:hover>.plusIcon {
-  fill: black;
-  transform: rotate(180deg);
-}
+    .plusButton:hover>.plusIcon {
+      fill: black;
+      transform: rotate(180deg);
+    }
 
-.plusButton:focus-visible>.plusIcon {
-  fill: black;
-  transform: rotate(180deg);
-}
-.input-container{
-  display:flex;
-}
-.card_altera_senha{
-  margin-left: -27%;
-    margin-top: -11%;
-}
-.centralizar{
-  margin:auto;
-  padding:10px;
-}
-.form{
-  max-height: 100vh;
-  border:0.5px solid blue;
-}
-.alinhamento{
-  margin-top:-90vh;
-}
+    .plusButton:focus-visible>.plusIcon {
+      fill: black;
+      transform: rotate(180deg);
+    }
+    .input-container{
+      display:flex;
+    }
+    .card_altera_senha{
+      margin-left: -27%;
+        margin-top: -11%;
+    }
+    .centralizar{
+      margin:auto;
+      padding:10px;
+    }
+    .form{
+      max-height: 100vh;
+      border:0.5px solid blue;
+    }
+    .alinhamento{
+      margin-top:-90vh;
+    }
   </style>
     <style>
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
@@ -456,7 +456,13 @@ if ($resultado->num_rows > 0) {
             <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"></path>
           </g>
         </svg>
-      </div>  
+      </div>
+      
+      <div class="input-container">
+        <input type="number" name="quantidade" placeholder="Quantidade">
+        <span></span>
+      </div>
+
       <button class="submit" name="submit">Cadastrar</button>
     </div>
   </form>
@@ -484,8 +490,9 @@ if ($resultado->num_rows > 0) {
         $descricao = mysqli_real_escape_string($conn, $_POST["desc"]);
         $valor = mysqli_real_escape_string($conn, $_POST["valor"]);
         $categoria = mysqli_real_escape_string($conn, $_POST["categoria"]);
+        $quantidade = mysqli_real_escape_string($conn, $_POST["quantidade"]);
 
-        $sql = "INSERT INTO Produto (nome, descricao, foto, valor, categoria_id) VALUES ('$nome', '$descricao', '$fotoNome', $valor, $categoria)";
+        $sql = "INSERT INTO Produto (nome, descricao, foto, valor, categoria_id, quantidade_estoque) VALUES ('$nome', '$descricao', '$fotoNome', $valor, $categoria, $quantidade)";
 
         if ($conn->query($sql) === TRUE) {
           header("Location: ../index.php");

@@ -895,6 +895,7 @@ document.addEventListener('visibilitychange', function() {
         echo '<div class="card-info">';
         echo '<p class="text-title">' . $card_produto["nome"] . '</p>';
         echo '<p class="text-body">' . $card_produto["descricao"] . '</p>';
+        echo '<span class="text-body">Estoque: ' . number_format($card_produto["quantidade_estoque"]) . '</span><br>';
         echo '</div>';
 
         echo '<div class="card-footer"style="display:flex;">';
