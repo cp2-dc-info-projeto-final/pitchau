@@ -6,11 +6,11 @@ if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
   }
   if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
     header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-  }}
+  }
 
 if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['id'])) {
     $id = $_POST['id'];
-    $deleteUser= Apagar_conta($id);
+    $deleteUser= apagar_usuarios($id);
     if($deleteUser == 1){
         header("Location: ../paginas/erro_excluirUsuario.php");
     }
@@ -25,12 +25,12 @@ elseif(isset($_POST['action']) && $_POST['action'] == 'adminuser' && isset($_POS
         $tornaradmin= transform_admin($id);
 
 } 
-/*
+
 elseif(isset($_POST['action']) && $_POST['action'] == 'user' && isset($_POST['id'])){
     $id= $_POST['id'];
     $tornaradmin= destransform_admin($id);
 }
-*/  
+  
 header("Location: ../paginas/visualizacaoUser.php"); // Redirecionar para a página do painel após o login
 
 ?>
