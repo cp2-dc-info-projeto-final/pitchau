@@ -2,7 +2,7 @@
 
     //old CadProd
 
-    include_once "consultas/flying_bubbles.php";
+    include_once "../consultas/flying_bubbles.php";
 
     // Função para gerar um nome único para a imagem
     function generateUniqueFileName($originalName) {
@@ -13,12 +13,15 @@
 
     // Processar o formulário quando for enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $id = $_POST["id"];
         $nome = $_POST["nome"];
         $descricao = $_POST["desc"];
         $valor = $_POST["valor"];
+        $categoria_id = $_POST["categoria"];
 
         // Verificar se uma imagem foi enviada
-        if ($_FILES["foto"]["error"] === 0) {
+        $fotoNome = 0;
+        if ($_FILES["foto"]["error"] == 0) {
             $fotoNome = generateUniqueFileName($_FILES["foto"]["name"]);
             echo $fotoNome;
             $fotoCaminho = "../img/produtos_cadastrados/" . $fotoNome;
@@ -29,10 +32,13 @@
         }
 
         // Inserir os dados no banco de dados
-        $id_user=$_SESSION["user_id"] = $row["id"];
+        $id_user=$_SESSION["user_id"];// = $row["id"];
         echo $id_user;
-        $sql = "INSERT INTO Produto (nome, descricao, valor, foto) VALUES ('$nome', '$descricao', $valor, '$fotoNome')";
-
+        $sql = "SELECT * FROM Produto";
+        $sql = "UPDATE Produto SET nome = '$nome', descricao = '$descricao', valor = $valor, foto = '$fotoNome', categoria_id = $categoria_id WHERE id = $id";
+        // Criar conexão
+        $conn= connect();
+        //$sql = $conn->prepare("DELETE FROM usuario WHERE id = ?");
         if ($conn->query($sql) === TRUE) {
             echo "Produto atualizado com sucesso!";
         } else {
