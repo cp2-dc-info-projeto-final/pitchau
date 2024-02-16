@@ -341,7 +341,7 @@ function getuser(){
 function apagar_usuarios($id){
     $conn= connect();
     $sql = $conn->prepare("DELETE FROM usuario WHERE id = ?");
-    
+    $sql->bind_param("i", $id);
     if ($sql->execute()) {
         header("Location: ../paginas/visualizacaoUser.php");
     } else {
