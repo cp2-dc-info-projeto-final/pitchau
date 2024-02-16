@@ -82,17 +82,17 @@ $rowProduto = $resultProduto->fetch_assoc();
 
 if ($rowProduto['count'] == 0) {
     // Inserir dados na tabela Produto
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Violão Giannini', 'Violão com cordas de aço. Para os amantes do Country.', 'violao1.png', 1500, 2, 20)");
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Violão Tagima', 'Violao com cordas de nylon. Perfeito para os amantes de Clássica. Acompanha duas partituras.', 'violao2.png', 1700, 2, 30)");
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Violão para estudo Giannini', 'Violão com cordas de aço para estudo. Acompanha material de estudo.', 'violao3.png', 1300, 2, 35)");
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Guitarra Fender', 'Guitarra supimpa para Blues. Acompanha palheta azul.', 'guitarra1.png', 2400, 2, 27)");
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Baixolão Tagima', 'Baixolao eletroacústico em marfim.', 'baixolao1.png', 2100, 2, 15)");
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Contrabaixo Yamaha 6 cordas', 'Contrabaixo 6 cordas em acácia.', 'contrabaixo1.png', 2400, 2, 22)");
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Contrabaixo para estudo Tagima', 'Contrabaixo 6 cordas para estudo. Acompanha material de estudo.', 'contrabaixo2.png', 2500, 2, 27)");
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Violino 4/4 Eagle', 'Violino 4/4 em maple e ébano. Acompanha arco, breu e estojo.', 'violino1.png', 1300, 2, 12)");
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Flauta Doce Yamaha', 'Flauta doce em marfim.', 'flauta1.png', 200, 1, 45)");
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Clarinete Bb Yamaha', 'Clarinete 17 chaves Bb.', 'clarinete1.png', 820, 1, 99)");
-    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id) VALUES('Saxofone Alto Dolphin', 'Saxofone Alto Eb em Latão.', 'saxofone1.png', 3200, 1, 54)");    
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id, quantidade_estoque) VALUES('Violão Giannini', 'Violão com cordas de aço. Para os amantes do Country.', 'violao1.png', 1500, 2, 20)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id, quantidade_estoque) VALUES('Violão Tagima', 'Violao com cordas de nylon. Perfeito para os amantes de Clássica. Acompanha duas partituras.', 'violao2.png', 1700, 2, 30)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id, quantidade_estoque) VALUES('Violão para estudo Giannini', 'Violão com cordas de aço para estudo. Acompanha material de estudo.', 'violao3.png', 1300, 2, 35)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id, quantidade_estoque) VALUES('Guitarra Fender', 'Guitarra supimpa para Blues. Acompanha palheta azul.', 'guitarra1.png', 2400, 2, 27)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id, quantidade_estoque) VALUES('Baixolão Tagima', 'Baixolao eletroacústico em marfim.', 'baixolao1.png', 2100, 2, 15)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id, quantidade_estoque) VALUES('Contrabaixo Yamaha 6 cordas', 'Contrabaixo 6 cordas em acácia.', 'contrabaixo1.png', 2400, 2, 22)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id, quantidade_estoque) VALUES('Contrabaixo para estudo Tagima', 'Contrabaixo 6 cordas para estudo. Acompanha material de estudo.', 'contrabaixo2.png', 2500, 2, 27)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id, quantidade_estoque) VALUES('Violino 4/4 Eagle', 'Violino 4/4 em maple e ébano. Acompanha arco, breu e estojo.', 'violino1.png', 1300, 2, 12)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id, quantidade_estoque) VALUES('Flauta Doce Yamaha', 'Flauta doce em marfim.', 'flauta1.png', 200, 1, 45)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id, quantidade_estoque) VALUES('Clarinete Bb Yamaha', 'Clarinete 17 chaves Bb.', 'clarinete1.png', 820, 1, 99)");
+    $conn->query("INSERT INTO Produto(nome, descricao, foto, valor, categoria_id, quantidade_estoque) VALUES('Saxofone Alto Dolphin', 'Saxofone Alto Eb em Latão.', 'saxofone1.png', 3200, 1, 54)");    
     // Adicione mais inserções de produtos conforme necessário
 }
 
