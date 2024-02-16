@@ -656,7 +656,7 @@ session_start();
       echo "<input type='hidden' id='menulevel' value='3'/>"; //Torna em administrador
       $menulevel = 3;
   }
-    else echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
+  else echo "<input type='hidden' id='menulevel' value='2'/>"; //Torna em usuário
   $menulevel = 2;
   }
 ?>

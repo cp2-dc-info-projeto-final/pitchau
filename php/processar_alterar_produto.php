@@ -34,6 +34,7 @@
         // Inserir os dados no banco de dados
         $id_user=$_SESSION["user_id"];// = $row["id"];
         echo $id_user;
+        $sql = "SELECT * FROM Produto";
         $sql = "UPDATE Produto SET nome = '$nome', descricao = '$descricao', valor = $valor, foto = '$fotoNome', categoria_id = $categoria_id WHERE id = $id";
         // Criar conexão
         $conn= connect();
