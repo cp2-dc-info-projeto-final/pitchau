@@ -801,8 +801,7 @@ $conn->close();
   </div>
   <button type="submit" class="submit">Confirmar</button>
   <br><br>
-  <button onclick="window.location.href='php/processar_exluir_produto.php?id_produto=<?php echo $card_produto['id']; ?>';" class="submit">Excluir Produto</button>
-  <a href='php/processar_exluir_produto.php?id_produto=<?php echo $card_produto['id']; ?>'>Excloi</a>
+  <?php echo '<a href="php/processar_excluir_produto.php?id_produto='.$card_produto["id"].'">Excluir</a>';?>
 </form>
 <script>
 	//  add_cart = document.getElementById("addcart").innerHTML = menu;
