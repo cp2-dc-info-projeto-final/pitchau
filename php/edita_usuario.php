@@ -1,12 +1,12 @@
 <?php
 include_once "../consultas/flying_bubbles.php";
 session_start();
-if ($_SESSION['is_admin'] != 1) {
-    exit("Acesso negado!");
-    if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
-        header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-    }
-}
+if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
+    header("Location: ../index.php"); // Redirecionar para a página index
+  }
+  if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
+    header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+  }}
 
 if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['id'])) {
     $id = $_POST['id'];
@@ -24,11 +24,13 @@ elseif(isset($_POST['action']) && $_POST['action'] == 'adminuser' && isset($_POS
         $id= $_POST['id'];
         $tornaradmin= transform_admin($id);
 
-} elseif(isset($_POST['action']) && $_POST['action'] == 'user' && isset($_POST['id'])){
+} 
+/*
+elseif(isset($_POST['action']) && $_POST['action'] == 'user' && isset($_POST['id'])){
     $id= $_POST['id'];
     $tornaradmin= destransform_admin($id);
 }
-    
+*/  
 header("Location: ../paginas/visualizacaoUser.php"); // Redirecionar para a página do painel após o login
 
 ?>
