@@ -724,9 +724,9 @@ error_reporting(E_ALL);
     <?php
 
       if (isset( $_SESSION["user_id"]) && !$_SESSION["is_admin"] == true){
-/*        if (contarItensNoCarrinho($_SESSION['user_id']) == 0){
+       if (contarItensNoCarrinho($_SESSION['user_id']) == 0){
     
-        }*/
+        }
         echo '<button data-quantity="0" class="btn-cart"  onclick=" toggleCarrinho(); atualizarTotal();" >';
         echo '  <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">';
         echo '    <title>Sacola</title>';

@@ -367,6 +367,20 @@ function transform_admin($id){
 
 }
 
+function destransform_admin($id){
+    $conn= connect();
+    $sql = $conn->prepare("UPDATE usuario set isAdmin = 0 WHERE id = ?");
+    $sql->bind_param("i", $id);
+    if ($sql->execute()) {
+        header("Location: ../paginas/visualizacaoUser.php");
+    } else {
+        echo "Erro ao tirar adm:" . $conn->error;
+        return 1;
+    }
+    $sql->close();
+
+}
+
 function insertIntoCarrinho($id_produto, $quantidade) {
     $id_cliente= $_SESSION["user_id"];
     // Substitua 'sua_tabela' pelo nome real da tabela no seu banco de dados
@@ -415,7 +429,6 @@ function removeFromCarrinho($id_produto) {
     $sql->close();
     $conn->close();
 }
-
 
 
 function getProdutosNoCarrinhoPorCliente($id_cliente) {
