@@ -1053,7 +1053,7 @@ atualizarNotificacaoCarrinho()
   </div>
   <div class="fixed-footer">
     <div class="col" id="totalCompraMaster total"style="margin:auto;padding-rigth:10%; font-size: 26px; font-weight: 800;">
-      <span id="total"></span>
+      <span id="total" style="font-color:black"></span>
       <script>
         function atualizarTotal() {
           var xmlhttp_ = new XMLHttpRequest();
