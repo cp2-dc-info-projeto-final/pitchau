@@ -25,6 +25,7 @@
         $descricao = $_POST["desc"];
         $valor = $_POST["valor"];
         $categoria_id = $_POST["categoria"];
+        $quantidade = $_POST["quantidade"];
 
         $id_user=$_SESSION["user_id"];// = $row["id"];
         echo $id_user;
@@ -37,11 +38,11 @@
             echo $fotoNome;
             $fotoCaminho = "../img/img_produto/" . $fotoNome;
             move_uploaded_file($_FILES["foto"]["tmp_name"], $fotoCaminho);
-            $sql = "UPDATE Produto SET nome = '$nome', descricao = '$descricao', valor = $valor, foto = '$fotoNome', categoria_id = $categoria_id WHERE id = $id";
+            $sql = "UPDATE Produto SET nome = '$nome', descricao = '$descricao', valor = $valor, foto = '$fotoNome', categoria_id = $categoria_id, quantidade_estoque = $quantidade WHERE id = $id";
         }
         
         else {
-            $sql = "UPDATE Produto SET nome = '$nome', descricao = '$descricao', valor = $valor, categoria_id = $categoria_id WHERE id = $id";
+            $sql = "UPDATE Produto SET nome = '$nome', descricao = '$descricao', valor = $valor, categoria_id = $categoria_id, quantidade_estoque = $quantidade WHERE id = $id";
             // Lidar com erro de upload de imagem, se necessário
         }
 

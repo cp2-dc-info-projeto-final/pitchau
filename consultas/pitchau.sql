@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `Produto` (
   PRIMARY KEY (`id`),
   KEY `categoria_id` (`categoria_id`),
   CONSTRAINT `Produto_ibfk_1` FOREIGN KEY (`categoria_id`) REFERENCES `Categoria` (`id`)
-);
+) /*ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci*/;
 
 CREATE TABLE IF NOT EXISTS `Slider` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -51,3 +51,11 @@ CREATE TABLE IF NOT EXISTS `ProdutoCarrinho` (
    FOREIGN KEY(`usuario_id`) REFERENCES `Usuario`(`id`),
    FOREIGN KEY(`produto_id`) REFERENCES `Produto` (`id`)
 )
+
+CREATE TABLE IF NOT EXISTS `carrinho` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_produto` int(11) DEFAULT NULL,
+  `id_cliente` int(11) DEFAULT NULL,
+  `quantidade` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=169 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
