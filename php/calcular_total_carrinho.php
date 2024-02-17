@@ -25,7 +25,7 @@ function calcularTotalCarrinho() {
     $id_usuario = $_SESSION['user_id'];
 
     // Consulta para obter os IDs dos produtos no carrinho
-    $sqlCarrinho = "SELECT id_produto FROM carrinho WHERE id_cliente = ?";
+    $sqlCarrinho = "SELECT produto_id FROM produtocarrinho WHERE usuario_id = ?";
     $stmtCarrinho = $conn->prepare($sqlCarrinho);
 
     if (!$stmtCarrinho) {
@@ -40,10 +40,10 @@ function calcularTotalCarrinho() {
         $total = 0;
 
         while ($rowCarrinho = $resultCarrinho->fetch_assoc()) {
-            $id_produto = $rowCarrinho['id_produto'];
+            $id_produto = $rowCarrinho['produto_id'];
 
             // Consulta para obter o valor do produto
-            $sqlProduto = "SELECT valor FROM Produto WHERE id = ?";
+            $sqlProduto = "SELECT valor FROM produto WHERE id = ?";
             $stmtProduto = $conn->prepare($sqlProduto);
 
             if (!$stmtProduto) {
