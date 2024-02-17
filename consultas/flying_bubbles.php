@@ -437,14 +437,13 @@ function destransform_admin($id){
 
 function insertIntoCarrinho($id_produto, $quantidade) {
     $id_cliente= $_SESSION["user_id"];
-    // Substitua 'sua_tabela' pelo nome real da tabela no seu banco de dados
     $conn = connect();
     
     // Prepara a consulta SQL usando placeholders para prevenção de SQL injection
-    $sql = $conn->prepare("INSERT INTO carrinho (id_produto, id_cliente, quantidade) VALUES (?, ?, ?)");
+    $sql = $conn->prepare("INSERT INTO produtocarrinho (usuario_id, produto_id , quantidade) VALUES (?, ?, ?)");
     
     // Associa os parâmetros aos placeholders e define os tipos de dados
-    $sql->bind_param("iii", $id_produto, $id_cliente, $quantidade);
+    $sql->bind_param("iii", $id_cliente ,$id_produto, $quantidade);
     
     // Executa a consulta SQL
     if ($sql->execute()) {
@@ -484,29 +483,56 @@ function removeFromCarrinho($id_produto) {
     $conn->close();
 }
 
-
-/*
-function getProdutosNoCarrinhoPorCliente($id_cliente) {
+function getProdutosCarrinho($id_cliente){
     $conn = connect();
+    $produtos_no_carrinho = array(); // Inicializa um array para armazenar os produtos no carrinho
 
-    // Substitua 'sua_tabela_carrinho' pelo nome real da tabela carrinho no seu banco de dados
-    /*$sql = $conn->prepare("SELECT produto_id, quantidade FROM ProdutoCarrinho WHERE id_cliente = ?");
-    $sql->bind_param("i", $id_cliente);
+    $sql = "SELECT produto_id FROM produtocarrinho WHERE usuario_id = '$id_cliente'";
+    $res = $conn->query($sql);
 
-    $sql->execute();
-    $result = $sql->get_result(); * /
-    $sql = "SELECT produto_id FROM ProdutoCarrinho WHERE id_cliente = " . $id_cliente;
-    $result = $conn->query($sql);
-    // Obter todos os resultados como um array associativo
-    $array = $result->fetch_all(MYSQLI_ASSOC); //fingindo que funciona e que é um array de ids de produtos; agora temos que pegar os atributos do produto:
-    $sql = "SELECT * FROM produto WHERE id = ";
-    for($i = 0; i < size(array); i++)
-        sql = sql . array[i] . "or ";
-    //fazer a consulta!!!
+    if ($res) {
+        while ($produto = $res->fetch_assoc()) {
+            $id_produto = $produto['produto_id'];
+
+            $sql_produto = "SELECT * FROM produto WHERE id = '$id_produto'";
+            $res_produto = $conn->query($sql_produto);
+
+            if ($res_produto) {
+                while ($row_produto = $res_produto->fetch_assoc()) {
+                    $produtos_no_carrinho[] = $row_produto; // Adiciona o produto ao array de produtos no carrinho
+                    echo '<div class="card" style="height:350px; margin:auto;">';
+                    echo '<div class="card-img">';
+                    $imagem = 'img/img_produto/' . $produtos_no_carrinho['foto'];
+                    echo '<img src="' . $imagem . '" class="d-block w-100" alt="...">';
+                    echo '</div>';
+                    echo '<div class="card-info">';
+                    echo '<p class="text-title">' . $produtos_no_carrinho["nome"] . '</p>';
+                    echo '<p class="text-body">' . $produtos_no_carrinho["descricao"] . '</p>';
+                    echo '    <div class="custom-card__price">'. number_format($produtos_no_carrinho["valor"], 2) . '</div>';
+                    echo '</div>';
+
+                    echo '<div class="card-footer">';            
+                    echo '<div class="custom-card">';
+                    echo '    <div class="custom-card__price">'. number_format($produtos_no_carrinho["valor"]*$produtos_no_carrinho['quantidade'], 2) . '</div>';
+                    echo '    <div class="custom-card__counter">';
+                    echo '        <button class="custom-card__btn" onclick="removerDoCarrinho(' . $produtos_no_carrinho['id'] . '); maisproduto(); atualizarTotal(); atualizarNotificacaoCarrinho();">-</button>';
+                    echo '        <div class="custom-card__counter-score">' .$produtos_no_carrinho['quantidade']. '</div>';
+                    echo '        <button class="custom-card__btn custom-card__btn-plus" id="addcart_' . $produtos_no_carrinho['id'] . '_carrinho maisproduto" onclick="adicionarAoCarrinho(' . $produto['id'] . '); maisproduto(); atualizarTotal(); atualizarNotificacaoCarrinho();">+</button>';
+                    echo '    </div>';
+                    echo '</div>';
+                        
+                }
+            } 
+        }
+    } 
+
     $conn->close();
 
-    return $produtos_no_carrinho;
-}*/
+    //return $produtos_no_carrinho;
+}
+
+
+
 
 function getProdutoPorId($id_produto) {
     $conn = connect();
@@ -686,14 +712,15 @@ function updateFotoPerfil($id_usuario, $nova_foto) {
 
 
 function contarItensNoCarrinho($id_cliente) {
-   /* $conn=connect();
+
+    $conn=connect();
 
     if ($conn->connect_error) {
         die("Conexão falhou: " . $conn->connect_error);
     }
 
     // Consulta SQL usando DISTINCT para contar IDs únicos no carrinho
-    $sql = "SELECT COUNT(DISTINCT id_produto) AS quantidade FROM carrinho WHERE id_cliente = ?";
+    $sql = "SELECT COUNT(DISTINCT produto_id) AS quantidade FROM produtocarrinho WHERE usuario_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id_cliente);
 
@@ -709,7 +736,7 @@ function contarItensNoCarrinho($id_cliente) {
     }
 
     $stmt->close();
-    $conn->close();*/
+    $conn->close();
 }
 
 

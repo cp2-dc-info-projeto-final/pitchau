@@ -907,12 +907,13 @@ document.addEventListener('visibilitychange', function() {
           echo 'Logue e compre!';
         }
         elseif (isset( $_SESSION["user_id"]) && !$_SESSION["is_admin"] == true){
-          echo '<button data-quantity="0" class="btn-cart" id=" addcart_' . $card_produto['id'] . '_carrinho" onclick="adicionarAoCarrinho(' . $card_produto['id'] . '); maisproduto(); atualizarNotificacaoCarrinho(); atualizarTotal();">';
+          $id_produto= $card_produto['id'];
+          echo '<a href="php/inserir_produto.php?id_produto='.$card_produto["id"].'">';
           echo '  <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">';
           echo '    <title>icon-cart</title>';
           echo '    <path transform="translate(-3.62 -0.85)" d="M28,27.3,26.24,7.51a.75.75,0,0,0-.76-.69h-3.7a6,6,0,0,0-12,0H6.13a.76.76,0,0,0-.76.69L3.62,27.3v.07a4.29,4.29,0,0,0,4.52,4H23.48a4.29,4.29,0,0,0,4.52-4ZM15.81,2.37a4.47,4.47,0,0,1,4.46,4.45H11.35a4.47,4.47,0,0,1,4.46-4.45Zm7.67,27.48H8.13a2.79,2.79,0,0,1-3-2.45L6.83,8.34h3V11a.76.76,0,0,0,1.52,0V8.34h8.92V11a.76.76,0,0,0,1.52,0V8.34h3L26.48,27.4a2.79,2.79,0,0,1-3,2.44Zm0,0"></path>';
           echo '  </svg>';
-          echo '</button>';
+          echo '</a>';
         }
 
         else{
@@ -927,11 +928,12 @@ document.addEventListener('visibilitychange', function() {
       echo "Nenhum produto encontrado na tabela Produto.";
     }
 ?>
+
 </div>
 
 <!-- Adicionando um script JavaScript para lidar com a chamada assíncrona -->
 <script>
-  function adicionarAoCarrinho(id_produto) {
+  function adicionarAoCarrinho($id_produto) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -940,13 +942,13 @@ document.addEventListener('visibilitychange', function() {
         }
     };
     
-    xmlhttp.open("GET", "consultas/flying_bubbles.php?method=insertIntoCarrinho&id_produto=" + id_produto, true);
+    xmlhttp.open("REQUEST", "consultas/flying_bubbles.php?method=insertIntoCarrinho&id_produto=" + id_produto, true);
     
     xmlhttp.send();
 
 }
 
-function removerDoCarrinho(id_produto) {
+function removerDoCarrinho($id_produto) {
     var xmlhttpRemove = new XMLHttpRequest(); // Usar um objeto XMLHttpRequest diferente para evitar conflitos
     xmlhttpRemove.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -955,7 +957,7 @@ function removerDoCarrinho(id_produto) {
         }
     };
     
-    xmlhttpRemove.open("GET", "consultas/flying_bubbles.php?method=removeFromCarrinho&id_produto=" + id_produto, true);
+    xmlhttpRemove.open("GET", "consultas/flying_bubbles.php?method=removeFromCarrinho&id_produto=" + $id_produto, true);
     
     xmlhttpRemove.send();
 }
@@ -1005,11 +1007,56 @@ atualizarNotificacaoCarrinho()
 
   </button>
   <div class="card_list_carrinho">
+  <?php 
+    $conn= connect(); 
+    $id_cliente= $_SESSION['user_id'];
+    $produtos_no_carrinho = array(); // Inicializa um array para armazenar os produtos no carrinho
 
+    $sql = "SELECT * FROM produtocarrinho WHERE usuario_id = '$id_cliente'";
+    $res = $conn->query($sql);
+
+    if ($res) {
+        while ($produto = $res->fetch_assoc()) {
+            $id_produto = $produto['produto_id'];
+            $quantidade= $produto['quantidade'];
+
+            $sql_produto = "SELECT * FROM produto WHERE id = '$id_produto'";
+            $res_produto = $conn->query($sql_produto);
+
+            if ($res_produto) {
+                while ($row_produto = $res_produto->fetch_assoc()) {
+                    $produtos_no_carrinho[] = $row_produto; // Adiciona o produto ao array de produtos no carrinho
+                    echo '<div class="card" style="height:350px; margin:auto;">';
+                    echo '<div class="card-img">';
+                    $imagem = 'img/img_produto/' .$row_produto['foto'];
+                    echo '<img src="' . $imagem . '" class="d-block w-100" alt="...">';
+                    echo '</div>';
+                    echo '<div class="card-info">';
+                    echo '<p class="text-title">' .$row_produto["nome"] . '</p>';
+                    echo '<p class="text-body">' . $row_produto["descricao"] . '</p>';
+                    echo '    <div class="custom-card__price">'. number_format($row_produto["valor"], 2) . '</div>';
+                    echo '</div>';
+
+                    echo '<div class="card-footer">';            
+                    echo '<div class="custom-card">';
+                    echo '    <div class="custom-card__price">'. number_format($row_produto['valor']*$quantidade) . '</div>';
+                    echo '    <div class="custom-card__counter">';
+                    echo '        <button class="custom-card__btn" onclick="removerDoCarrinho(' . $row_produto['id'] . '); maisproduto(); atualizarTotal(); atualizarNotificacaoCarrinho();">-</button>';
+                    echo '        <div class="custom-card__counter-score">' .$quantidade. '</div>';
+                    echo '        <button class="custom-card__btn custom-card__btn-plus" id="addcart_' . $row_produto['id'] . '_carrinho maisproduto" onclick="adicionarAoCarrinho(' . $row_produto['id'] . '); maisproduto(); atualizarTotal(); atualizarNotificacaoCarrinho();">+</button>';
+                    echo '    </div>';
+                    echo '</div>';
+                        
+                }
+            } 
+        }
+    }   
+
+  ?>
 </div>
 
   <div class="fixed-footer">
-  <div class="container text-center botao-content" style="display:flex; color:black; align-itens:center;justify-content: space-around; ">
+
   
     <div class="col" id="totalCompraMaster total"style="margin:auto;padding-rigth:10%; font-size: 26px; font-weight: 800;">
     <span id="total"></span>
@@ -1035,8 +1082,8 @@ function atualizarTotal() {
     </div>
      
     <div class="col">
-    <button class="pagar" id="showPopupBtn" onclick=""> Comprar
-</button>
+    <?php echo '<a class= "pagar" href="php/comprarProduto.php">Comprar</a>';
+    ?>
       
     </div>
     
