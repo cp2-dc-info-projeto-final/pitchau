@@ -2,7 +2,7 @@
   session_start();
   include_once "consultas/flying_bubbles.php";
 
-  if (isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
+  if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
     header("Location: index.php"); // Redirecionar para a página do painel após o login
   }
 

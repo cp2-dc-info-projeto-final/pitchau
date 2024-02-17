@@ -10,12 +10,12 @@
 <link rel="stylesheet" href="../css/registre.css?v=0.8">
 </head>
 <body>
-<?php include_once "../consultas/flying_bubbles.php";
-session_start(); 
- if ($_SESSION['is_admin'] != 1) {
-  header("Location: ../index.php");
-    exit;}
-
+<?php
+  session_start();
+  include_once "../consultas/flying_bubbles.php";
+  if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
+      header("Location: ../index.php"); // Redirecionar para a página do painel após o login
+  }
 ?>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
