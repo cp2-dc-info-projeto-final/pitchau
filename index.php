@@ -1032,6 +1032,8 @@ atualizarNotificacaoCarrinho()
                     echo '<p class="text-body">' . $row_produto["descricao"] . '</p>';
                     echo '    <div class="custom-card__price">'. number_format($row_produto["valor"], 2) . '</div>';
                     echo '</div>';
+                    echo '</div>';
+                    echo '<br>';
                         
                 }
             } 
