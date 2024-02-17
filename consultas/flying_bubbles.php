@@ -44,13 +44,13 @@ function connect(){
     // Conectar ao banco de dados Pitchau após a criação
 $conn = new mysqli($servername, $username, $password, 'Pitchau');
 
-// Verificar se a tabela Usuario está vazia
-$resultUsuario = $conn->query("SELECT COUNT(*) as count FROM Usuario");
-$rowUsuario = $resultUsuario->fetch_assoc();
+// Verificar se a tabela usuario está vazia
+$resultusuario = $conn->query("SELECT COUNT(*) as count FROM usuario");
+$rowusuario = $resultusuario->fetch_assoc();
 
-if($rowUsuario['count'] == 0) {
-    // Inserir super adm na tabela Usuario
-    $conn->query('INSERT INTO Usuario(email, senha, nome, isAdmin) VALUES("adm@super", "$2y$10$KAseMta2Vx5CEwk9rDjACOVRHrYMBsDj4YfqThOm5KYgsBD9TVg5u", "Super Administrador", 1)');
+if($rowusuario['count'] == 0) {
+    // Inserir super adm na tabela usuario
+    $conn->query('INSERT INTO usuario(email, senha, nome, isAdmin) VALUES("adm@super", "$2y$10$KAseMta2Vx5CEwk9rDjACOVRHrYMBsDj4YfqThOm5KYgsBD9TVg5u", "Super Administrador", 1)');
 /*
 =================================
 
@@ -201,7 +201,7 @@ function add_produto_carrinho( $id_produto){
 function processar_login($email, $senha){
     $conn = connect();
 
-    $sql = "SELECT id, nome, email, senha, isAdmin, foto FROM Usuario WHERE email = '$email'";
+    $sql = "SELECT id, nome, email, senha, isAdmin, foto FROM usuario WHERE email = '$email'";
     $result = $conn->query($sql);
     
     if ($result->num_rows == 1) {
@@ -236,7 +236,7 @@ function perfil(){
 if (isset($_SESSION["email"])) { 
     $email = $_SESSION["email"]; // Obtém o email do usuário da sessão
 
-    // Use $emailUsuario para exibir informações do usuário ou realizar operações
+    // Use $emailusuario para exibir informações do usuário ou realizar operações
     
 } else {
     // Se o usuário não estiver logado, redirecione-o para a página de login
@@ -270,7 +270,7 @@ function pegar_foto($user_id) {
     $conn = connect();
 
     // Utilizando prepared statement para evitar injeções SQL
-    $stmt = $conn->prepare("SELECT foto FROM Usuario WHERE id = ?");
+    $stmt = $conn->prepare("SELECT foto FROM usuario WHERE id = ?");
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -288,12 +288,12 @@ function pegar_foto($user_id) {
 function alterar_email($email, $senha){
     $conn= connect();
     $user_id= $_SESSION["user_id"]; //Variavel de sessão
-    $sql= "SELECT email, senha FROM Usuario WHERE id= '$user_id'";
+    $sql= "SELECT email, senha FROM usuario WHERE id= '$user_id'";
     $result=$conn->query($sql);
     if($result->num_rows > 0 ){
         $row= $result->fetch_assoc();
         if($senha == $row['senha']){
-            $stmt=$conn->prepare("UPDATE Usuario SET email= ? WHERE id= ?");
+            $stmt=$conn->prepare("UPDATE usuario SET email= ? WHERE id= ?");
             $stmt->bind_param("si",$email, $user_id );
             if ($stmt->execute()) {
                 header("Location: ../php/logout.php");
@@ -313,7 +313,7 @@ function alterar_email($email, $senha){
 function Apagar_conta($id){
     $conn= connect();
     $user_id= $_SESSION["user_id"]; //Variavel de sessão
-    $stmt = $conn->prepare("DELETE FROM Usuario WHERE id = ?");
+    $stmt = $conn->prepare("DELETE FROM usuario WHERE id = ?");
     $stmt->bind_param("i", $user_id);
     $result= $stmt->execute();
     $stmt->close();
@@ -323,7 +323,7 @@ function Apagar_conta($id){
 
 function getuser(){
     $conn= connect();
-    $sql = "SELECT * FROM Usuario";
+    $sql = "SELECT * FROM usuario";
     $result = $conn->query($sql);
     $usuarios = [];
     // Verificar se há resultados
@@ -665,7 +665,7 @@ function getCompra() {
 
 function getUserName($id_usuario) {
     $conn = connect();
-    $sql = "SELECT nome FROM Usuario WHERE id = $id_usuario";
+    $sql = "SELECT nome FROM usuario WHERE id = $id_usuario";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -679,7 +679,7 @@ function getUserName($id_usuario) {
 
 function getFotoPefil($id_usuario) {
     $conn = connect();
-    $sql = "SELECT foto FROM Usuario WHERE id = $id_usuario";
+    $sql = "SELECT foto FROM usuario WHERE id = $id_usuario";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -694,12 +694,12 @@ function updateFotoPerfil($id_usuario, $nova_foto) {
     $conn = connect();
 
     // Verifica se o usuário existe antes de tentar atualizar
-    $verifica_sql = "SELECT id FROM Usuario WHERE id = $id_usuario";
+    $verifica_sql = "SELECT id FROM usuario WHERE id = $id_usuario";
     $verifica_result = $conn->query($verifica_sql);
 
     if ($verifica_result->num_rows > 0) {
         // Atualiza o caminho da foto na base de dados
-        $update_sql = "UPDATE Usuario SET foto = '$nova_foto' WHERE id = $id_usuario";
+        $update_sql = "UPDATE usuario SET foto = '$nova_foto' WHERE id = $id_usuario";
         $conn->query($update_sql);
 
         return "Foto de perfil atualizada com sucesso.";
@@ -707,38 +707,4 @@ function updateFotoPerfil($id_usuario, $nova_foto) {
         return "Usuário não encontrado.";
     }
 }
-
-
-
-
-function contarItensNoCarrinho($id_cliente) {
-
-    $conn=connect();
-
-    if ($conn->connect_error) {
-        die("Conexão falhou: " . $conn->connect_error);
-    }
-
-    // Consulta SQL usando DISTINCT para contar IDs únicos no carrinho
-    $sql = "SELECT COUNT(DISTINCT produto_id) AS quantidade FROM produtocarrinho WHERE usuario_id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $id_cliente);
-
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $quantidade = $row['quantidade'];
-        return $quantidade;
-    } else {
-        return 0;
-    }
-
-    $stmt->close();
-    $conn->close();
-}
-
-
-
 ?>
