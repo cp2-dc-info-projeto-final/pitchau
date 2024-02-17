@@ -5,8 +5,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 // Restante do seu código
 
-include_once "../consultas/flying_bubbles.php";
-
 require '../vendor/autoload.php'; 
 
 
@@ -17,34 +15,48 @@ require '../vendor/phpmailer/phpmailer/src/Exception.php';
 require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require '../vendor/phpmailer/phpmailer/src/SMTP.php';
 
-// Recupere as informações do banco de dados
-$destinatario = "adeiltontoco11@gmail.com"; // Substitua pela lógica para obter o destinatário do banco de dados
-$assunto = "Teste do E-mail"; // Substitua pela lógica para obter o assunto do banco de dados
-$mensagem = "Teste de envio do E-mail"; // Substitua pela lógica para obter a mensagem do banco de dados
+function envia_email($para, $assunto, $mensagem){
 
-$mail = new PHPMailer(true);
+    //Cria uma instância da classe PHPMailer; o parâmetro true habilita as exceções
+    $mail = new PHPMailer(true);
 
-try {
-    // Configurações do servidor SMTP
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'adeiltonfilho80@gmail.com';
-    $mail->Password = 'Toco.1665';
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port = 465;
+    try {
+        //Configurações do servidor
+        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                   //Habilita a saída de debug (para fase de testes)
+        $mail->isSMTP();                                            //Define o envio por meio do SMTP
+        $mail->Host       = 'smtp.gmail.com';                       //Define o servidor SMTP utilizado para o envio
+        $mail->SMTPAuth   = true;                                   //Habilita a autenticação do SMTP
+        $mail->Username   = 'pitchau0@gmail.com';               //usuário SMTP
+        $mail->Password   = 'admuser123';                     //senha SMTP
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;       //Habilita a encriptação implícita TLS
+        $mail->Port       = 465;                                    //Porta TCP de conexão; use 587 se você tiver configurado SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS
+        
 
-    // Destinatário e assunto
-    $mail->setFrom($destinatario, 'Adeilton');
-    $mail->addAddress($destinatario);
-    $mail->Subject = $assunto;
+        //Remetente e Destinatários
+        $mail->setFrom('clinicamanoelgomes@gmail.com', 'Clinica Manoel Gomes');  // Adiciona o remetente
+        $mail->addAddress($para);                                       // Adiciona um destinatário
+        // $mail->addAddress('ellen@example.com');                      // O nome é opcional
+        // $mail->addReplyTo('info@example.com', 'Information');        // Adicona um endereço de resposta
+        // $mail->addCC('cc@example.com');                              // Adiciona um e-mail de cópia
+        // $mail->addBCC('bcc@example.com');                            // Adicona um e-mail de cópia oculta.
 
-    // Corpo do e-mail
-    $mail->Body = $mensagem;
+        //Anexos
+        // $mail->addAttachment('/var/tmp/file.tar.gz');        //Adiciona um anexo
+        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');   //O nome é opcional
 
-    $mail->send();
-    echo 'E-mail enviado com sucesso!';
-} catch (Exception $e) {
-    echo 'Erro ao enviar o e-mail: ', $mail->ErrorInfo;
+        //Conteúdo
+        $mail->isHTML(true);                                    //Formata o e-mail com HTML
+        $mail->Subject = $assunto;                              //Assunto do e-mail
+        $mail->Body    = $mensagem;                             // Corpo do e-mail
+        // $mail->AltBody = 'Texto sem tags HTML!';             //Opção de texto para provedores de e-mail que não lêem HTML.
+
+        $mail->send();                                          // tenta enviar o e-mail
+        return true;                                            // retorna verdadeiro se enviar corretamente.
+    } catch (Exception $e) {
+        echo "Erro: ".$e;
+        return false;                                           // retorna falso se ocorrer uma falha no envio.
+    }
 }
+
+
 ?>

@@ -1014,7 +1014,6 @@ atualizarNotificacaoCarrinho()
     if ($res) {
       while ($produto = $res->fetch_assoc()) {
         $id_produto = $produto['produto_id'];
-        $quantidade= $produto['quantidade'];
 
         $sql_produto = "SELECT * FROM produto WHERE id = '$id_produto'";
         $res_produto = $conn->query($sql_produto);

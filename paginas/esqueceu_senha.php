@@ -66,13 +66,19 @@
 </nav>
 
 <div style="position: relative; text-align: center; background-color: beige;" class= "divin">
-<form action="../php/enviar_email.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
+<form action="../php/enviar_mensagem.php" method="POST" class="form" style="background-color: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 20px; position: relative; border: solid 2px blue; margin: auto;">
   <p class="title">Esqueceu Sua Senha</p>
   <p>Solicitação para Redefinição de Senha</p>
   <label>
     <input required="" placeholder="" type="email" name="email" class="input">
     <span>Email</span>
   </label>
+  <?php
+    if(isset($_SESSION['msg'])){
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }
+  ?>
   <p class="signin">Lembrei minha senha! <a href="login.php">Voltar</a></p>
   <button type="submit" class="submit">Enviar</button>
 </form>
