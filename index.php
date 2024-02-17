@@ -642,7 +642,7 @@ session_start();
 
 
           
-    </style>
+  </style>
 </head>
 <body>
 <?php
@@ -725,15 +725,11 @@ error_reporting(E_ALL);
     <?php
 
       if (isset( $_SESSION["user_id"]) && !$_SESSION["is_admin"] == true){
-       if (contarItensNoCarrinho($_SESSION['user_id']) == 0){
-    
-        }
         echo '<button data-quantity="0" class="btn-cart"  onclick=" toggleCarrinho(); atualizarTotal();" >';
         echo '  <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">';
         echo '    <title>Sacola</title>';
         echo '    <path transform="translate(-3.62 -0.85)" d="M28,27.3,26.24,7.51a.75.75,0,0,0-.76-.69h-3.7a6,6,0,0,0-12,0H6.13a.76.76,0,0,0-.76.69L3.62,27.3v.07a4.29,4.29,0,0,0,4.52,4H23.48a4.29,4.29,0,0,0,4.52-4ZM15.81,2.37a4.47,4.47,0,0,1,4.46,4.45H11.35a4.47,4.47,0,0,1,4.46-4.45Zm7.67,27.48H8.13a2.79,2.79,0,0,1-3-2.45L6.83,8.34h3V11a.76.76,0,0,0,1.52,0V8.34h8.92V11a.76.76,0,0,0,1.52,0V8.34h3L26.48,27.4a2.79,2.79,0,0,1-3,2.44Zm0,0"></path>';
         echo '  </svg>';
-        echo '  <span id="quantidadeCarrinho" class="quantity">'.contarItensNoCarrinho($_SESSION['user_id']).'</span>';
         echo '</button>';
       }
 
@@ -1000,15 +996,14 @@ atualizarNotificacaoCarrinho()
                                    
 </div>
 <div id="carrinhoTela" class="scrollable" style="border: 1px solid;">
-
   <button class="button"  id="fecharCarrinho" class="fecharCarrinho" onclick="toggleCarrinho();">
-  <svg  class="close"xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 14.41L14.41 17 12 14.59 9.59 17 7 14.41 9.59 12 7 9.59 9.59 7 12 9.59 14.41 7 17 9.59 14.41 12 17 14.41z"/>
-</svg>
-
+    <svg  class="close"xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 14.41L14.41 17 12 14.59 9.59 17 7 14.41 9.59 12 7 9.59 9.59 7 12 9.59 14.41 7 17 9.59 14.41 12 17 14.41z"/>
+    </svg>
   </button>
+
   <div class="card_list_carrinho">
-  <?php 
+    <?php 
     $conn= connect(); 
     $id_cliente= $_SESSION['user_id'];
     $produtos_no_carrinho = array(); // Inicializa um array para armazenar os produtos no carrinho
@@ -1017,12 +1012,12 @@ atualizarNotificacaoCarrinho()
     $res = $conn->query($sql);
 
     if ($res) {
-        while ($produto = $res->fetch_assoc()) {
-            $id_produto = $produto['produto_id'];
-            $quantidade= $produto['quantidade'];
+      while ($produto = $res->fetch_assoc()) {
+        $id_produto = $produto['produto_id'];
+        $quantidade= $produto['quantidade'];
 
-            $sql_produto = "SELECT * FROM produto WHERE id = '$id_produto'";
-            $res_produto = $conn->query($sql_produto);
+        $sql_produto = "SELECT * FROM produto WHERE id = '$id_produto'";
+        $res_produto = $conn->query($sql_produto);
 
             if ($res_produto) {
                 while ($row_produto = $res_produto->fetch_assoc()) {
@@ -1043,46 +1038,34 @@ atualizarNotificacaoCarrinho()
         }
     }   
 
-  ?>
-</div>
-
+    ?>
+  </div>
   <div class="fixed-footer">
-
-  
     <div class="col" id="totalCompraMaster total"style="margin:auto;padding-rigth:10%; font-size: 26px; font-weight: 800;">
-    <span id="total"></span>
-    <script>
-     
-function atualizarTotal() {
-    var xmlhttp_ = new XMLHttpRequest();
+      <span id="total"></span>
+      <script>
+        function atualizarTotal() {
+          var xmlhttp_ = new XMLHttpRequest();
 
-    xmlhttp_.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+          xmlhttp_.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
             // Atualiza o resultado na página
             document.getElementById("total").innerHTML =  this.responseText;
+          }
+          };
+
+          xmlhttp_.open("GET", "php/calcular_total_carrinho.php", true);
+          xmlhttp_.send();
         }
-    };
-
-    xmlhttp_.open("GET", "php/calcular_total_carrinho.php", true);
-    xmlhttp_.send();
-}
-
-  
-</script>
-      
+      </script>
     </div>
-     
     <div class="col">
-    <?php echo '<a class= "pagar" href="php/comprarProduto.php">Comprar</a>';
-    ?>
-      
+      <?php echo '<a class= "pagar" href="php/comprarProduto.php">Comprar</a>';
+      ?>      
     </div>
-    
-
-  
-</div>
- 
   </div>
+  <br><br><br>
+</div>
 
   <!-- Conteúdo do carrinho aqui -->
   
