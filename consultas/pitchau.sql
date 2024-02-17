@@ -1,3 +1,6 @@
+CREATE DATABASE pitchau;
+use pitchau;
+
 -- phpMyAdmin SQL Dump
 -- version 4.7.0
 -- https://www.phpmyadmin.net/
