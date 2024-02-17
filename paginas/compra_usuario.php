@@ -17,14 +17,6 @@
   if (!isset( $_SESSION["user_id"])) { //Verifica se == Usuário
     header("Location: ../index.php"); // Redirecionar para a página index
   }
-  if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifica se == Administrador
-    header("Location: ../index.php"); // Redirecionar para a página do painel após o login
-  }
-
-  if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"])) { //Verifica se == Usuário Logado ou == Administrador
-    echo "<input type='hidden' id='menulevel' value='1'/>"; //Torna em visitante
-    $menulevel = 1;
-  }
   if (isset($_SESSION["user_id"])) { //Verifica se == Usuário Logado
     if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]== 1 ) { //Verifica se == Administrador
       echo "<input type='hidden' id='menulevel' value='3'/>"; //Torna em administrador
@@ -73,7 +65,7 @@
 <div class="divin">
   <div class="form" style="min-height:90vh;">
     <div class="title">
-      Listagem de Compras
+      Minhas Compras
     </div>
     <table class="user-list">
       <tr>
@@ -84,7 +76,7 @@
       </tr>
       <?php
         // Substitua "getCompra" pela função que retorna os dados da tabela Compra
-        $compras = getCompra();
+        $compras = getusercompra();
         
         if (!empty($compras)) {
           foreach ($compras as $compra) {

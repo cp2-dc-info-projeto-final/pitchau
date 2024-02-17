@@ -6,7 +6,7 @@
 
     $conn= connect(); 
     $id_cliente= $_SESSION['user_id'];
-    $dataAtual = date('d/m/Y');
+    $dataAtual = date('d/m/Y H:i');
     
     
     $produtos_no_carrinho = array(); // Inicializa um array para armazenar os produtos no carrinho
@@ -36,14 +36,16 @@
                 while ($row_produto = $res_produto->fetch_assoc()) {
                     $produtos_no_carrinho[] = $row_produto; // Adiciona o produto ao array de produtos no carrinho
                     $nome_produto= $row_produto['nome'];
-                    $sql_inserir= "INSERT INTO historico (usuario_id, usuario_nome, produto_nome, data_compra) VALUES ('$id_cliente', '$nome_usuario ', '$nome_produto', '$dataAtual') ";
+                    $valor= $row_produto['valor'];
+                    $sql_inserir= "INSERT INTO historico (usuario_id, usuario_nome, produto_nome, data_compra, valor) VALUES ('$id_cliente', '$nome_usuario ', '$nome_produto', '$dataAtual', $valor) ";
                     mysqli_query($conn,$sql_inserir);
                     
 
 
                     $sql_delete = "DELETE FROM produtocarrinho WHERE usuario_id = '$id_cliente'"; 
                     mysqli_query($conn,$sql_delete);
-
+                    
+                    
 
 
 

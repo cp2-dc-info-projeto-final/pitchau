@@ -649,7 +649,24 @@ function inserirCompra($valor) {
 }
 function getCompra() {
     $conn = connect();
-    $sql = "SELECT * FROM Compra";
+    $sql = "SELECT * FROM historico";
+    $result = $conn->query($sql);
+
+    $compras = array();
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $compras[] = $row;
+        }
+    }
+
+    return $compras;
+}
+
+function getusercompra() {
+    $conn = connect();
+    $cod_cliente= $_SESSION['user_id'];
+    $sql = "SELECT * FROM historico WHERE usuario_id = '$cod_cliente'";
     $result = $conn->query($sql);
 
     $compras = array();
