@@ -1,9 +1,3 @@
-<?php
-    //Verifica se == Usuário Logado
-    if (!isset($_SESSION["user_id"])) { //Verifica se == Usuário
-        header("Location: ../index.php");;
-      }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
