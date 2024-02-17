@@ -12,13 +12,6 @@ CREATE TABLE `historico` (
   `valor` decimal(10,2) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-CREATE TABLE `historico` (
-  `usuario_id` int(11) NOT NULL,
-  `usuario_nome` varchar(255) NOT NULL,
-  `produto_nome` varchar(255) NOT NULL,
-  `data_compra` varchar(10) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
 CREATE TABLE `produto` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
