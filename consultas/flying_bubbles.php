@@ -338,6 +338,23 @@ function getuser(){
     return $usuarios;
 }
 
+function getcategoria(){
+    $conn= connect();
+    $sql = "SELECT * FROM Categoria";
+    $result = $conn->query($sql);
+    $categorias = [];
+    // Verificar se há resultados
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $categorias[] = $row;
+        }
+    }
+    // Fechar a conexão
+    $conn->close();
+
+    return $categorias;
+}
+
 function apagar_usuarios($id){
     $conn= connect();
     $sql = $conn->prepare("DELETE FROM usuario WHERE id = ?");
@@ -346,6 +363,19 @@ function apagar_usuarios($id){
         header("Location: ../paginas/visualizacaoUser.php");
     } else {
         echo "Erro ao excluir o usuário: " . $conn->error;
+        return 1;
+    }
+    $sql->close();
+}
+
+function apagar_categorias($id){
+    $conn= connect();
+    $sql = $conn->prepare("DELETE FROM Categoria WHERE id = ?");
+    $sql->bind_param("i", $id);
+    if ($sql->execute()) {
+        header("Location: ../paginas/gerenciarCategoria.php");
+    } else {
+        echo "Erro ao excluir a categoria: " . $conn->error;
         return 1;
     }
     $sql->close();
@@ -362,7 +392,20 @@ function editName_usuarios( $id,$newName){
         return 1;
         }
     $sql->close();
-    }
+}
+
+function editName_categorias( $id,$newName){
+    $conn= connect();
+    $sql = $conn->prepare("UPDATE Categoria SET nome = ? WHERE id = ?");
+    $sql->bind_param("si", $newName, $id);
+    if ($sql->execute()) {
+        header("Location: ../paginas/gerenciarCategoria.php");
+    } else {
+        echo "Erro ao atualizar o nome da categoria: " . $conn->error;
+        return 1;
+        }
+    $sql->close();
+}
 
 function transform_admin($id){
     $conn= connect();
