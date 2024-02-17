@@ -1037,16 +1037,6 @@ atualizarNotificacaoCarrinho()
                     echo '<p class="text-body">' . $row_produto["descricao"] . '</p>';
                     echo '    <div class="custom-card__price">'. number_format($row_produto["valor"], 2) . '</div>';
                     echo '</div>';
-
-                    echo '<div class="card-footer">';            
-                    echo '<div class="custom-card">';
-                    echo '    <div class="custom-card__price">'. number_format($row_produto['valor']*$quantidade) . '</div>';
-                    echo '    <div class="custom-card__counter">';
-                    echo '        <button class="custom-card__btn" onclick="removerDoCarrinho(' . $row_produto['id'] . '); maisproduto(); atualizarTotal(); atualizarNotificacaoCarrinho();">-</button>';
-                    echo '        <div class="custom-card__counter-score">' .$quantidade. '</div>';
-                    echo '        <button class="custom-card__btn custom-card__btn-plus" id="addcart_' . $row_produto['id'] . '_carrinho maisproduto" onclick="adicionarAoCarrinho(' . $row_produto['id'] . '); maisproduto(); atualizarTotal(); atualizarNotificacaoCarrinho();">+</button>';
-                    echo '    </div>';
-                    echo '</div>';
                         
                 }
             } 
