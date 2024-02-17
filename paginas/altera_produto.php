@@ -390,11 +390,12 @@
           z-index: 999;
         }
 
-        /* Conteúdo da Página */
+        /* Conteúdo da Página 
         .page-content {
-          /* Estilos do conteúdo da página aqui */
+          
         }
-
+         Estilos do conteúdo da página aqui */
+        
         /* Popup estilizado */
         .popup-container {
           z-index:1000;

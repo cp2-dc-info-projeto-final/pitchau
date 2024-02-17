@@ -389,10 +389,11 @@ if (!isset( $_SESSION["is_admin"]) || $_SESSION["is_admin"] == false) { //Verifi
           z-index: 999;
         }
 
-        /* Conteúdo da Página */
+        /* Conteúdo da Página
         .page-content {
-          /* Estilos do conteúdo da página aqui */
+          
         }
+        Estilos do conteúdo da página aqui */
 
         /* Popup estilizado */
         .popup-container {
