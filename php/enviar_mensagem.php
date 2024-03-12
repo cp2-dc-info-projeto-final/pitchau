@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once "../consultas/flying_bubbles.php";
 include_once "enviar_email.php";
 
@@ -16,7 +17,7 @@ if (isset($_REQUEST['email'])) {
 
         $code = rand(100000, 999999);
 
-        $para = $resultado['$email' ];
+        $para = $resultado['email'];
         $assunto = "Recuperação de Senha";
         $mensagem = "Sua nova senha é: $code";
 
@@ -35,7 +36,5 @@ if (isset($_REQUEST['email'])) {
         header("Location: ../paginas/esqueceu_senha.php");
         exit();
     }
-
-    echo $email;
 }
 ?>
