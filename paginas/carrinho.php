@@ -75,6 +75,7 @@
 
 <?php 
 include_once "../consultas/flying_bubbles.php";
+include_once "../php/processa_compra.php"
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
     // Coletar produtos
